@@ -11,7 +11,7 @@ Syllabus
 Reading Assignments
 Clicker Q’s
 Intro to Non-Inertial Mechanics</p>
-<h3 id="understanding-buoyancy-in-inertial-referrence-frames.">Understanding Buoyancy in inertial referrence frames.</h3>
+<h2 id="understanding-buoyancy-in-inertial-referrence-frames.">Understanding Buoyancy in inertial referrence frames.</h2>
 <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6NAphk-gABbiHFmldd4HxtDKahkx6zZIuU1xwbk9rWdW6HIjo" alt="enter image description here"></p>
 <p>We’ve spent a lot of time on Lagrangian mechanics, but today we focus on mechanics in non-inertial reference frames - frames which are accelerating linearly or rotating.</p>
 <p>Lagrangian mechanics lets us deal with these frames - we’ve done it repeatedly - but we still must start in an inertial frame of reference before changing to generalized coordinates within the non-inertial frame.</p>
