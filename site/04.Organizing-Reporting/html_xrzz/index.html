@@ -1250,14 +1250,14 @@ git push
 <h2 id="advanced">Advanced</h2>
 <ol>
 <li>
-<p>Update the social <code>links</code> for Instagram, Linkedin, GitHub with your own links by replacing the <code>#</code> in the <code>&lt;href&gt;</code> tags </p>
+<p>Update the social <code>links</code> for Instagram, Linkedin, GitHub with your own links by replacing the <code>#</code> in the <code>href=</code> tags </p>
 <pre><code>&lt;li class="SocialList-item"&gt;&lt;a href="#" rel="me"&gt;LinkedIn&lt;/a&gt; &lt;/li&gt;
 &lt;li class="SocialList-item"&gt; &lt;a href="#" rel="me"&gt;Instagram&lt;/a&gt; &lt;/li&gt;
 &lt;li class="SocialList-item"&gt; &lt;a href="#" rel="me"&gt;GitHub&lt;/a&gt; &lt;/li&gt;
 </code></pre>
 </li>
 <li>
-<p>Update the <code>navigation links</code> on top right in the same way. Replace the text or <code>#</code> in the <code>&lt;href&gt;</code> tags with approproate links to your pages. </p>
+<p>Update the <code>navigation links</code> on top right in the same way. Replace the text or <code>#</code> in the <code>href=</code> tags with approproate links to your pages. </p>
 <pre><code>&lt;li class="Navigation-listItem"&gt;
     &lt;a href="site/about" class="Navigation-link"&gt;About&lt;/a&gt; &lt;/li&gt;
 &lt;li class="Navigation-listItem"&gt;
@@ -1268,6 +1268,17 @@ git push
     &lt;a href="#" class="Navigation-link"&gt;Bookmarks&lt;/a&gt; &lt;/li&gt;
 &lt;li class="Navigation-listItem"&gt; 
     &lt;a href="#" class="Navigation-link"&gt;Contact&lt;/a&gt; &lt;/li&gt;
+</code></pre>
+<p>A <code>&lt;a&gt;</code> link tag has 2 main items. </p>
+<ol>
+<li>the <code>href=</code> link and </li>
+<li>the display text. Examples below</li>
+</ol>
+<p>Here the "site/about" is the link and "About" is the display text. </p>
+<pre><code>&lt;a href="site/about" class="Navigation-link"&gt;About&lt;/a&gt; &lt;/li&gt;
+</code></pre>
+<p>Here "#" is the link and "LinkedIn" is the display text. </p>
+<pre><code>&lt;a href="#" rel="me"&gt;LinkedIn&lt;/a&gt; &lt;/li&gt;
 </code></pre>
 </li>
 </ol>

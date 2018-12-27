@@ -65,15 +65,16 @@ Lets get started
 
     We are all set to view our bio page at https://username.github.io with updated picture and information. 
 
+
 ## Advanced 
 
-1. Update the social `links` for Instagram, Linkedin, GitHub with your own links by replacing the `#` in the `<href>` tags 
+1. Update the social `links` for Instagram, Linkedin, GitHub with your own links by replacing the `#` in the `href=` tags 
 
         <li class="SocialList-item"><a href="#" rel="me">LinkedIn</a> </li>
         <li class="SocialList-item"> <a href="#" rel="me">Instagram</a> </li>
         <li class="SocialList-item"> <a href="#" rel="me">GitHub</a> </li>
 
-2. Update the `navigation links` on top right in the same way. Replace the text or `#` in the `<href>` tags with approproate links to your pages. 
+2. Update the `navigation links` on top right in the same way. Replace the text or `#` in the `href=` tags with approproate links to your pages. 
 
         <li class="Navigation-listItem">
             <a href="site/about" class="Navigation-link">About</a> </li>
@@ -85,4 +86,18 @@ Lets get started
             <a href="#" class="Navigation-link">Bookmarks</a> </li>
         <li class="Navigation-listItem"> 
             <a href="#" class="Navigation-link">Contact</a> </li>
+    
+    A `<a>` link tag has 2 main items. 
+    
+    1. the `href=` link and 
+    2. the display text. Examples below
+
+    Here the "site/about" is the link and "About" is the display text. 
+        
+        <a href="site/about" class="Navigation-link">About</a> </li>
+        
+    Here "#" is the link and "LinkedIn" is the display text. 
+
+        <a href="#" rel="me">LinkedIn</a> </li>
+
 

@@ -40,8 +40,12 @@ Some examples of common html elements:
 * `<p>` tag - paragraph 
 * `<h1>, <h2>, <h3>` tag - headers of differnt font size; 1 being highest and large the number smaller the font 
 * `a` tag - this is a link tag that often contains a `href` link. We usually see them as clickable links on a webpage 
-* `img` tag - this tag contains a image that we want to display on our webpage. It also contains a `src` source link to the image file or URL. 
+* `img` tag - this tag contains a image that we want to display on our webpage. It also contains a `src` source link to the image file or URL. Usage Syntax:
+    
+        <a href="URL"> DISPLAY-TEXT </a>
 
+        where URL is the link and DISPLAY-TEXT is what gets displayed on the page which can be clicked.
+    
 Note: a tag once opened must closed to resemble a valid HTML code. 
 Eg. a paragraph tag starts with `<p>` and must end with `</p>`. This is true for all elements of html.
 
