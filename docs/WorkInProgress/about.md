@@ -26,3 +26,9 @@ and getting this error
 > segmentation fault (core dumped)  python
 
 thanks
+
+You can also put the [link URL][1] below the current paragraph
+like [this][2].
+
+   [1]: http://url
+   [2]: http://another.url "A funky title"

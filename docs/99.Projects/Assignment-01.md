@@ -58,3 +58,40 @@ This common repository can be accessed from any machine. Just remember to `pull`
 In the next assignment we will work in the `projects` directory. This directory will house the codes and programs we will write. 
 
 
+## test 
+
+ ├── 1.helloworld-intro
+    │   ├── helloworld
+    │   ├── helloworld.c
+    │   ├── helloworld.class
+    │   ├── helloworld-cs
+    │   │   ├── bin
+    │   │   │   └── Debug
+    │   │   │       └── netcoreapp2.1
+    │   │   │           ├── helloworld-cs.deps.json
+    │   │   │           ├── helloworld-cs.pdb
+    │   │   │           ├── helloworld-cs.runtimeconfig.dev.json
+    │   │   │           └── helloworld-cs.runtimeconfig.json
+    │   │   ├── helloworld-cs.csproj
+    │   │   ├── obj
+    │   │   │   ├── Debug
+    │   │   │   │   └── netcoreapp2.1
+    │   │   │   │       ├── helloworld-cs.AssemblyInfo.cs
+    │   │   │   │       ├── helloworld-cs.AssemblyInfoInputs.cache
+    │   │   │   │       ├── helloworld-cs.assets.cache
+    │   │   │   │       ├── helloworld-cs.csprojAssemblyReference.cache
+    │   │   │   │       ├── helloworld-cs.csproj.CoreCompileInputs.cache
+    │   │   │   │       ├── helloworld-cs.csproj.FileListAbsolute.txt
+    │   │   │   │       └── helloworld-cs.pdb
+    │   │   │   ├── helloworld-cs.csproj.nuget.cache
+    │   │   │   ├── helloworld-cs.csproj.nuget.g.props
+    │   │   │   ├── helloworld-cs.csproj.nuget.g.targets
+    │   │   │   └── project.assets.json
+    │   │   └── Program.cs
+    │   ├── helloworld.java
+    │   └── helloworld.py
+    ├── index.html
+    ├── LICENSE
+    └── README
+
+    

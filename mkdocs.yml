@@ -1,7 +1,7 @@
-site_name: Towshif Ali
+site_name: Data Service  Web Portal
 theme: #readthedocs
     name: 'material'
-site_url: https://towshif.github.io
+site_url: https://data.towshif.com
 
 
       

@@ -1,10 +1,29 @@
 # Git and Github 
 
+**What is Git?**
+
+Git is a *version-control system* for tracking changes in computer files and coordinating work on those files among multiple people. It is primarily used for source-code management in software development, but it can be used to keep track of changes in any set of files.
+
+
+When developers create something (an app, for example), they make constant changes to the code, releasing new versions up to and after the first official (non-beta) release.
+
+Version control systems keep these revisions straight, storing the modifications in a central repository. This allows developers to easily collaborate, as they can download a new version of the software, make changes, and upload the newest revision. Every developer can see these new changes, download them, and contribute.
+
+**What is GitHub?**
+
+Github.com is where developers store their projects and network with like minded people. It provides a online platform to sync your code, visually track changes and collaborate with other developers. More information on features provided by github is [here](https://github.com/features)
+
+## Repository
+A repository (usually abbreviated to “repo”) is a location where all the files for a particular project are stored. Each project has its own repo, and you can access it with a unique URL.
+![](https://www.howtogeek.com/wp-content/uploads/2014/01/2-create-repo.jpg)
+
+---
+
 ## Beginners Guide 
 
-Create a Github account at [https://github.com](https://github.com). Remember your usename and password. You will need is everytime you setup git on your local machine. 
+Create a Github account at [https://github.com](https://github.com). Remember your usename and password. You will need is everytime you sync your git on your local machine with github.
 
-Git in a nutshell: 
+Git and Github in a nutshell: 
 
     # Working locally
     git status      # tell whats the current sync status of local repo
@@ -20,9 +39,9 @@ Git in a nutshell:
     git commit [file1] [file2] [--all]      
     
 
-## Getting started with a repo 
+## Getting started with a github repo 
 
-Got to [https://github.com](https://github.com) and login. 
+Go to [https://github.com](https://github.com) and login. 
 
 Create a new repository (aka repo) with a name for the project. In this example we will use `YOUR-REPOSITORY` as you repo name. 
 
@@ -68,7 +87,9 @@ Following this will allow you to work on multiple machines at the same time. Als
 
 ## Advanced usage - git branch
 
-[Git Handbook](https://guides.github.com/introduction/git-handbook/)
+* [Git Handbook](https://guides.github.com/introduction/git-handbook/)
+* [Github Glossary](https://help.github.com/articles/github-glossary/)
+
 
 ---
 
