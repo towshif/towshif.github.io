@@ -34,16 +34,20 @@ Lets get started
 
 
 2. Update `index.html` with your image, text and email
-    Now we are ready to modify this file and update the images, Bio text and email addresses.
+    Now we are ready to modify this file and update the images, Bio text and email addresses. For beginners I have created some placeholders inside this file for you to update. Lets open the `index.html` file in `nano` editor.
+    
+    First update the *title* of your webpage. Replace the text `[YOUR-NAME]` with some text/ name of your choice.
 
-    To change image first find an image you want to put. Easiest was it to go to your linkedin profile and open your profile image in new tab. Copy the image URL from browser address bar and then paste it in the HTML. 
-    There two tags in the `index.html` file with the text `[YOUR_MEDIA_IMAGE_LINK]` wrapped within a `<img>` tag. Example below. 
+        <title>[YOUR-NAME]</title>
 
-        <img src="[YOUR_MEDIA_IMAGE_LINK]" alt="my face" class="Introduction-image u-photo"> </div>
+    Now lets change your *profile image*. To do this first you need to find the url of an image you want to put. Easiest way is it to go to your linkedin profile and open your profile image in new tab. Copy the image URL from browser address bar and then paste it in the HTML. 
+    There two occurrences of the text `[YOUR_MEDIA_IMAGE_LINK]` wrapped within a `<img>` tag. Example below. 
 
-    replace this text `[YOUR_MEDIA_IMAGE_LINK]` with the profile image link from linkedin. Alternatively you can find some other image from some hosting platform like facebook, google+ etc. Just make sure the image is publicly available.
+        <img src="[YOUR_MEDIA_IMAGE_LINK]" alt="my face" class="Introduction-image u-photo"> 
 
-    Similarly update the email id by replacing text in `[YOUR_EMAIL]@gmail.com]`. There are a total of 4 occurrences of this tags
+    Replace the text `[YOUR_MEDIA_IMAGE_LINK]` with the profile image link from linkedin. Alternatively you can find some other image from some other hosting platform like facebook, google+ etc. Just make sure the image url is publicly accessible. ( Open an incognito window in chrome and try to access the link.)
+
+    Similarly update the *email id* by replacing text in `[YOUR_EMAIL]@gmail.com]`. There are a total of 4 occurrences of this tags
 
          <a href="mailto:[YOUR_EMAIL]@gmail.com" class="u-email">[YOUR_EMAIL]@gmail.com</a>
 

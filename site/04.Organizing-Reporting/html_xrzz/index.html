@@ -657,6 +657,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../linux-google-cloud/" title="Setting up Google Cloud Console" class="md-nav__link">
+      Setting up Google Cloud Console
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../markdown/" title="Markdown (.md)  in 10 mins" class="md-nav__link">
       Markdown (.md)  in 10 mins
     </a>
@@ -1219,13 +1231,16 @@ ls
 </li>
 <li>
 <p>Update <code>index.html</code> with your image, text and email
-    Now we are ready to modify this file and update the images, Bio text and email addresses.</p>
-<p>To change image first find an image you want to put. Easiest was it to go to your linkedin profile and open your profile image in new tab. Copy the image URL from browser address bar and then paste it in the HTML. 
-There two tags in the <code>index.html</code> file with the text <code>[YOUR_MEDIA_IMAGE_LINK]</code> wrapped within a <code>&lt;img&gt;</code> tag. Example below. </p>
-<pre><code>&lt;img src="[YOUR_MEDIA_IMAGE_LINK]" alt="my face" class="Introduction-image u-photo"&gt; &lt;/div&gt;
+    Now we are ready to modify this file and update the images, Bio text and email addresses. For beginners I have created some placeholders inside this file for you to update. Lets open the <code>index.html</code> file in <code>nano</code> editor.</p>
+<p>First update the <em>title</em> of your webpage. Replace the text <code>[YOUR-NAME]</code> with some text/ name of your choice.</p>
+<pre><code>&lt;title&gt;[YOUR-NAME]&lt;/title&gt;
 </code></pre>
-<p>replace this text <code>[YOUR_MEDIA_IMAGE_LINK]</code> with the profile image link from linkedin. Alternatively you can find some other image from some hosting platform like facebook, google+ etc. Just make sure the image is publicly available.</p>
-<p>Similarly update the email id by replacing text in <code>[YOUR_EMAIL]@gmail.com]</code>. There are a total of 4 occurrences of this tags</p>
+<p>Now lets change your <em>profile image</em>. To do this first you need to find the url of an image you want to put. Easiest way is it to go to your linkedin profile and open your profile image in new tab. Copy the image URL from browser address bar and then paste it in the HTML. 
+There two occurrences of the text <code>[YOUR_MEDIA_IMAGE_LINK]</code> wrapped within a <code>&lt;img&gt;</code> tag. Example below. </p>
+<pre><code>&lt;img src="[YOUR_MEDIA_IMAGE_LINK]" alt="my face" class="Introduction-image u-photo"&gt;
+</code></pre>
+<p>Replace the text <code>[YOUR_MEDIA_IMAGE_LINK]</code> with the profile image link from linkedin. Alternatively you can find some other image from some other hosting platform like facebook, google+ etc. Just make sure the image url is publicly accessible. ( Open an incognito window in chrome and try to access the link.)</p>
+<p>Similarly update the <em>email id</em> by replacing text in <code>[YOUR_EMAIL]@gmail.com]</code>. There are a total of 4 occurrences of this tags</p>
 <pre><code> &lt;a href="mailto:[YOUR_EMAIL]@gmail.com" class="u-email"&gt;[YOUR_EMAIL]@gmail.com&lt;/a&gt;
 </code></pre>
 <p>Finally update your bio text that are contained here</p>
@@ -1317,13 +1332,13 @@ git push
           </a>
         
         
-          <a href="../markdown/" title="Markdown (.md)  in 10 mins" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../linux-google-cloud/" title="Setting up Google Cloud Console" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Markdown (.md)  in 10 mins
+                Setting up Google Cloud Console
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1356,6 +1371,8 @@ git push
       <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
     
