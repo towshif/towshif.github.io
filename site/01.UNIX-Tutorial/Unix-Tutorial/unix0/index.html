@@ -1200,8 +1200,10 @@
     be pressed.</li>
 </ul>
 <p>So, for example,</p>
-<pre><code>ls anydirectory [Enter]
-</code></pre>
+<div class="codehilite"><pre><span></span>ls anydirectory [Enter]
+</pre></div>
+
+
 <p>means "at the UNIX prompt <code>%</code> or <code>$</code>, type ls followed by the name of some
 directory, then press the key marked Enter"</p>
 <p>Don't forget to press the [Enter] key: commands are not sent to the
@@ -1221,7 +1223,7 @@ Windows do not make this distinction.</p>
 <li>Z shell (zsh)</li>
 </ul>
 <h2 id="to-check-current-login-shell">To check current login shell</h2>
-<pre><code>echo $0
+<div class="codehilite"><pre><span></span>echo $0
 -bash
 
 cat /etc/shells 
@@ -1230,11 +1232,11 @@ cat /etc/shells
 /bin/bash
 
 # to change shell for `username`
-usermod -s /bin/bash &lt;username&gt;
+usermod -s /bin/bash &amp;lt;username&amp;gt;
 
 # alternate method with chsh 
-chsh -s /bin/bash &lt;username&gt;
-</code></pre>
+chsh -s /bin/bash &amp;lt;username&amp;gt;
+</pre></div>
                 
                   
                 

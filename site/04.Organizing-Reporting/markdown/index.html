@@ -1368,49 +1368,61 @@
 <hr />
 <h2 id="quick-and-dirty">Quick and Dirty</h2>
 <p>The <em>quick</em> brown fox, jumped <strong>over</strong> the lazy <a href="https://en.wikipedia.org/wiki/Dog">dog</a>.</p>
-<pre><code>The *quick* brown fox, jumped **over** the lazy [dog](https://en.wikipedia.org/wiki/Dog).
-</code></pre>
+<div class="codehilite"><pre><span></span>The *quick* brown fox, jumped **over** the lazy [dog](https://en.wikipedia.org/wiki/Dog).
+</pre></div>
+
+
 <h2 id="text-sizes"><strong>Text Sizes</strong></h2>
-<pre><code># Heading 1
+<div class="codehilite"><pre><span></span># Heading 1
 ## Heading 2
 ### Heading 3
-</code></pre>
+</pre></div>
+
+
 <h2 id="heading-1">Heading 1</h2>
 <h3 id="heading-2">Heading 2</h3>
 <h4 id="heading-3">Heading 3</h4>
 <hr />
 <h2 id="text-styling"><strong>Text Styling</strong></h2>
-<pre><code>*italic*
+<div class="codehilite"><pre><span></span>*italic*
 **bold**
 ***bold-italic***
 [link](http://example.com)
-</code></pre>
+</pre></div>
+
+
 <p><em>italic</em></p>
 <p><strong>bold</strong></p>
 <p><strong><em>bold-italic</em></strong></p>
 <p><a href="http://example.com">link</a></p>
 <hr />
 <h2 id="images"><strong>Images</strong></h2>
-<pre><code>![m'lady](http://i.imgur.com/v8IVDka.jpg)
-</code></pre>
+<div class="codehilite"><pre><span></span>![m&#39;lady](http://i.imgur.com/v8IVDka.jpg)
+</pre></div>
+
+
 <p><img alt="m'lady" src="http://i.imgur.com/v8IVDka.jpg" /></p>
 <h2 id="lists"><strong>Lists</strong></h2>
-<pre><code>* Item 1
+<div class="codehilite"><pre><span></span>* Item 1
 * Item 2
 * Item 3
-</code></pre>
+</pre></div>
+
+
 <ul>
 <li>Item 1</li>
 <li>Item 2</li>
 <li>Item 3 </li>
 </ul>
 <h2 id="tables"><strong>Tables</strong></h2>
-<pre><code>| Item     | Value | Qty |
+<div class="codehilite"><pre><span></span>| Item     | Value | Qty |
 | ---      | ---   | --- |
 | Computer | $1600 | 5   |
 | Phone    | $12   | 12  |
 | Pipe     | $1    | 234 |
-</code></pre>
+</pre></div>
+
+
 <table>
 <thead>
 <tr>
@@ -1438,14 +1450,17 @@
 </tbody>
 </table>
 <h2 id="fenced-code-block-use-for-codes-and-syntax-highlighting"><strong>Fenced Code block</strong>   - use for codes and syntax highlighting</h2>
-<pre><code>```
+<div class="codehilite"><pre><span></span>```
 // Foo
 var bar = 0;
 ```
-</code></pre>
-<pre><code>// Foo
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>// Foo
 var bar = 0;
-</code></pre>
+</pre></div>
+
 
 <h2 id="blockquotes">Blockquotes</h2>
 <blockquote>
@@ -1458,12 +1473,14 @@ part of the blockquote, even without the &gt; character in front.</p>
 <p>To end the blockquote, just put a blank line before the following
 paragraph.</p>
 <h2 id="preformatted-text-use-indentation">Preformatted text - use indentation</h2>
-<pre><code>This line won't *have any markdown* formatting applied.
-I can even write &lt;b&gt;HTML&lt;/b&gt; and it will show up as text.
+<div class="codehilite"><pre><span></span>This line won&#39;t *have any markdown* formatting applied.
+I can even write &amp;lt;b&amp;gt;HTML&amp;lt;/b&amp;gt; and it will show up as text.
 This is great for showing program source code, or HTML or even
-Markdown. &lt;b&gt;this won't show up as HTML&lt;/b&gt; but
-exactly &lt;i&gt;as you see it in this text file&lt;/i&gt;.
-</code></pre>
+Markdown. &amp;lt;b&amp;gt;this won&#39;t show up as HTML&amp;lt;/b&amp;gt; but
+exactly &amp;lt;i&amp;gt;as you see it in this text file&amp;lt;/i&amp;gt;.
+</pre></div>
+
+
 <p>Within a paragraph, you can use backquotes to do the same thing.
 <code>This won't be *italic* or **bold** at all.</code></p>
 <p>And thats it. </p>
@@ -1472,26 +1489,31 @@ exactly &lt;i&gt;as you see it in this text file&lt;/i&gt;.
 <p>You can also put the <a href="http://url">link URL</a> below the current paragraph
 like <a href="http://another.url" title="A funky title">this</a>.</p>
 <h2 id="code-highlighting">Code highlighting</h2>
-<pre><code class="python">import abc
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">abc</span>
+</pre></div>
+
 
 <p>you will need the extension installed and update mkdocs.yml </p>
-<pre><code>pip install pygments
-</code></pre>
+<div class="codehilite"><pre><span></span>pip install pygments
+</pre></div>
+
+
 <p>To enable CodeHilite, add the following lines to your mkdocs.yml:</p>
-<pre><code>markdown_extensions:
+<div class="codehilite"><pre><span></span>markdown_extensions:
 - codehilite
-</code></pre>
+</pre></div>
+
+
 <h2 id="adding-latex-support">Adding Latex Support</h2>
 <p>if using mkdocs need to add <code>extra_javascript</code> tags in config file mkdocs.yml</p>
-<pre><code>site_name: My Humble Website
-theme:
-    name: material       #readthedocs
-    highlightjs: true
+<div class="codehilite"><pre><span></span><span class="n">site_name</span><span class="o">:</span> <span class="n">My</span> <span class="n">Humble</span> <span class="n">Website</span>
+<span class="n">theme</span><span class="o">:</span>
+    <span class="n">name</span><span class="o">:</span> <span class="n">material</span>       <span class="err">#</span><span class="n">readthedocs</span>
+    <span class="n">highlightjs</span><span class="o">:</span> <span class="kc">true</span>
 
-extra_javascript:
-- 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
-</code></pre>
+<span class="n">extra_javascript</span><span class="o">:</span>
+<span class="o">-</span> <span class="s1">&#39;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML&#39;</span>
+</pre></div>
                 
                   
                 

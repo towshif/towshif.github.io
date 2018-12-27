@@ -1146,7 +1146,7 @@
 <p>Go to <a href="https://github.com">https://github.com</a> and login. </p>
 <p>Create a new repository (aka repo) with a name for the project. In this example we will use <code>Project101</code> as you repo name. Copy the git repo link (HTTPS) from the Download tab. </p>
 <p>Now on your local machine, go to the directory under which you want this git project and clone this repo. </p>
-<pre><code># clone the git repo you created
+<div class="codehilite"><pre><span></span># clone the git repo you created
 git clone https://github.com/YOUR-USERNAME/Project101.git
 
 # check local dir 
@@ -1155,7 +1155,9 @@ ls
 # you should be able to see repo directory
 # cd into this git project dir 
 cd Project101
-</code></pre>
+</pre></div>
+
+
 </li>
 <li>
 <p>Now that we have setup the repo locally, let us write some code in <code>C</code>.</p>
@@ -1168,25 +1170,33 @@ cd Project101
 }
 ```</p>
 <p>Now compile and run it </p>
-<pre><code>cc helloworld.c
-</code></pre>
+<div class="codehilite"><pre><span></span>cc helloworld.c
+</pre></div>
+
+
 <p>This will generate the compiled binary <code>a.out</code>. Run <code>ls</code> command to check if this file exists. </p>
 <p>To run the compiled binary </p>
-<pre><code>./a.out
+<div class="codehilite"><pre><span></span>./a.out
 Hello World from Unix
-</code></pre>
+</pre></div>
+
+
 <p>Lets write a helloworld program in <code>python</code>. </p>
 <p>Create a new file <code>helloworld.py</code>, open it in nano editor and write the following single line of python code. </p>
-<pre><code>print ("Hello World from Unix.")
-</code></pre>
+<div class="codehilite"><pre><span></span>print (&quot;Hello World from Unix.&quot;)
+</pre></div>
+
+
 <p>There is not compilation step in python since it is an interpreter based language like <code>sh</code>, <code>bash</code>, <code>perl</code> scripts. Where as <code>C</code>, <code>Java</code>, <code>C#</code> are compiled languages and needs a compiler to convert them into binary. To run this python program. </p>
-<pre><code>python helloworld.py
+<div class="codehilite"><pre><span></span>python helloworld.py
 Hello World from Unix
-</code></pre>
+</pre></div>
+
+
 </li>
 <li>
 <p>Now that we have this code we want to sync this with github. So we need to go to the <code>projects1</code> root directory and then run git add, commit and push </p>
-<pre><code>git add --all 
+<div class="codehilite"><pre><span></span>git add --all 
 git commit --all 
 # you will be asked for commit message
 
@@ -1196,7 +1206,9 @@ git push
 git config credential.helper store
 git pull
 # run these two so that your credentials are locally saved and git would not ask user/pass next time you push
-</code></pre>
+</pre></div>
+
+
 </li>
 <li>
 <p>Now navigate to your online repo at https://github.com/YOUR-USERNAME/Project101. You should be able to see the files <code>helloworld.c</code> and <code>hellowold.py</code>. Click on them and browse through the contents. </p>
@@ -1204,47 +1216,57 @@ git pull
 <li>
 <p>Lets get back to the terminal/ shell that we were using and make changes into these two files. </p>
 <p>We will create an <code>addme()</code> function in each of the <code>helloworld.c</code> and <code>hellowold.py</code> files as follows. The purpose of this function is to add two integers and then we want to print the sum as output from the code.</p>
-<pre><code>#include &lt;stdio.h&gt;
+<div class="codehilite"><pre><span></span><span class="p">#</span><span class="nn">include</span> <span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">stdio</span><span class="p">.</span><span class="nc">h</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span>
 
-int addme (int a, int b) {
-    return (a+b);
-}
+<span class="nt">int</span> <span class="nt">addme</span> <span class="o">(</span><span class="nt">int</span> <span class="nt">a</span><span class="o">,</span> <span class="nt">int</span> <span class="nt">b</span><span class="o">)</span> <span class="p">{</span>
+    <span class="err">return</span> <span class="err">(a+b)</span><span class="p">;</span>
+<span class="p">}</span>
 
-int main () {
-    printf("Hello World from Unix. I am KrazyCoder.\n");
-    printf("I added: 5 + 7 = %d\n", addme(5,7));
-    return 0;
-}
-</code></pre>
+<span class="nt">int</span> <span class="nt">main</span> <span class="o">()</span> <span class="p">{</span>
+    <span class="err">printf(&quot;Hello</span> <span class="err">World</span> <span class="err">from</span> <span class="err">Unix.</span> <span class="err">I</span> <span class="err">am</span> <span class="err">KrazyCoder.\n&quot;)</span><span class="p">;</span>
+    <span class="err">printf(&quot;I</span> <span class="n">added</span><span class="p">:</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">=</span> <span class="o">%</span><span class="n">d</span><span class="err">\</span><span class="n">n</span><span class="err">&quot;</span><span class="p">,</span> <span class="nf">addme</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">));</span>
+    <span class="err">return</span> <span class="err">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
 <p>Compile and run the file <code>helloworld.c</code></p>
-<pre><code>cc helloworld.c
+<div class="codehilite"><pre><span></span>cc helloworld.c
 ./a.out 
 Hello World from Unix. I am KrazyCoder.
 I added: 5 + 7 = 12
-</code></pre>
+</pre></div>
+
+
 <p>Now lets write the same function <code>addme()</code> in python inside <code>helloworld.py</code> as follows </p>
-<pre><code>def addme (a, b):
+<div class="codehilite"><pre><span></span>def addme (a, b):
     return (a+b)
 
-print ("Hello World from Unix. I am KrazyCoder")
-print ("I added: 5 + 7 = ", addme(5,7))
-</code></pre>
+print (&quot;Hello World from Unix. I am KrazyCoder&quot;)
+print (&quot;I added: 5 + 7 = &quot;, addme(5,7))
+</pre></div>
+
+
 <p>Note Python has a simpler syntax; it does not need for <code>;</code> at line endinngs and variable declaration like <code>int</code>, <code>string</code>, <code>float</code> etc. </p>
 <p>Lets run the python file </p>
-<pre><code>python helloworld.py 
+<div class="codehilite"><pre><span></span>python helloworld.py 
 Hello World from Unix. I am KrazyCoder
-('I added: 5 + 7 = ', 12)
-</code></pre>
+(&#39;I added: 5 + 7 = &#39;, 12)
+</pre></div>
+
+
 </li>
 <li>
 <p>Now that we have completed making changes to both the files, lets sync these changes to the online github repo. </p>
-<pre><code>git add --all 
+<div class="codehilite"><pre><span></span>git add --all 
 git commit --all 
 # you will be asked for commit message
 
 git push 
 # you will be asked for github username and password.
-</code></pre>
+</pre></div>
+
+
 <p>Visualize the changes in your repo at github.com. </p>
 </li>
 </ol>

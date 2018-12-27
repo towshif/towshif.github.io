@@ -1354,13 +1354,15 @@
                 <h1 id="unix-shell-in-10-mins">UNIX Shell in 10 mins</h1>
 <h2 id="unix-file-system"><strong>Unix File System</strong></h2>
 <p>Directory Structure and notations.</p>
-<pre><code>~                       -&gt; HOME directory 
-.                       -&gt; current directory 
-..                      -&gt; parent directory 
-../../                  -&gt; parent of parent and can be used in any combination
-*.jpg                   -&gt; [Wildcard notation] select all files with extension `jpg` in current directory 
-~/Documents/*.doc       -&gt; [Wildcard notation] select all files with extension `doc` in [HOME_DIRECTORY]/Documents/
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">~</span>                       <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">HOME</span> <span class="n">directory</span> 
+<span class="p">.</span>                       <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">current</span> <span class="n">directory</span> 
+<span class="p">..</span>                      <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">parent</span> <span class="n">directory</span> 
+<span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span>                  <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">parent</span> <span class="n">of</span> <span class="n">parent</span> <span class="n">and</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="k">in</span> <span class="n">any</span> <span class="n">combination</span>
+<span class="o">*</span><span class="p">.</span><span class="n">jpg</span>                   <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">[</span><span class="n">Wildcard</span> <span class="n">notation</span><span class="p">]</span> <span class="n">select</span> <span class="n">all</span> <span class="n">files</span> <span class="n">with</span> <span class="n">extension</span> <span class="err">`</span><span class="n">jpg</span><span class="err">`</span> <span class="k">in</span> <span class="n">current</span> <span class="n">directory</span> 
+<span class="o">~/</span><span class="n">Documents</span><span class="cm">/*.doc       -&amp;gt; [Wildcard notation] select all files with extension `doc` in [HOME_DIRECTORY]/Documents/</span>
+</pre></div>
+
+
 <p>Also take a look at this <a href="https://www.ibm.com/developerworks/aix/library/au-badunixhabits.html">badunixhabits</a> guide.</p>
 <h2 id="basic-unix-shell-commands"><strong>Basic Unix Shell Commands</strong></h2>
 <p>Summary </p>
@@ -1440,7 +1442,7 @@
 <hr />
 <h3 id="ls-list-files"><code>ls</code>  - List files</h3>
 <p>The ls command is used to list the contents of a directory. It is probably the most commonly used Linux command. It can be used in a number of different ways. Here are some examples: </p>
-<pre><code>ls -options arguments
+<div class="codehilite"><pre><span></span>ls -options arguments
 
 ls                  # List the files in the working directory
 
@@ -1451,61 +1453,79 @@ ls -l               # List the files in the working directory in long format
 ls -l /etc /bin     #  List the files in the /bin directory and the /etc directory in long format
 
 ls -la ..           # List all files (even ones with names beginning with a period character, which are normally hidden) in the parent of the working directory in long format
-</code></pre>
+</pre></div>
+
+
 <hr />
 <h3 id="cd-change-directory"><code>cd</code> - Change Directory</h3>
 <p>Change Directory to the path specified, for example cd projects. There are a few really helpful arguments to aid this:</p>
-<pre><code>cd [DIRECTORY_NAME or PATH]     # navigate to  DIR or PATH
+<div class="codehilite"><pre><span></span>cd [DIRECTORY_NAME or PATH]     # navigate to  DIR or PATH
 cd ~                            # ~ is HOME directory of user also same as
 cd $HOME
 cd ../..                        # navigate up 2 levels
-</code></pre>
+</pre></div>
+
+
 <hr />
 <h3 id="mkdir-make-directory"><code>mkdir</code> - Make Directory</h3>
 <p>Make directories with this command mkdir my_folder . Not only can it make the folder specified, but also its parents if they do not exist already using the -p option. The command </p>
-<pre><code>mkdir [DIRECTORY_NAME]
+<div class="codehilite"><pre><span></span>mkdir [DIRECTORY_NAME]
 
 mkdir -p first_folder/next_folder/my_folder 
 # To create multiple new nested folder: 
 # the first, next folder and the next on path
-</code></pre>
+</pre></div>
+
+
 <p>There is an option to set the mode, or permissions, via the -m flag, and these can be changed later with the chmod command (see below for more on mode and permissions).</p>
 <hr />
 <h3 id="touch-create-a-file"><code>touch</code> - Create a File</h3>
 <p>Create an empty file. Touches the file to update the access and or modification date of a file or directory without opening, saving or closing the file. But one of the most common uses is to create an empty file touch my_file.</p>
-<pre><code>touch [FILENAME]            # creates a blank file called 'FILENAME'
-</code></pre>
+<div class="codehilite"><pre><span></span>touch [FILENAME]            # creates a blank file called &#39;FILENAME&#39;
+</pre></div>
+
+
 <hr />
 <h3 id="cat-display-content-of-a-file"><code>cat</code> - Display content of a File</h3>
 <p>Concatenate and print files to stdout cat my_file. This command is only for view/ preview. 
 You can pass one or more file names to this command, and even number the lines using the -n to number the lines. Close cousin of this is <code>more</code>, <code>head</code>, <code>tail</code>. Also you can use  <code>vi</code> to launch a terminal-based text editor. </p>
-<pre><code>cat [FILENAME]              # to show whole file in stdout (terminal)
+<div class="codehilite"><pre><span></span>cat [FILENAME]              # to show whole file in stdout (terminal)
 cat [FILENAME] -n           # to number the lines in stdout (terminal)
 cat [FILENAME_1] [FILENAME_2] [..]
-</code></pre>
+</pre></div>
+
+
 <hr />
 <h3 id="mv-move-or-rename"><code>mv</code> - move or rename</h3>
 <p>Moves files and folders. The first argument is the file you want to move, and the second is the location to move it to. Use the flags -f to force move them and -i to prompt confirmation before overwriting files.</p>
 <p>Moving Files</p>
-<pre><code>mv [SOURCE_FILE] [DESTINATION_FILE]
-</code></pre>
+<div class="codehilite"><pre><span></span>mv [SOURCE_FILE] [DESTINATION_FILE]
+</pre></div>
+
+
 <p>Moving Directories</p>
-<pre><code>mv -r [SOURCE DIRECTORY] [DESTINATION DIRECTORY]    
-# -r options needed to move files recursively
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">mv</span> <span class="o">-</span><span class="n">r</span> <span class="p">[</span><span class="n">SOURCE</span> <span class="n">DIRECTORY</span><span class="p">]</span> <span class="p">[</span><span class="n">DESTINATION</span> <span class="n">DIRECTORY</span><span class="p">]</span>    
+<span class="cp"># -r options needed to move files recursively</span>
+</pre></div>
+
+
 <hr />
 <h3 id="cp-copy"><code>cp</code> - copy</h3>
 <p>Copies files and folders cp my_file ./projects . The flag -r recursively copies subfolders and files.</p>
 <p>Copying Files</p>
-<pre><code>cp [SOURCE_FILE] [DESTINATION_FILE]
-</code></pre>
+<div class="codehilite"><pre><span></span>cp [SOURCE_FILE] [DESTINATION_FILE]
+</pre></div>
+
+
 <p>Copying Directories</p>
-<pre><code>cp -r [SOURCE DIRECTORY] [DESTINATION DIRECTORY]    # -r options needed to move files recursively
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="p">[</span><span class="n">SOURCE</span> <span class="n">DIRECTORY</span><span class="p">]</span> <span class="p">[</span><span class="n">DESTINATION</span> <span class="n">DIRECTORY</span><span class="p">]</span>    <span class="err">#</span> <span class="o">-</span><span class="n">r</span> <span class="n">options</span> <span class="n">needed</span> <span class="n">to</span> <span class="n">move</span> <span class="n">files</span> <span class="n">recursively</span>
+</pre></div>
+
+
 <hr />
 <h3 id="rm-remove-delete"><code>rm</code> - remove/ delete</h3>
 <p>Removes files and folders rm my_folder. Options below</p>
-<pre><code>rm [FILENAME or WILDCARDS]
+<div class="codehilite"><pre><span></span>rm [FILENAME or WILDCARDS]
 
 # removes all file in the current folder with extension jpg and txt
 rm *.jpg *.txt
@@ -1516,24 +1536,28 @@ rm -r [DIRECTORY_NAME]
 
 # If you want to remove all folders and files in the current directory the command is 
 rm -rf ./*
-</code></pre>
+</pre></div>
+
+
 <hr />
 <h3 id="redirection-output">Redirection - output</h3>
 <p>Write (or redirect) output from a command to a file.<br />
 <code>&gt;</code> with write to the file which <code>&gt;&gt;</code> will append to the file if it already exists. </p>
-<pre><code># Redirection
-python hello.py &gt; output.txt   # stdout to (file)
-python hello.py &gt;&gt; output.txt  # stdout to (file), append
-python hello.py 2&gt; error.log   # stderr to (file)
-python hello.py 2&gt;&amp;1           # stderr to stdout
-python hello.py 2&gt;/dev/null    # stderr to (null)
-python hello.py &amp;&gt;/dev/null    # stdout and stderr to (null)
-python hello.py &lt; foo.txt
-</code></pre>
+<div class="codehilite"><pre><span></span># Redirection
+python hello.py &amp;gt; output.txt   # stdout to (file)
+python hello.py &amp;gt;&amp;gt; output.txt  # stdout to (file), append
+python hello.py 2&amp;gt; error.log   # stderr to (file)
+python hello.py 2&amp;gt;&amp;amp;1           # stderr to stdout
+python hello.py 2&amp;gt;/dev/null    # stderr to (null)
+python hello.py &amp;amp;&amp;gt;/dev/null    # stdout and stderr to (null)
+python hello.py &amp;lt; foo.txt
+</pre></div>
+
+
 <hr />
 <h3 id="man-manual"><code>man</code> - manual</h3>
 <p>Manuals for a command can be shown with this instruction. Below is some of the output from running man ls, it also displays all the options available for running the command.</p>
-<pre><code>man ls
+<div class="codehilite"><pre><span></span>man ls
 
 LS(1)                     BSD General Commands Manual                    LS(1)
 NAME
@@ -1545,7 +1569,9 @@ DESCRIPTION
     any requested, associated information.  For each operand that names a file of type directory, ls
     displays the names of files contained within that directory, as well as any requested, associated
     information.
-</code></pre>
+</pre></div>
+
+
 <hr />
 <p><a href="../unix-cheat-sheet/">Cheat Sheet</a></p>
 <p><a href="https://devhints.io/bash">Another Cheat Sheet</a></p>

@@ -1489,19 +1489,25 @@
 <h2 id="ssh-on-linux">ssh on Linux</h2>
 <h3 id="install">Install</h3>
 <p>ssh client is available as a part of openssh-server package. </p>
-<pre><code># install ssh client, server and ssh-agent
+<div class="codehilite"><pre><span></span># install ssh client, server and ssh-agent
 sudo apt install openssh-server
-</code></pre>
+</pre></div>
+
+
 <h3 id="ssh-usage-syntax"><code>ssh</code> usage syntax</h3>
-<pre><code># Basic usage     
+<div class="codehilite"><pre><span></span># Basic usage     
 ssh [USERNAME]@[IP_ADDRESS or HOSTNAME]
 
 # with custom PORT; default PORT:22
 ssh -p [PORT] [USERNAME]@[IP_ADDRESS or HOSTNAME]
-</code></pre>
+</pre></div>
+
+
 <p>Example: </p>
-<pre><code>ssh -p 6789 fermi@server.gentoo.com
-</code></pre>
+<div class="codehilite"><pre><span></span>ssh -p 6789 fermi@server.gentoo.com
+</pre></div>
+
+
 <hr />
 <h2 id="ssh-client-for-windows-putty">ssh client for Windows: <code>Putty</code></h2>
 <h3 id="install_1">Install</h3>
@@ -1509,12 +1515,14 @@ ssh -p [PORT] [USERNAME]@[IP_ADDRESS or HOSTNAME]
 <em> Download Putty standalone version or installed version from <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a>
 </em> Run the PuTTY tool (putty.exe)
 * In the PuTTY tool, specify your username and the external IP address of the instance that you want to connect to in the Host Name field. Click open.</p>
-<pre><code>In the example below, the `username` is jane_doe and the external `IP` address is 203.0.113.2
+<div class="codehilite"><pre><span></span>In the example below, the `username` is jane_doe and the external `IP` address is 203.0.113.2
 
 You can however use only `[IP]` instead of the `[username]@[IP]` syntax.
 
 ![Putty](https://cloud.google.com/compute/images/connecting/putty_set_hostname.png)
-</code></pre>
+</pre></div>
+
+
 <h3 id="connect">Connect</h3>
 <p>User guide for connecting to server : <a href="https://www.digitalocean.com/docs/droplets/how-to/connect-with-ssh/putty/">ssh with putty </a>
 For exploring more advanced option on putty continue reading. </p>
@@ -1544,39 +1552,49 @@ Follow the installation instructions for powerline</p>
 <em> public key [remains in server or the host] ; format </em>.pub (Unix) and <em>.ppk (windows Putty) 
 </em> private key [used by client]</p>
 <p>Usage Syntax for ssh connection with keys:</p>
-<pre><code>ssh -i [PATH_TO_PRIVATE_KEY] [USERNAME]@[IP_ADDRESS]
-</code></pre>
+<div class="codehilite"><pre><span></span>ssh -i [PATH_TO_PRIVATE_KEY] [USERNAME]@[IP_ADDRESS]
+</pre></div>
+
+
 <p>Example: </p>
-<pre><code>ssh -i /home/towshif/.ssh/AWS-Server2019-Key -p 6789 towshif@server.gentoo.com
-</code></pre>
+<div class="codehilite"><pre><span></span>ssh -i /home/towshif/.ssh/AWS-Server2019-Key -p 6789 towshif@server.gentoo.com
+</pre></div>
+
+
 <h3 id="how-to-set-up-ssh-keys-on-host-and-client-linux">How To Set Up SSH Keys on Host and Client (Linux)</h3>
 <p>Now lets look at how to setup server and client to use keys. With keys you can also skip password for ssh login. 
 1. Step One—Create the RSA Key Pair</p>
-<pre><code>The first step is to create the key pair on the `client` machine (there is a good chance that this will just be your computer):
+<div class="codehilite"><pre><span></span>The first step is to create the key pair on the `client` machine (there is a good chance that this will just be your computer):
 
     ssh-keygen -t rsa
 
 advanced usage:
 
     ssh-keygen -t rsa -f ~/.ssh/[KEY_FILENAME] -C [USERNAME]
-</code></pre>
+</pre></div>
+
+
 <ol>
 <li>
 <p>Step Two—Store the Keys and Passphrase</p>
 <p>Once you have entered the Gen Key command, you will get a few more questions:</p>
-<pre><code>Enter file in which to save the key (/home/demo/.ssh/id_rsa):
+<div class="codehilite"><pre><span></span>Enter file in which to save the key (/home/demo/.ssh/id_rsa):
 # You can press enter here, saving the file to the user home (in this case, my example user is called demo).
 
 Enter passphrase (empty for no passphrase):
-</code></pre>
+</pre></div>
+
+
 <p>Example: 
 The entire key generation process looks like this:</p>
 <blockquote>
-<pre><code>ssh-keygen -t rsa
-</code></pre>
+<div class="codehilite"><pre><span></span>ssh-keygen -t rsa
+</pre></div>
+
+
 </blockquote>
 <p>Output</p>
-<pre><code>Generating public/private rsa key pair.
+<div class="codehilite"><pre><span></span>Generating public/private rsa key pair.
 Enter file in which to save the key (/home/demo/.ssh/id_rsa): 
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
@@ -1584,7 +1602,7 @@ Your identification has been saved in /home/demo/.ssh/id_rsa.
 Your public key has been saved in /home/demo/.ssh/id_rsa.pub.
 The key fingerprint is:
 4a:dd:0a:c6:35:4e:3f:ed:27:38:8c:74:44:4d:93:67 demo@a
-The key's randomart image is:
+The key&#39;s randomart image is:
 +--[ RSA 2048]----+
 |          .oo.   |
 |         .  o.E  |
@@ -1598,58 +1616,78 @@ The key's randomart image is:
 +-----------------+
 The public key is now located in /home/demo/.ssh/id_rsa.pub. 
 The private key (identification) is now located in /home/demo/.ssh/id_rsa.
-</code></pre>
+</pre></div>
+
+
 <p>List the contents of ~/.ssh to view the key files. 
 <em> Public key file: ~/.ssh/[KEY_FILENAME].pub
 </em> Private key file: ~/.ssh/[KEY_FILENAME]
 where [KEY_FILENAME] is the filename of the SSH key, which was set when the key was created.</p>
 <p>Restrict access to the private key so only you (this USER) can access it</p>
-<pre><code>    chmod 400 ~/.ssh/[KEY_FILENAME]
-</code></pre>
+<div class="codehilite"><pre><span></span>    chmod 400 ~/.ssh/[KEY_FILENAME]
+</pre></div>
+
+
 <p>Private keys can be used from different clients to connect to the host.</p>
 </li>
 <li>
 <p>Step Three—Copy the Public Key to Host Server that you want to access. </p>
 <p>Once the key pair is generated, it's time to place the public key on the server that we want to use.
 You can copy the public key into the new machine's authorized_keys file with the <code>ssh-copy-id</code> command. Make sure to replace the example username and IP address below.</p>
-<pre><code>ssh-copy-id demo@198.51.100.0
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="k">copy</span><span class="o">-</span><span class="kt">id</span> <span class="n">demo</span><span class="mf">@198.51.100.0</span>
+</pre></div>
+
+
 <p>OR copy manually like this or any way you prefer. </p>
-<pre><code>cat ~/.ssh/id_rsa.pub | ssh demo@198.51.100.0 "mkdir -p ~/.ssh &amp;&amp; chmod 700 ~/.ssh &amp;&amp; cat &gt;&gt;  ~/.ssh/authorized_keys"
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">cat</span> <span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="p">.</span><span class="n">pub</span> <span class="o">|</span> <span class="n">ssh</span> <span class="n">demo</span><span class="mf">@198.51.100.0</span> <span class="s">&quot;mkdir -p ~/.ssh &amp;amp;&amp;amp; chmod 700 ~/.ssh &amp;amp;&amp;amp; cat &amp;gt;&amp;gt;  ~/.ssh/authorized_keys&quot;</span>
+</pre></div>
+
+
 <p>Either one you choose you will see similar output as this </p>
-<pre><code>The authenticity of host '198.51.100.0 (198.51.100.0)' can't be established.
-RSA key fingerprint is b1:2d:33:67:ce:35:4d:5f:f3:a8:cd:c0:c4:48:86:12.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added '198.51.100.0' (RSA) to the list of known hosts.
-user@198.51.100.0's password:
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">The</span> <span class="n">authenticity</span> <span class="n">of</span> <span class="n">host</span> <span class="err">&#39;</span><span class="mf">198.51.100.0</span> <span class="p">(</span><span class="mf">198.51.100.0</span><span class="p">)</span><span class="err">&#39;</span> <span class="n">can</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">be</span> <span class="n">established</span><span class="p">.</span>
+<span class="n">RSA</span> <span class="n">key</span> <span class="n">fingerprint</span> <span class="n">is</span> <span class="nl">b1</span><span class="p">:</span><span class="mi">2</span><span class="nl">d</span><span class="p">:</span><span class="mi">33</span><span class="o">:</span><span class="mi">67</span><span class="o">:</span><span class="nl">ce</span><span class="p">:</span><span class="mi">35</span><span class="o">:</span><span class="mi">4</span><span class="nl">d</span><span class="p">:</span><span class="mf">5f</span><span class="o">:</span><span class="nl">f3</span><span class="p">:</span><span class="nl">a8</span><span class="p">:</span><span class="nl">cd</span><span class="p">:</span><span class="nl">c0</span><span class="p">:</span><span class="nl">c4</span><span class="p">:</span><span class="mi">48</span><span class="o">:</span><span class="mi">86</span><span class="o">:</span><span class="mf">12.</span>
+<span class="n">Are</span> <span class="n">you</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="k">continue</span> <span class="n">connecting</span> <span class="p">(</span><span class="n">yes</span><span class="o">/</span><span class="n">no</span><span class="p">)</span><span class="o">?</span> <span class="n">yes</span>
+<span class="nl">Warning</span><span class="p">:</span> <span class="n">Permanently</span> <span class="n">added</span> <span class="err">&#39;</span><span class="mf">198.51.100.0</span><span class="err">&#39;</span> <span class="p">(</span><span class="n">RSA</span><span class="p">)</span> <span class="n">to</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">known</span> <span class="n">hosts</span><span class="p">.</span>
+<span class="n">user</span><span class="mf">@198.51.100.0</span><span class="err">&#39;</span><span class="n">s</span> <span class="nl">password</span><span class="p">:</span>
+</pre></div>
+
+
 <p>Remember to change permisson for public key to 700 on your remote server. Make sure you're logged in as the user for whom the key was created. Then, ensure your .ssh directory on the server, and the files it contains, have the correct permissions:</p>
-<pre><code>chmod 700 ~/.ssh/[KEY_FILENAME].pub        
+<div class="codehilite"><pre><span></span>chmod 700 ~/.ssh/[KEY_FILENAME].pub        
 # optional if you are only user
 chmod 600 ~/.ssh/authorized_keys
-</code></pre>
+</pre></div>
+
+
 </li>
 </ol>
 <p>To Create ssh keys on Windows with <code>putty</code> use this reference: <br />
 <a href="https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/create-with-putty/">SSH keys on Windows</a></p>
 <h3 id="log-in-using-your-private-key">Log In Using Your Private Key</h3>
 <p>You can now SSH or SFTP into your server using your private key. From the command line, you can use:</p>
-<pre><code>ssh SYSUSER@x.x.x.x
-</code></pre>
+<div class="codehilite"><pre><span></span>ssh SYSUSER@x.x.x.x
+</pre></div>
+
+
 <p>If you didn't create your key in the default location, you'll need to specify the location:</p>
-<pre><code>ssh -i ~/.ssh/custom_key_name SYSUSER@x.x.x.x
-</code></pre>
+<div class="codehilite"><pre><span></span>ssh -i ~/.ssh/custom_key_name SYSUSER@x.x.x.x
+</pre></div>
+
+
 <p>OR a more verbose syntax </p>
-<pre><code># -l [USER]
+<div class="codehilite"><pre><span></span># -l [USER]
 # -i [PATH TO PRIVATE KEY]
 # -p [PORT]
 ssh -i /nfs/shared/users/nixcraft/keys/server1/id_rsa -p 4242 -l nixcraft server1.cyberciti.biz
-</code></pre>
+</pre></div>
+
+
 <h3 id="retrieve-your-public-key-from-your-private-key">Retrieve Your Public Key from Your Private Key</h3>
 <p>The following command will retrieve the public key from a private key:</p>
-<pre><code>ssh-keygen -y
-</code></pre>
+<div class="codehilite"><pre><span></span>ssh-keygen -y
+</pre></div>
+
+
 <p>This can be useful, for example, if your server provider generated your SSH key for you and you were only able to download the private key portion of the key pair.
 Note that you cannot retrieve the private key if you only have the public key.</p>
 <p>If you're using a Windows SSH client, such as PuTTy, look in the configuration settings to specify the path to your private key.</p>
@@ -1659,14 +1697,18 @@ Note that you cannot retrieve the private key if you only have the public key.</
 <p>Create a file <code>config</code> in ~/.ssh dir and you can populate it with the host login configurations that are frequently used by that machine. 
 Note : passwords are not allowed to be saven in this file. </p>
 <p>If config file doesnot exist create one </p>
-<pre><code>touch ~/.ssh/config
+<div class="codehilite"><pre><span></span>touch ~/.ssh/config
 vi ~/.ssh/config
-</code></pre>
+</pre></div>
+
+
 <p>Set permissions on ~/.ssh/config</p>
-<pre><code>chmod 600 ~/.ssh/config
-</code></pre>
+<div class="codehilite"><pre><span></span>chmod 600 ~/.ssh/config
+</pre></div>
+
+
 <p>Sample basic <code>config</code> : </p>
-<pre><code>Host scotch
+<div class="codehilite"><pre><span></span>Host scotch
     HostName scotch.io
     User nick
 
@@ -1685,29 +1727,37 @@ Host amazon1
     IdentityFile /path/to/special/privatekey/amazonKey
     ServerAliveInterval 60
     ServerAliveCountMax 30
-</code></pre>
+</pre></div>
+
+
 <p>For host "amazon1" there are <code>ServerAliveInterval</code> and <code>ServerAliveCountMax</code> options. 
 <em> <code>ServerAliveInterval</code> option will refresh your session every 60 seconds in order to keep it open, 
 </em> <code>ServerAliveCountMax</code> option specifies that this should only be performed 30 times, thus ensuring your session won’t time-out for at least 30 minutes of inactivity.</p>
 <h3 id="using-alias-in-bashrc-for-ssh-host-enries">Using alias in <code>.bashrc</code> for ssh host enries</h3>
-<pre><code># in .bashrc file add this line 
-alias dev='ssh fooey@dev.example.com -p 22000'
+<div class="codehilite"><pre><span></span># in .bashrc file add this line 
+alias dev=&#39;ssh fooey@dev.example.com -p 22000&#39;
 
 # then source it 
 source ~/.bashrc
-</code></pre>
+</pre></div>
+
+
 <p>To connect </p>
-<pre><code>$ dev
-</code></pre>
+<div class="codehilite"><pre><span></span>$ dev
+</pre></div>
+
+
 <p>Use as many alias as needed. For more info on <code>alias</code> use <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-useful-bash-aliases-and-functions">this reference</a></p>
 <hr />
 <h2 id="ssh-tunnelling">SSH Tunnelling</h2>
 <p>What is it?</p>
 <h3 id="port-forwarding-forward-tunnel">Port Forwarding : Forward Tunnel</h3>
-<pre><code>ssh -f -N -L 9906:127.0.0.1:3306 coolio@database.example.com
+<div class="codehilite"><pre><span></span>ssh -f -N -L 9906:127.0.0.1:3306 coolio@database.example.com
 # -f puts ssh in background
 # -N makes it not execute a remote command
-</code></pre>
+</pre></div>
+
+
 <h3 id="reverse-ssh-tunnelling">Reverse SSH tunnelling</h3>
 <p>This section is in progress.    </p>
 <hr />

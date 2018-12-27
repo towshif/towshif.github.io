@@ -1212,50 +1212,58 @@ Both of them are very powerfull documentation engines and have a huge community.
 <p>For more detailed documentation please refer to <a href="https://www.mkdocs.org/#mkdocs">mkdocs website</a></p>
 <h2 id="quick-start">Quick start</h2>
 <p>Install the latest version of mkdocs and theme: Material with <code>pip</code>:</p>
-<pre><code>pip install mkdocs 
+<div class="codehilite"><pre><span></span>pip install mkdocs 
 pip install mkdocs-material
-</code></pre>
+</pre></div>
+
 
 <p>Material theme also provides a lot of features and customization. Pleare refer <a href="https://squidfunk.github.io/mkdocs-material/getting-started/">here</a> for more on Material Docs.</p>
 <p>Append the following line to your project's <code>mkdocs.yml</code>:</p>
-<pre><code>theme:
-  name: 'material'
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">theme</span><span class="o">:</span>
+  <span class="n">name</span><span class="o">:</span> <span class="s1">&#39;material&#39;</span>
+</pre></div>
+
 
 <p>A default theme is available. Other popular themese include <code>readthedocs</code> adapted from python sphynx and many <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">others</a>.</p>
 <p>Create a <code>new</code> mkdocs project or directory. </p>
-<pre><code>mkdocs new my-project
+<div class="codehilite"><pre><span></span>mkdocs new my-project
 cd my-project
-</code></pre>
+</pre></div>
+
 
 <p>By default there is a single configuration file named <code>mkdocs.yml</code>, and a folder named docs that will contain your documentation source files. Right now the docs folder just contains a single documentation page, named <code>index.md</code>. Create and save your markdown documents here.</p>
 <p>Now to see the rendered html MkDocs comes with a built-in dev-server that lets you preview your documentation as you work on it. Make sure you're in the same directory as the mkdocs.yml configuration file, and then start the server by running the mkdocs serve command:</p>
-<pre><code>mkdocs serve
+<div class="codehilite"><pre><span></span>mkdocs serve
 INFO    -  Building documentation...
 INFO    -  Cleaning site directory
 [I 160402 15:50:43 server:271] Serving on http://127.0.0.1:8000
 [I 160402 15:50:43 handlers:58] Start watching changes
 [I 160402 15:50:43 handlers:60] Start detecting changes
-</code></pre>
+</pre></div>
+
 
 <p>MkDocs <code>serve</code> switch provides a local dev server with live reloading by default. More customizations are available with <code>--help</code> flag. </p>
-<pre><code>mkdocs --help
-</code></pre>
+<div class="codehilite"><pre><span></span>mkdocs --help
+</pre></div>
+
 
 <p>For example to specify project config file <code>-f</code>, outgoing ip:port with switch <code>-a</code>. </p>
-<pre><code># run mkdocs on all ip without live reloading 
+<div class="codehilite"><pre><span></span># run mkdocs on all ip without live reloading 
 mkdocs serve -a 0.0.0.0:8000 --no-livereload -f /home/towshif/workspace/next/.docs/mkdocs.yml
-</code></pre>
+</pre></div>
 
-<pre><code># start local dev server with live-reload. Do not use SSL with this functionality.
-# Note: 'livereload.js' will load on port 8000 (default)
+
+<div class="codehilite"><pre><span></span># start local dev server with live-reload. Do not use SSL with this functionality.
+# Note: &#39;livereload.js&#39; will load on port 8000 (default)
 mkdocs serve -a 0.0.0.0:8000 -f /home/towshif/workspace/next/.docs/mkdocs.yml
-</code></pre>
+</pre></div>
+
 
 <p>To Kill the process for the custom local server you can also call pkill. </p>
-<pre><code># to kill mkdocs server 
+<div class="codehilite"><pre><span></span># to kill mkdocs server 
 pkill mkdocs&quot;
-</code></pre>
+</pre></div>
+
 
 <h2 id="references">References</h2>
 <ul>

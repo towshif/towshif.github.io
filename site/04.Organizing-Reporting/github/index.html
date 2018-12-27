@@ -1295,7 +1295,7 @@
 <h2 id="beginners-guide">Beginners Guide</h2>
 <p>Create a Github account at <a href="https://github.com">https://github.com</a>. Remember your usename and password. You will need is everytime you sync your git on your local machine with github.</p>
 <p>Git and Github in a nutshell: </p>
-<pre><code># Working locally
+<div class="codehilite"><pre><span></span># Working locally
 git status      # tell whats the current sync status of local repo
 
 # Two-step commits
@@ -1307,12 +1307,14 @@ git add [file1] [file2] [--all]
 
 # Committing Changes 
 git commit [file1] [file2] [--all]
-</code></pre>
+</pre></div>
+
+
 <h2 id="getting-started-with-a-github-repo">Getting started with a github repo</h2>
 <p>Go to <a href="https://github.com">https://github.com</a> and login. </p>
 <p>Create a new repository (aka repo) with a name for the project. In this example we will use <code>YOUR-REPOSITORY</code> as you repo name. </p>
 <p>Now on your local machine, go to the directory under which you want this git project</p>
-<pre><code># clone the git repo you created
+<div class="codehilite"><pre><span></span># clone the git repo you created
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 
 # check local dir 
@@ -1333,14 +1335,18 @@ git commit --all        # you will be asked to write a message with each commit
 
 # sync it with remote repository 
 git push origin master
-</code></pre>
+</pre></div>
+
+
 <p>For first time <code>push</code> you will be asked for username and password. After you have finished push run the following to remember your credentials for future use. Or else you will be asked to enter password everytime you push.</p>
-<pre><code># to remember git crcedentials (user, password)
+<div class="codehilite"><pre><span></span># to remember git crcedentials (user, password)
 git config credential.helper store
 
 # then run git pull 
 git pull
-</code></pre>
+</pre></div>
+
+
 <p>Now check online at https://github.com/YOUR-USERNAME/YOUR-REPOSITORY to see if the changes you made synced correctly.</p>
 <p>Next time when when you start working on your project you should always <code>pull</code> before making any local changes. This will sync your local with remote and you will have the latest changes before you start. </p>
 <p>Following this will allow you to work on multiple machines at the same time. Also multiple users can work on this at the same time. </p>
@@ -1354,7 +1360,7 @@ git pull
 <p>GitHub and the command line: </p>
 <p>For developers new to the command line, the GitHub Training team has put together a series of tutorials on Git commands to guide the way. Sometimes, a series of commands can paint a picture of how to use Git:</p>
 <h3 id="example-contribute-to-an-existing-repository">Example: Contribute to an existing repository</h3>
-<pre><code># download a repository on GitHub.com to our machine
+<div class="codehilite"><pre><span></span># download a repository on GitHub.com to our machine
 git clone https://github.com/me/repo.git
 
 # change into the `repo` directory
@@ -1371,15 +1377,17 @@ git checkout my-branch
 # stage the changed files
 git add file1.md file2.md
 
-# take a snapshot of the staging area (anything that's been added)
-git commit -m "my snapshot"
+# take a snapshot of the staging area (anything that&#39;s been added)
+git commit -m &quot;my snapshot&quot;
 
 # push changes to github
 git push --set-upstream origin my-branch
-</code></pre>
+</pre></div>
+
+
 <h3 id="example-start-a-new-repository-and-publish-it-to-github">Example: Start a new repository and publish it to GitHub</h3>
 <p>First, you will need to create a new repository on GitHub. You can learn how to create a new repository in our Hello World guide. Do not initialize the repository with a README, .gitignore or License. This empty repository will await your code.</p>
-<pre><code># create a new directory, and initialize it with git-specific functions
+<div class="codehilite"><pre><span></span># create a new directory, and initialize it with git-specific functions
 git init my-repo
 
 # change into the `my-repo` directory
@@ -1388,11 +1396,11 @@ cd my-repo
 # create the first file in the project
 touch README.md
 
-# git isn't aware of the file, stage it
+# git isn&#39;t aware of the file, stage it
 git add README.md
 
 # take a snapshot of the staging area
-git commit -m "add README to initial commit"
+git commit -m &quot;add README to initial commit&quot;
 
 # provide the path for the repository you created on github
 git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
@@ -1417,11 +1425,11 @@ git checkout feature-a
 git add file1.md
 
 # take a snapshot of the staging area
-git commit -m "edit file1"
+git commit -m &quot;edit file1&quot;
 
 # push changes to github
 git push
-</code></pre>
+</pre></div>
                 
                   
                 

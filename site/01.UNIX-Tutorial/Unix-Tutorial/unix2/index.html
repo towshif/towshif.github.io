@@ -1495,11 +1495,15 @@ current working directory and calls it <strong>file2</strong></p>
 area of the file system, and use the cp command to copy it to your
 unixstuff directory.</p>
 <p>First, cd to your unixstuff directory.</p>
-<pre><code>cd ~/unixstuff
-</code></pre>
+<div class="codehilite"><pre><span></span>cd ~/unixstuff
+</pre></div>
+
+
 <p>Then at the UNIX prompt, type,</p>
-<pre><code>cp /vol/examples/tutorial/science.txt .
-</code></pre>
+<div class="codehilite"><pre><span></span>cp /vol/examples/tutorial/science.txt .
+</pre></div>
+
+
 <p>(Note: Don't forget the dot (.) at the end. Remember, in UNIX, the dot
 means the current directory.)</p>
 <p>The above command means copy the file <strong>science.txt</strong> to the current
@@ -1523,19 +1527,23 @@ directory, but giving it a different name.</p>
 <p>We are now going to move the file science.bak to your backup directory.</p>
 <p>First, change directories to your unixstuff directory (can you remember
 how?). Then, inside the <strong>unixstuff</strong> directory, type</p>
-<pre><code>mv science.bak backups/.
-</code></pre>
+<div class="codehilite"><pre><span></span>mv science.bak backups/.
+</pre></div>
+
+
 <p>Type <code>ls</code> and <code>ls backups</code> to see if it has worked.</p>
 <h2 id="23-removing-files-and-directories">2.3 Removing files and directories</h2>
 <h3 id="rm-remove-rmdir-remove-directory">rm (remove), rmdir (remove directory)</h3>
 <p>To delete (remove) a file, use the rm command. As an example, we are
 going to create a copy of the <strong>science.txt</strong> file then delete it.</p>
 <p>Inside your <strong>unixstuff</strong> directory, type</p>
-<pre><code>cp science.txt tempfile.txt
+<div class="codehilite"><pre><span></span>cp science.txt tempfile.txt
 ls (to check if it has created the file)
 rm tempfile.txt
 ls (to check if it has deleted the file)
-</code></pre>
+</pre></div>
+
+
 <p>You can use the rmdir command to remove a directory (make sure it is
 empty first). Try to remove the <strong>backups</strong> directory. You will not be
 able to since UNIX will not let you remove a non-empty directory.</p>
@@ -1548,47 +1556,61 @@ using the rmdir command.</p>
 window of the previous commands so the output of the following commands
 can be clearly understood.</p>
 <p>At the prompt, type</p>
-<pre><code>clear
-</code></pre>
+<div class="codehilite"><pre><span></span>clear
+</pre></div>
+
+
 <p>This will clear all text and leave you with the     prompt at the top of
 the window.</p>
 <h3 id="cat-concatenate">cat (concatenate)</h3>
 <p>The command cat can be used to display the contents of a file on the
 screen. Type:</p>
-<pre><code>cat science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>cat science.txt
+</pre></div>
+
+
 <p>As you can see, the file is longer than than the size of the window, so
 it scrolls past making it unreadable.</p>
 <h3 id="less">less</h3>
 <p>The command less writes the contents of a file onto the screen a page at
 a time. Type</p>
-<pre><code>less science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>less science.txt
+</pre></div>
+
+
 <p>Press the <code>[space-bar]</code> if you want to see another page, type <code>[q]</code> if
 you want to quit reading. As you can see, less is used in preference to
 cat for long files.</p>
 <h3 id="head">head</h3>
 <p>The head command writes the first ten lines of a file to the screen.</p>
 <p>First clear the screen then type</p>
-<pre><code>head science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>head science.txt
+</pre></div>
+
+
 <p>Then type</p>
-<pre><code>head -5 science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>head -5 science.txt
+</pre></div>
+
+
 <p>What difference did the -5 do to the head command?</p>
 <h3 id="tail">tail</h3>
 <p>The tail command writes the last ten lines of a file to the screen.</p>
 <p>Clear the screen and type</p>
-<pre><code>tail science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>tail science.txt
+</pre></div>
+
+
 <p>How can you view the last 15 lines of the file?</p>
 <h2 id="25-searching-the-contents-of-a-file">2.5 Searching the contents of a file</h2>
 <h3 id="simple-searching-using-less">Simple searching using less</h3>
 <p>Using less, you can search though a text file for a keyword (pattern).
 For example, to search through <strong>science.txt</strong> for the word 'science',
 type</p>
-<pre><code>less science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>less science.txt
+</pre></div>
+
+
 <p>then, still in less (i.e. don't press [q] to quit), type a forward
 slash <code>[/]</code> followed by the word to search</p>
 <p>/science</p>
@@ -1597,23 +1619,31 @@ search for the next occurrence of the word.</p>
 <h3 id="grep-dont-ask-why-it-is-called-grep">grep (don't ask why it is called grep)</h3>
 <p>grep is one of many standard UNIX utilities. It searches files for
 specified words or patterns. First clear the screen, then type</p>
-<pre><code>grep science science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>grep science science.txt
+</pre></div>
+
+
 <p>As you can see, grep has printed out each line containg the word
 science.</p>
 <p>Or has it????</p>
 <p>Try typing</p>
-<pre><code>grep Science science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>grep Science science.txt
+</pre></div>
+
+
 <p>The grep command is case sensitive; it distinguishes between Science and
 science.</p>
 <p>To ignore upper/lower case distinctions, use the -i option, i.e. type</p>
-<pre><code>grep -i science science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>grep -i science science.txt
+</pre></div>
+
+
 <p>To search for a phrase or pattern, you must enclose it in single quotes
 (the apostrophe symbol). For example to search for spinning top, type</p>
-<pre><code>grep -i 'spinning top' science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>grep -i &#39;spinning top&#39; science.txt
+</pre></div>
+
+
 <p>Some of the other options of grep are:</p>
 <p>-v display those lines that do NOT match
 -n precede each maching line with the line number
@@ -1621,16 +1651,22 @@ science.</p>
 <p>Try some of them and see the different results. Don't forget, you can
 use more than one option at a time, for example, the number of lines
 without the words science or Science is</p>
-<pre><code>grep -ivc science science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>grep -ivc science science.txt
+</pre></div>
+
+
 <h3 id="wc-word-count">wc (word count)</h3>
 <p>A handy little utility is the wc command, short for word count. To do a
 word count on <strong>science.txt</strong>, type</p>
-<pre><code>wc -w science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>wc -w science.txt
+</pre></div>
+
+
 <p>To find out how many lines the file has, type</p>
-<pre><code>wc -l science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>wc -l science.txt
+</pre></div>
+
+
 <p>Summary</p>
 <table>
 <thead>

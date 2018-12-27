@@ -1305,66 +1305,90 @@
 system for their personal files, usually about 100Mb. If you go over
 your quota, you are given 7 days to remove excess files.</p>
 <p>To check your current quota and how much of it you have used, type</p>
-<pre><code>quota -v
-</code></pre>
+<div class="codehilite"><pre><span></span>quota -v
+</pre></div>
+
+
 <h3 id="df">df</h3>
 <p>The df command reports on the space left on the file system. For
 example, to find out how much space is left on the fileserver, type</p>
-<pre><code>df .
-</code></pre>
+<div class="codehilite"><pre><span></span>df .
+</pre></div>
+
+
 <h3 id="du">du</h3>
 <p>The du command outputs the number of kilobyes used by each subdirectory.
 Useful if you have gone over quota and you want to find out which
 directory has the most files. In your home-directory, type</p>
-<pre><code>du
-</code></pre>
+<div class="codehilite"><pre><span></span>du
+</pre></div>
+
+
 <h3 id="compress">compress</h3>
 <p>This reduces the size of a file, thus freeing valuable disk space. For
 example, type</p>
-<pre><code>ls -l science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>ls -l science.txt
+</pre></div>
+
+
 <p>and note the size of the file. Then to compress science.txt, type</p>
-<pre><code>compress science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>compress science.txt
+</pre></div>
+
+
 <p>This will compress the file and place it in a file called science.txt.Z</p>
 <p>To see the change in size, type ls -l again.</p>
 <p>To uncomress the file, use the uncompress command.</p>
-<pre><code>uncompress science.txt.Z
-</code></pre>
+<div class="codehilite"><pre><span></span>uncompress science.txt.Z
+</pre></div>
+
+
 <h3 id="gzip">gzip</h3>
 <p>This also compresses a file, and is more efficient than compress. For
 example, to zip science.txt, type</p>
-<pre><code>gzip science.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>gzip science.txt
+</pre></div>
+
+
 <p>This will zip the file and place it in a file called science.txt.gz</p>
 <p>To unzip the file, use the gunzip command.</p>
-<pre><code>gunzip science.txt.gz
-</code></pre>
+<div class="codehilite"><pre><span></span>gunzip science.txt.gz
+</pre></div>
+
+
 <h3 id="file">file</h3>
 <p>file classifies the named files according to the type of data they
 contain, for example ascii (text), pictures, compressed data, etc.. To
 report on all files in your home directory, type</p>
-<pre><code>file *
-</code></pre>
+<div class="codehilite"><pre><span></span>file *
+</pre></div>
+
+
 <h3 id="history">history</h3>
 <p>The C shell keeps an ordered list of all the commands that you have
 entered. Each command is given a number according to the order it was
 entered.</p>
-<pre><code>history (show command history list)
-</code></pre>
+<div class="codehilite"><pre><span></span>history (show command history list)
+</pre></div>
+
+
 <p>If you are using the C shell, you can use the exclamation character (!)
 to recall commands easily.</p>
-<pre><code>!! (recall last command)
+<div class="codehilite"><pre><span></span>!! (recall last command)
 
 !-3 (recall third most recent command)
 
 !5 (recall 5th command in list)
 
 !grep (recall last command starting with grep)
-</code></pre>
+</pre></div>
+
+
 <p>You can increase the size of the history buffer by typing</p>
-<pre><code>set history=100
-</code></pre>
+<div class="codehilite"><pre><span></span>set history=100
+</pre></div>
+
+
 <p>M.Stonebank@surrey.ac.uk, © 24th August 2001</p>
                 
                   

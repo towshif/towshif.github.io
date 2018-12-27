@@ -1361,44 +1361,60 @@
 This is a recommended method since it will allow smooth and dedicated user setup for this Jupyter Server.</p>
 <h2 id="check-packages-required">Check packages required</h2>
 <p>You should have these packages installed </p>
-<pre><code>python3 --version
+<div class="codehilite"><pre><span></span>python3 --version
 pip3 --version
 virtualenv --version
-</code></pre>
+</pre></div>
+
+
 <p>if not installed login as <code>sudo</code> user and install</p>
-<pre><code>sudo apt update
+<div class="codehilite"><pre><span></span>sudo apt update
 sudo apt install python3-dev python3-pip
 sudo pip3 install -U virtualenv  # system-wide install
-</code></pre>
+</pre></div>
+
+
 <h2 id="setup-environment-for-development-as-jupyter-notebook-user">Setup Environment for development as jupyter notebook <code>user</code></h2>
 <p>Login as <code>user</code> and create a new virtual environment by choosing a Python interpreter and making a ./venv directory to hold it:</p>
-<pre><code>virtualenv --system-site-packages -p python3 ~/venv
-</code></pre>
+<div class="codehilite"><pre><span></span>virtualenv --system-site-packages -p python3 ~/venv
+</pre></div>
+
+
 <p>Activate the virtual environment using a shell-specific command:</p>
-<pre><code>source ~/venv/bin/activate  # sh, bash, ksh, or zsh
-</code></pre>
+<div class="codehilite"><pre><span></span>source ~/venv/bin/activate  # sh, bash, ksh, or zsh
+</pre></div>
+
+
 <p>When virtualenv is active, your shell prompt is prefixed with <code>(venv)</code>.</p>
 <p>Install packages within a virtual environment without affecting the host system setup. Start by upgrading pip:</p>
-<pre><code>pip install --upgrade pip
+<div class="codehilite"><pre><span></span>pip install --upgrade pip
 
 pip list  # show packages installed within the virtual environment
-</code></pre>
+</pre></div>
+
+
 <p>And to exit virtualenv later:</p>
-<pre><code>deactivate  # don't exit until you're done using your virtual environment
-</code></pre>
+<div class="codehilite"><pre><span></span>deactivate  # don&#39;t exit until you&#39;re done using your virtual environment
+</pre></div>
+
+
 <p><em>Pro Tip</em></p>
-<pre><code># add a bash alias in .bashrc for venv activation 
+<div class="codehilite"><pre><span></span># add a bash alias in .bashrc for venv activation 
 # for zsh shell this is .zshrc
 
-alias venv="source /home/fermi/venv/bin/activate"
+alias venv=&quot;source /home/fermi/venv/bin/activate&quot;
 source ~/.bashrc
 
 # run venv to activate virtual environment 
 venv
-</code></pre>
+</pre></div>
+
+
 <h2 id="install-jupyter-as-sudo-user">Install Jupyter as <code>sudo</code> user</h2>
-<pre><code>sudo python3 -m pip install jupyter # system-wide install
-</code></pre>
+<div class="codehilite"><pre><span></span>sudo python3 -m pip install jupyter # system-wide install
+</pre></div>
+
+
 <h2 id="login-as-user-where-you-created-virtual-environment">Login as <code>user</code> where you created virtual environment</h2>
 <p>Setup A notebook configuration file. Check to see if you have a notebook configuration file, jupyter_notebook_config.py. The default location for this file is your Jupyter folder located in your home directory:</p>
 <ul>
@@ -1407,26 +1423,32 @@ venv
 <li>Linux: /home/USERNAME/.jupyter/jupyter_notebook_config.py</li>
 </ul>
 <p>If you don’t already have a Jupyter folder, or if your Jupyter folder doesn’t contain a notebook configuration file, run the following command:</p>
-<pre><code>jupyter notebook --generate-config
+<div class="codehilite"><pre><span></span>jupyter notebook --generate-config
 
 # output
 Writing default config to: /home/fermi/.jupyter/jupyter_notebook_config.py
-</code></pre>
+</pre></div>
+
+
 <p>Navigate to jupyter_notebook_config.py in the ~/[PATH] specified above and open with an editor. </p>
 <h2 id="set-configuration-for-jupyter">Set configuration for Jupyter</h2>
 <p>Edit the <code>jupyter_notebook_config.py</code>. For more info <a href="https://jupyter-notebook.readthedocs.io/en/stable/public_server.html">refer to documentation</a>.</p>
-<pre><code>nano /home/fermi/.jupyter/jupyter_notebook_config.py
-</code></pre>
+<div class="codehilite"><pre><span></span>nano /home/fermi/.jupyter/jupyter_notebook_config.py
+</pre></div>
+
+
 <p>Change ip and port as you see fit. IP <code>0.0.0.0</code> will broadcast in LAN incase you want to access from another host other than localhost.</p>
-<pre><code>## The IP address the notebook server will listen on.
-c.NotebookApp.ip = '0.0.0.0'  #default= localhost
+<div class="codehilite"><pre><span></span>## The IP address the notebook server will listen on.
+c.NotebookApp.ip = &#39;0.0.0.0&#39;  #default= localhost
 
 ## The port the notebook server will listen on.
 c.NotebookApp.port = 7000     #default=8888
-</code></pre>
+</pre></div>
+
+
 <h2 id="startinf-jupyter-for-the-first-time">Startinf Jupyter for the first time</h2>
 <p>Start the notebook </p>
-<pre><code>jupyter-notebook
+<div class="codehilite"><pre><span></span>jupyter-notebook
 
 # output 
 [I 11:33:48.980 NotebookApp] Writing notebook server cookie secret to /run/user/1002/jupyter/notebook_cookie_secret
@@ -1441,7 +1463,9 @@ c.NotebookApp.port = 7000     #default=8888
     to login with a token:
         http://(TSERV or 127.0.0.1):7000/?token=ea0e3be651a7244793651e7aadc6e8994d4db30ce5d8ef1b
 [I 11:34:18.338 NotebookApp] 302 GET /?token=ea0e3be651a7244793651e7aadc6e8994d4db30ce5d8ef1b (66.167.121.235) 0.89ms
-</code></pre>
+</pre></div>
+
+
 <p>Visit the url from the commandline output in you browser. In this example the url is: </p>
 <p><code>http://(TSERV or 127.0.0.1):7000/?token=ea0e3be651a7244793651e7aadc6e8994d4db30ce5d8ef1b</code>.</p>
 <p>You can also replace <code>http://(TSERV or 127.0.0.1)</code> with the <code>IP</code> or <code>HOSTNAME</code> of the server/ machine. You should be able to login. </p>
@@ -1451,12 +1475,14 @@ c.NotebookApp.port = 7000     #default=8888
 <h2 id="setting-up-notebook-server-as-a-service">Setting up notebook server as a service</h2>
 <p>login as <code>user</code></p>
 <p>Setup Environment for your service. I use a file for setting all the ENVIRONMENT_VARIABLES for this service to use </p>
-<pre><code># create env file in /home/fermi/.jupyter/env
+<div class="codehilite"><pre><span></span># create env file in /home/fermi/.jupyter/env
 touch /home/fermi/.jupyter/env
-</code></pre>
+</pre></div>
+
+
 <p>Add ENVIRONMENT VARIABLES in to the file as follows. Add <code>venv</code>, <code>CUDA</code> libraries and paths if you have.
 You can lookup your <code>.bashrc</code> to check if you have custom variables.</p>
-<pre><code># file:     /home/fermi/.jupyter/env
+<div class="codehilite"><pre><span></span># file:     /home/fermi/.jupyter/env
 
 # Note that I am including venv path so that jupyter.service uses this venv binaries.
 PATH=/home/fermi/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda/bin:$PATH
@@ -1465,16 +1491,20 @@ PATH=/home/fermi/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbi
 LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 CUDA_HOME=/usr/local/cuda
 CUDA_VISIBLE_DEVICES=0
-</code></pre>
+</pre></div>
+
+
 <p>Now login as <code>sudo</code> user. </p>
-<pre><code># create a service file
+<div class="codehilite"><pre><span></span># create a service file
 sudo touch /lib/systemd/system/jupyter.service
 
 # open and edit 
 sudo nano /lib/systemd/system/jupyter.service
-</code></pre>
+</pre></div>
+
+
 <p>The following is a modified version of <a href="https://gist.github.com/whophil/5a2eab328d2f8c16bb31c9ceaf23164f">this service config</a>.</p>
-<pre><code># service name:     jupyter.service 
+<div class="codehilite"><pre><span></span># service name:     jupyter.service 
 # path:             /lib/systemd/system/jupyter.service
 
 # After Ubuntu 16.04, Systemd becomes the default.
@@ -1504,7 +1534,9 @@ RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
-</code></pre>
+</pre></div>
+
+
 <p>Recap and a things to note:</p>
 <ul>
 <li>service will run as user <code>fermi</code>. Since we have provided default access to fermi's home directory and our workspace <code>WorkingDirectory=/home/fermi/users</code></li>
@@ -1515,16 +1547,18 @@ WantedBy=multi-user.target
 <p>By default ipykernel is installed along with jupyter when we installed the jupyter notebook in previous step. 
 However we also have to provide a kernel for the virtual environment we just created. </p>
 <p>login as <code>user</code> and list all existing kernels </p>
-<pre><code>jupyter-kernelspec list
-</code></pre>
+<div class="codehilite"><pre><span></span>jupyter-kernelspec list
+</pre></div>
+
+
 <p>Create a custom kernel with python3 from the virtual env with a custom name <em>venvPy3</em></p>
-<pre><code>source ~/venv/bin/activate
+<div class="codehilite"><pre><span></span>source ~/venv/bin/activate
 
 which python    # this should echo 
-&gt;    /home/fermi/venv/bin/python
+&amp;gt;    /home/fermi/venv/bin/python
 
 python --version    # check version just to make sure its the same we installed 
-&gt;   Python 3.5.2
+&amp;gt;   Python 3.5.2
 
 # from venv install kernel 
 python3 -m ipykernel install --user --name=venvPy3
@@ -1533,32 +1567,40 @@ jupyter-kernelspec list
 Available kernels:
 venvpy3     /home/fermi/.local/share/jupyter/kernels/venvpy3  
 python3     /usr/local/share/jupyter/kernels/
-</code></pre>
+</pre></div>
+
+
 <p>You should also be able to see native kernels as shown here <code>python3</code> from native python in <code>/usr/local/share/jupyter/kernels/</code>
 This is happening because of the ipykernel that is installed in the systems python libraries. 
 To install packages with native kernels use <code>--user</code> option.
 This is however not required for the virtualenv.</p>
 <p>For our application we would like to disable native kernels and provide user access to only the venv for simplicity. We can add as many kernels as we like in the venv. </p>
 <p>First check where is ipykernel installed. Login as <code>sudo</code> user</p>
-<pre><code>pip3 list | grep ipykernel
-</code></pre>
+<div class="codehilite"><pre><span></span>pip3 list | grep ipykernel
+</pre></div>
+
+
 <p>Uninstall <code>ipykernel</code> from system python libs. </p>
-<pre><code>sudo  python3 -m pip uninstall  ipykernel
-</code></pre>
+<div class="codehilite"><pre><span></span>sudo  python3 -m pip uninstall  ipykernel
+</pre></div>
+
+
 <p>Login as jupyter notebook <code>user</code> and activate <code>venv</code>. Now from install <code>ipykernel</code> in venv. </p>
-<pre><code># from venv install kernel     
+<div class="codehilite"><pre><span></span># from venv install kernel     
 pip install ipykernel
 
 # list existing kernels
 
 # install custom venv kernel 
 python3 -m ipykernel install --user --name=venvPy3
-</code></pre>
+</pre></div>
+
+
 <p>You can add as many kernel as needed for multiple versions of python from within the venv. 
 All kernels created inside venv are available in the <code>user</code> home at <code>/home/fermi/.local/share/jupyter/kernels/</code></p>
 <h2 id="start-the-jupyter-service">Start the jupyter service</h2>
 <p>Now we are ready to start the service. Enable and start the daemon </p>
-<pre><code># Enable the service
+<div class="codehilite"><pre><span></span># Enable the service
 sudo systemctl enable jupyter.service
 Created symlink from /etc/systemd/system/multi-user.target.wants/jupyter.service to /lib/systemd/system/jupyter.service.
 
@@ -1570,42 +1612,54 @@ sudo systemctl restart jupyter.service
 # Now check status of the jupyter service daemon
 
 sudo service jupyter status
-</code></pre>
+</pre></div>
+
+
 <p>output : the daemon is running </p>
-<pre><code>● jupyter.service - Jupyter Notebook Server
-Loaded: loaded (/lib/systemd/system/jupyter.service; enabled; vendor preset: enabled)
-Active: active (running) since Sat 2018-11-24 12:09:05 PST; 21s ago
-Main PID: 8012 (jupyter-noteboo)
-    Tasks: 1
-Memory: 40.6M
-    CPU: 824ms
-CGroup: /system.slice/jupyter.service
-        └─8012 /usr/bin/python3 /usr/local/bin/jupyter-notebook --config=/home/fermi/.jupyter/jupyter_notebook_config.py
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">●</span> <span class="nt">jupyter</span><span class="p">.</span><span class="nc">service</span> <span class="nt">-</span> <span class="nt">Jupyter</span> <span class="nt">Notebook</span> <span class="nt">Server</span>
+<span class="nt">Loaded</span><span class="o">:</span> <span class="nt">loaded</span> <span class="o">(/</span><span class="nt">lib</span><span class="o">/</span><span class="nt">systemd</span><span class="o">/</span><span class="nt">system</span><span class="o">/</span><span class="nt">jupyter</span><span class="p">.</span><span class="nc">service</span><span class="o">;</span> <span class="nt">enabled</span><span class="o">;</span> <span class="nt">vendor</span> <span class="nt">preset</span><span class="o">:</span> <span class="nt">enabled</span><span class="o">)</span>
+<span class="nt">Active</span><span class="o">:</span> <span class="nt">active</span> <span class="o">(</span><span class="nt">running</span><span class="o">)</span> <span class="nt">since</span> <span class="nt">Sat</span> <span class="nt">2018-11-24</span> <span class="nt">12</span><span class="p">:</span><span class="nd">09</span><span class="p">:</span><span class="nd">05</span> <span class="nt">PST</span><span class="o">;</span> <span class="nt">21s</span> <span class="nt">ago</span>
+<span class="nt">Main</span> <span class="nt">PID</span><span class="o">:</span> <span class="nt">8012</span> <span class="o">(</span><span class="nt">jupyter-noteboo</span><span class="o">)</span>
+    <span class="nt">Tasks</span><span class="o">:</span> <span class="nt">1</span>
+<span class="nt">Memory</span><span class="o">:</span> <span class="nt">40</span><span class="p">.</span><span class="nc">6M</span>
+    <span class="nt">CPU</span><span class="o">:</span> <span class="nt">824ms</span>
+<span class="nt">CGroup</span><span class="o">:</span> <span class="o">/</span><span class="nt">system</span><span class="p">.</span><span class="nc">slice</span><span class="o">/</span><span class="nt">jupyter</span><span class="p">.</span><span class="nc">service</span>
+        <span class="err">└─</span><span class="nt">8012</span> <span class="o">/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">bin</span><span class="o">/</span><span class="nt">python3</span> <span class="o">/</span><span class="nt">usr</span><span class="o">/</span><span class="nt">local</span><span class="o">/</span><span class="nt">bin</span><span class="o">/</span><span class="nt">jupyter-notebook</span> <span class="nt">--config</span><span class="o">=/</span><span class="nt">home</span><span class="o">/</span><span class="nt">fermi</span><span class="o">/</span><span class="p">.</span><span class="nc">jupyter</span><span class="o">/</span><span class="nt">jupyter_notebook_config</span><span class="p">.</span><span class="nc">py</span>
+</pre></div>
+
+
 <h2 id="login-to-the-jupyter-notebook-and-check">login to the jupyter notebook and check</h2>
 <p>Visit the URL, create a new notebook. </p>
 <p>Verify the venv is loaded </p>
-<pre><code>! python --version 
+<div class="codehilite"><pre><span></span>! python --version 
 ! pip --version 
 ! which python
 ! which pip
-</code></pre>
+</pre></div>
+
+
 <p>should generate output </p>
-<pre><code>Python 3.5.2
+<div class="codehilite"><pre><span></span>Python 3.5.2
 pip 18.1 from /home/fermi/venv/lib/python3.5/site-packages/pip (python 3.5)
 /home/fermi/venv/bin/python
 /home/fermi/venv/bin/pip
-</code></pre>
+</pre></div>
+
+
 <p>As you see the venv is active. Also you should be able to see the 'Python3' venv kernel in the kernel list.</p>
 <p>To check kernels available run this from commandline </p>
-<pre><code>jupyter-kernelspec list
+<div class="codehilite"><pre><span></span>jupyter-kernelspec list
   python3    /usr/local/share/jupyter/kernels/python3
-</code></pre>
+</pre></div>
+
+
 <p>To add and rename kernels please refer to <code>jupyter-kernelspec</code> documentation. </p>
 <h2 id="check-permissions-for-pip-install-from-jupyter">Check permissions for pip install from jupyter</h2>
 <p>From a new notebook run: </p>
-<pre><code>! pip install pandas
-</code></pre>
+<div class="codehilite"><pre><span></span>! pip install pandas
+</pre></div>
+
+
 <p>If you dont get any permission errors during the install you are good to go. </p>
 <p>This concludes the full installation process for the <strong>Jupyer Notebook Server</strong> as a service daemon. </p>
                 

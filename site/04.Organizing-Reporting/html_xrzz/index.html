@@ -1213,52 +1213,66 @@
 <p>Download the sample <code>index.html</code> file 
     The sample html file for this page is available here <a href="https://raw.githubusercontent.com/towshif/towshif.github.io/master/docs/Samples/sample_index.html">https://raw.githubusercontent.com/towshif/towshif.github.io/master/docs/Samples/sample_index.html</a></p>
 <p>To download this file we will fire command <code>wget</code></p>
-<pre><code># cd to your local repo directory 
+<div class="codehilite"><pre><span></span># cd to your local repo directory 
 cd username.github.io
 
 # download the file from link using wget 
 wget https://raw.githubusercontent.com/towshif/towshif.github.io/master/docs/Samples/sample_index.html
-</code></pre>
+</pre></div>
+
+
 <p>This will download this <code>sample_index.html</code> file to you current directory. Now we want to make this our <code>index.html</code>. </p>
-<pre><code># delete existing index.html 
+<div class="codehilite"><pre><span></span># delete existing index.html 
 rm index.html
 
 mv sample_index.html index.html
 
 # check if all went well 
 ls
-</code></pre>
+</pre></div>
+
+
 </li>
 <li>
 <p>Update <code>index.html</code> with your image, text and email
     Now we are ready to modify this file and update the images, Bio text and email addresses. For beginners I have created some placeholders inside this file for you to update. Lets open the <code>index.html</code> file in <code>nano</code> editor.</p>
 <p>First update the <em>title</em> of your webpage. Replace the text <code>[YOUR-NAME]</code> with some text/ name of your choice.</p>
-<pre><code>&lt;title&gt;[YOUR-NAME]&lt;/title&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span>&amp;lt;title&amp;gt;[YOUR-NAME]&amp;lt;/title&amp;gt;
+</pre></div>
+
+
 <p>Now lets change your <em>profile image</em>. To do this first you need to find the url of an image you want to put. Easiest way is it to go to your linkedin profile and open your profile image in new tab. Copy the image URL from browser address bar and then paste it in the HTML. 
 There two occurrences of the text <code>[YOUR_MEDIA_IMAGE_LINK]</code> wrapped within a <code>&lt;img&gt;</code> tag. Example below. </p>
-<pre><code>&lt;img src="[YOUR_MEDIA_IMAGE_LINK]" alt="my face" class="Introduction-image u-photo"&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span>&amp;lt;img src=&quot;[YOUR_MEDIA_IMAGE_LINK]&quot; alt=&quot;my face&quot; class=&quot;Introduction-image u-photo&quot;&amp;gt;
+</pre></div>
+
+
 <p>Replace the text <code>[YOUR_MEDIA_IMAGE_LINK]</code> with the profile image link from linkedin. Alternatively you can find some other image from some other hosting platform like facebook, google+ etc. Just make sure the image url is publicly accessible. ( Open an incognito window in chrome and try to access the link.)</p>
 <p>Similarly update the <em>email id</em> by replacing text in <code>[YOUR_EMAIL]@gmail.com]</code>. There are a total of 4 occurrences of this tags</p>
-<pre><code> &lt;a href="mailto:[YOUR_EMAIL]@gmail.com" class="u-email"&gt;[YOUR_EMAIL]@gmail.com&lt;/a&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span> <span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">a</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;mailto:</span><span class="cp">[</span><span class="nx">YOUR_EMAIL</span><span class="cp">]</span><span class="s2">@gmail.com&quot;</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&quot;u-email&quot;</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span><span class="cp">[</span><span class="nx">YOUR_EMAIL</span><span class="cp">]</span><span class="p">@</span><span class="k">gmail</span><span class="p">.</span><span class="nc">com</span><span class="o">&amp;</span><span class="nt">lt</span><span class="p">;</span><span class="o">/</span><span class="nt">a</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span>
+</pre></div>
+
+
 <p>Finally update your bio text that are contained here</p>
-<pre><code>&lt;h1&gt;
-    Hi, I'm &lt;a href="#" class="u-url u-uid p-name"&gt;Konfuzed Banda&lt;/a&gt; &lt;/h1&gt;
-&lt;p&gt; I'm the CTO and one of the Co-Founders at A Company. I like things on Github as well. &lt;/p&gt;
-&lt;p&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span>&amp;lt;h1&amp;gt;
+    Hi, I&#39;m &amp;lt;a href=&quot;#&quot; class=&quot;u-url u-uid p-name&quot;&amp;gt;Konfuzed Banda&amp;lt;/a&amp;gt; &amp;lt;/h1&amp;gt;
+&amp;lt;p&amp;gt; I&#39;m the CTO and one of the Co-Founders at A Company. I like things on Github as well. &amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+</pre></div>
+
+
 </li>
 <li>
 <p>Sync this with github.io repo. </p>
-<pre><code>git add --all 
+<div class="codehilite"><pre><span></span>git add --all 
 git commit --all 
 # write a commit message
 
 # now sync these updates with github repo 
 git push
-</code></pre>
+</pre></div>
+
+
 <p>We are all set to view our bio page at https://username.github.io with updated picture and information. </p>
 </li>
 </ol>
@@ -1266,35 +1280,43 @@ git push
 <ol>
 <li>
 <p>Update the social <code>links</code> for Instagram, Linkedin, GitHub with your own links by replacing the <code>#</code> in the <code>href=</code> tags </p>
-<pre><code>&lt;li class="SocialList-item"&gt;&lt;a href="#" rel="me"&gt;LinkedIn&lt;/a&gt; &lt;/li&gt;
-&lt;li class="SocialList-item"&gt; &lt;a href="#" rel="me"&gt;Instagram&lt;/a&gt; &lt;/li&gt;
-&lt;li class="SocialList-item"&gt; &lt;a href="#" rel="me"&gt;GitHub&lt;/a&gt; &lt;/li&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span>&amp;lt;li class=&quot;SocialList-item&quot;&amp;gt;&amp;lt;a href=&quot;#&quot; rel=&quot;me&quot;&amp;gt;LinkedIn&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+&amp;lt;li class=&quot;SocialList-item&quot;&amp;gt; &amp;lt;a href=&quot;#&quot; rel=&quot;me&quot;&amp;gt;Instagram&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+&amp;lt;li class=&quot;SocialList-item&quot;&amp;gt; &amp;lt;a href=&quot;#&quot; rel=&quot;me&quot;&amp;gt;GitHub&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+</pre></div>
+
+
 </li>
 <li>
 <p>Update the <code>navigation links</code> on top right in the same way. Replace the text or <code>#</code> in the <code>href=</code> tags with approproate links to your pages. </p>
-<pre><code>&lt;li class="Navigation-listItem"&gt;
-    &lt;a href="site/about" class="Navigation-link"&gt;About&lt;/a&gt; &lt;/li&gt;
-&lt;li class="Navigation-listItem"&gt;
-    &lt;a href="#" class="Navigation-link"&gt;Articles&lt;/a&gt; &lt;/li&gt;
-&lt;li class="Navigation-listItem"&gt; 
-    &lt;a href="#" class="Navigation-link"&gt;Notes&lt;/a&gt; &lt;/li&gt;
-&lt;li class="Navigation-listItem"&gt;
-    &lt;a href="#" class="Navigation-link"&gt;Bookmarks&lt;/a&gt; &lt;/li&gt;
-&lt;li class="Navigation-listItem"&gt; 
-    &lt;a href="#" class="Navigation-link"&gt;Contact&lt;/a&gt; &lt;/li&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span>&amp;lt;li class=&quot;Navigation-listItem&quot;&amp;gt;
+    &amp;lt;a href=&quot;site/about&quot; class=&quot;Navigation-link&quot;&amp;gt;About&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+&amp;lt;li class=&quot;Navigation-listItem&quot;&amp;gt;
+    &amp;lt;a href=&quot;#&quot; class=&quot;Navigation-link&quot;&amp;gt;Articles&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+&amp;lt;li class=&quot;Navigation-listItem&quot;&amp;gt; 
+    &amp;lt;a href=&quot;#&quot; class=&quot;Navigation-link&quot;&amp;gt;Notes&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+&amp;lt;li class=&quot;Navigation-listItem&quot;&amp;gt;
+    &amp;lt;a href=&quot;#&quot; class=&quot;Navigation-link&quot;&amp;gt;Bookmarks&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+&amp;lt;li class=&quot;Navigation-listItem&quot;&amp;gt; 
+    &amp;lt;a href=&quot;#&quot; class=&quot;Navigation-link&quot;&amp;gt;Contact&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+</pre></div>
+
+
 <p>A <code>&lt;a&gt;</code> link tag has 2 main items. </p>
 <ul>
 <li>the <code>href=</code> link and </li>
 <li>the display text. Examples below</li>
 </ul>
 <p>Here the "site/about" is the link and "About" is the display text. </p>
-<pre><code>&lt;a href="site/about" class="Navigation-link"&gt;About&lt;/a&gt; &lt;/li&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span>&amp;lt;a href=&quot;site/about&quot; class=&quot;Navigation-link&quot;&amp;gt;About&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+</pre></div>
+
+
 <p>Here "#" is the link and "LinkedIn" is the display text. </p>
-<pre><code>&lt;a href="#" rel="me"&gt;LinkedIn&lt;/a&gt; &lt;/li&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span>&amp;lt;a href=&quot;#&quot; rel=&quot;me&quot;&amp;gt;LinkedIn&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt;
+</pre></div>
+
+
 </li>
 </ol>
                 

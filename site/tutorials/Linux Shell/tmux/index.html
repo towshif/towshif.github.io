@@ -1208,105 +1208,117 @@ This is one of the sources from which this current document is adapted.</p>
 <p>Installation for Ubuntu is similar to Mac, except that we will be using the apt-get package manager that comes pre-installed. Note that we will have to run apt-get as sudo. This is because a user account won’t have enough privileges to install tmux, so sudo will allow us to install it as superuser.</p>
 <ul>
 <li>Update apt-get to make sure we are on the latest and greatest:<blockquote>
-<pre><code>sudo apt-get update
-</code></pre>
+<div class="codehilite"><pre><span></span>sudo apt-get update
+</pre></div>
+
+
 </blockquote>
 </li>
 <li>Install tmux:<blockquote>
-<pre><code>sudo apt-get install tmux
-</code></pre>
+<div class="codehilite"><pre><span></span>sudo apt-get install tmux
+</pre></div>
+
+
 </blockquote>
 </li>
 <li>Confirm that it installed by checking the version:<blockquote>
-<pre><code>tmux -V
-</code></pre>
+<div class="codehilite"><pre><span></span>tmux -V
+</pre></div>
+
+
 </blockquote>
 </li>
 </ul>
 <h2 id="quick-note">Quick Note:</h2>
 <p>Use <code>tmux</code> with <code>zsh</code> to make life easier for newbies. Type <code>tmux</code> and then use tabs to find option. </p>
 <blockquote>
-<pre><code>tmux attach-session -t intro-c
-</code></pre>
+<div class="codehilite"><pre><span></span>tmux attach-session -t intro-c
+</pre></div>
+
+
 </blockquote>
 <p>Keyboard shortcut interpretation for newwbies: dont get lost in the usage of this shortcut syntax. 
 Follow the Example: </p>
 <blockquote>
-<pre><code>^b d 
+<div class="codehilite"><pre><span></span>^b d 
 # or 
 ctrl+b d 
-means =&gt;  Press Ctrl hold, press b. Then release both and press d
-</code></pre>
+means =&amp;gt;  Press Ctrl hold, press b. Then release both and press d
+</pre></div>
+
+
 </blockquote>
 <p>Syntax used here: 
 <em> <code>⎇</code>  ALT
 </em> <code>^</code>  CTRL
 * <code>+</code>  hold (press and hold)</p>
 <h1 id="basic-tmux-usage">Basic <code>tmux</code> usage:</h1>
-<pre><code>tmux new -s [session name]
-# Start new named session:
+<div class="codehilite"><pre><span></span><span class="n">tmux</span> <span class="n">new</span> <span class="o">-</span><span class="n">s</span> <span class="p">[</span><span class="n">session</span> <span class="n">name</span><span class="p">]</span>
+<span class="cp"># Start new named session:</span>
 
-ctrl+b d
-# Detach from session:
+<span class="n">ctrl</span><span class="o">+</span><span class="n">b</span> <span class="n">d</span>
+<span class="cp"># Detach from session:</span>
 
-tmux ls
-# List sessions:
+<span class="n">tmux</span> <span class="n">ls</span>
+<span class="cp"># List sessions:</span>
 
-tmux a -t [name of session] 
-# Attach to named session:
+<span class="n">tmux</span> <span class="n">a</span> <span class="o">-</span><span class="n">t</span> <span class="p">[</span><span class="n">name</span> <span class="n">of</span> <span class="n">session</span><span class="p">]</span> 
+<span class="cp"># Attach to named session:</span>
 
-tmux attach-session -t [name of session]
-# OR
+<span class="n">tmux</span> <span class="n">attach</span><span class="o">-</span><span class="n">session</span> <span class="o">-</span><span class="n">t</span> <span class="p">[</span><span class="n">name</span> <span class="n">of</span> <span class="n">session</span><span class="p">]</span>
+<span class="cp"># OR</span>
 
-tmux kill-session -t [name of session]
-# Kill named session:
+<span class="n">tmux</span> <span class="n">kill</span><span class="o">-</span><span class="n">session</span> <span class="o">-</span><span class="n">t</span> <span class="p">[</span><span class="n">name</span> <span class="n">of</span> <span class="n">session</span><span class="p">]</span>
+<span class="cp"># Kill named session:</span>
 
-ctrl+b "
-# Split panes horizontally: use Shift keys to get upper " or %
+<span class="n">ctrl</span><span class="o">+</span><span class="n">b</span> <span class="s">&quot;</span>
+<span class="cp"># Split panes horizontally: use Shift keys to get upper &quot; or %</span>
 
-ctrl+b %
-# Split panes vertically:
+<span class="n">ctrl</span><span class="o">+</span><span class="n">b</span> <span class="o">%</span>
+<span class="cp"># Split panes vertically:</span>
 
-ctrl+b x
-# Kill current pane:
+<span class="n">ctrl</span><span class="o">+</span><span class="n">b</span> <span class="n">x</span>
+<span class="cp"># Kill current pane:</span>
 
-ctrl+b [arrow key]
-# Move to another pane:
+<span class="n">ctrl</span><span class="o">+</span><span class="n">b</span> <span class="p">[</span><span class="n">arrow</span> <span class="n">key</span><span class="p">]</span>
+<span class="cp"># Move to another pane:</span>
 
-tmux kill-server
-# Kill tmux server, along with all sessions:
-</code></pre>
+<span class="n">tmux</span> <span class="n">kill</span><span class="o">-</span><span class="n">server</span>
+<span class="cp"># Kill tmux server, along with all sessions:</span>
+</pre></div>
+
+
 <h1 id="keyboard-shortcuts-within-the-tmux-shell-window">Keyboard shortcuts within the <code>tmux</code> shell/ window:</h1>
-<pre><code>^b then c 
-# To create a new window
+<div class="codehilite"><pre><span></span><span class="o">^</span><span class="n">b</span> <span class="n">then</span> <span class="n">c</span> 
+<span class="cp"># To create a new window</span>
 
-^b then n 
-# To switch to the next window
+<span class="o">^</span><span class="n">b</span> <span class="n">then</span> <span class="n">n</span> 
+<span class="cp"># To switch to the next window</span>
 
-^b then , 
-# Then [type something] then ⌤ to rename the current window
+<span class="o">^</span><span class="n">b</span> <span class="n">then</span> <span class="p">,</span> 
+<span class="cp"># Then [type something] then ⌤ to rename the current window</span>
 
-^b then % 
-# To split the current window into panes vertically
+<span class="o">^</span><span class="n">b</span> <span class="n">then</span> <span class="o">%</span> 
+<span class="cp"># To split the current window into panes vertically</span>
 
-^b then " 
-# To split the current window into panes horizontally
+<span class="o">^</span><span class="n">b</span> <span class="n">then</span> <span class="s">&quot; </span>
+<span class="cp"># To split the current window into panes horizontally</span>
 
-^b then ↑ 
-# (arrows) to move to the above pane (works for all four arrows)
+<span class="o">^</span><span class="n">b</span> <span class="n">then</span> <span class="err">↑</span> 
+<span class="cp"># (arrows) to move to the above pane (works for all four arrows)</span>
 
-^b then q 
-# To show pane numbers, then (optionally) the number to switch to that pane
+<span class="o">^</span><span class="n">b</span> <span class="n">then</span> <span class="n">q</span> 
+<span class="cp"># To show pane numbers, then (optionally) the number to switch to that pane</span>
 
-^b then ⎇(Alt)+↑(arrow keys) 
-# To resize the current pane up (works for all four arrows)
+<span class="o">^</span><span class="n">b</span> <span class="n">then</span> <span class="err">⎇</span><span class="p">(</span><span class="n">Alt</span><span class="p">)</span><span class="o">+</span><span class="err">↑</span><span class="p">(</span><span class="n">arrow</span> <span class="n">keys</span><span class="p">)</span> 
+<span class="cp"># To resize the current pane up (works for all four arrows)</span>
 
-^b then x 
-# To kill the current pane (or window if it only has one pane)
+<span class="o">^</span><span class="n">b</span> <span class="n">then</span> <span class="n">x</span> 
+<span class="cp"># To kill the current pane (or window if it only has one pane)</span>
 
-^b then [ 
-# To enter copy mode, then four arrow keys to move, even past the visible point, which is great for scrolling--I don't use it much for copying/pasting.
-</code></pre>
+<span class="o">^</span><span class="n">b</span> <span class="n">then</span> <span class="p">[</span> 
+<span class="cp"># To enter copy mode, then four arrow keys to move, even past the visible point, which is great for scrolling--I don&#39;t use it much for copying/pasting.</span>
+</pre></div>
                 
                   
                 

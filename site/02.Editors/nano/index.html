@@ -1258,8 +1258,10 @@
 <p>I personally find <code>nano</code> to be excellent replacement of notepad on shell. </p>
 <h2 id="open-a-file-in-nano-editor">Open a file in <code>nano</code> editor</h2>
 <p>You can also use the following syntax:</p>
-<pre><code>nano /path/to/filename
-</code></pre>
+<div class="codehilite"><pre><span></span>nano /path/to/filename
+</pre></div>
+
+
 <p><img alt="" src="https://www.howtogeek.com/wp-content/uploads/2011/02/banner1.png" /></p>
 <h2 id="shortcuts">Shortcuts</h2>
 <table>
@@ -1307,9 +1309,11 @@
 <hr />
 <h2 id="installation">Installation</h2>
 <p>Most of the modern linux distros come with <code>nano</code> preinstalled. If not you can install nano from shell</p>
-<pre><code>sudo apt-get update
+<div class="codehilite"><pre><span></span>sudo apt-get update
 sudo apt-get install nano
-</code></pre>
+</pre></div>
+
+
 <h3 id="prerequisites">Prerequisites</h3>
 <p>A Linux OS, with terminal access and the ability to run sudo commands
 nano 2.2 or greater installed.</p>
@@ -1321,46 +1325,51 @@ If you indeed need a lot more functionality then nano is not right package to us
 <ul>
 <li>To configure global settings for the nano text editor for all uses on your machine, navigate out to the directory /etc and open the file nanorc.  Optionally, configure nano on a user by user basis by creating a .nanorc file in their home directory.</li>
 </ul>
-<pre><code># open up the global configuration file for nano, with nano ;-)
+<div class="codehilite"><pre><span></span># open up the global configuration file for nano, with nano ;-)
 $ sudo nano /etc/nanorc
-</code></pre>
+</pre></div>
+
 
 <ul>
 <li>To enable mouse support, where you can click on an item anywhere it view and the cursor will go there, enable the setting:</li>
 </ul>
-<pre><code>## Enable mouse support, if available for your system.  When enabled,
+<div class="codehilite"><pre><span></span>## Enable mouse support, if available for your system.  When enabled,
 ## mouse clicks can be used to place the cursor, set the mark (with a
 ## double click), and execute shortcuts.  The mouse will work in the X
 ## Window System, and on the console when gpm is running.
 ##
 set mouse
-</code></pre>
+</pre></div>
+
 
 <ul>
 <li>To enable text to not wrap down to the next line, enable the following:</li>
 </ul>
-<pre><code>## Don't wrap text at all.
+<div class="codehilite"><pre><span></span>## Don&#39;t wrap text at all.
 set nowrap
-</code></pre>
+</pre></div>
+
 
 <ul>
 <li>To enable smooth scroll from page to page, instead of choppy scrolling, enable the following:</li>
 </ul>
-<pre><code>## Use smooth scrolling as the default.
+<div class="codehilite"><pre><span></span>## Use smooth scrolling as the default.
 set smooth
-</code></pre>
+</pre></div>
+
 
 <ul>
 <li>To configure a color for comments in any file that is opened with nano, add this to the file:</li>
 </ul>
-<pre><code>syntax &quot;comments&quot; &quot;.*&quot;
+<div class="codehilite"><pre><span></span>syntax &quot;comments&quot; &quot;.*&quot;
 color blue &quot;^#.*&quot;
-</code></pre>
+</pre></div>
+
 
 <ul>
 <li>To enable text highlighting for most all of your C derivatives, make sure the following include statements are not commented out:</li>
 </ul>
-<pre><code>## Nanorc files
+<div class="codehilite"><pre><span></span>## Nanorc files
 include &quot;/usr/share/nano/nanorc.nanorc&quot;
 
 ## C/C++
@@ -1437,7 +1446,7 @@ include &quot;/usr/share/nano/pov.nanorc&quot;
 
 ## XML-type files
 include &quot;/usr/share/nano/xml.nanorc&quot;
-</code></pre>
+</pre></div>
                 
                   
                 

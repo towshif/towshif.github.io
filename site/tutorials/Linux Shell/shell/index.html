@@ -1189,18 +1189,20 @@
                 
                 <h1 id="unix-shell-in-10-mins">Unix Shell in 10 mins</h1>
 <h2 id="unix-file-system-directory-structure-and-notations">Unix File System Directory Structure and notations</h2>
-<pre><code>~                       -&gt; HOME directory 
-.                       -&gt; current directory 
-..                      -&gt; parent directory 
-../../                  -&gt; parent of parent and can be used in any combination
-*.jpg                   -&gt; [Wildcard notation] select all files with extension `jpg` in current directory 
-~/Documents/*.doc       -&gt; [Wildcard notation] select all files with extension `doc` in [HOME_DIRECTORY]/Documents/
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">~</span>                       <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">HOME</span> <span class="n">directory</span> 
+<span class="p">.</span>                       <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">current</span> <span class="n">directory</span> 
+<span class="p">..</span>                      <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">parent</span> <span class="n">directory</span> 
+<span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span>                  <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">parent</span> <span class="n">of</span> <span class="n">parent</span> <span class="n">and</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="k">in</span> <span class="n">any</span> <span class="n">combination</span>
+<span class="o">*</span><span class="p">.</span><span class="n">jpg</span>                   <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">[</span><span class="n">Wildcard</span> <span class="n">notation</span><span class="p">]</span> <span class="n">select</span> <span class="n">all</span> <span class="n">files</span> <span class="n">with</span> <span class="n">extension</span> <span class="err">`</span><span class="n">jpg</span><span class="err">`</span> <span class="k">in</span> <span class="n">current</span> <span class="n">directory</span> 
+<span class="o">~/</span><span class="n">Documents</span><span class="cm">/*.doc       -&amp;gt; [Wildcard notation] select all files with extension `doc` in [HOME_DIRECTORY]/Documents/</span>
+</pre></div>
+
+
 <p>Also take a look at this <a href="https://www.ibm.com/developerworks/aix/library/au-badunixhabits.html">badunixhabits</a> guide.</p>
 <h1 id="basic-unix-shell-commands">Basic Unix Shell Commands</h1>
 <h2 id="ls"><code>ls</code></h2>
 <p>The ls command is used to list the contents of a directory. It is probably the most commonly used Linux command. It can be used in a number of different ways. Here are some examples: </p>
-<pre><code>ls -options arguments
+<div class="codehilite"><pre><span></span>ls -options arguments
 
 ls                  # List the files in the working directory
 
@@ -1211,37 +1213,47 @@ ls -l               # List the files in the working directory in long format
 ls -l /etc /bin     #  List the files in the /bin directory and the /etc directory in long format
 
 ls -la ..           # List all files (even ones with names beginning with a period character, which are normally hidden) in the parent of the working directory in long format
-</code></pre>
+</pre></div>
+
+
 <h2 id="cd"><code>cd</code></h2>
 <p>Change Directory to the path specified, for example cd projects. There are a few really helpful arguments to aid this:</p>
-<pre><code>cd [DIRECTORY_NAME]
-</code></pre>
+<div class="codehilite"><pre><span></span>cd [DIRECTORY_NAME]
+</pre></div>
+
+
 <h2 id="mkdir"><code>mkdir</code></h2>
 <p>Make directories with this command mkdir my_folder . Not only can it make the folder specified, but also its parents if they do not exist already using the -p option. The command </p>
-<pre><code>mkdir [DIRECTORY_NAME]
+<div class="codehilite"><pre><span></span>mkdir [DIRECTORY_NAME]
 
 # To create multiple new nested folder: the first, next folder and the next on path
 mkdir -p first_folder/next_folder/my_folder
-</code></pre>
+</pre></div>
+
+
 <p>There is an option to set the mode, or permissions, via the -m flag, and these can be changed later with the chmod command (see below for more on mode and permissions).</p>
 <h2 id="touch"><code>touch</code></h2>
 <p>Create an empty file. Touches the file to update the access and or modification date of a file or directory without opening, saving or closing the file. But one of the most common uses is to create an empty file touch my_file.</p>
-<pre><code>touch [FILENAME]
-</code></pre>
+<div class="codehilite"><pre><span></span>touch [FILENAME]
+</pre></div>
+
+
 <h2 id="cat"><code>cat</code></h2>
 <p>Concatenate and print files to stdout cat my_file. This command is only for view/ preview. 
 You can pass one or more file names to this command, and even number the lines using the -n to number the lines. Close cousin of this is <code>more</code>, <code>head</code>, <code>tail</code>. Also you can use  <code>vi</code> to launch a terminal-based text editor. </p>
-<pre><code>cat [FILENAME]              # to show whole file in stdout (terminal)
+<div class="codehilite"><pre><span></span>cat [FILENAME]              # to show whole file in stdout (terminal)
 cat [FILENAME] -n           # to number the lines in stdout (terminal)
 cat [FILENAME_1] [FILENAME_2] [..]
-</code></pre>
+</pre></div>
+
+
 <h2 id="mv"><code>mv</code></h2>
 <p>Moves files and folders. The first argument is the file you want to move, and the second is the location to move it to. Use the flags -f to force move them and -i to prompt confirmation before overwriting files.</p>
 <h2 id="cp"><code>cp</code></h2>
 <p>Copies files and folders cp my_file ./projects . The flag -r recursively copies subfolders and files.</p>
 <h2 id="rm"><code>rm</code></h2>
 <p>Removes files and folders rm my_folder. Options below</p>
-<pre><code>rm [FILENAME or WILDCARDS]
+<div class="codehilite"><pre><span></span>rm [FILENAME or WILDCARDS]
 
 # removes all file in the current folder with extension jpg and txt
 rm *.jpg *.txt
@@ -1252,12 +1264,16 @@ rm -r [DIRECTORY_NAME]
 
 # If you want to remove all folders and files in the current directory the command is 
 rm -rf ./*
-</code></pre>
+</pre></div>
+
+
 <h2 id="chmod"><code>chmod</code></h2>
 <p>Change mode so you can set permissions for read, write and execute for the user, members of your group and others. This uses binary values as an argument to set these. There are many common chmod permissions, a few key ones are:</p>
 <p>In general, chmod commands take the form:</p>
-<pre><code>chmod options permissions file name
-</code></pre>
+<div class="codehilite"><pre><span></span>chmod options permissions file name
+</pre></div>
+
+
 <p>If no options are specified, chmod modifies the permissions of the file specified by file name to the permissions specified by permissions.</p>
 <p>permissions defines the permissions for the owner of the file (the "user"), members of the group who owns the file (the "group"), and anyone else ("others"). There are two ways to represent these permissions: with symbols (alphanumeric characters), or with octal numbers (the digits 0 through 7).</p>
 <p>Let's say you are the owner of a file named myfile, and you want to set its permissions so that:
@@ -1265,65 +1281,77 @@ rm -rf ./*
 </em> members of your group can read ande xecute it; and
 * others may only read it.</p>
 <p>This command will do the trick:</p>
-<pre><code>chmod u=rwx,g=rx,o=r myfile
-</code></pre>
+<div class="codehilite"><pre><span></span>chmod u=rwx,g=rx,o=r myfile
+</pre></div>
+
+
 <p>This example uses symbolic permissions notation. The letters u, g, and o stand for "user", "group", and "other". The equals sign ("=") means "set the permissions exactly like this," and the letters "r", "w", and "x" stand for "read", "write", and "execute", respectively. The commas separate the different classes of permissions, and there are no spaces in between them.</p>
 <p>Here is the equivalent command using octal permissions notation:</p>
-<pre><code>chmod 754 myfile 
+<div class="codehilite"><pre><span></span>chmod 754 myfile 
 # this is equivalent to chmod u=rwx,g=rx,o=r myfile
-</code></pre>
+</pre></div>
+
+
 <p>Here the digits 7, 5, and 4 each individually represent the permissions for the user, group, and others, in that order. Each digit is a combination of the numbers 4, 2, 1, and 0:</p>
-<pre><code>4 stands for "read",
-2 stands for "write",
-1 stands for "execute", and
-0 stands for "no permission."
-</code></pre>
+<div class="codehilite"><pre><span></span>4 stands for &quot;read&quot;,
+2 stands for &quot;write&quot;,
+1 stands for &quot;execute&quot;, and
+0 stands for &quot;no permission.&quot;
+</pre></div>
+
+
 <p>So 7 is the combination of permissions 4+2+1 (read, write, and execute), 5 is 4+0+1 (read, no write, and execute), and 4 is 4+0+0 (read, no write, and no execute).</p>
-<pre><code>777 — anyone can read, write and execute chmod 777 my_file
+<div class="codehilite"><pre><span></span>777 — anyone can read, write and execute chmod 777 my_file
 755 — for files that should be readable and executable by others, but only changeable by the issuing user
 700 — only the user can do anything to the file
-</code></pre>
+</pre></div>
+
+
 <p>These are the examples from the symbolic notation section given in octal notation:</p>
-<pre><code>Symbolic       Notation    Numeric Notation English  
+<div class="codehilite"><pre><span></span>Symbolic       Notation    Numeric Notation English  
 ----------     0000        no permissions  
--rwx------     0700        read, write, &amp; execute only for owner   
--rwxrwx---     0770        read, write, &amp; execute for owner and group  
--rwxrwxrwx     0777        read, write, &amp; execute for owner, group and others  
+-rwx------     0700        read, write, &amp;amp; execute only for owner   
+-rwxrwx---     0770        read, write, &amp;amp; execute for owner and group  
+-rwxrwxrwx     0777        read, write, &amp;amp; execute for owner, group and others  
 ---x--x--x     0111        execute     
 --w--w--w-     0222        write   
---wx-wx-wx     0333        write &amp; execute     
+--wx-wx-wx     0333        write &amp;amp; execute     
 -r--r--r--     0444        read    
--r-xr-xr-x     0555        read &amp; execute  
--rw-rw-rw-     0666        read &amp; write    
--rwxr-----     0740        owner can read, write, &amp; execute; group can only read; others have no permissions
-</code></pre>
+-r-xr-xr-x     0555        read &amp;amp; execute  
+-rw-rw-rw-     0666        read &amp;amp; write    
+-rwxr-----     0740        owner can read, write, &amp;amp; execute; group can only read; others have no permissions
+</pre></div>
+
+
 <p>chmod Examples
     # Set the permissions of file.htm to "owner can read and write; group can read only; others can read only".
     chmod 644 file.htm</p>
-<pre><code># Recursively (-R) Change the permissions of the directory myfiles, and all folders and files it contains, to mode 755: User can read, write, and execute; group members and other users can read and execute, but cannot write.
-chmod -R 755 myfiles
+<div class="codehilite"><pre><span></span><span class="err">#</span> <span class="nt">Recursively</span> <span class="o">(</span><span class="nt">-R</span><span class="o">)</span> <span class="nt">Change</span> <span class="nt">the</span> <span class="nt">permissions</span> <span class="nt">of</span> <span class="nt">the</span> <span class="nt">directory</span> <span class="nt">myfiles</span><span class="o">,</span> <span class="nt">and</span> <span class="nt">all</span> <span class="nt">folders</span> <span class="nt">and</span> <span class="nt">files</span> <span class="nt">it</span> <span class="nt">contains</span><span class="o">,</span> <span class="nt">to</span> <span class="nt">mode</span> <span class="nt">755</span><span class="o">:</span> <span class="nt">User</span> <span class="nt">can</span> <span class="nt">read</span><span class="o">,</span> <span class="nt">write</span><span class="o">,</span> <span class="nt">and</span> <span class="nt">execute</span><span class="o">;</span> <span class="nt">group</span> <span class="nt">members</span> <span class="nt">and</span> <span class="nt">other</span> <span class="nt">users</span> <span class="nt">can</span> <span class="nt">read</span> <span class="nt">and</span> <span class="nt">execute</span><span class="o">,</span> <span class="nt">but</span> <span class="nt">cannot</span> <span class="nt">write</span><span class="o">.</span>
+<span class="nt">chmod</span> <span class="nt">-R</span> <span class="nt">755</span> <span class="nt">myfiles</span>
 
-# Change the permissions for the owner of example.jpg so that the owner may read and write the file. Do not change the permissions for the group, or for others.
-chmod u=rw example.jpg
+<span class="err">#</span> <span class="nt">Change</span> <span class="nt">the</span> <span class="nt">permissions</span> <span class="nt">for</span> <span class="nt">the</span> <span class="nt">owner</span> <span class="nt">of</span> <span class="nt">example</span><span class="p">.</span><span class="nc">jpg</span> <span class="nt">so</span> <span class="nt">that</span> <span class="nt">the</span> <span class="nt">owner</span> <span class="nt">may</span> <span class="nt">read</span> <span class="nt">and</span> <span class="nt">write</span> <span class="nt">the</span> <span class="nt">file</span><span class="o">.</span> <span class="nt">Do</span> <span class="nt">not</span> <span class="nt">change</span> <span class="nt">the</span> <span class="nt">permissions</span> <span class="nt">for</span> <span class="nt">the</span> <span class="nt">group</span><span class="o">,</span> <span class="nt">or</span> <span class="nt">for</span> <span class="nt">others</span><span class="o">.</span>
+<span class="nt">chmod</span> <span class="nt">u</span><span class="o">=</span><span class="nt">rw</span> <span class="nt">example</span><span class="p">.</span><span class="nc">jpg</span>
 
-# Set the "Set-User-ID" bit of comphope.txt, so that anyone who attempts to access that file does so as if they are the owner of the file.
-chmod u+s comphope.txt
+<span class="err">#</span> <span class="nt">Set</span> <span class="nt">the</span> <span class="s2">&quot;Set-User-ID&quot;</span> <span class="nt">bit</span> <span class="nt">of</span> <span class="nt">comphope</span><span class="p">.</span><span class="nc">txt</span><span class="o">,</span> <span class="nt">so</span> <span class="nt">that</span> <span class="nt">anyone</span> <span class="nt">who</span> <span class="nt">attempts</span> <span class="nt">to</span> <span class="nt">access</span> <span class="nt">that</span> <span class="nt">file</span> <span class="nt">does</span> <span class="nt">so</span> <span class="nt">as</span> <span class="nt">if</span> <span class="nt">they</span> <span class="nt">are</span> <span class="nt">the</span> <span class="nt">owner</span> <span class="nt">of</span> <span class="nt">the</span> <span class="nt">file</span><span class="o">.</span>
+<span class="nt">chmod</span> <span class="nt">u</span><span class="o">+</span><span class="nt">s</span> <span class="nt">comphope</span><span class="p">.</span><span class="nc">txt</span>
 
-# The opposite of the above command; un-sets the SUID bit.
-chmod u-s comphope.txt
+<span class="err">#</span> <span class="nt">The</span> <span class="nt">opposite</span> <span class="nt">of</span> <span class="nt">the</span> <span class="nt">above</span> <span class="nt">command</span><span class="o">;</span> <span class="nt">un-sets</span> <span class="nt">the</span> <span class="nt">SUID</span> <span class="nt">bit</span><span class="o">.</span>
+<span class="nt">chmod</span> <span class="nt">u-s</span> <span class="nt">comphope</span><span class="p">.</span><span class="nc">txt</span>
 
-# Set the permissions of file.cgi to "read, write, and execute by owner" and "read and execute by the group and everyone else".
-chmod 755 file.cgi
+<span class="err">#</span> <span class="nt">Set</span> <span class="nt">the</span> <span class="nt">permissions</span> <span class="nt">of</span> <span class="nt">file</span><span class="p">.</span><span class="nc">cgi</span> <span class="nt">to</span> <span class="s2">&quot;read, write, and execute by owner&quot;</span> <span class="nt">and</span> <span class="s2">&quot;read and execute by the group and everyone else&quot;</span><span class="o">.</span>
+<span class="nt">chmod</span> <span class="nt">755</span> <span class="nt">file</span><span class="p">.</span><span class="nc">cgi</span>
 
-# Set the permission of file.txt to "read and write by everyone.".
-chmod 666 file.txt
+<span class="err">#</span> <span class="nt">Set</span> <span class="nt">the</span> <span class="nt">permission</span> <span class="nt">of</span> <span class="nt">file</span><span class="p">.</span><span class="nc">txt</span> <span class="nt">to</span> <span class="s2">&quot;read and write by everyone.&quot;</span><span class="o">.</span>
+<span class="nt">chmod</span> <span class="nt">666</span> <span class="nt">file</span><span class="p">.</span><span class="nc">txt</span>
 
-# Accomplishes the same thing as the above command, using symbolic notation.
-chmod a=rw file.txt
-</code></pre>
+<span class="err">#</span> <span class="nt">Accomplishes</span> <span class="nt">the</span> <span class="nt">same</span> <span class="nt">thing</span> <span class="nt">as</span> <span class="nt">the</span> <span class="nt">above</span> <span class="nt">command</span><span class="o">,</span> <span class="nt">using</span> <span class="nt">symbolic</span> <span class="nt">notation</span><span class="o">.</span>
+<span class="nt">chmod</span> <span class="nt">a</span><span class="o">=</span><span class="nt">rw</span> <span class="nt">file</span><span class="p">.</span><span class="nc">txt</span>
+</pre></div>
+
+
 <h2 id="man"><code>man</code></h2>
 <p>Manuals for a command can be shown with this instruction. Below is some of the output from running man ls, it also displays all the options available for running the command.</p>
-<pre><code>LS(1)                     BSD General Commands Manual                    LS(1)
+<div class="codehilite"><pre><span></span>LS(1)                     BSD General Commands Manual                    LS(1)
 NAME
     ls -- list directory contents
 SYNOPSIS
@@ -1333,19 +1361,23 @@ DESCRIPTION
     any requested, associated information.  For each operand that names a file of type directory, ls
     displays the names of files contained within that directory, as well as any requested, associated
     information.
-</code></pre>
+</pre></div>
+
+
 <h2 id="redirection">Redirection</h2>
 <p>Write (or redirect) output from a command to a file.<br />
 <code>&gt;</code> with write to the file which <code>&gt;&gt;</code> will append to the file if it already exists. </p>
-<pre><code># Redirection
-python hello.py &gt; output.txt   # stdout to (file)
-python hello.py &gt;&gt; output.txt  # stdout to (file), append
-python hello.py 2&gt; error.log   # stderr to (file)
-python hello.py 2&gt;&amp;1           # stderr to stdout
-python hello.py 2&gt;/dev/null    # stderr to (null)
-python hello.py &amp;&gt;/dev/null    # stdout and stderr to (null)
-python hello.py &lt; foo.txt
-</code></pre>
+<div class="codehilite"><pre><span></span># Redirection
+python hello.py &amp;gt; output.txt   # stdout to (file)
+python hello.py &amp;gt;&amp;gt; output.txt  # stdout to (file), append
+python hello.py 2&amp;gt; error.log   # stderr to (file)
+python hello.py 2&amp;gt;&amp;amp;1           # stderr to stdout
+python hello.py 2&amp;gt;/dev/null    # stderr to (null)
+python hello.py &amp;amp;&amp;gt;/dev/null    # stdout and stderr to (null)
+python hello.py &amp;lt; foo.txt
+</pre></div>
+
+
 <p><a href="https://devhints.io/bash">Cheat Sheet</a></p>
                 
                   

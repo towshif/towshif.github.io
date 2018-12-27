@@ -1232,21 +1232,23 @@
 <hr />
 <h2 id="ifconfig-ip-address"><code>ifconfig</code> - IP address</h2>
 <p>To check your own IP address. </p>
-<pre><code>ifconfig
-</code></pre>
+<div class="codehilite"><pre><span></span>ifconfig
+</pre></div>
+
+
 <p>In the example below: 
 <em> LAN Ethernet IP is: 192.168.0.11
 </em> Mac Address is: 00:16:35:69:BD:79</p>
 <p>Example Output: </p>
-<pre><code>$ ifconfig
-eth0      Link encap:Ethernet  HWaddr 00:16:35:69:BD:79
+<div class="codehilite"><pre><span></span>$ ifconfig
+eth0      Link encap:Ethernet  HWaddr <span class="m">00</span>:16:35:69:BD:79
         inet addr:192.168.0.11  Bcast:192.168.0.255  Mask:255.255.255.0
         inet6 addr: fe80::212:ff35:fe69:bd12/64 Scope:Link
         UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
         RX packets:16791460 errors:0 dropped:0 overruns:0 frame:0
         TX packets:30066639 errors:0 dropped:0 overruns:0 carrier:0
         collisions:0 txqueuelen:1000
-        RX bytes:2182259898 (2.0 GiB)  TX bytes:3951206845 (3.6 GiB)
+        RX bytes:2182259898 <span class="o">(</span><span class="m">2</span>.0 GiB<span class="o">)</span>  TX bytes:3951206845 <span class="o">(</span><span class="m">3</span>.6 GiB<span class="o">)</span>
         Interrupt:209 Memory:fdef0000-fdf00000
 
 lo        Link encap:Local Loopback
@@ -1256,63 +1258,75 @@ lo        Link encap:Local Loopback
         RX packets:32098 errors:0 dropped:0 overruns:0 frame:0
         TX packets:32098 errors:0 dropped:0 overruns:0 carrier:0
         collisions:0 txqueuelen:0
-        RX bytes:3227365 (3.0 MiB)  TX bytes:3227365 (3.0 MiB)
-</code></pre>
+        RX bytes:3227365 <span class="o">(</span><span class="m">3</span>.0 MiB<span class="o">)</span>  TX bytes:3227365 <span class="o">(</span><span class="m">3</span>.0 MiB<span class="o">)</span>
+</pre></div>
+
+
 <h2 id="ping-check-network-access"><code>ping</code> - Check network Access</h2>
-<pre><code>ping [HOST or IP-ADDRESS or WEBSITE]
-</code></pre>
+<div class="codehilite"><pre><span></span>ping [HOST or IP-ADDRESS or WEBSITE]
+</pre></div>
+
+
 <h2 id="netstat-network-activity"><code>netstat</code> - Network Activity</h2>
-<pre><code>netstat -r
-</code></pre>
+<div class="codehilite"><pre><span></span>netstat -r
+</pre></div>
+
+
 <p>Example Output: </p>
-<pre><code>$ netstat -r
+<div class="codehilite"><pre><span></span>$ netstat -r
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
-192.168.0.0     *               255.255.255.0   U         0 0          0 eth0
-169.254.0.0     *               255.255.0.0     U         0 0          0 eth0
-10.1.0.0    192.168.0.2 255.255.0.0     U         0 0          0 eth0
-default         192.168.0.1     0.0.0.0         UG        0 0          0 eth0
-</code></pre>
-<p>Other usage </p>
-<pre><code>$ netstat -a | grep LISTEN | grep -v LISTENING
-tcp        0      0 localhost.localdomain:32000 *:*                 LISTEN
-tcp        0      0 localhost.locald:bootserver *:*                 LISTEN
-tcp        0      0 *:cbt                       *:*                 LISTEN
-tcp        0      0 *:38821                     *:*                 LISTEN
-tcp        0      0 *:8009                      *:*                 LISTEN
+<span class="m">192</span>.168.0.0     *               <span class="m">255</span>.255.255.0   U         <span class="m">0</span> <span class="m">0</span>          <span class="m">0</span> eth0
+<span class="m">169</span>.254.0.0     *               <span class="m">255</span>.255.0.0     U         <span class="m">0</span> <span class="m">0</span>          <span class="m">0</span> eth0
+<span class="m">10</span>.1.0.0    <span class="m">192</span>.168.0.2 <span class="m">255</span>.255.0.0     U         <span class="m">0</span> <span class="m">0</span>          <span class="m">0</span> eth0
+default         <span class="m">192</span>.168.0.1     <span class="m">0</span>.0.0.0         UG        <span class="m">0</span> <span class="m">0</span>          <span class="m">0</span> eth0
+</pre></div>
 
-$ netstat -an | more
-Active Internet connections (servers and established)
+
+<p>Other usage </p>
+<div class="codehilite"><pre><span></span>$ netstat -a <span class="p">|</span> grep LISTEN <span class="p">|</span> grep -v LISTENING
+tcp        <span class="m">0</span>      <span class="m">0</span> localhost.localdomain:32000 *:*                 LISTEN
+tcp        <span class="m">0</span>      <span class="m">0</span> localhost.locald:bootserver *:*                 LISTEN
+tcp        <span class="m">0</span>      <span class="m">0</span> *:cbt                       *:*                 LISTEN
+tcp        <span class="m">0</span>      <span class="m">0</span> *:38821                     *:*                 LISTEN
+tcp        <span class="m">0</span>      <span class="m">0</span> *:8009                      *:*                 LISTEN
+
+$ netstat -an <span class="p">|</span> more
+Active Internet connections <span class="o">(</span>servers and established<span class="o">)</span>
 Proto Recv-Q Send-Q Local Address             Foreign Address         State
-tcp        0      0 127.0.0.1:32000           0.0.0.0:*               LISTEN
-tcp        0      0 127.0.0.1:2016            0.0.0.0:*               LISTEN
-tcp        0      0 0.0.0.0:7777              0.0.0.0:*               LISTEN
-tcp        0      0 0.0.0.0:38821             0.0.0.0:*               LISTEN
-</code></pre>
+tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m">127</span>.0.0.1:32000           <span class="m">0</span>.0.0.0:*               LISTEN
+tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m">127</span>.0.0.1:2016            <span class="m">0</span>.0.0.0:*               LISTEN
+tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m">0</span>.0.0.0:7777              <span class="m">0</span>.0.0.0:*               LISTEN
+tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m">0</span>.0.0.0:38821             <span class="m">0</span>.0.0.0:*               LISTEN
+</pre></div>
+
+
 <h2 id="traceroute-trace-server-routes-to-remote-host">traceroute - Trace server routes to remote host</h2>
 <p>This command will display the route taken to reach the remote host and, along with the stops it makes, provide some timing information that shows how long each leg in the route is taking.</p>
-<pre><code>traceroute [HOSTNAME or SERVER or WEBSITE]
-</code></pre>
+<div class="codehilite"><pre><span></span>traceroute [HOSTNAME or SERVER or WEBSITE]
+</pre></div>
+
+
 <p>Example output: </p>
-<pre><code>$ traceroute www.google.com
-traceroute to www.google.com (216.58.219.4), 30 hops max, 60 byte packets
-1  testwifi.here (192.168.86.1)  0.588 ms  1.110 ms  0.725 ms
-2  96.120.88.245 (96.120.88.245)  9.233 ms  14.729 ms  15.564 ms
-3  be-20002-rur02.santaclara.ca.sfba.comcast.net (68.85.103.169)  16.102 ms  16.221 ms  15.741 ms
-4  162.151.78.129 (162.151.78.129)  15.626 ms  15.836 ms  15.772 ms
-5  be-232-rar01.santaclara.ca.sfba.comcast.net (162.151.78.253)  16.099 ms * *
-6  be-299-ar01.santaclara.ca.sfba.comcast.net (68.86.143.93)  15.896 ms  13.372 ms  13.345 ms
-7  96.112.146.18 (96.112.146.18)  13.998 ms 96.112.146.26 (96.112.146.26)  11.898 ms  11.132 ms
-8  * * *
-9  108.170.236.62 (108.170.236.62)  19.286 ms 209.85.251.4 (209.85.251.4)  17.231 ms 108.170.236.60 (108.170.236.60)  16.081 ms
-10  108.170.242.254 (108.170.242.254)  18.317 ms 108.170.242.238 (108.170.242.238)  17.908 ms 108.170.242.253 (108.170.242.253)  17.933 ms
-11  216.239.62.41 (216.239.62.41)  18.089 ms 72.14.237.147 (72.14.237.147)  18.223 ms 66.249.94.29 (66.249.94.29)  18.394 ms
-12  66.249.95.15 (66.249.95.15)  23.803 ms 216.239.54.22 (216.239.54.22)  21.822 ms 64.233.174.206 (64.233.174.206)  36.001 ms
-13  108.170.234.40 (108.170.234.40)  22.110 ms 108.170.230.134 (108.170.230.134)  22.006 ms  21.297 ms
-14  108.170.247.193 (108.170.247.193)  22.033 ms  21.847 ms 108.170.247.225 (108.170.247.225)  19.486 ms
-15  108.170.237.143 (108.170.237.143)  20.839 ms  19.894 ms  17.991 ms
-16  lax17s03-in-f4.1e100.net (216.58.219.4)  17.176 ms  17.725 ms  24.966 ms
-</code></pre>
+<div class="codehilite"><pre><span></span>$ traceroute www.google.com
+traceroute to www.google.com <span class="o">(</span><span class="m">216</span>.58.219.4<span class="o">)</span>, <span class="m">30</span> hops max, <span class="m">60</span> byte packets
+<span class="m">1</span>  testwifi.here <span class="o">(</span><span class="m">192</span>.168.86.1<span class="o">)</span>  <span class="m">0</span>.588 ms  <span class="m">1</span>.110 ms  <span class="m">0</span>.725 ms
+<span class="m">2</span>  <span class="m">96</span>.120.88.245 <span class="o">(</span><span class="m">96</span>.120.88.245<span class="o">)</span>  <span class="m">9</span>.233 ms  <span class="m">14</span>.729 ms  <span class="m">15</span>.564 ms
+<span class="m">3</span>  be-20002-rur02.santaclara.ca.sfba.comcast.net <span class="o">(</span><span class="m">68</span>.85.103.169<span class="o">)</span>  <span class="m">16</span>.102 ms  <span class="m">16</span>.221 ms  <span class="m">15</span>.741 ms
+<span class="m">4</span>  <span class="m">162</span>.151.78.129 <span class="o">(</span><span class="m">162</span>.151.78.129<span class="o">)</span>  <span class="m">15</span>.626 ms  <span class="m">15</span>.836 ms  <span class="m">15</span>.772 ms
+<span class="m">5</span>  be-232-rar01.santaclara.ca.sfba.comcast.net <span class="o">(</span><span class="m">162</span>.151.78.253<span class="o">)</span>  <span class="m">16</span>.099 ms * *
+<span class="m">6</span>  be-299-ar01.santaclara.ca.sfba.comcast.net <span class="o">(</span><span class="m">68</span>.86.143.93<span class="o">)</span>  <span class="m">15</span>.896 ms  <span class="m">13</span>.372 ms  <span class="m">13</span>.345 ms
+<span class="m">7</span>  <span class="m">96</span>.112.146.18 <span class="o">(</span><span class="m">96</span>.112.146.18<span class="o">)</span>  <span class="m">13</span>.998 ms <span class="m">96</span>.112.146.26 <span class="o">(</span><span class="m">96</span>.112.146.26<span class="o">)</span>  <span class="m">11</span>.898 ms  <span class="m">11</span>.132 ms
+<span class="m">8</span>  * * *
+<span class="m">9</span>  <span class="m">108</span>.170.236.62 <span class="o">(</span><span class="m">108</span>.170.236.62<span class="o">)</span>  <span class="m">19</span>.286 ms <span class="m">209</span>.85.251.4 <span class="o">(</span><span class="m">209</span>.85.251.4<span class="o">)</span>  <span class="m">17</span>.231 ms <span class="m">108</span>.170.236.60 <span class="o">(</span><span class="m">108</span>.170.236.60<span class="o">)</span>  <span class="m">16</span>.081 ms
+<span class="m">10</span>  <span class="m">108</span>.170.242.254 <span class="o">(</span><span class="m">108</span>.170.242.254<span class="o">)</span>  <span class="m">18</span>.317 ms <span class="m">108</span>.170.242.238 <span class="o">(</span><span class="m">108</span>.170.242.238<span class="o">)</span>  <span class="m">17</span>.908 ms <span class="m">108</span>.170.242.253 <span class="o">(</span><span class="m">108</span>.170.242.253<span class="o">)</span>  <span class="m">17</span>.933 ms
+<span class="m">11</span>  <span class="m">216</span>.239.62.41 <span class="o">(</span><span class="m">216</span>.239.62.41<span class="o">)</span>  <span class="m">18</span>.089 ms <span class="m">72</span>.14.237.147 <span class="o">(</span><span class="m">72</span>.14.237.147<span class="o">)</span>  <span class="m">18</span>.223 ms <span class="m">66</span>.249.94.29 <span class="o">(</span><span class="m">66</span>.249.94.29<span class="o">)</span>  <span class="m">18</span>.394 ms
+<span class="m">12</span>  <span class="m">66</span>.249.95.15 <span class="o">(</span><span class="m">66</span>.249.95.15<span class="o">)</span>  <span class="m">23</span>.803 ms <span class="m">216</span>.239.54.22 <span class="o">(</span><span class="m">216</span>.239.54.22<span class="o">)</span>  <span class="m">21</span>.822 ms <span class="m">64</span>.233.174.206 <span class="o">(</span><span class="m">64</span>.233.174.206<span class="o">)</span>  <span class="m">36</span>.001 ms
+<span class="m">13</span>  <span class="m">108</span>.170.234.40 <span class="o">(</span><span class="m">108</span>.170.234.40<span class="o">)</span>  <span class="m">22</span>.110 ms <span class="m">108</span>.170.230.134 <span class="o">(</span><span class="m">108</span>.170.230.134<span class="o">)</span>  <span class="m">22</span>.006 ms  <span class="m">21</span>.297 ms
+<span class="m">14</span>  <span class="m">108</span>.170.247.193 <span class="o">(</span><span class="m">108</span>.170.247.193<span class="o">)</span>  <span class="m">22</span>.033 ms  <span class="m">21</span>.847 ms <span class="m">108</span>.170.247.225 <span class="o">(</span><span class="m">108</span>.170.247.225<span class="o">)</span>  <span class="m">19</span>.486 ms
+<span class="m">15</span>  <span class="m">108</span>.170.237.143 <span class="o">(</span><span class="m">108</span>.170.237.143<span class="o">)</span>  <span class="m">20</span>.839 ms  <span class="m">19</span>.894 ms  <span class="m">17</span>.991 ms
+<span class="m">16</span>  lax17s03-in-f4.1e100.net <span class="o">(</span><span class="m">216</span>.58.219.4<span class="o">)</span>  <span class="m">17</span>.176 ms  <span class="m">17</span>.725 ms  <span class="m">24</span>.966 ms
+</pre></div>
                 
                   
                 

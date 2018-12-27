@@ -1341,8 +1341,10 @@ variables have lower case names.</p>
 <h2 id="82-environment-variables">8.2 Environment Variables</h2>
 <p>An example of an environment variable is the OSTYPE variable. The value
 of this is the current operating system you are using. Type</p>
-<pre><code>echo $OSTYPE
-</code></pre>
+<div class="codehilite"><pre><span></span>echo $OSTYPE
+</pre></div>
+
+
 <p>More examples of environment variables are</p>
 <ul>
 <li>USER (your login name)</li>
@@ -1357,14 +1359,18 @@ of this is the current operating system you are using. Type</p>
 <p>ENVIRONMENT variables are set using the setenv command, displayed using
 the printenv or env commands, and unset using the unsetenv command.</p>
 <p>To show all values of these variables, type</p>
-<pre><code>printenv | less
-</code></pre>
+<div class="codehilite"><pre><span></span>printenv | less
+</pre></div>
+
+
 <h2 id="83-shell-variables">8.3 Shell Variables</h2>
 <p>An example of a shell variable is the history variable. The value of
 this is how many shell commands to save, allow the user to scroll back
 through all the commands they have previously entered. Type</p>
-<pre><code>echo $history
-</code></pre>
+<div class="codehilite"><pre><span></span>echo $history
+</pre></div>
+
+
 <p>More examples of shell variables are</p>
 <ul>
 <li>cwd (your current working directory)</li>
@@ -1377,8 +1383,10 @@ through all the commands they have previously entered. Type</p>
 <p>SHELL variables are both set and displayed using the set command. They
 can be unset by using the unset command.</p>
 <p>To show all values of these variables, type</p>
-<pre><code>set | less
-</code></pre>
+<div class="codehilite"><pre><span></span>set | less
+</pre></div>
+
+
 <h3 id="so-what-is-the-difference-between-path-and-path">So what is the difference between PATH and path ?</h3>
 <p>In general, environment and shell variables that have the same name
 (apart from the case) are distinct and independent, except for possibly
@@ -1409,28 +1417,38 @@ browser) in your .cshrc or .login file.</p>
 <p>For example, to change the number of shell commands saved in the history
 list, you need to set the shell variable history. It is set to 100 by
 default, but you can increase this if you wish.</p>
-<pre><code>set history = 200
-</code></pre>
+<div class="codehilite"><pre><span></span>set history = 200
+</pre></div>
+
+
 <p>Check this has worked by typing</p>
-<pre><code>echo $history
-</code></pre>
+<div class="codehilite"><pre><span></span>echo $history
+</pre></div>
+
+
 <p>However, this has only set the variable for the lifetime of the current
 shell. If you open a new xterm window, it will only have the default
 history value set. To PERMANENTLY set the value of history, you will
 need to add the set command to the .cshrc file.</p>
 <p>First open the <strong>.cshrc</strong> file in a text editor. An easy, user-friendly
 editor to use is nedit.</p>
-<pre><code>nedit ~/.cshrc
-</code></pre>
+<div class="codehilite"><pre><span></span>nedit ~/.cshrc
+</pre></div>
+
+
 <p>Add the following line AFTER the list of other commands.</p>
 <p>set history = 200</p>
 <p>Save the file and force the shell to reread its .cshrc file buy using
 the shell source command.</p>
-<pre><code>source .cshrc
-</code></pre>
+<div class="codehilite"><pre><span></span>source .cshrc
+</pre></div>
+
+
 <p>Check this has worked by typing</p>
-<pre><code>echo $history
-</code></pre>
+<div class="codehilite"><pre><span></span>echo $history
+</pre></div>
+
+
 <h2 id="86-setting-the-path">8.6 Setting the path</h2>
 <p>When you type a command, your path (or PATH) variable defines in which
 directories the shell will look to find the command you typed. If the
@@ -1442,18 +1460,24 @@ path (<strong>~/units174/bin/units</strong>), or you need to have the directory
 <strong>~/units174/bin</strong> in your path.</p>
 <p>You can add it to the end of your existing path (the <strong>$path</strong>
 represents this) by issuing the command:</p>
-<pre><code>set path = ($path ~/units174/bin)
-</code></pre>
+<div class="codehilite"><pre><span></span>set path = ($path ~/units174/bin)
+</pre></div>
+
+
 <p>Test that this worked by trying to run units in any directory other that
 where units is actually located.</p>
-<pre><code>cd; units
-</code></pre>
+<div class="codehilite"><pre><span></span>cd; units
+</pre></div>
+
+
 <p><strong>HINT:</strong> You can run multiple commands on one line by separating them
 with a semicolon.</p>
 <p>To add this path PERMANENTLY, add the following line to your .cshrc
 AFTER the list of other commands.</p>
-<pre><code>set path = ($path ~/units174/bin)
-</code></pre>
+<div class="codehilite"><pre><span></span>set path = ($path ~/units174/bin)
+</pre></div>
+
+
 <p>M.Stonebank@surrey.ac.uk October 2001</p>
                 
                   

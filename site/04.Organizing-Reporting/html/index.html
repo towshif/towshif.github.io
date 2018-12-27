@@ -1231,19 +1231,21 @@
 <li><code>body</code> tag - this contains all the text that is visible in the webpage. </li>
 </ul>
 <p>This is an outline of basic format of an <code>html</code> source</p>
-<pre><code>&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;&lt;/title&gt;            
-        &lt;styles&gt;&lt;/styles&gt;                        
-        &lt;script&gt;&lt;/script&gt;                            
-    &lt;/head&gt;
+<div class="codehilite"><pre><span></span>&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+        &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;            
+        &amp;lt;styles&amp;gt;&amp;lt;/styles&amp;gt;                        
+        &amp;lt;script&amp;gt;&amp;lt;/script&amp;gt;                            
+    &amp;lt;/head&amp;gt;
 
-    &lt;body&gt;
+    &amp;lt;body&amp;gt;
             //This body tag contains contains all the text that is visible in the webpage. 
-    &lt;/body&gt;
+    &amp;lt;/body&amp;gt;
 
-&lt;/html&gt;
-</code></pre>
+&amp;lt;/html&amp;gt;
+</pre></div>
+
+
 <p>There are a lot more html elements that have custom use and are contained in the <code>body</code> tag, however in this tutorial we will cover only a few of them. The elements are referred to as html <code>tags</code>. Tags are basically containers of text or instructions with a specific purpose defining the behaviour of the element.</p>
 <p>Some common html elements are: </p>
 <ul>
@@ -1251,15 +1253,19 @@
 <li><code>&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;</code> tag - headers of different font size; 1 being largets and then bigger the h-number smaller the font </li>
 <li>
 <p><code>a</code> tag - this is a link tag that often contains a <code>href</code> link. We usually see them as clickable links on a webpage. Usage Syntax:</p>
-<pre><code>&lt;a href="URL"&gt; DISPLAY-TEXT &lt;/a&gt;
+<div class="codehilite"><pre><span></span>&amp;lt;a href=&quot;URL&quot;&amp;gt; DISPLAY-TEXT &amp;lt;/a&amp;gt;
 
 where URL is the link and DISPLAY-TEXT is what gets displayed on the page which can be clicked.
-</code></pre>
+</pre></div>
+
+
 </li>
 <li>
 <p><code>img</code> tag - this tag contains a image that we want to display on our webpage. It  contains a <code>src</code> source link to the image file or URL. Usage syntax: </p>
-<pre><code>&lt;img src="http://IMAGE_URL"  ..styles..text...etc... &gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">img</span> <span class="nt">src</span><span class="o">=</span><span class="s2">&quot;http://IMAGE_URL&quot;</span>  <span class="o">.</span><span class="p">.</span><span class="nc">styles</span><span class="o">.</span><span class="p">.</span><span class="nc">text</span><span class="o">..</span><span class="p">.</span><span class="nc">etc</span><span class="o">...</span> <span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span>
+</pre></div>
+
+
 </li>
 </ul>
 <p>Note: a tag once opened must be closed to resemble a valid HTML code. 
@@ -1282,24 +1288,30 @@ Eg. a paragraph tag starts with <code>&lt;p&gt;</code> and must end with <code>&
 <li>
 <p>Clone the repository: </p>
 <p>Go to the folder where you want to store your project, and clone the new repository. </p>
-<pre><code>git clone https://github.com/username/username.github.io
-</code></pre>
+<div class="codehilite"><pre><span></span>git clone https://github.com/username/username.github.io
+</pre></div>
+
+
 </li>
 <li>
 <p>Add an <code>index.html</code> file - this the entrypoint of your website </p>
-<pre><code>cd username.github.io        
+<div class="codehilite"><pre><span></span>cd username.github.io        
 touch index.html 
 nano index.html 
-# and write "Hello World". 
+# and write &quot;Hello World&quot;. 
 # Save exit
-</code></pre>
+</pre></div>
+
+
 </li>
 <li>
 <p>Push this file to your github repo </p>
-<pre><code>git add --all
+<div class="codehilite"><pre><span></span>git add --all
 git commit --all
 git push
-</code></pre>
+</pre></div>
+
+
 </li>
 <li>
 <p>You are done. Fire up a browser and go to https://username.github.io. and you can see your webpage live.</p>

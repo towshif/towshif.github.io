@@ -1193,17 +1193,19 @@
 <li>First all users accessing the directory need to share a group. </li>
 <li>Then change the group permissions of the directory and set to default rwx</li>
 </ul>
-<pre><code>chmod g+s &lt;directory&gt;  //set gid 
+<div class="codehilite"><pre><span></span>chmod g+s &lt;directory&gt;  //set gid 
 setfacl -d -m g::rwx /&lt;directory&gt;  //set group to rwx default 
 setfacl -d -m o::rx /&lt;directory&gt;   //set other
-</code></pre>
+</pre></div>
+
 
 <p>Next we can verify:</p>
-<pre><code>getfacl /&lt;directory&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span>getfacl /&lt;directory&gt;
+</pre></div>
+
 
 <p>Output:</p>
-<pre><code># file: ../&lt;directory&gt;/
+<div class="codehilite"><pre><span></span># file: ../&lt;directory&gt;/
 # owner: &lt;user&gt;
 # group: media
 # flags: -s-
@@ -1213,19 +1215,21 @@ other::r-x
 default:user::rwx
 default:group::rwx
 default:other::r-x
-</code></pre>
+</pre></div>
+
 
 <h2 id="examples">Examples:</h2>
 <p>To modify existing files in goups use <code>-m</code> switch and to set new default permission with switch <code>-d</code> to the directory for <code>group</code>. </p>
-<pre><code>chmod g+s /home/limited.users/&lt;directory&gt;
-setfacl -R -m g::rwx /home/limited.users/&lt;directory&gt; // gives group read,write,exec permissions for currently existing files and folders, recursively
+<div class="codehilite"><pre><span></span><span class="s s-Atom">chmod</span> <span class="s s-Atom">g</span><span class="o">+</span><span class="s s-Atom">s</span> <span class="o">/</span><span class="s s-Atom">home</span><span class="o">/</span><span class="s s-Atom">limited</span><span class="p">.</span><span class="s s-Atom">users/&lt;directory</span><span class="o">&gt;</span>
+<span class="s s-Atom">setfacl</span> <span class="o">-</span><span class="nv">R</span> <span class="o">-</span><span class="s s-Atom">m</span> <span class="nn">g</span><span class="p">:</span><span class="s s-Atom">:rwx</span> <span class="o">/</span><span class="s s-Atom">home</span><span class="o">/</span><span class="s s-Atom">limited</span><span class="p">.</span><span class="s s-Atom">users/&lt;directory</span><span class="o">&gt;</span> <span class="o">//</span> <span class="s s-Atom">gives</span> <span class="s s-Atom">group</span> <span class="s s-Atom">read</span><span class="p">,</span><span class="s s-Atom">write</span><span class="p">,</span><span class="s s-Atom">exec</span> <span class="s s-Atom">permissions</span> <span class="s s-Atom">for</span> <span class="s s-Atom">currently</span> <span class="s s-Atom">existing</span> <span class="s s-Atom">files</span> <span class="s s-Atom">and</span> <span class="s s-Atom">folders</span><span class="p">,</span> <span class="s s-Atom">recursively</span>
 
-setfacl -R -m o::x /home/limited.users/&lt;directory&gt; //revokes read and write permission for everyone else in existing folder and subfolders 
+<span class="s s-Atom">setfacl</span> <span class="o">-</span><span class="nv">R</span> <span class="o">-</span><span class="s s-Atom">m</span> <span class="nn">o</span><span class="p">:</span><span class="s s-Atom">:x</span> <span class="o">/</span><span class="s s-Atom">home</span><span class="o">/</span><span class="s s-Atom">limited</span><span class="p">.</span><span class="s s-Atom">users/&lt;directory</span><span class="o">&gt;</span> <span class="o">//</span><span class="s s-Atom">revokes</span> <span class="s s-Atom">read</span> <span class="s s-Atom">and</span> <span class="s s-Atom">write</span> <span class="s s-Atom">permission</span> <span class="s s-Atom">for</span> <span class="s s-Atom">everyone</span> <span class="s s-Atom">else</span> <span class="s s-Atom">in</span> <span class="s s-Atom">existing</span> <span class="s s-Atom">folder</span> <span class="s s-Atom">and</span> <span class="s s-Atom">subfolders</span> 
 
-setfacl -R -d -m g::rwx /home/limited.users/&lt;directory&gt; // gives group rwx permissions by default, recursively
+<span class="s s-Atom">setfacl</span> <span class="o">-</span><span class="nv">R</span> <span class="o">-</span><span class="s s-Atom">d</span> <span class="o">-</span><span class="s s-Atom">m</span> <span class="nn">g</span><span class="p">:</span><span class="s s-Atom">:rwx</span> <span class="o">/</span><span class="s s-Atom">home</span><span class="o">/</span><span class="s s-Atom">limited</span><span class="p">.</span><span class="s s-Atom">users/&lt;directory</span><span class="o">&gt;</span> <span class="o">//</span> <span class="s s-Atom">gives</span> <span class="s s-Atom">group</span> <span class="s s-Atom">rwx</span> <span class="s s-Atom">permissions</span> <span class="s s-Atom">by</span> <span class="s s-Atom">default</span><span class="p">,</span> <span class="s s-Atom">recursively</span>
 
-setfacl -R -d -m o::--- /home/limited.users/&lt;directory&gt; //revokes read, write and execute permissions for everyone else. 
-</code></pre>
+<span class="s s-Atom">setfacl</span> <span class="o">-</span><span class="nv">R</span> <span class="o">-</span><span class="s s-Atom">d</span> <span class="o">-</span><span class="s s-Atom">m</span> <span class="nn">o</span><span class="p">::-</span><span class="s s-Atom">--</span> <span class="o">/</span><span class="s s-Atom">home</span><span class="o">/</span><span class="s s-Atom">limited</span><span class="p">.</span><span class="s s-Atom">users/&lt;directory</span><span class="o">&gt;</span> <span class="o">//</span><span class="s s-Atom">revokes</span> <span class="s s-Atom">read</span><span class="p">,</span> <span class="s s-Atom">write</span> <span class="s s-Atom">and</span> <span class="s s-Atom">execute</span> <span class="s s-Atom">permissions</span> <span class="s s-Atom">for</span> <span class="s s-Atom">everyone</span> <span class="s s-Atom">else</span><span class="p">.</span> 
+</pre></div>
+
 
 <p>This tute was compiled from <a href="https://unix.stackexchange.com/questions/1314/how-to-set-default-file-permissions-for-all-folders-files-in-a-directory">Stackoverflow</a> by <a href="https://twitter.com/hashtag/towshif">@towshif</a></p>
                 

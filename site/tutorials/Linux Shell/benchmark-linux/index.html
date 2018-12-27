@@ -1233,22 +1233,28 @@
 <h2 id="install">Install</h2>
 <p>On Debian/Ubuntu, sysbench can be installed as follows:</p>
 <blockquote>
-<pre><code>sudo apt-get install sysbench
+<div class="codehilite"><pre><span></span>sudo apt-get install sysbench
 man sysbench # check cli options
-</code></pre>
+</pre></div>
+
+
 </blockquote>
 <h2 id="cpu-benchmark">CPU Benchmark</h2>
 <p>You can benchmark your CPU performance as follows:</p>
 <blockquote>
-<pre><code>sysbench --test=cpu --cpu-max-prime=20000 run
-</code></pre>
+<div class="codehilite"><pre><span></span>sysbench --test=cpu --cpu-max-prime=20000 run
+</pre></div>
+
+
 </blockquote>
 <p>Sample output: </p>
 <blockquote>
-<pre><code>sysbench 0.4.12:  multi-threaded system evaluation benchmark
-</code></pre>
+<div class="codehilite"><pre><span></span>sysbench 0.4.12:  multi-threaded system evaluation benchmark
+</pre></div>
+
+
 </blockquote>
-<pre><code>Running the test with following options:
+<div class="codehilite"><pre><span></span>Running the test with following options:
 Number of threads: 1
 
 Doing CPU performance benchmark
@@ -1272,20 +1278,26 @@ Test execution summary:
 Threads fairness:
     events (avg/stddev):           10000.0000/0.00
     execution time (avg/stddev):   29.3989/0.00
-</code></pre>
+</pre></div>
+
+
 <p>The most important line to note is <code>total time: 23.8724s</code></p>
 <h2 id="memory-benchmark">Memory Benchmark</h2>
 <p>When using the memory workload, sysbench will allocate a buffer (provided through the --memory-block-size parameter, defaults to 1kbyte) and each execution will read or write to this memory (--memory-oper, defaults to write) in a random or sequential manner (--memory-access-mode, defaults to sequential).</p>
 <blockquote>
-<pre><code>sysbench --test=memory --memory-block-size=1M --memory-total-size=10G run
-</code></pre>
+<div class="codehilite"><pre><span></span>sysbench --test=memory --memory-block-size=1M --memory-total-size=10G run
+</pre></div>
+
+
 </blockquote>
 <p>Sample Output </p>
 <blockquote>
-<pre><code>sysbench 0.4.12:  multi-threaded system evaluation benchmark
-</code></pre>
+<div class="codehilite"><pre><span></span>sysbench 0.4.12:  multi-threaded system evaluation benchmark
+</pre></div>
+
+
 </blockquote>
-<pre><code>Running the test with following options:
+<div class="codehilite"><pre><span></span>Running the test with following options:
 Number of threads: 1
 
 Doing memory operations speed test
@@ -1316,34 +1328,44 @@ Test execution summary:
 Threads fairness:
     events (avg/stddev):           10240.0000/0.00
     execution time (avg/stddev):   1.4811/0.00
-</code></pre>
+</pre></div>
+
+
 <p>Important line to note is the throughput: </p>
 <p><code>Operations performed: 10240 ( 6906.34 ops/sec) | 10240.00 MB transferred (6906.34 MB/sec)</code></p>
 <p>As a derivative you can use a variety of block sizes to test read and write: </p>
 <blockquote>
-<pre><code>sysbench --test=memory --memory-block-size=1K --memory-scope=global --memory-total-size=100G --memory-oper=read run
+<div class="codehilite"><pre><span></span>sysbench --test=memory --memory-block-size=1K --memory-scope=global --memory-total-size=100G --memory-oper=read run
 sysbench --test=memory --memory-block-size=1K --memory-scope=global --memory-total-size=100G --memory-oper=write run
-</code></pre>
+</pre></div>
+
+
 </blockquote>
 <h2 id="file-io-tests">File I/O tests:</h2>
 <blockquote>
-<pre><code># prepare file on disk 
+<div class="codehilite"><pre><span></span># prepare file on disk 
 sysbench --test=fileio --file-total-size=150G prepare
-</code></pre>
+</pre></div>
+
+
 </blockquote>
-<pre><code># test rw with sysbench
+<div class="codehilite"><pre><span></span># test rw with sysbench
 sysbench --test=fileio --file-total-size=150G --file-test-mode=rndrw --init-rng=on --max-time=300 --max-requests=0 run
 
 # dont forget to cleanup after 
 sysbench --test=fileio --file-total-size=150G cleanup
-</code></pre>
+</pre></div>
+
+
 <p>Output: </p>
 <blockquote>
-<pre><code>towshif@TSERV:~$ sysbench --test=fileio --file-total-size=4G --file-test-mode=rndrw --max-time=300 --max-requests=0 --file-extra-flags=direct run
+<div class="codehilite"><pre><span></span>towshif@TSERV:~$ sysbench --test=fileio --file-total-size=4G --file-test-mode=rndrw --max-time=300 --max-requests=0 --file-extra-flags=direct run
 sysbench 0.4.12:  multi-threaded system evaluation benchmark
-</code></pre>
+</pre></div>
+
+
 </blockquote>
-<pre><code>Running the test with following options:
+<div class="codehilite"><pre><span></span>Running the test with following options:
 Number of threads: 1
 
 Extra file open flags: 16384
@@ -1377,18 +1399,22 @@ Test execution summary:
 Threads fairness:
     events (avg/stddev):           57006.0000/0.00
     execution time (avg/stddev):   197.1079/0.00
-</code></pre>
+</pre></div>
+
+
 <p>Benchmark metric: </p>
 <p><code>Read 534.44Mb  Written 356.28Mb  Total transferred 890.72Mb  (2.969Mb/sec) | 190.02 Requests/sec executed</code></p>
 <h1 id="shell-script-to-perform-full-sysbench-tests">Shell Script to perform full <code>sysbench</code> tests</h1>
 <blockquote>
-<pre><code># Ref: http://wiki.mikejung.biz/Sysbench
+<div class="codehilite"><pre><span></span># Ref: http://wiki.mikejung.biz/Sysbench
 # CPU
 sysbench --test=cpu --cpu-max-prime=20000 run
 sysbench --test=cpu --cpu-max-prime=20000 run --num-threads=4
-</code></pre>
+</pre></div>
+
+
 </blockquote>
-<pre><code>#FILE IO
+<div class="codehilite"><pre><span></span>#FILE IO
 sysbench --test=fileio --file-total-size=4G prepare
 sysbench --test=fileio --file-total-size=4G --file-test-mode=rndrw --max-time=300 --max-requests=0 --file-extra-flags=direct run
 sysbench --test=fileio --file-total-size=4G cleanup
@@ -1396,7 +1422,9 @@ sysbench --test=fileio --file-total-size=4G cleanup
 #MEMROY
 sysbench --test=memory --memory-block-size=1K --memory-scope=global --memory-total-size=100G --memory-oper=read run
 sysbench --test=memory --memory-block-size=1K --memory-scope=global --memory-total-size=100G --memory-oper=write run
-</code></pre>
+</pre></div>
+
+
 <h4 id="references">References:</h4>
 <ul>
 <li>https://www.howtoforge.com/how-to-benchmark-your-system-cpu-file-io-mysql-with-sysbench</li>

@@ -1240,23 +1240,31 @@
                   <h1>Cleanup</h1>
                 
                 <h2 id="remove-unnecessary-packages-and-dependencies">Remove Unnecessary Packages and Dependencies</h2>
-<pre><code>sudo apt-get autoremove
-</code></pre>
+<div class="codehilite"><pre><span></span>sudo apt-get autoremove
+</pre></div>
+
+
 <h2 id="cleanup-thumnail-cache">Cleanup Thumnail cache</h2>
-<pre><code>du -sh ~/.cache/thumbnails
+<div class="codehilite"><pre><span></span>du -sh ~/.cache/thumbnails
 sudo rm -rf ~/.cache/thumbnails/*
-</code></pre>
+</pre></div>
+
+
 <h2 id="remove-old-kernels">Remove Old Kernels</h2>
-<pre><code>sudo dpkg --list 'linux-image*'
+<div class="codehilite"><pre><span></span>sudo dpkg --list &#39;linux-image*&#39;
 sudo apt-get remove linux-image-VERSION
-</code></pre>
+</pre></div>
+
+
 <h2 id="clean-apt-cache">Clean Apt Cache</h2>
-<pre><code>sudo du -sh /var/cache/apt
+<div class="codehilite"><pre><span></span>sudo du -sh /var/cache/apt
 sudo apt-get clean
-</code></pre>
+</pre></div>
+
+
 <h2 id="gtkorphan-orphaned-packages-gui-support">GtkOrphan (orphaned packages) - GUI support</h2>
-<pre><code>sudo apt-get install gtkorphan
-</code></pre>
+<div class="codehilite"><pre><span></span>sudo apt-get install gtkorphan
+</pre></div>
                 
                   
                 

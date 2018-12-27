@@ -1144,63 +1144,95 @@
                 
                 <h1 id="bash-pro-tips">Bash Pro Tips</h1>
 <p>Codes are available at <a href="https://gist.github.com/towshif/bba124a507d1f7513118977c7dd591ae">this gist</a></p>
-<pre><code>curl https://gist.githubusercontent.com/towshif/bba124a507d1f7513118977c7dd591ae/raw/22f26f731f0349c2b0fcd170dc33eca93e3c561e/bash-aliases.sh &gt;&gt; ~/.bashrc
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nt">curl</span> <span class="nt">https</span><span class="o">://</span><span class="nt">gist</span><span class="p">.</span><span class="nc">githubusercontent</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span><span class="nt">towshif</span><span class="o">/</span><span class="nt">bba124a507d1f7513118977c7dd591ae</span><span class="o">/</span><span class="nt">raw</span><span class="o">/</span><span class="nt">22f26f731f0349c2b0fcd170dc33eca93e3c561e</span><span class="o">/</span><span class="nt">bash-aliases</span><span class="p">.</span><span class="nc">sh</span> <span class="o">&amp;</span><span class="nt">gt</span><span class="o">;&amp;</span><span class="nt">gt</span><span class="o">;</span> <span class="o">~/</span><span class="p">.</span><span class="nc">bashrc</span>
+</pre></div>
+
+
 <h1 id="system-aliases">System Aliases</h1>
 <p>How about some of our monitoring and system stats commands? I call these with the same options every time, so I might as well make some aliases.</p>
 <p>This one will list our disk usage in human-readable units including filesystem type, and print a total at the bottom:</p>
-<pre><code>alias df="df -Tha --total"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias df=&quot;df -Tha --total&quot;
+</pre></div>
+
+
 <p>We might as well add an alias for our preferred du output as well:</p>
-<pre><code>alias du="du -ach | sort -h"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias du=&quot;du -ach | sort -h&quot;
+</pre></div>
+
+
 <p>Let's keep going in the same direction by making our free output more human friendly:</p>
-<pre><code>alias free="free -mht"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias free=&quot;free -mht&quot;
+</pre></div>
+
+
 <p>We can do a lot with our listing process table. Let's start out by setting a default output:</p>
-<pre><code>alias ps="ps auxf"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias ps=&quot;ps auxf&quot;
+</pre></div>
+
+
 <p>How about we make our process table searchable. We can create an alias that searches our process for an argument we'll pass:</p>
-<pre><code>alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias psg=&quot;ps aux | grep -v grep | grep -i -e VSZ -e&quot;
+</pre></div>
+
+
 <p>Now, when we call it with the process name we're looking for as an argument, we'll get a nice, compact output:</p>
-<pre><code>psg bash
+<div class="codehilite"><pre><span></span>psg bash
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 1001      5227  0.0  0.0  26320  3376 pts/0    Ss   16:29   0:00 bash
-</code></pre>
+</pre></div>
+
+
 <h1 id="miscellaneous-aliases">Miscellaneous Aliases</h1>
 <p>One common option to the mkdir command that we use often is the -p flag to make any necessary parent directories. We can make this the default:</p>
-<pre><code>alias mkdir="mkdir -p"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias mkdir=&quot;mkdir -p&quot;
+</pre></div>
+
+
 <p>We might want to add a -v flag on top of that so we are told of every directory creation, which can help us recognize quickly if we had a typo which caused an accidental directory branch:</p>
-<pre><code>alias mkdir="mkdir -pv"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias mkdir=&quot;mkdir -pv&quot;
+</pre></div>
+
+
 <p>When downloading files from the internet with wget, in almost all circumstances, you'll want to pass the -c flag in order to continue the download in case of problems. We can set that with this:</p>
-<pre><code>alias wget="wget -c"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias wget=&quot;wget -c&quot;
+</pre></div>
+
+
 <p>We can search our history easily like with a grep of the history command's output. This is sometimes more useful than using CTRL-R to reverse search because it gives you the command number to do more complex recalls afterwards:</p>
-<pre><code>alias histg="history | grep"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias histg=&quot;history | grep&quot;
+</pre></div>
+
+
 <p>I have a few system tools that I prefer to upgrade from the standard version to more complex tools. These will only work if you've downloaded the required utilities, but they can be very helpful. Keep in mind that these may affect your other aliases.</p>
 <p>This one replaces the conventional top command with an enhanced version that is much easier on the eyes and can be sorted, searched, and scrolled without complications:</p>
-<pre><code>alias top="htop"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias top=&quot;htop&quot;
+</pre></div>
+
+
 <p>In a similar way, the ncdu command can be downloaded which presents file and directory sizes in an interactive ncurses display that you can browse and use to perform simple file actions:</p>
-<pre><code>alias du="ncdu"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias du=&quot;ncdu&quot;
+</pre></div>
+
+
 <p>There's an upgraded utility for df as well that's called pydf. It provides colorized output and text-based usage bars. We can default to using this utility if we have it:</p>
-<pre><code>alias df="pydf"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias df=&quot;pydf&quot;
+</pre></div>
+
+
 <p>Have you ever needed your public IP address from the command line when you're behind a router using NAT? Something like this could be useful:</p>
-<pre><code>alias myip="curl http://ipecho.net/plain; echo"
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nt">alias</span> <span class="nt">myip</span><span class="o">=</span><span class="s2">&quot;curl http://ipecho.net/plain; echo&quot;</span>
+</pre></div>
+
+
 <p>For my own purposes, I like to optimize the images I upload for articles to be 690px or less, so I use the ImageMagick package (sudo apt-get install imagemagick if not already available) which contains a command called mogrify that does just this. I have this command in my ~/.bashrc file:</p>
-<pre><code>alias webify="mogrify -resize 690\&gt; *.png"
-</code></pre>
+<div class="codehilite"><pre><span></span>alias webify=&quot;mogrify -resize 690\&amp;gt; *.png&quot;
+</pre></div>
+
+
 <p>This will resize all of the PNG images in the current directory, only if they are wider than 690px.</p>
 <p>If I then have to upload them to a server, I can use sftp to connect and automatically change to a specific directory:</p>
-<pre><code>alias upload="sftp username@server.com:/path/to/upload/directory
-</code></pre>
+<div class="codehilite"><pre><span></span>alias upload=&quot;sftp username@server.com:/path/to/upload/directory
+</pre></div>
                 
                   
                 
