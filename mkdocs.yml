@@ -1,7 +1,8 @@
-site_name: Data Service  Web Portal
+site_name: Less-Than-10 Tutorials (<10)
 theme: #readthedocs
     name: 'material'
-site_url: https://data.towshif.com
+site_url: https://towshif.github.io
+
 
 
       
