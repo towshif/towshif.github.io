@@ -33,23 +33,26 @@ This is an outline of basic format of an `html` source
     </html>
 
 
-There are a lot more html elements that have custom use and are contained in the `body` tag, however in this tutorial we will cover on a few of them. The elements are referred to as html `tags`. Tags are basically containers of text or instructions with a specific purpose defining the behaviour of the element.
+There are a lot more html elements that have custom use and are contained in the `body` tag, however in this tutorial we will cover only a few of them. The elements are referred to as html `tags`. Tags are basically containers of text or instructions with a specific purpose defining the behaviour of the element.
 
-Some examples of common html elements: 
+Some common html elements are: 
 
 * `<p>` tag - paragraph 
-* `<h1>, <h2>, <h3>` tag - headers of differnt font size; 1 being highest and large the number smaller the font 
-* `a` tag - this is a link tag that often contains a `href` link. We usually see them as clickable links on a webpage 
-* `img` tag - this tag contains a image that we want to display on our webpage. It also contains a `src` source link to the image file or URL. Usage Syntax:
+* `<h1>, <h2>, <h3>` tag - headers of different font size; 1 being largets and then bigger the h-number smaller the font 
+* `a` tag - this is a link tag that often contains a `href` link. We usually see them as clickable links on a webpage. Usage Syntax:
     
         <a href="URL"> DISPLAY-TEXT </a>
 
         where URL is the link and DISPLAY-TEXT is what gets displayed on the page which can be clicked.
-    
-Note: a tag once opened must closed to resemble a valid HTML code. 
+
+* `img` tag - this tag contains a image that we want to display on our webpage. It  contains a `src` source link to the image file or URL. Usage syntax: 
+
+        <img src="http://IMAGE_URL"  ..styles..text...etc... >
+
+Note: a tag once opened must be closed to resemble a valid HTML code. 
 Eg. a paragraph tag starts with `<p>` and must end with `</p>`. This is true for all elements of html.
 
-Now that we have a basic overview of `HTML` lets dive into some coding. We will create a basic webpage and host this page on *github pages*. 
+Now that we have a basic understanding of `HTML` lets dive into some coding. We will create a basic webpage and host this page on *github pages*. 
 
 
 ---
