@@ -18,11 +18,12 @@
         cd Project101
 
 2.  Now that we have setup the repo locally, let us write some code in `C`.
+    
     Create a file `helloworld.c`
         
     ```C    
     #include <stdio.h>
-
+    
     int main () {
         printf("Hello World from Unix\n");
         return 0;
