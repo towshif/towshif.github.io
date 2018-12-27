@@ -89,8 +89,8 @@ Lets get started
     
     A `<a>` link tag has 2 main items. 
     
-    1. the `href=` link and 
-    2. the display text. Examples below
+    * the `href=` link and 
+    * the display text. Examples below
 
     Here the "site/about" is the link and "About" is the display text. 
         

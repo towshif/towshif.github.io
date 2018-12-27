@@ -1146,7 +1146,7 @@ cd Project101
 </code></pre>
 </li>
 <li>
-<p>Now that we have set this up lest write some code.</p>
+<p>Now that we have setup the repo locally, let us write some code in <code>C</code>.</p>
 <p>Create a file <code>helloworld.c</code></p>
 <pre><code>#include &lt;stdio.h&gt;
 
@@ -1163,7 +1163,7 @@ int main () {
 <pre><code>./a.out
 Hello World from Unix
 </code></pre>
-<p>Now lets write a helloworld program in python. </p>
+<p>Lets write a helloworld program in <code>python</code>. </p>
 <p>Create a new file <code>helloworld.py</code>, open it in nano editor and write the following single line of python code. </p>
 <pre><code>print ("Hello World from Unix.")
 </code></pre>
@@ -1191,7 +1191,7 @@ git pull
 </li>
 <li>
 <p>Lets get back to the terminal/ shell that we were using and make changes into these two files. </p>
-<p>we will create an <code>addme()</code> function in each of the <code>helloworld.c</code> and <code>hellowold.py</code> files as follows. The purpose of this function is to add two integers and then we want to print the sum as output from the code.</p>
+<p>We will create an <code>addme()</code> function in each of the <code>helloworld.c</code> and <code>hellowold.py</code> files as follows. The purpose of this function is to add two integers and then we want to print the sum as output from the code.</p>
 <pre><code>#include &lt;stdio.h&gt;
 
 int addme (int a, int b) {
@@ -1210,14 +1210,15 @@ int main () {
 Hello World from Unix. I am KrazyCoder.
 I added: 5 + 7 = 12
 </code></pre>
-<p>Now lets wriet the same function <code>addme</code> in python file <code>helloworld.py</code> as follows </p>
+<p>Now lets write the same function <code>addme()</code> in python inside <code>helloworld.py</code> as follows </p>
 <pre><code>def addme (a, b):
     return (a+b)
 
 print ("Hello World from Unix. I am KrazyCoder")
 print ("I added: 5 + 7 = ", addme(5,7))
 </code></pre>
-<p>Run the python file </p>
+<p>Note Python has a simpler syntax. No need for <code>;</code> and variable declaration like <code>int</code> string etc. </p>
+<p>Lets run the python file </p>
 <pre><code>python helloworld.py 
 Hello World from Unix. I am KrazyCoder
 ('I added: 5 + 7 = ', 12)

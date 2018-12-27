@@ -17,7 +17,7 @@
         # cd into this git project dir 
         cd Project101
 
-2. Now that we have set this up lest write some code.
+2. Now that we have setup the repo locally, let us write some code in `C`.
     
     Create a file `helloworld.c`
         
@@ -37,7 +37,7 @@
         ./a.out
         Hello World from Unix
 
-    Now lets write a helloworld program in python. 
+    Lets write a helloworld program in `python`. 
     
     Create a new file `helloworld.py`, open it in nano editor and write the following single line of python code. 
 
@@ -65,7 +65,7 @@
 
 5. Lets get back to the terminal/ shell that we were using and make changes into these two files. 
 
-    we will create an `addme()` function in each of the `helloworld.c` and `hellowold.py` files as follows. The purpose of this function is to add two integers and then we want to print the sum as output from the code.
+    We will create an `addme()` function in each of the `helloworld.c` and `hellowold.py` files as follows. The purpose of this function is to add two integers and then we want to print the sum as output from the code.
 
         #include <stdio.h>
         
@@ -88,15 +88,17 @@
         I added: 5 + 7 = 12
 
 
-    Now lets wriet the same function `addme` in python file `helloworld.py` as follows 
+    Now lets write the same function `addme()` in python inside `helloworld.py` as follows 
 
         def addme (a, b):
             return (a+b)
 
         print ("Hello World from Unix. I am KrazyCoder")
         print ("I added: 5 + 7 = ", addme(5,7))
-        
-    Run the python file 
+    
+    Note Python has a simpler syntax. No need for `;` and variable declaration like `int` string etc. 
+
+    Lets run the python file 
         
         python helloworld.py 
         Hello World from Unix. I am KrazyCoder
