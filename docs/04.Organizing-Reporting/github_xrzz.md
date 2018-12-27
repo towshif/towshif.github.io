@@ -96,7 +96,7 @@
         print ("Hello World from Unix. I am KrazyCoder")
         print ("I added: 5 + 7 = ", addme(5,7))
     
-    Note Python has a simpler syntax. No need for `;` and variable declaration like `int` string etc. 
+    Note Python has a simpler syntax; it does not need for `;` at line endinngs and variable declaration like `int`, `string`, `float` etc. 
 
     Lets run the python file 
         
@@ -114,4 +114,4 @@
         git push 
         # you will be asked for github username and password. 
 
-    Visualize the changes on github.com. 
+    Visualize the changes in your repo at github.com. 
