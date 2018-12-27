@@ -38,7 +38,7 @@
     
     
       
-        <title>Exercise: Create webpage on Github.io - Data Service  Web Portal</title>
+        <title>Exercise: Create a webpage on Github.io - Data Service  Web Portal</title>
       
     
     
@@ -74,7 +74,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#exercise-create-webpage-on-githubio" tabindex="1" class="md-skip">
+      <a href="#exercise-create-a-webpage-on-githubio" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -100,7 +100,7 @@
                 Data Service  Web Portal
               </span>
               <span class="md-header-nav__topic">
-                Exercise: Create webpage on Github.io
+                Exercise: Create a webpage on Github.io
               </span>
             
           
@@ -608,9 +608,45 @@
       
     
     
-    <a href="./" title="Exercise: Create webpage on Github.io" class="md-nav__link md-nav__link--active">
-      Exercise: Create webpage on Github.io
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Exercise: Create a webpage on Github.io
+      </label>
+    
+    <a href="./" title="Exercise: Create a webpage on Github.io" class="md-nav__link md-nav__link--active">
+      Exercise: Create a webpage on Github.io
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement-what-do-we-want-to-achieve" title="Problem statement: What do we want to achieve ?" class="md-nav__link">
+    Problem statement: What do we want to achieve ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced" title="Advanced" class="md-nav__link">
+    Advanced
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1117,6 +1153,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement-what-do-we-want-to-achieve" title="Problem statement: What do we want to achieve ?" class="md-nav__link">
+    Problem statement: What do we want to achieve ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced" title="Advanced" class="md-nav__link">
+    Advanced
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1128,14 +1187,19 @@
               
                 
                 
-                <h1 id="exercise-create-webpage-on-githubio">Exercise: Create webpage on Github.io</h1>
+                <h1 id="exercise-create-a-webpage-on-githubio">Exercise: Create a webpage on Github.io</h1>
 <p>In the previous tutorial we already hosted a simple index.html file with "Hello World" text. We will further develop on this repository and create a better webpage for you bio. </p>
+<h2 id="problem-statement-what-do-we-want-to-achieve">Problem statement: What do we want to achieve ?</h2>
 <p>This is the <a href="https://towshif.github.io/">bio page</a> we will try to mimic. As you can see there are a few components we want to update first.</p>
 <ul>
 <li>profile images  </li>
 <li>Bio text </li>
 </ul>
-<p>The sample html file for this page is available here https://raw.githubusercontent.com/towshif/towshif.github.io/master/docs/Samples/sample_index.html</p>
+<p>Lets get started </p>
+<ol>
+<li>
+<p>Download the sample <code>index.html</code> file 
+    The sample html file for this page is available here <a href="https://raw.githubusercontent.com/towshif/towshif.github.io/master/docs/Samples/sample_index.html">https://raw.githubusercontent.com/towshif/towshif.github.io/master/docs/Samples/sample_index.html</a></p>
 <p>To download this file we will fire command <code>wget</code></p>
 <pre><code># cd to your local repo directory 
 cd username.github.io
@@ -1152,7 +1216,61 @@ mv sample_index.html index.html
 # check if all went well 
 ls
 </code></pre>
-<p>Now we are ready to modify this file and update the images, Bio text and email addresses. </p>
+</li>
+<li>
+<p>Update <code>index.html</code> with your image, text and email
+    Now we are ready to modify this file and update the images, Bio text and email addresses.</p>
+<p>To change image first find an image you want to put. Easiest was it to go to your linkedin profile and open your profile image in new tab. Copy the image URL from browser address bar and then paste it in the HTML. 
+There two tags in the <code>index.html</code> file with the text <code>[YOUR_MEDIA_IMAGE_LINK]</code> wrapped within a <code>&lt;img&gt;</code> tag. Example below. </p>
+<pre><code>&lt;img src="[YOUR_MEDIA_IMAGE_LINK]" alt="my face" class="Introduction-image u-photo"&gt; &lt;/div&gt;
+</code></pre>
+<p>replace this text <code>[YOUR_MEDIA_IMAGE_LINK]</code> with the profile image link from linkedin. Alternatively you can find some other image from some hosting platform like facebook, google+ etc. Just make sure the image is publicly available.</p>
+<p>Similarly update the email id by replacing text in <code>[YOUR_EMAIL]@gmail.com]</code>. There are a total of 4 occurrences of this tags</p>
+<pre><code> &lt;a href="mailto:[YOUR_EMAIL]@gmail.com" class="u-email"&gt;[YOUR_EMAIL]@gmail.com&lt;/a&gt;
+</code></pre>
+<p>Finally update your bio text that are contained here</p>
+<pre><code>&lt;h1&gt;
+    Hi, I'm &lt;a href="#" class="u-url u-uid p-name"&gt;Konfuzed Banda&lt;/a&gt; &lt;/h1&gt;
+&lt;p&gt; I'm the CTO and one of the Co-Founders at A Company. I like things on Github as well. &lt;/p&gt;
+&lt;p&gt;
+</code></pre>
+</li>
+<li>
+<p>Sync this with github.io repo. </p>
+<pre><code>git add --all 
+git commit --all 
+# write a commit message
+
+# now sync these updates with github repo 
+git push
+</code></pre>
+<p>We are all set to view our bio page at https://username.github.io with updated picture and information. </p>
+</li>
+</ol>
+<h2 id="advanced">Advanced</h2>
+<ol>
+<li>
+<p>Update the social <code>links</code> for Instagram, Linkedin, GitHub with your own links by replacing the <code>#</code> in the <code>&lt;href&gt;</code> tags </p>
+<pre><code>&lt;li class="SocialList-item"&gt;&lt;a href="#" rel="me"&gt;LinkedIn&lt;/a&gt; &lt;/li&gt;
+&lt;li class="SocialList-item"&gt; &lt;a href="#" rel="me"&gt;Instagram&lt;/a&gt; &lt;/li&gt;
+&lt;li class="SocialList-item"&gt; &lt;a href="#" rel="me"&gt;GitHub&lt;/a&gt; &lt;/li&gt;
+</code></pre>
+</li>
+<li>
+<p>Update the <code>navigation links</code> on top right in the same way. Replace the text or <code>#</code> in the <code>&lt;href&gt;</code> tags with approproate links to your pages. </p>
+<pre><code>&lt;li class="Navigation-listItem"&gt;
+    &lt;a href="site/about" class="Navigation-link"&gt;About&lt;/a&gt; &lt;/li&gt;
+&lt;li class="Navigation-listItem"&gt;
+    &lt;a href="#" class="Navigation-link"&gt;Articles&lt;/a&gt; &lt;/li&gt;
+&lt;li class="Navigation-listItem"&gt; 
+    &lt;a href="#" class="Navigation-link"&gt;Notes&lt;/a&gt; &lt;/li&gt;
+&lt;li class="Navigation-listItem"&gt;
+    &lt;a href="#" class="Navigation-link"&gt;Bookmarks&lt;/a&gt; &lt;/li&gt;
+&lt;li class="Navigation-listItem"&gt; 
+    &lt;a href="#" class="Navigation-link"&gt;Contact&lt;/a&gt; &lt;/li&gt;
+</code></pre>
+</li>
+</ol>
                 
                   
                 
