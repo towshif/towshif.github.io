@@ -41,7 +41,7 @@
     
     Create a new file `helloworld.py`, open it in nano editor and write the following single line of python code. 
 
-        print ("Hello World from Unix.)
+        print ("Hello World from Unix.")
 
     There is not compilation step in python since it is an interpreter based language like `sh`, `bash`, `perl` scripts. Where as `C`, `Java`, `C#` are compiled languages and needs a compiler to convert them into binary. To run this python program. 
     
