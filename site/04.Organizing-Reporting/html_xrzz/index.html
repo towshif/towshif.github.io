@@ -1135,9 +1135,24 @@
 <li>profile images  </li>
 <li>Bio text </li>
 </ul>
-<p>The sample html file for this page is available here </p>
-<pre><code>cd username.github.io
+<p>The sample html file for this page is available here https://raw.githubusercontent.com/towshif/towshif.github.io/master/docs/Samples/sample_index.html</p>
+<p>To download this file we will fire command <code>wget</code></p>
+<pre><code># cd to your local repo directory 
+cd username.github.io
+
+# download the file from link using wget 
+wget https://raw.githubusercontent.com/towshif/towshif.github.io/master/docs/Samples/sample_index.html
 </code></pre>
+<p>This will download this <code>sample_index.html</code> file to you current directory. Now we want to make this our <code>index.html</code>. </p>
+<pre><code># delete existing index.html 
+rm index.html
+
+mv sample_index.html index.html
+
+# check if all went well 
+ls
+</code></pre>
+<p>Now we are ready to modify this file and update the images, Bio text and email addresses. </p>
                 
                   
                 
