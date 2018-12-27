@@ -140,3 +140,17 @@ To enable CodeHilite, add the following lines to your mkdocs.yml:
 
     markdown_extensions:
     - codehilite
+
+
+
+## Adding Latex Support 
+
+if using mkdocs need to add `extra_javascript` tags in config file mkdocs.yml
+
+    site_name: My Humble Website
+    theme:
+        name: material       #readthedocs
+        highlightjs: true
+
+    extra_javascript:
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'

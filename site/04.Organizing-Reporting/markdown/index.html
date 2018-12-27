@@ -1482,6 +1482,16 @@ like <a href="http://another.url" title="A funky title">this</a>.</p>
 <pre><code>markdown_extensions:
 - codehilite
 </code></pre>
+<h2 id="adding-latex-support">Adding Latex Support</h2>
+<p>if using mkdocs need to add <code>extra_javascript</code> tags in config file mkdocs.yml</p>
+<pre><code>site_name: My Humble Website
+theme:
+    name: material       #readthedocs
+    highlightjs: true
+
+extra_javascript:
+- 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+</code></pre>
                 
                   
                 

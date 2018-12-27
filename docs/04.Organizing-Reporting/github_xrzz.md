@@ -17,37 +17,39 @@
         # cd into this git project dir 
         cd Project101
 
-2. Now that we have setup the repo locally, let us write some code in `C`.
-    
+2.  Now that we have setup the repo locally, let us write some code in `C`.
     Create a file `helloworld.c`
         
-        #include <stdio.h>
-        
-        int main () {
-            printf("Hello World from Unix\n");
-            return 0;
-        }
+    ```C    
+    #include <stdio.h>
+
+    int main () {
+        printf("Hello World from Unix\n");
+        return 0;
+    }
+    ```
+
     Now compile and run it 
 
         cc helloworld.c
     This will generate the compiled binary `a.out`. Run `ls` command to check if this file exists. 
-    
+
     To run the compiled binary 
 
         ./a.out
         Hello World from Unix
 
     Lets write a helloworld program in `python`. 
-    
+
     Create a new file `helloworld.py`, open it in nano editor and write the following single line of python code. 
 
         print ("Hello World from Unix.")
 
     There is not compilation step in python since it is an interpreter based language like `sh`, `bash`, `perl` scripts. Where as `C`, `Java`, `C#` are compiled languages and needs a compiler to convert them into binary. To run this python program. 
-    
+
         python helloworld.py
         Hello World from Unix
-        
+    
 3. Now that we have this code we want to sync this with github. So we need to go to the `projects1` root directory and then run git add, commit and push 
 
         git add --all 
