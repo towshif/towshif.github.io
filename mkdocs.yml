@@ -1,7 +1,7 @@
 site_name: Less-Than-10 Tutorials (<10)
 
 theme: 
-    name: readthedocs # material
+    name: material  #readthedocs # material
     highlightjs: true  # only for readthedocs
 
 
