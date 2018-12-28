@@ -1,1365 +1,431 @@
-
-
-
-
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-      
-        <link rel="canonical" href="https://towshif.github.io/tutorials/Linux Shell/bash-cheat-sheet/">
-      
-      
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
-    
-    
-      
-        <title>Bash Script Cheat Sheet - Less-Than-10 Tutorials (<10)</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
-      
-      
-    
-    
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
-    
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
-      
-    
-    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
-    
-    
-    
-  </head>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Bash Script Cheat Sheet - Less-Than-10 Tutorials (<10)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Bash Script Cheat Sheet";
+    var mkdocs_page_input_path = "tutorials/Linux Shell/bash-cheat-sheet.md";
+    var mkdocs_page_url = "/tutorials/Linux Shell/bash-cheat-sheet/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
     
-      <a href="#bash-script-cheat-sheet" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon"></i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            
-              <span class="md-header-nav__topic">
-                Less-Than-10 Tutorials (<10)
-              </span>
-              <span class="md-header-nav__topic">
-                Bash Script Cheat Sheet
-              </span>
-            
-          
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Less-Than-10 Tutorials (<10)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
 </div>
-          
-        
       </div>
-      
-    </div>
-  </nav>
-</header>
-    
-    <div class="md-container">
-      
-        
-      
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-nav__button md-logo">
-      
-        <i class="md-icon"></i>
-      
-    </a>
-    Less-Than-10 Tutorials (<10)
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../.." title="Instructions" class="md-nav__link">
-      Instructions
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../gettingStarted/" title="Getting Started" class="md-nav__link">
-      Getting Started
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      00.Remote Access
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        00.Remote Access
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../00.Remote-Access/scp/" title="scp - Secure Copy in 10 mins" class="md-nav__link">
-      scp - Secure Copy in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../00.Remote-Access/ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
-      ssh - Secure Shell in 10 mins
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      01.UNIX Tutorial
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        01.UNIX Tutorial
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/shell/" title="UNIX Shell in 10 mins" class="md-nav__link">
-      UNIX Shell in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/unix-cheat-sheet/" title="UNIX Shell Cheat Sheet" class="md-nav__link">
-      UNIX Shell Cheat Sheet
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
-    
-    <label class="md-nav__link" for="nav-4-3">
-      Unix Tutorial
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
-      <label class="md-nav__title" for="nav-4-3">
-        Unix Tutorial
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/" title="Contents: UNIX Tutorial for Beginners" class="md-nav__link">
-      Contents: UNIX Tutorial for Beginners
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/introunix/" title="Introduction to UNIX" class="md-nav__link">
-      Introduction to UNIX
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix0/" title="UNIX Tutorial" class="md-nav__link">
-      UNIX Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix1/" title="1. UNIX Tutorial One" class="md-nav__link">
-      1. UNIX Tutorial One
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix2/" title="2. UNIX Tutorial Two" class="md-nav__link">
-      2. UNIX Tutorial Two
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix3/" title="3. UNIX Tutorial Three" class="md-nav__link">
-      3. UNIX Tutorial Three
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix4/" title="4. UNIX Tutorial Four" class="md-nav__link">
-      4. UNIX Tutorial Four
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix5/" title="5. UNIX Tutorial Five" class="md-nav__link">
-      5. UNIX Tutorial Five
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix6/" title="6. UNIX Tutorial Six" class="md-nav__link">
-      6. UNIX Tutorial Six
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix7/" title="7. UNIX Tutorial Seven" class="md-nav__link">
-      7. UNIX Tutorial Seven
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix8/" title="8. UNIX Tutorial Eight" class="md-nav__link">
-      8. UNIX Tutorial Eight
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix99answer/" title="7. Answers" class="md-nav__link">
-      7. Answers
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      02.Editors
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        02.Editors
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../02.Editors/nano/" title="Getting started with `Nano`" class="md-nav__link">
-      Getting started with `Nano`
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      03.Web Interaction
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        03.Web Interaction
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../03.Web-Interaction/Unix-Basic-NetworkAccess/" title="Basic Networking from shell" class="md-nav__link">
-      Basic Networking from shell
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../03.Web-Interaction/Unix-Networking/" title="More on Networking" class="md-nav__link">
-      More on Networking
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      04.Organizing Reporting
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        04.Organizing Reporting
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/github/" title="Git and Github" class="md-nav__link">
-      Git and Github
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/github_xrzz/" title="Exercise: Git and Github" class="md-nav__link">
-      Exercise: Git and Github
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/html/" title="Creating a Webpage with Github.io" class="md-nav__link">
-      Creating a Webpage with Github.io
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/html_xrzz/" title="Exercise: Create a webpage on Github.io" class="md-nav__link">
-      Exercise: Create a webpage on Github.io
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/linux-google-cloud/" title="Setting up Google Cloud Console" class="md-nav__link">
-      Setting up Google Cloud Console
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/markdown/" title="Markdown (.md)  in 10 mins" class="md-nav__link">
-      Markdown (.md)  in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/publishing-markdown/" title="Publishing Markdown Documents" class="md-nav__link">
-      Publishing Markdown Documents
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
-    
-    <label class="md-nav__link" for="nav-8">
-      99.Projects
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        99.Projects
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../99.Projects/Assignment-01/" title="Assignment 1: Project" class="md-nav__link">
-      Assignment 1: Project
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
-    
-    <label class="md-nav__link" for="nav-9">
-      Others
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        Others
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Others/RollingUpdates/" title="RollingUpdates" class="md-nav__link">
-      RollingUpdates
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
-    
-    <label class="md-nav__link" for="nav-10">
-      WorkInProgress
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
-        WorkInProgress
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../WorkInProgress/University-List-Detailed/" title="US University Ranking 2019 (Detailed List)" class="md-nav__link">
-      US University Ranking 2019 (Detailed List)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../WorkInProgress/University-List/" title="Top 200 US University Rankings 2019" class="md-nav__link">
-      Top 200 US University Rankings 2019
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../WorkInProgress/about/" title="About" class="md-nav__link">
-      About
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
-    
-    <label class="md-nav__link" for="nav-11">
-      Tutorials
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
-        Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../" title="Getting Started with Tutorials" class="md-nav__link">
-      Getting Started with Tutorials
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Helper/" title="Insert Multiple Cursors at the Start of Every Line with VSCode" class="md-nav__link">
-      Insert Multiple Cursors at the Start of Every Line with VSCode
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-3" type="checkbox" id="nav-11-3">
-    
-    <label class="md-nav__link" for="nav-11-3">
-      Intro
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
-      <label class="md-nav__title" for="nav-11-3">
-        Intro
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Intro/mkdocs/" title="Markdown documentation with MkDocs and Themes" class="md-nav__link">
-      Markdown documentation with MkDocs and Themes
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-4" type="checkbox" id="nav-11-4" checked>
-    
-    <label class="md-nav__link" for="nav-11-4">
-      Linux Shell
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="5">
-      <label class="md-nav__title" for="nav-11-4">
-        Linux Shell
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../bash-alias/" title="Bash Pro Tips" class="md-nav__link">
-      Bash Pro Tips
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Bash Script Cheat Sheet
-      </label>
-    
-    <a href="./" title="Bash Script Cheat Sheet" class="md-nav__link md-nav__link--active">
-      Bash Script Cheat Sheet
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-bash-basics" title="1. Bash Basics." class="md-nav__link">
-    1. Bash Basics.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-file-commands" title="1.1. File Commands." class="md-nav__link">
-    1.1. File Commands.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-directory-commands" title="1.2. Directory Commands." class="md-nav__link">
-    1.2. Directory Commands.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#13-ssh-system-info-network-commands" title="1.3. SSH, System Info &amp; Network Commands." class="md-nav__link">
-    1.3. SSH, System Info &amp; Network Commands.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-basic-shell-programming" title="2. Basic Shell Programming." class="md-nav__link">
-    2. Basic Shell Programming.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#21-variables" title="2.1. Variables." class="md-nav__link">
-    2.1. Variables.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#22-functions" title="2.2. Functions." class="md-nav__link">
-    2.2. Functions.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#23-flow-control" title="2.3. Flow Control." class="md-nav__link">
-    2.3. Flow Control.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-command-line-processing-cycle" title="3. Command-Line Processing Cycle." class="md-nav__link">
-    3. Command-Line Processing Cycle.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-inputoutput-redirectors" title="4. Input/Output Redirectors." class="md-nav__link">
-    4. Input/Output Redirectors.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-process-handling" title="5. Process Handling." class="md-nav__link">
-    5. Process Handling.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-tips-and-tricks" title="6. Tips and Tricks." class="md-nav__link">
-    6. Tips and Tricks.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-debugging-shell-programs" title="7. Debugging Shell Programs." class="md-nav__link">
-    7. Debugging Shell Programs.
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../benchmark-linux/" title="Sysbench tool for benchmarking" class="md-nav__link">
-      Sysbench tool for benchmarking
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../cleanup/" title="Cleanup" class="md-nav__link">
-      Cleanup
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../nano/" title="Getting started with `Nano`" class="md-nav__link">
-      Getting started with `Nano`
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../permissions/" title="Setting Default permissions for Directory with user groups" class="md-nav__link">
-      Setting Default permissions for Directory with user groups
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../reference/" title="References" class="md-nav__link">
-      References
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../rough/" title="Rough" class="md-nav__link">
-      Rough
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../shell-advanced-1/" title="Unix Shell Advanced" class="md-nav__link">
-      Unix Shell Advanced
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../shell/" title="Unix Shell in 10 mins" class="md-nav__link">
-      Unix Shell in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
-      ssh - Secure Shell in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tmux/" title="tmux in 10 mins" class="md-nav__link">
-      tmux in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../vim/" title="Vim in 10 mins" class="md-nav__link">
-      Vim in 10 mins
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-5" type="checkbox" id="nav-11-5">
-    
-    <label class="md-nav__link" for="nav-11-5">
-      Python
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="6">
-      <label class="md-nav__title" for="nav-11-5">
-        Python
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Python/Todo/" title="Python For Engineers and Professionals" class="md-nav__link">
-      Python For Engineers and Professionals
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Python/python-cheat-sheet/" title="Newbies" class="md-nav__link">
-      Newbies
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Python/setup-Jupyter/" title="How to Setup Jupyter Notebook Server as a daemon service" class="md-nav__link">
-      How to Setup Jupyter Notebook Server as a daemon service
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
 
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Instructions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../gettingStarted/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">00.Remote Access</span>
+    <ul class="subnav">
+                <li class="">
                     
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-bash-basics" title="1. Bash Basics." class="md-nav__link">
-    1. Bash Basics.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-file-commands" title="1.1. File Commands." class="md-nav__link">
-    1.1. File Commands.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-directory-commands" title="1.2. Directory Commands." class="md-nav__link">
-    1.2. Directory Commands.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#13-ssh-system-info-network-commands" title="1.3. SSH, System Info &amp; Network Commands." class="md-nav__link">
-    1.3. SSH, System Info &amp; Network Commands.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-basic-shell-programming" title="2. Basic Shell Programming." class="md-nav__link">
-    2. Basic Shell Programming.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#21-variables" title="2.1. Variables." class="md-nav__link">
-    2.1. Variables.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#22-functions" title="2.2. Functions." class="md-nav__link">
-    2.2. Functions.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#23-flow-control" title="2.3. Flow Control." class="md-nav__link">
-    2.3. Flow Control.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-command-line-processing-cycle" title="3. Command-Line Processing Cycle." class="md-nav__link">
-    3. Command-Line Processing Cycle.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-inputoutput-redirectors" title="4. Input/Output Redirectors." class="md-nav__link">
-    4. Input/Output Redirectors.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-process-handling" title="5. Process Handling." class="md-nav__link">
-    5. Process Handling.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-tips-and-tricks" title="6. Tips and Tricks." class="md-nav__link">
-    6. Tips and Tricks.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-debugging-shell-programs" title="7. Debugging Shell Programs." class="md-nav__link">
-    7. Debugging Shell Programs.
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
+    <a class="" href="../../../00.Remote-Access/scp/">scp - Secure Copy in 10 mins</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../00.Remote-Access/ssh/">ssh - Secure Shell in 10 mins</a>
+                </li>
     </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
+	    </li>
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
+            <li class="toctree-l1">
+		
+    <span class="caption-text">01.UNIX Tutorial</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/shell/">UNIX Shell in 10 mins</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/unix-cheat-sheet/">UNIX Shell Cheat Sheet</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unix Tutorial</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/">Contents: UNIX Tutorial for Beginners</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/introunix/">Introduction to UNIX</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix0/">UNIX Tutorial</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix1/">1. UNIX Tutorial One</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix2/">2. UNIX Tutorial Two</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix3/">3. UNIX Tutorial Three</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix4/">4. UNIX Tutorial Four</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix5/">5. UNIX Tutorial Five</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix6/">6. UNIX Tutorial Six</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix7/">7. UNIX Tutorial Seven</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix8/">8. UNIX Tutorial Eight</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix99answer/">7. Answers</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">02.Editors</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../02.Editors/nano/">Getting started with `Nano`</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">03.Web Interaction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../03.Web-Interaction/Unix-Basic-NetworkAccess/">Basic Networking from shell</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../03.Web-Interaction/Unix-Networking/">More on Networking</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">04.Organizing Reporting</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/github/">Git and Github</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/github_xrzz/">Exercise: Git and Github</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/html/">Creating a Webpage with Github.io</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/html_xrzz/">Exercise: Create a webpage on Github.io</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/linux-google-cloud/">Setting up Google Cloud Console</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/markdown/">Markdown (.md)  in 10 mins</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/publishing-markdown/">Publishing Markdown Documents</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">99.Projects</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../99.Projects/Assignment-01/">Assignment 1: Project</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Others</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../Others/RollingUpdates/">RollingUpdates</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">WorkInProgress</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../WorkInProgress/University-List-Detailed/">US University Ranking 2019 (Detailed List)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../WorkInProgress/University-List/">Top 200 US University Rankings 2019</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../WorkInProgress/about/">About</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../">Getting Started with Tutorials</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../Helper/">Insert Multiple Cursors at the Start of Every Line with VSCode</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Intro</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Intro/mkdocs/">Markdown documentation with MkDocs and Themes</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Linux Shell</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../bash-alias/">Bash Pro Tips</a>
+                </li>
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Bash Script Cheat Sheet</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#bash-script-cheat-sheet">Bash Script Cheat Sheet</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#1-bash-basics">1. Bash Basics.</a></li>
+        
+            <li><a class="toctree-l5" href="#11-file-commands">1.1. File Commands.</a></li>
+        
+            <li><a class="toctree-l5" href="#12-directory-commands">1.2. Directory Commands.</a></li>
+        
+            <li><a class="toctree-l5" href="#13-ssh-system-info-network-commands">1.3. SSH, System Info &amp; Network Commands.</a></li>
+        
+            <li><a class="toctree-l5" href="#2-basic-shell-programming">2. Basic Shell Programming.</a></li>
+        
+            <li><a class="toctree-l5" href="#21-variables">2.1. Variables.</a></li>
+        
+            <li><a class="toctree-l5" href="#22-functions">2.2. Functions.</a></li>
+        
+            <li><a class="toctree-l5" href="#23-flow-control">2.3. Flow Control.</a></li>
+        
+            <li><a class="toctree-l5" href="#3-command-line-processing-cycle">3. Command-Line Processing Cycle.</a></li>
+        
+            <li><a class="toctree-l5" href="#4-inputoutput-redirectors">4. Input/Output Redirectors.</a></li>
+        
+            <li><a class="toctree-l5" href="#5-process-handling">5. Process Handling.</a></li>
+        
+            <li><a class="toctree-l5" href="#6-tips-and-tricks">6. Tips and Tricks.</a></li>
+        
+            <li><a class="toctree-l5" href="#7-debugging-shell-programs">7. Debugging Shell Programs.</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../benchmark-linux/">Sysbench tool for benchmarking</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../cleanup/">Cleanup</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../nano/">Getting started with `Nano`</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../permissions/">Setting Default permissions for Directory with user groups</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/">References</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../rough/">Rough</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../shell-advanced-1/">Unix Shell Advanced</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../shell/">Unix Shell in 10 mins</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../ssh/">ssh - Secure Shell in 10 mins</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../tmux/">tmux in 10 mins</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../vim/">Vim in 10 mins</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Python</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Python/Todo/">Python For Engineers and Professionals</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Python/python-cheat-sheet/">Newbies</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Python/setup-Jupyter/">How to Setup Jupyter Notebook Server as a daemon service</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Less-Than-10 Tutorials (<10)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Linux Shell &raquo;</li>
+        
+      
+        
+          <li>Tutorials &raquo;</li>
+        
+      
+    
+    <li>Bash Script Cheat Sheet</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
               
-                
-                
                 <h1 id="bash-script-cheat-sheet">Bash Script Cheat Sheet</h1>
 <h2 id="1-bash-basics">1. Bash Basics.</h2>
-<div class="codehilite"><pre><span></span>export              # displays all environment variables
+<pre><code>export              # displays all environment variables
 
-echo $0             # displays the shell you&#39;re using
+echo $0             # displays the shell you're using
 echo $SHELL
 
 echo $BASH_VERSION  # displays bash version
@@ -1368,12 +434,12 @@ bash                # if you want to use bash (type exit to go back to your norm
 whereis bash        # finds out where bash is on your system
 
 clear               # clears content on window (hide displayed lines): keyboard shortcut ^L 
-</pre></div>
 
+</code></pre>
 
 <h2 id="11-file-commands">1.1. File Commands.</h2>
-<div class="codehilite"><pre><span></span>ls                            # lists your files
-ls -l                         # lists your files in &#39;long format&#39;, which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified
+<pre><code>ls                            # lists your files
+ls -l                         # lists your files in 'long format', which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified
 ls -a                         # lists all files, including hidden files
 ln -s &lt;filename&gt; &lt;link&gt;       # creates symbolic link to file
 touch &lt;filename&gt;              # creates or updates your file
@@ -1398,19 +464,17 @@ genscript                     # converts plain text files into postscript for pr
 dvips &lt;filename&gt;              # print .dvi files (i.e. files produced by LaTeX)
 grep &lt;pattern&gt; &lt;filenames&gt;    # looks for the string in the files
 grep -r &lt;pattern&gt; &lt;dir&gt;       # search recursively for pattern in directory
-</pre></div>
-
+</code></pre>
 
 <h2 id="12-directory-commands">1.2. Directory Commands.</h2>
-<div class="codehilite"><pre><span></span>mkdir &lt;dirname&gt;  # makes a new directory
+<pre><code>mkdir &lt;dirname&gt;  # makes a new directory
 cd               # changes to home
 cd &lt;dirname&gt;     # changes directory
 pwd              # tells you where you currently are
-</pre></div>
-
+</code></pre>
 
 <h2 id="13-ssh-system-info-network-commands">1.3. SSH, System Info &amp; Network Commands.</h2>
-<div class="codehilite"><pre><span></span>ssh user@host            # connects to host as user
+<pre><code>ssh user@host            # connects to host as user
 ssh -p &lt;port&gt; user@host  # connects to host on specified port as user
 ssh-copy-id user@host    # adds your ssh key to host for user to enable a keyed or passwordless login
 
@@ -1418,7 +482,7 @@ whoami                   # returns your username
 passwd                   # lets you change your password
 quota -v                 # shows what your disk quota is
 date                     # shows the current date and time
-cal                      # shows the month&#39;s calendar
+cal                      # shows the month's calendar
 uptime                   # shows current uptime
 w                        # displays whois online
 who                      # return all users who all logged in
@@ -1441,196 +505,195 @@ whois &lt;domain&gt;           # gets whois information for domain
 dig &lt;domain&gt;             # gets DNS information for domain
 dig -x &lt;host&gt;            # reverses lookup host
 wget &lt;file&gt;              # downloads file
-</pre></div>
 
+</code></pre>
 
 <h2 id="2-basic-shell-programming">2. Basic Shell Programming.</h2>
 <h2 id="21-variables">2.1. Variables.</h2>
-<div class="codehilite"><pre><span></span><span class="s s-Atom">varname</span><span class="o">=</span><span class="s s-Atom">value</span>                <span class="s s-Atom">#</span> <span class="s s-Atom">defines</span> <span class="s s-Atom">a</span> <span class="s s-Atom">variable</span>
-<span class="s s-Atom">varname</span><span class="o">=</span><span class="s s-Atom">value</span> <span class="s s-Atom">command</span>        <span class="s s-Atom">#</span> <span class="s s-Atom">defines</span> <span class="s s-Atom">a</span> <span class="s s-Atom">variable</span> <span class="s s-Atom">to</span> <span class="s s-Atom">be</span> <span class="s s-Atom">in</span> <span class="s s-Atom">the</span> <span class="s s-Atom">environment</span> <span class="s s-Atom">of</span> <span class="s s-Atom">a</span> <span class="s s-Atom">particular</span> <span class="s s-Atom">subprocess</span>
-<span class="s s-Atom">echo</span> <span class="err">$</span><span class="s s-Atom">varname</span>                <span class="s s-Atom">#</span> <span class="s s-Atom">checks</span> <span class="s s-Atom">a</span> <span class="s s-Atom">variable&#39;s value</span>
-<span class="s s-Atom">echo $$                      # prints process ID of the current shell</span>
-<span class="s s-Atom">echo $!                      # prints process ID of the most recently invoked background job</span>
-<span class="s s-Atom">echo $?                      # displays the exit status of the last command</span>
-<span class="s s-Atom">export VARNAME=value         # defines an environment variable (will be available in subprocesses)</span>
+<pre><code>varname=value                # defines a variable
+varname=value command        # defines a variable to be in the environment of a particular subprocess
+echo $varname                # checks a variable's value
+echo $$                      # prints process ID of the current shell
+echo $!                      # prints process ID of the most recently invoked background job
+echo $?                      # displays the exit status of the last command
+export VARNAME=value         # defines an environment variable (will be available in subprocesses)
 
-<span class="s s-Atom">array[0] = val               # several ways to define an array</span>
-<span class="s s-Atom">array[1] = val</span>
-<span class="s s-Atom">array[2] = val</span>
-<span class="s s-Atom">array=([2]=val [0]=val [1]=val)</span>
-<span class="s s-Atom">array(val val val)</span>
+array[0] = val               # several ways to define an array
+array[1] = val
+array[2] = val
+array=([2]=val [0]=val [1]=val)
+array(val val val)
 
-<span class="s s-Atom">${array[i]}                  # displays array&#39;s</span> <span class="s s-Atom">value</span> <span class="s s-Atom">for</span> <span class="s s-Atom">this</span> <span class="s s-Atom">index</span><span class="p">.</span> <span class="nv">If</span> <span class="s s-Atom">no</span> <span class="s s-Atom">index</span> <span class="o">is</span> <span class="s s-Atom">supplied</span><span class="p">,</span> <span class="s s-Atom">array</span> <span class="s s-Atom">element</span> <span class="mi">0</span> <span class="o">is</span> <span class="s s-Atom">assumed</span>
-<span class="err">$</span><span class="p">{</span><span class="s s-Atom">#array</span><span class="p">[</span><span class="s s-Atom">i</span><span class="p">]}</span>                 <span class="s s-Atom">#</span> <span class="s s-Atom">to</span> <span class="s s-Atom">find</span> <span class="s s-Atom">out</span> <span class="s s-Atom">the</span> <span class="s s-Atom">length</span> <span class="s s-Atom">of</span> <span class="s s-Atom">any</span> <span class="s s-Atom">element</span> <span class="s s-Atom">in</span> <span class="s s-Atom">the</span> <span class="s s-Atom">array</span>
-<span class="err">$</span><span class="p">{</span><span class="s s-Atom">#array</span><span class="p">[</span><span class="s s-Atom">@</span><span class="p">]}</span>                 <span class="s s-Atom">#</span> <span class="s s-Atom">to</span> <span class="s s-Atom">find</span> <span class="s s-Atom">out</span> <span class="s s-Atom">how</span> <span class="s s-Atom">many</span> <span class="s s-Atom">values</span> <span class="s s-Atom">there</span> <span class="s s-Atom">are</span> <span class="s s-Atom">in</span> <span class="s s-Atom">the</span> <span class="s s-Atom">array</span>
+${array[i]}                  # displays array's value for this index. If no index is supplied, array element 0 is assumed
+${#array[i]}                 # to find out the length of any element in the array
+${#array[@]}                 # to find out how many values there are in the array
 
-<span class="s s-Atom">declare</span> <span class="o">-</span><span class="s s-Atom">a</span>                   <span class="s s-Atom">#</span> <span class="s s-Atom">the</span> <span class="s s-Atom">variables</span> <span class="s s-Atom">are</span> <span class="s s-Atom">treaded</span> <span class="s s-Atom">as</span> <span class="s s-Atom">arrays</span>
-<span class="s s-Atom">declare</span> <span class="o">-</span><span class="s s-Atom">f</span>                   <span class="s s-Atom">#</span> <span class="s s-Atom">uses</span> <span class="s s-Atom">funtion</span> <span class="s s-Atom">names</span> <span class="s s-Atom">only</span>
-<span class="s s-Atom">declare</span> <span class="o">-</span><span class="nv">F</span>                   <span class="s s-Atom">#</span> <span class="s s-Atom">displays</span> <span class="s s-Atom">function</span> <span class="s s-Atom">names</span> <span class="s s-Atom">without</span> <span class="s s-Atom">definitions</span>
-<span class="s s-Atom">declare</span> <span class="o">-</span><span class="s s-Atom">i</span>                   <span class="s s-Atom">#</span> <span class="s s-Atom">the</span> <span class="s s-Atom">variables</span> <span class="s s-Atom">are</span> <span class="s s-Atom">treaded</span> <span class="s s-Atom">as</span> <span class="s s-Atom">integers</span>
-<span class="s s-Atom">declare</span> <span class="o">-</span><span class="s s-Atom">r</span>                   <span class="s s-Atom">#</span> <span class="s s-Atom">makes</span> <span class="s s-Atom">the</span> <span class="s s-Atom">variables</span> <span class="s s-Atom">read</span><span class="o">-</span><span class="s s-Atom">only</span>
-<span class="s s-Atom">declare</span> <span class="o">-</span><span class="s s-Atom">x</span>                   <span class="s s-Atom">#</span> <span class="s s-Atom">marks</span> <span class="s s-Atom">the</span> <span class="s s-Atom">variables</span> <span class="s s-Atom">for</span> <span class="s s-Atom">export</span> <span class="s s-Atom">via</span> <span class="s s-Atom">the</span> <span class="s s-Atom">environment</span>
+declare -a                   # the variables are treaded as arrays
+declare -f                   # uses funtion names only
+declare -F                   # displays function names without definitions
+declare -i                   # the variables are treaded as integers
+declare -r                   # makes the variables read-only
+declare -x                   # marks the variables for export via the environment
 
-<span class="err">$</span><span class="p">{</span><span class="nn">varname</span><span class="p">:</span><span class="o">-</span><span class="s s-Atom">word</span><span class="p">}</span>             <span class="s s-Atom">#</span> <span class="s s-Atom">if</span> <span class="s s-Atom">varname</span> <span class="s s-Atom">exists</span> <span class="s s-Atom">and</span> <span class="s s-Atom">isn&#39;t null, return its value; otherwise return word</span>
-<span class="s s-Atom">${varname:=word}             # if varname exists and isn&#39;t</span> <span class="s s-Atom">null</span><span class="p">,</span> <span class="s s-Atom">return</span> <span class="s s-Atom">its</span> <span class="s s-Atom">value</span><span class="p">;</span> <span class="s s-Atom">otherwise</span> <span class="s s-Atom">set</span> <span class="s s-Atom">it</span> <span class="s s-Atom">word</span> <span class="s s-Atom">and</span> <span class="s s-Atom">then</span> <span class="s s-Atom">return</span> <span class="s s-Atom">its</span> <span class="s s-Atom">value</span>
-<span class="err">$</span><span class="p">{</span><span class="nn">varname</span><span class="p">:</span><span class="s s-Atom">?message</span><span class="p">}</span>          <span class="s s-Atom">#</span> <span class="s s-Atom">if</span> <span class="s s-Atom">varname</span> <span class="s s-Atom">exists</span> <span class="s s-Atom">and</span> <span class="s s-Atom">isn&#39;t null, return its value; otherwise print varname, followed by message and abort the current command or script</span>
-<span class="s s-Atom">${varname:+word}             # if varname exists and isn&#39;t</span> <span class="s s-Atom">null</span><span class="p">,</span> <span class="s s-Atom">return</span> <span class="s s-Atom">word</span><span class="p">;</span> <span class="s s-Atom">otherwise</span> <span class="s s-Atom">return</span> <span class="s s-Atom">null</span>
-<span class="err">$</span><span class="p">{</span><span class="nn">varname</span><span class="p">:</span><span class="nn">offset</span><span class="p">:</span><span class="s s-Atom">length</span><span class="p">}</span>     <span class="s s-Atom">#</span> <span class="s s-Atom">performs</span> <span class="s s-Atom">substring</span> <span class="s s-Atom">expansion</span><span class="p">.</span> <span class="nv">It</span> <span class="s s-Atom">returns</span> <span class="s s-Atom">the</span> <span class="s s-Atom">substring</span> <span class="s s-Atom">of</span> <span class="err">$</span><span class="s s-Atom">varname</span> <span class="s s-Atom">starting</span> <span class="s s-Atom">at</span> <span class="s s-Atom">offset</span> <span class="s s-Atom">and</span> <span class="s s-Atom">up</span> <span class="s s-Atom">to</span> <span class="s s-Atom">length</span> <span class="s s-Atom">characters</span>
+${varname:-word}             # if varname exists and isn't null, return its value; otherwise return word
+${varname:=word}             # if varname exists and isn't null, return its value; otherwise set it word and then return its value
+${varname:?message}          # if varname exists and isn't null, return its value; otherwise print varname, followed by message and abort the current command or script
+${varname:+word}             # if varname exists and isn't null, return word; otherwise return null
+${varname:offset:length}     # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
 
-<span class="err">$</span><span class="p">{</span><span class="s s-Atom">variable#pattern</span><span class="p">}</span>          <span class="s s-Atom">#</span> <span class="s s-Atom">if</span> <span class="s s-Atom">the</span> <span class="s s-Atom">pattern</span> <span class="s s-Atom">matches</span> <span class="s s-Atom">the</span> <span class="s s-Atom">beginning</span> <span class="s s-Atom">of</span> <span class="s s-Atom">the</span> <span class="s s-Atom">variable&#39;s value, delete the shortest part that matches and return the rest</span>
-<span class="s s-Atom">${variable##pattern}         # if the pattern matches the beginning of the variable&#39;s</span> <span class="s s-Atom">value</span><span class="p">,</span> <span class="s s-Atom">delete</span> <span class="s s-Atom">the</span> <span class="s s-Atom">longest</span> <span class="s s-Atom">part</span> <span class="s s-Atom">that</span> <span class="s s-Atom">matches</span> <span class="s s-Atom">and</span> <span class="s s-Atom">return</span> <span class="s s-Atom">the</span> <span class="s s-Atom">rest</span>
-<span class="err">$</span><span class="p">{</span><span class="s s-Atom">variable</span><span class="c1">%pattern}          # if the pattern matches the end of the variable&#39;s value, delete the shortest part that matches and return the rest</span>
-<span class="err">$</span><span class="p">{</span><span class="s s-Atom">variable</span><span class="c1">%%pattern}         # if the pattern matches the end of the variable&#39;s value, delete the longest part that matches and return the rest</span>
-<span class="err">$</span><span class="p">{</span><span class="s s-Atom">variable</span><span class="o">/</span><span class="s s-Atom">pattern</span><span class="o">/</span><span class="s s-Atom">string</span><span class="p">}</span>   <span class="s s-Atom">#</span> <span class="s s-Atom">the</span> <span class="s s-Atom">longest</span> <span class="s s-Atom">match</span> <span class="s s-Atom">to</span> <span class="s s-Atom">pattern</span> <span class="s s-Atom">in</span> <span class="s s-Atom">variable</span> <span class="o">is</span> <span class="s s-Atom">replaced</span> <span class="s s-Atom">by</span> <span class="s s-Atom">string</span><span class="p">.</span> <span class="nv">Only</span> <span class="s s-Atom">the</span> <span class="s s-Atom">first</span> <span class="s s-Atom">match</span> <span class="o">is</span> <span class="s s-Atom">replaced</span>
-<span class="err">$</span><span class="p">{</span><span class="s s-Atom">variable</span><span class="o">//</span><span class="s s-Atom">pattern</span><span class="o">/</span><span class="s s-Atom">string</span><span class="p">}</span>  <span class="s s-Atom">#</span> <span class="s s-Atom">the</span> <span class="s s-Atom">longest</span> <span class="s s-Atom">match</span> <span class="s s-Atom">to</span> <span class="s s-Atom">pattern</span> <span class="s s-Atom">in</span> <span class="s s-Atom">variable</span> <span class="o">is</span> <span class="s s-Atom">replaced</span> <span class="s s-Atom">by</span> <span class="s s-Atom">string</span><span class="p">.</span> <span class="nv">All</span> <span class="s s-Atom">matches</span> <span class="s s-Atom">are</span> <span class="s s-Atom">replaced</span>
+${variable#pattern}          # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
+${variable##pattern}         # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
+${variable%pattern}          # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
+${variable%%pattern}         # if the pattern matches the end of the variable's value, delete the longest part that matches and return the rest
+${variable/pattern/string}   # the longest match to pattern in variable is replaced by string. Only the first match is replaced
+${variable//pattern/string}  # the longest match to pattern in variable is replaced by string. All matches are replaced
 
-<span class="err">$</span><span class="p">{</span><span class="s s-Atom">#varname</span><span class="p">}</span>                  <span class="s s-Atom">#</span> <span class="s s-Atom">returns</span> <span class="s s-Atom">the</span> <span class="s s-Atom">length</span> <span class="s s-Atom">of</span> <span class="s s-Atom">the</span> <span class="s s-Atom">value</span> <span class="s s-Atom">of</span> <span class="s s-Atom">the</span> <span class="s s-Atom">variable</span> <span class="s s-Atom">as</span> <span class="s s-Atom">a</span> <span class="s s-Atom">character</span> <span class="s s-Atom">string</span>
+${#varname}                  # returns the length of the value of the variable as a character string
 
-<span class="s s-Atom">*</span><span class="p">(</span><span class="s s-Atom">patternlist</span><span class="p">)</span>               <span class="s s-Atom">#</span> <span class="s s-Atom">matches</span> <span class="s s-Atom">zero</span> <span class="s s-Atom">or</span> <span class="s s-Atom">more</span> <span class="s s-Atom">occurences</span> <span class="s s-Atom">of</span> <span class="s s-Atom">the</span> <span class="s s-Atom">given</span> <span class="s s-Atom">patterns</span>
-<span class="s s-Atom">+</span><span class="p">(</span><span class="s s-Atom">patternlist</span><span class="p">)</span>               <span class="s s-Atom">#</span> <span class="s s-Atom">matches</span> <span class="s s-Atom">one</span> <span class="s s-Atom">or</span> <span class="s s-Atom">more</span> <span class="s s-Atom">occurences</span> <span class="s s-Atom">of</span> <span class="s s-Atom">the</span> <span class="s s-Atom">given</span> <span class="s s-Atom">patterns</span>
-<span class="s s-Atom">?</span><span class="p">(</span><span class="s s-Atom">patternlist</span><span class="p">)</span>               <span class="s s-Atom">#</span> <span class="s s-Atom">matches</span> <span class="s s-Atom">zero</span> <span class="s s-Atom">or</span> <span class="s s-Atom">one</span> <span class="s s-Atom">occurence</span> <span class="s s-Atom">of</span> <span class="s s-Atom">the</span> <span class="s s-Atom">given</span> <span class="s s-Atom">patterns</span>
-<span class="s s-Atom">@</span><span class="p">(</span><span class="s s-Atom">patternlist</span><span class="p">)</span>               <span class="s s-Atom">#</span> <span class="s s-Atom">matches</span> <span class="s s-Atom">exactly</span> <span class="s s-Atom">one</span> <span class="s s-Atom">of</span> <span class="s s-Atom">the</span> <span class="s s-Atom">given</span> <span class="s s-Atom">patterns</span>
-<span class="p">!(</span><span class="s s-Atom">patternlist</span><span class="p">)</span>               <span class="s s-Atom">#</span> <span class="s s-Atom">matches</span> <span class="s s-Atom">anything</span> <span class="s s-Atom">except</span> <span class="s s-Atom">one</span> <span class="s s-Atom">of</span> <span class="s s-Atom">the</span> <span class="s s-Atom">given</span> <span class="s s-Atom">patterns</span>
+*(patternlist)               # matches zero or more occurences of the given patterns
++(patternlist)               # matches one or more occurences of the given patterns
+?(patternlist)               # matches zero or one occurence of the given patterns
+@(patternlist)               # matches exactly one of the given patterns
+!(patternlist)               # matches anything except one of the given patterns
 
-<span class="err">$</span><span class="p">(</span><span class="nv">UNIX</span> <span class="s s-Atom">command</span><span class="p">)</span>              <span class="s s-Atom">#</span> <span class="s s-Atom">command</span> <span class="nn">substitution</span><span class="p">:</span> <span class="s s-Atom">runs</span> <span class="s s-Atom">the</span> <span class="s s-Atom">command</span> <span class="s s-Atom">and</span> <span class="s s-Atom">returns</span> <span class="s s-Atom">standard</span> <span class="s s-Atom">output</span>
-</pre></div>
+$(UNIX command)              # command substitution: runs the command and returns standard output
 
+</code></pre>
 
 <h2 id="22-functions">2.2. Functions.</h2>
 <p>The function refers to passed arguments by position (as if they were positional parameters), that is, $1, $2, and so forth.
 <code>$@ is equal to "$1" "$2"... "$N"</code>, where N is the number of positional parameters. <code>$#</code> holds the number of positional parameters.</p>
-<div class="codehilite"><pre><span></span>functname() {
+<pre><code>functname() {
   shell commands
 }
 
 unset -f functname  # deletes a function definition
 declare -f          # displays all defined functions in your login session
-</pre></div>
-
+</code></pre>
 
 <h2 id="23-flow-control">2.3. Flow Control.</h2>
-<div class="codehilite"><pre><span></span><span class="n">statement1</span> <span class="o">&amp;&amp;</span> <span class="n">statement2</span>  <span class="err">#</span> <span class="n">and</span> <span class="n">operator</span>
-<span class="n">statement1</span> <span class="o">||</span> <span class="n">statement2</span>  <span class="err">#</span> <span class="n">or</span> <span class="n">operator</span>
+<pre><code>statement1 &amp;&amp; statement2  # and operator
+statement1 || statement2  # or operator
 
-<span class="o">-</span><span class="n">a</span>                        <span class="err">#</span> <span class="n">and</span> <span class="n">operator</span> <span class="n">inside</span> <span class="n">a</span> <span class="n">test</span> <span class="n">conditional</span> <span class="n">expression</span>
-<span class="o">-</span><span class="n">o</span>                        <span class="err">#</span> <span class="n">or</span> <span class="n">operator</span> <span class="n">inside</span> <span class="n">a</span> <span class="n">test</span> <span class="n">conditional</span> <span class="n">expression</span>
+-a                        # and operator inside a test conditional expression
+-o                        # or operator inside a test conditional expression
 
-<span class="n">str1</span><span class="o">=</span><span class="n">str2</span>                 <span class="err">#</span> <span class="n">str1</span> <span class="n">matches</span> <span class="n">str2</span>
-<span class="n">str1</span><span class="o">!=</span><span class="n">str2</span>                <span class="err">#</span> <span class="n">str1</span> <span class="n">does</span> <span class="n">not</span> <span class="n">match</span> <span class="n">str2</span>
-<span class="n">str1</span><span class="o">&lt;</span><span class="n">str2</span>                 <span class="err">#</span> <span class="n">str1</span> <span class="n">is</span> <span class="n">less</span> <span class="n">than</span> <span class="n">str2</span>
-<span class="n">str1</span><span class="o">&gt;</span><span class="n">str2</span>                 <span class="err">#</span> <span class="n">str1</span> <span class="n">is</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">str2</span>
-<span class="o">-</span><span class="n">n</span> <span class="n">str1</span>                   <span class="err">#</span> <span class="n">str1</span> <span class="n">is</span> <span class="n">not</span> <span class="n">null</span> <span class="p">(</span><span class="n">has</span> <span class="n">length</span> <span class="n">greater</span> <span class="n">than</span> <span class="mi">0</span><span class="p">)</span>
-<span class="o">-</span><span class="n">z</span> <span class="n">str1</span>                   <span class="err">#</span> <span class="n">str1</span> <span class="n">is</span> <span class="n">null</span> <span class="p">(</span><span class="n">has</span> <span class="n">length</span> <span class="mi">0</span><span class="p">)</span>
+str1=str2                 # str1 matches str2
+str1!=str2                # str1 does not match str2
+str1&lt;str2                 # str1 is less than str2
+str1&gt;str2                 # str1 is greater than str2
+-n str1                   # str1 is not null (has length greater than 0)
+-z str1                   # str1 is null (has length 0)
 
-<span class="o">-</span><span class="n">a</span> <span class="n">file</span>                   <span class="err">#</span> <span class="n">file</span> <span class="n">exists</span>
-<span class="o">-</span><span class="n">d</span> <span class="n">file</span>                   <span class="err">#</span> <span class="n">file</span> <span class="n">exists</span> <span class="n">and</span> <span class="n">is</span> <span class="n">a</span> <span class="n">directory</span>
-<span class="o">-</span><span class="n">e</span> <span class="n">file</span>                   <span class="err">#</span> <span class="n">file</span> <span class="n">exists</span><span class="p">;</span> <span class="n">same</span> <span class="o">-</span><span class="n">a</span>
-<span class="o">-</span><span class="n">f</span> <span class="n">file</span>                   <span class="err">#</span> <span class="n">file</span> <span class="n">exists</span> <span class="n">and</span> <span class="n">is</span> <span class="n">a</span> <span class="n">regular</span> <span class="n">file</span> <span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">e</span><span class="p">.,</span> <span class="n">not</span> <span class="n">a</span> <span class="n">directory</span> <span class="n">or</span> <span class="n">other</span> <span class="n">special</span> <span class="n">type</span> <span class="n">of</span> <span class="n">file</span><span class="p">)</span>
-<span class="o">-</span><span class="n">r</span> <span class="n">file</span>                   <span class="err">#</span> <span class="n">you</span> <span class="n">have</span> <span class="n">read</span> <span class="n">permission</span>
-<span class="o">-</span><span class="n">r</span> <span class="n">file</span>                   <span class="err">#</span> <span class="n">file</span> <span class="n">exists</span> <span class="n">and</span> <span class="n">is</span> <span class="n">not</span> <span class="n">empty</span>
-<span class="o">-</span><span class="n">w</span> <span class="n">file</span>                   <span class="err">#</span> <span class="n">your</span> <span class="n">have</span> <span class="n">write</span> <span class="n">permission</span>
-<span class="o">-</span><span class="n">x</span> <span class="n">file</span>                   <span class="err">#</span> <span class="n">you</span> <span class="n">have</span> <span class="n">execute</span> <span class="n">permission</span> <span class="n">on</span> <span class="n">file</span><span class="p">,</span> <span class="n">or</span> <span class="n">directory</span> <span class="n">search</span> <span class="n">permission</span> <span class="k">if</span> <span class="n">it</span> <span class="n">is</span> <span class="n">a</span> <span class="n">directory</span>
-<span class="o">-</span><span class="n">N</span> <span class="n">file</span>                   <span class="err">#</span> <span class="n">file</span> <span class="n">was</span> <span class="n">modified</span> <span class="n">since</span> <span class="n">it</span> <span class="n">was</span> <span class="n">last</span> <span class="n">read</span>
-<span class="o">-</span><span class="n">O</span> <span class="n">file</span>                   <span class="err">#</span> <span class="n">you</span> <span class="n">own</span> <span class="n">file</span>
-<span class="o">-</span><span class="n">G</span> <span class="n">file</span>                   <span class="err">#</span> <span class="n">file</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">group</span> <span class="n">ID</span> <span class="n">matches</span> <span class="n">yours</span> <span class="p">(</span><span class="n">or</span> <span class="n">one</span> <span class="n">of</span> <span class="n">yours</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">are</span> <span class="k">in</span> <span class="n">multiple</span> <span class="n">groups</span><span class="p">)</span>
-<span class="n">file1</span> <span class="o">-</span><span class="n">nt</span> <span class="n">file2</span>           <span class="err">#</span> <span class="n">file1</span> <span class="n">is</span> <span class="n">newer</span> <span class="n">than</span> <span class="n">file2</span>
-<span class="n">file1</span> <span class="o">-</span><span class="n">ot</span> <span class="n">file2</span>           <span class="err">#</span> <span class="n">file1</span> <span class="n">is</span> <span class="n">older</span> <span class="n">than</span> <span class="n">file2</span>
+-a file                   # file exists
+-d file                   # file exists and is a directory
+-e file                   # file exists; same -a
+-f file                   # file exists and is a regular file (i.e., not a directory or other special type of file)
+-r file                   # you have read permission
+-r file                   # file exists and is not empty
+-w file                   # your have write permission
+-x file                   # you have execute permission on file, or directory search permission if it is a directory
+-N file                   # file was modified since it was last read
+-O file                   # you own file
+-G file                   # file's group ID matches yours (or one of yours, if you are in multiple groups)
+file1 -nt file2           # file1 is newer than file2
+file1 -ot file2           # file1 is older than file2
 
-<span class="o">-</span><span class="n">lt</span>                       <span class="err">#</span> <span class="n">less</span> <span class="n">than</span>
-<span class="o">-</span><span class="n">le</span>                       <span class="err">#</span> <span class="n">less</span> <span class="n">than</span> <span class="n">or</span> <span class="n">equal</span>
-<span class="o">-</span><span class="n">eq</span>                       <span class="err">#</span> <span class="n">equal</span>
-<span class="o">-</span><span class="n">ge</span>                       <span class="err">#</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">or</span> <span class="n">equal</span>
-<span class="o">-</span><span class="n">gt</span>                       <span class="err">#</span> <span class="n">greater</span> <span class="n">than</span>
-<span class="o">-</span><span class="n">ne</span>                       <span class="err">#</span> <span class="n">not</span> <span class="n">equal</span>
+-lt                       # less than
+-le                       # less than or equal
+-eq                       # equal
+-ge                       # greater than or equal
+-gt                       # greater than
+-ne                       # not equal
 
-<span class="k">if</span> <span class="n">condition</span>
-<span class="n">then</span>
-  <span class="n">statements</span>
-<span class="p">[</span><span class="n">elif</span> <span class="n">condition</span>
-  <span class="n">then</span> <span class="n">statements</span><span class="p">...]</span>
-<span class="p">[</span><span class="k">else</span>
-  <span class="n">statements</span><span class="p">]</span>
-<span class="n">fi</span>
+if condition
+then
+  statements
+[elif condition
+  then statements...]
+[else
+  statements]
+fi
 
-<span class="k">for</span> <span class="nl">x</span> <span class="p">:</span><span class="o">=</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">10</span> <span class="k">do</span>
-<span class="n">begin</span>
-  <span class="n">statements</span>
-<span class="n">end</span>
+for x := 1 to 10 do
+begin
+  statements
+end
 
-<span class="k">for</span> <span class="n">name</span> <span class="p">[</span><span class="k">in</span> <span class="n">list</span><span class="p">]</span>
-<span class="k">do</span>
-  <span class="n">statements</span> <span class="n">that</span> <span class="n">can</span> <span class="n">use</span> <span class="err">$</span><span class="n">name</span>
-<span class="n">done</span>
+for name [in list]
+do
+  statements that can use $name
+done
 
-<span class="k">for</span> <span class="p">((</span> <span class="n">initialisation</span> <span class="p">;</span> <span class="n">ending</span> <span class="n">condition</span> <span class="p">;</span> <span class="n">update</span> <span class="p">))</span>
-<span class="k">do</span>
-  <span class="n">statements</span><span class="p">...</span>
-<span class="n">done</span>
+for (( initialisation ; ending condition ; update ))
+do
+  statements...
+done
 
-<span class="k">case</span> <span class="n">expression</span> <span class="k">in</span>
-  <span class="n">pattern1</span> <span class="p">)</span>
-    <span class="n">statements</span> <span class="p">;;</span>
-  <span class="n">pattern2</span> <span class="p">)</span>
-    <span class="n">statements</span> <span class="p">;;</span>
-  <span class="p">...</span>
-<span class="n">esac</span>
+case expression in
+  pattern1 )
+    statements ;;
+  pattern2 )
+    statements ;;
+  ...
+esac
 
-<span class="n">select</span> <span class="n">name</span> <span class="p">[</span><span class="k">in</span> <span class="n">list</span><span class="p">]</span>
-<span class="k">do</span>
-  <span class="n">statements</span> <span class="n">that</span> <span class="n">can</span> <span class="n">use</span> <span class="err">$</span><span class="n">name</span>
-<span class="n">done</span>
+select name [in list]
+do
+  statements that can use $name
+done
 
-<span class="k">while</span> <span class="n">condition</span><span class="p">;</span> <span class="k">do</span>
-  <span class="n">statements</span>
-<span class="n">done</span>
+while condition; do
+  statements
+done
 
-<span class="n">until</span> <span class="n">condition</span><span class="p">;</span> <span class="k">do</span>
-  <span class="n">statements</span>
-<span class="n">done</span>
-</pre></div>
+until condition; do
+  statements
+done
 
+</code></pre>
 
 <h2 id="3-command-line-processing-cycle">3. Command-Line Processing Cycle.</h2>
 <p>The default order for command lookup is functions, followed by built-ins, with scripts and executables last.
 There are three built-ins that you can use to override this order: <code>command</code>, <code>builtin</code> and <code>enable</code>.</p>
-<div class="codehilite"><pre><span></span>command  # removes alias and function lookup. Only built-ins and commands found in the search path are executed
+<pre><code>command  # removes alias and function lookup. Only built-ins and commands found in the search path are executed
 builtin  # looks up only built-in commands, ignoring functions and commands found in PATH
 enable   # enables and disables shell built-ins
 
 eval     # takes arguments and run them through the command-line processing steps all over again
-</pre></div>
-
+</code></pre>
 
 <h2 id="4-inputoutput-redirectors">4. Input/Output Redirectors.</h2>
-<div class="codehilite"><pre><span></span>cmd1|cmd2  # pipe; takes standard output of cmd1 as standard input to cmd2
+<pre><code>
+cmd1|cmd2  # pipe; takes standard output of cmd1 as standard input to cmd2
 &gt; file     # directs standard output to file
-<span class="p">&lt;</span> <span class="nt">file</span>     <span class="err">#</span> <span class="na">takes</span> <span class="na">standard</span> <span class="na">input</span> <span class="na">from</span> <span class="na">file</span>
-<span class="p">&gt;</span>&gt; file    # directs standard output to file; append to file if it already exists
+&lt; file     # takes standard input from file
+&gt;&gt; file    # directs standard output to file; append to file if it already exists
 &gt;|file     # forces standard output to file even if noclobber is set
 n&gt;|file    # forces output to file from file descriptor n even if noclobber is set
-<span class="err">&lt;</span>&gt; file    # uses file as both standard input and standard output
-n<span class="err">&lt;</span>&gt;file    # uses file as both input and output for file descriptor n
-<span class="err">&lt;</span><span class="p">&lt;</span><span class="nt">label</span>    <span class="err">#</span> <span class="na">here-document</span>
-<span class="na">n</span><span class="p">&gt;</span>file     # directs file descriptor n to file
-n<span class="p">&lt;</span><span class="nt">file</span>     <span class="err">#</span> <span class="na">takes</span> <span class="na">file</span> <span class="na">descriptor</span> <span class="na">n</span> <span class="na">from</span> <span class="na">file</span>
-<span class="na">n</span><span class="p">&gt;</span>&gt;file    # directs file description n to file; append to file if it already exists
-n&gt;<span class="err">&amp;</span>        # duplicates standard output to file descriptor n
-n<span class="nt">&lt;&amp; </span><span class="nf">       # duplicates standard input from file descriptor n</span>
-<span class="nf">n&gt;&amp;m       # file descriptor n is made to be a copy of the output file descriptor</span>
-<span class="nf">n&lt;&amp;m       # file descriptor n is made to be a copy of the input file descriptor</span>
-<span class="nt">&amp;&gt;</span>file     # directs standard output and standard error to file
-<span class="err">&lt;&amp;</span>-        # closes the standard input
-&gt;<span class="err">&amp;</span>-        # closes the standard output
-n&gt;<span class="err">&amp;</span>-       # closes the ouput from file descriptor n
-n<span class="err">&lt;&amp;</span>-       # closes the input from file descripor n
-</pre></div>
+&lt;&gt; file    # uses file as both standard input and standard output
+n&lt;&gt;file    # uses file as both input and output for file descriptor n
+&lt;&lt;label    # here-document
+n&gt;file     # directs file descriptor n to file
+n&lt;file     # takes file descriptor n from file
+n&gt;&gt;file    # directs file description n to file; append to file if it already exists
+n&gt;&amp;        # duplicates standard output to file descriptor n
+n&lt;&amp;        # duplicates standard input from file descriptor n
+n&gt;&amp;m       # file descriptor n is made to be a copy of the output file descriptor
+n&lt;&amp;m       # file descriptor n is made to be a copy of the input file descriptor
+&amp;&gt;file     # directs standard output and standard error to file
+&lt;&amp;-        # closes the standard input
+&gt;&amp;-        # closes the standard output
+n&gt;&amp;-       # closes the ouput from file descriptor n
+n&lt;&amp;-       # closes the input from file descripor n
 
+</code></pre>
 
 <h2 id="5-process-handling">5. Process Handling.</h2>
 <p>To suspend a job, type CTRL+Z while it is running. You can also suspend a job with CTRL+Y.
 This is slightly different from CTRL+Z in that the process is only stopped when it attempts to read input from terminal.
 Of course, to interupt a job, type CTRL+C.</p>
-<div class="codehilite"><pre><span></span>myCommand &amp;  # runs job in the background and prompts back the shell
+<pre><code>myCommand &amp;  # runs job in the background and prompts back the shell
 
 jobs         # lists all jobs (use with -l to see associated PID)
 
@@ -1654,13 +717,14 @@ trap - sig1 sig2    # resets the action taken when the signal is received to the
 disown &lt;PID|JID&gt;    # removes the process from the list of jobs
 
 wait                # waits until all background jobs have finished
-</pre></div>
 
+</code></pre>
 
 <h2 id="6-tips-and-tricks">6. Tips and Tricks.</h2>
-<div class="codehilite"><pre><span></span>## set an alias
+<pre><code>
+## set an alias
 cd; nano .bash_profile
-&gt; alias gentlenode=&#39;ssh admin@gentlenode.com -p 3404&#39;  # add your alias in .bash_profile
+&gt; alias gentlenode='ssh admin@gentlenode.com -p 3404'  # add your alias in .bash_profile
 
 ## to quickly go to a specific directory
 cd; nano .bashrc
@@ -1669,122 +733,90 @@ cd; nano .bashrc
 
 source .bashrc
 cd websites
-</pre></div>
 
+</code></pre>
 
 <h2 id="7-debugging-shell-programs">7. Debugging Shell Programs.</h2>
-<div class="codehilite"><pre><span></span><span class="nx">bash</span> <span class="o">-</span><span class="nx">n</span> <span class="nx">scriptname</span>  <span class="err">#</span> <span class="nx">don</span><span class="s1">&#39;t run commands; check for syntax errors only</span>
-<span class="s1">set -o noexec       # alternative (set option in script)</span>
+<pre><code>bash -n scriptname  # don't run commands; check for syntax errors only
+set -o noexec       # alternative (set option in script)
 
-<span class="s1">bash -v scriptname  # echo commands before running them</span>
-<span class="s1">set -o verbose      # alternative (set option in script)</span>
+bash -v scriptname  # echo commands before running them
+set -o verbose      # alternative (set option in script)
 
-<span class="s1">bash -x scriptname  # echo commands after command-line processing</span>
-<span class="s1">set -o xtrace       # alternative (set option in script)</span>
+bash -x scriptname  # echo commands after command-line processing
+set -o xtrace       # alternative (set option in script)
 
-<span class="s1">trap &#39;</span><span class="nx">echo</span> <span class="nx">$varname</span><span class="s1">&#39; EXIT  # useful when you want to print out the values of variables at the point that your script exits</span>
+trap 'echo $varname' EXIT  # useful when you want to print out the values of variables at the point that your script exits
 
-<span class="s1">function errtrap {</span>
-<span class="s1">  es=$?</span>
-<span class="s1">  echo &quot;ERROR line $1: Command exited with status $es.&quot;</span>
-<span class="s1">}</span>
+function errtrap {
+  es=$?
+  echo &quot;ERROR line $1: Command exited with status $es.&quot;
+}
 
-<span class="s1">trap &#39;</span><span class="nx">errtrap</span> <span class="nx">$LINENO</span><span class="err">&#39;</span> <span class="nx">ERR</span>  <span class="err">#</span> <span class="nx">is</span> <span class="nx">run</span> <span class="nx">whenever</span> <span class="nx">a</span> <span class="nx">command</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">surrounding</span> <span class="nx">script</span> <span class="nx">or</span> <span class="kd">function</span> <span class="nx">exists</span> <span class="kd">with</span> <span class="nx">non</span><span class="o">-</span><span class="nx">zero</span> <span class="nx">status</span> 
+trap 'errtrap $LINENO' ERR  # is run whenever a command in the surrounding script or function exists with non-zero status 
 
-<span class="kd">function</span> <span class="nx">dbgtrap</span> <span class="p">{</span>
-  <span class="nx">echo</span> <span class="s2">&quot;badvar is $badvar&quot;</span>
-<span class="p">}</span>
+function dbgtrap {
+  echo &quot;badvar is $badvar&quot;
+}
 
-<span class="nx">trap</span> <span class="sb">```dbgtrap DEBUG  # causes the trap code to be executed before every statement in a function or script</span>
-<span class="sb">## ...section of code in which the problem occurs...</span>
-<span class="sb">tr```</span><span class="nx">ap</span> <span class="o">-</span> <span class="nx">DEBUG</span>  <span class="err">#</span> <span class="nx">turn</span> <span class="nx">off</span> <span class="nx">the</span> <span class="nx">DEBUG</span> <span class="nx">trap</span>
+trap ```dbgtrap DEBUG  # causes the trap code to be executed before every statement in a function or script
+## ...section of code in which the problem occurs...
+tr```ap - DEBUG  # turn off the DEBUG trap
 
-<span class="kd">function</span> <span class="nx">returntrap</span> <span class="p">{</span>
-  <span class="nx">echo</span> <span class="s2">&quot;A return occured&quot;</span>
-<span class="p">}</span>
+function returntrap {
+  echo &quot;A return occured&quot;
+}
 
-<span class="nx">trap</span> <span class="nx">returntrap</span> <span class="nx">RETURN</span>  <span class="err">#</span> <span class="nx">is</span> <span class="nx">executed</span> <span class="nx">each</span> <span class="nx">time</span> <span class="nx">a</span> <span class="nx">shell</span> <span class="kd">function</span> <span class="nx">or</span> <span class="nx">a</span> <span class="nx">script</span> <span class="nx">executed</span> <span class="kd">with</span> <span class="nx">the</span> <span class="p">.</span> <span class="nx">or</span> <span class="nx">source</span> <span class="nx">commands</span> <span class="nx">finishes</span> <span class="nx">executing</span>
-</pre></div>
-                
-                  
-                
+trap returntrap RETURN  # is executed each time a shell function or a script executed with the . or source commands finishes executing
+
+</code></pre>
               
-              
-                
-
-
-              
-            </article>
+            </div>
           </div>
-        </div>
-      </main>
-      
-        
-<footer class="md-footer">
+          <footer>
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../bash-alias/" title="Bash Pro Tips" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Bash Pro Tips
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../benchmark-linux/" title="Sysbench tool for benchmarking" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Sysbench tool for benchmarking
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../benchmark-linux/" class="btn btn-neutral float-right" title="Sysbench tool for benchmarking">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../bash-alias/" class="btn btn-neutral" title="Bash Pro Tips"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
     </div>
   
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
-      </div>
-      
-        
-      
-    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
   </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
-    </div>
-    
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <span><a href="../bash-alias/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-    
-    
       
-    
-  </body>
+        <span style="margin-left: 15px"><a href="../benchmark-linux/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
 </html>

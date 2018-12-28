@@ -128,9 +128,17 @@ like [this][2].
 
 ## Code highlighting
 
-```python
-import abc
+* hello world
+    * hello 
+    
+```javascript
+for(var i = 0; i < 5; i++){
+    Console.log("Hello");
+}
 ```
+    
+    * none 
+* more inport 
 
 you will need the extension installed and update mkdocs.yml 
 

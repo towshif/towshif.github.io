@@ -1,1206 +1,404 @@
-
-
-
-
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-      
-        <link rel="canonical" href="https://towshif.github.io/tutorials/Linux Shell/reference/">
-      
-      
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
-    
-    
-      
-        <title>References - Less-Than-10 Tutorials (<10)</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
-      
-      
-    
-    
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
-    
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
-      
-    
-    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
-    
-    
-    
-  </head>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>References - Less-Than-10 Tutorials (<10)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "References";
+    var mkdocs_page_input_path = "tutorials/Linux Shell/reference.md";
+    var mkdocs_page_url = "/tutorials/Linux Shell/reference/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
     
-      <a href="#references" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon"></i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            
-              <span class="md-header-nav__topic">
-                Less-Than-10 Tutorials (<10)
-              </span>
-              <span class="md-header-nav__topic">
-                References
-              </span>
-            
-          
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Less-Than-10 Tutorials (<10)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
 </div>
-          
-        
       </div>
-      
-    </div>
-  </nav>
-</header>
-    
-    <div class="md-container">
-      
-        
-      
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-nav__button md-logo">
-      
-        <i class="md-icon"></i>
-      
-    </a>
-    Less-Than-10 Tutorials (<10)
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../.." title="Instructions" class="md-nav__link">
-      Instructions
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../gettingStarted/" title="Getting Started" class="md-nav__link">
-      Getting Started
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      00.Remote Access
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        00.Remote Access
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../00.Remote-Access/scp/" title="scp - Secure Copy in 10 mins" class="md-nav__link">
-      scp - Secure Copy in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../00.Remote-Access/ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
-      ssh - Secure Shell in 10 mins
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      01.UNIX Tutorial
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        01.UNIX Tutorial
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/shell/" title="UNIX Shell in 10 mins" class="md-nav__link">
-      UNIX Shell in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/unix-cheat-sheet/" title="UNIX Shell Cheat Sheet" class="md-nav__link">
-      UNIX Shell Cheat Sheet
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
-    
-    <label class="md-nav__link" for="nav-4-3">
-      Unix Tutorial
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
-      <label class="md-nav__title" for="nav-4-3">
-        Unix Tutorial
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/" title="Contents: UNIX Tutorial for Beginners" class="md-nav__link">
-      Contents: UNIX Tutorial for Beginners
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/introunix/" title="Introduction to UNIX" class="md-nav__link">
-      Introduction to UNIX
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix0/" title="UNIX Tutorial" class="md-nav__link">
-      UNIX Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix1/" title="1. UNIX Tutorial One" class="md-nav__link">
-      1. UNIX Tutorial One
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix2/" title="2. UNIX Tutorial Two" class="md-nav__link">
-      2. UNIX Tutorial Two
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix3/" title="3. UNIX Tutorial Three" class="md-nav__link">
-      3. UNIX Tutorial Three
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix4/" title="4. UNIX Tutorial Four" class="md-nav__link">
-      4. UNIX Tutorial Four
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix5/" title="5. UNIX Tutorial Five" class="md-nav__link">
-      5. UNIX Tutorial Five
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix6/" title="6. UNIX Tutorial Six" class="md-nav__link">
-      6. UNIX Tutorial Six
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix7/" title="7. UNIX Tutorial Seven" class="md-nav__link">
-      7. UNIX Tutorial Seven
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix8/" title="8. UNIX Tutorial Eight" class="md-nav__link">
-      8. UNIX Tutorial Eight
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix99answer/" title="7. Answers" class="md-nav__link">
-      7. Answers
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      02.Editors
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        02.Editors
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../02.Editors/nano/" title="Getting started with `Nano`" class="md-nav__link">
-      Getting started with `Nano`
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      03.Web Interaction
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        03.Web Interaction
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../03.Web-Interaction/Unix-Basic-NetworkAccess/" title="Basic Networking from shell" class="md-nav__link">
-      Basic Networking from shell
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../03.Web-Interaction/Unix-Networking/" title="More on Networking" class="md-nav__link">
-      More on Networking
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      04.Organizing Reporting
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        04.Organizing Reporting
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/github/" title="Git and Github" class="md-nav__link">
-      Git and Github
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/github_xrzz/" title="Exercise: Git and Github" class="md-nav__link">
-      Exercise: Git and Github
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/html/" title="Creating a Webpage with Github.io" class="md-nav__link">
-      Creating a Webpage with Github.io
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/html_xrzz/" title="Exercise: Create a webpage on Github.io" class="md-nav__link">
-      Exercise: Create a webpage on Github.io
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/linux-google-cloud/" title="Setting up Google Cloud Console" class="md-nav__link">
-      Setting up Google Cloud Console
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/markdown/" title="Markdown (.md)  in 10 mins" class="md-nav__link">
-      Markdown (.md)  in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/publishing-markdown/" title="Publishing Markdown Documents" class="md-nav__link">
-      Publishing Markdown Documents
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
-    
-    <label class="md-nav__link" for="nav-8">
-      99.Projects
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        99.Projects
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../99.Projects/Assignment-01/" title="Assignment 1: Project" class="md-nav__link">
-      Assignment 1: Project
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
-    
-    <label class="md-nav__link" for="nav-9">
-      Others
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        Others
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Others/RollingUpdates/" title="RollingUpdates" class="md-nav__link">
-      RollingUpdates
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
-    
-    <label class="md-nav__link" for="nav-10">
-      WorkInProgress
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
-        WorkInProgress
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../WorkInProgress/University-List-Detailed/" title="US University Ranking 2019 (Detailed List)" class="md-nav__link">
-      US University Ranking 2019 (Detailed List)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../WorkInProgress/University-List/" title="Top 200 US University Rankings 2019" class="md-nav__link">
-      Top 200 US University Rankings 2019
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../WorkInProgress/about/" title="About" class="md-nav__link">
-      About
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
-    
-    <label class="md-nav__link" for="nav-11">
-      Tutorials
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
-        Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../" title="Getting Started with Tutorials" class="md-nav__link">
-      Getting Started with Tutorials
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Helper/" title="Insert Multiple Cursors at the Start of Every Line with VSCode" class="md-nav__link">
-      Insert Multiple Cursors at the Start of Every Line with VSCode
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-3" type="checkbox" id="nav-11-3">
-    
-    <label class="md-nav__link" for="nav-11-3">
-      Intro
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
-      <label class="md-nav__title" for="nav-11-3">
-        Intro
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Intro/mkdocs/" title="Markdown documentation with MkDocs and Themes" class="md-nav__link">
-      Markdown documentation with MkDocs and Themes
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-4" type="checkbox" id="nav-11-4" checked>
-    
-    <label class="md-nav__link" for="nav-11-4">
-      Linux Shell
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="5">
-      <label class="md-nav__title" for="nav-11-4">
-        Linux Shell
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../bash-alias/" title="Bash Pro Tips" class="md-nav__link">
-      Bash Pro Tips
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../bash-cheat-sheet/" title="Bash Script Cheat Sheet" class="md-nav__link">
-      Bash Script Cheat Sheet
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../benchmark-linux/" title="Sysbench tool for benchmarking" class="md-nav__link">
-      Sysbench tool for benchmarking
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../cleanup/" title="Cleanup" class="md-nav__link">
-      Cleanup
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../nano/" title="Getting started with `Nano`" class="md-nav__link">
-      Getting started with `Nano`
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../permissions/" title="Setting Default permissions for Directory with user groups" class="md-nav__link">
-      Setting Default permissions for Directory with user groups
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        References
-      </label>
-    
-    <a href="./" title="References" class="md-nav__link md-nav__link--active">
-      References
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#gist" title="Gist" class="md-nav__link">
-    Gist
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bash-alias" title="bash alias" class="md-nav__link">
-    bash alias
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../rough/" title="Rough" class="md-nav__link">
-      Rough
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../shell-advanced-1/" title="Unix Shell Advanced" class="md-nav__link">
-      Unix Shell Advanced
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../shell/" title="Unix Shell in 10 mins" class="md-nav__link">
-      Unix Shell in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
-      ssh - Secure Shell in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tmux/" title="tmux in 10 mins" class="md-nav__link">
-      tmux in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../vim/" title="Vim in 10 mins" class="md-nav__link">
-      Vim in 10 mins
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-5" type="checkbox" id="nav-11-5">
-    
-    <label class="md-nav__link" for="nav-11-5">
-      Python
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="6">
-      <label class="md-nav__title" for="nav-11-5">
-        Python
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Python/Todo/" title="Python For Engineers and Professionals" class="md-nav__link">
-      Python For Engineers and Professionals
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Python/python-cheat-sheet/" title="Newbies" class="md-nav__link">
-      Newbies
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Python/setup-Jupyter/" title="How to Setup Jupyter Notebook Server as a daemon service" class="md-nav__link">
-      How to Setup Jupyter Notebook Server as a daemon service
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
 
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Instructions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../gettingStarted/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">00.Remote Access</span>
+    <ul class="subnav">
+                <li class="">
                     
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#gist" title="Gist" class="md-nav__link">
-    Gist
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bash-alias" title="bash alias" class="md-nav__link">
-    bash alias
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
+    <a class="" href="../../../00.Remote-Access/scp/">scp - Secure Copy in 10 mins</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../00.Remote-Access/ssh/">ssh - Secure Shell in 10 mins</a>
+                </li>
     </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
+	    </li>
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
+            <li class="toctree-l1">
+		
+    <span class="caption-text">01.UNIX Tutorial</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/shell/">UNIX Shell in 10 mins</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/unix-cheat-sheet/">UNIX Shell Cheat Sheet</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unix Tutorial</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/">Contents: UNIX Tutorial for Beginners</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/introunix/">Introduction to UNIX</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix0/">UNIX Tutorial</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix1/">1. UNIX Tutorial One</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix2/">2. UNIX Tutorial Two</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix3/">3. UNIX Tutorial Three</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix4/">4. UNIX Tutorial Four</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix5/">5. UNIX Tutorial Five</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix6/">6. UNIX Tutorial Six</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix7/">7. UNIX Tutorial Seven</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix8/">8. UNIX Tutorial Eight</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix99answer/">7. Answers</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">02.Editors</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../02.Editors/nano/">Getting started with `Nano`</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">03.Web Interaction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../03.Web-Interaction/Unix-Basic-NetworkAccess/">Basic Networking from shell</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../03.Web-Interaction/Unix-Networking/">More on Networking</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">04.Organizing Reporting</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/github/">Git and Github</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/github_xrzz/">Exercise: Git and Github</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/html/">Creating a Webpage with Github.io</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/html_xrzz/">Exercise: Create a webpage on Github.io</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/linux-google-cloud/">Setting up Google Cloud Console</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/markdown/">Markdown (.md)  in 10 mins</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../04.Organizing-Reporting/publishing-markdown/">Publishing Markdown Documents</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">99.Projects</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../99.Projects/Assignment-01/">Assignment 1: Project</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Others</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../Others/RollingUpdates/">RollingUpdates</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">WorkInProgress</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../WorkInProgress/University-List-Detailed/">US University Ranking 2019 (Detailed List)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../WorkInProgress/University-List/">Top 200 US University Rankings 2019</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../WorkInProgress/about/">About</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../">Getting Started with Tutorials</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../Helper/">Insert Multiple Cursors at the Start of Every Line with VSCode</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Intro</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Intro/mkdocs/">Markdown documentation with MkDocs and Themes</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Linux Shell</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../bash-alias/">Bash Pro Tips</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../bash-cheat-sheet/">Bash Script Cheat Sheet</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../benchmark-linux/">Sysbench tool for benchmarking</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../cleanup/">Cleanup</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../nano/">Getting started with `Nano`</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../permissions/">Setting Default permissions for Directory with user groups</a>
+                </li>
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">References</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#references">References</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#gist">Gist</a></li>
+        
+            <li><a class="toctree-l5" href="#bash-alias">bash alias</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../rough/">Rough</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../shell-advanced-1/">Unix Shell Advanced</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../shell/">Unix Shell in 10 mins</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../ssh/">ssh - Secure Shell in 10 mins</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../tmux/">tmux in 10 mins</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../vim/">Vim in 10 mins</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Python</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Python/Todo/">Python For Engineers and Professionals</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Python/python-cheat-sheet/">Newbies</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Python/setup-Jupyter/">How to Setup Jupyter Notebook Server as a daemon service</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Less-Than-10 Tutorials (<10)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Linux Shell &raquo;</li>
+        
+      
+        
+          <li>Tutorials &raquo;</li>
+        
+      
+    
+    <li>References</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
               
-                
-                
                 <h1 id="references">References</h1>
 <h2 id="gist">Gist</h2>
 <ul>
@@ -1210,86 +408,53 @@
 <ul>
 <li><a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-useful-bash-aliases-and-functions">bash alias</a></li>
 </ul>
-                
-                  
-                
               
-              
-                
-
-
-              
-            </article>
+            </div>
           </div>
-        </div>
-      </main>
-      
-        
-<footer class="md-footer">
+          <footer>
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../permissions/" title="Setting Default permissions for Directory with user groups" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Setting Default permissions for Directory with user groups
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../rough/" title="Rough" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Rough
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rough/" class="btn btn-neutral float-right" title="Rough">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../permissions/" class="btn btn-neutral" title="Setting Default permissions for Directory with user groups"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
     </div>
   
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
-      </div>
-      
-        
-      
-    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
   </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
-    </div>
-    
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <span><a href="../permissions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-    
-    
       
-    
-  </body>
+        <span style="margin-left: 15px"><a href="../rough/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
 </html>

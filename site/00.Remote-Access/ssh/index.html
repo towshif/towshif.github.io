@@ -1,1513 +1,427 @@
-
-
-
-
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-      
-        <link rel="canonical" href="https://towshif.github.io/00.Remote-Access/ssh/">
-      
-      
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
-    
-    
-      
-        <title>ssh - Secure Shell in 10 mins - Less-Than-10 Tutorials (<10)</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
-      
-      
-    
-    
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
-    
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
-      
-    
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
-    
-    
-    
-  </head>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>ssh - Secure Shell in 10 mins - Less-Than-10 Tutorials (<10)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ssh - Secure Shell in 10 mins";
+    var mkdocs_page_input_path = "00.Remote-Access/ssh.md";
+    var mkdocs_page_url = "/00.Remote-Access/ssh/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
     
-      <a href="#ssh-secure-shell-in-10-mins" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon"></i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            
-              <span class="md-header-nav__topic">
-                Less-Than-10 Tutorials (<10)
-              </span>
-              <span class="md-header-nav__topic">
-                ssh - Secure Shell in 10 mins
-              </span>
-            
-          
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Less-Than-10 Tutorials (<10)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
 </div>
-          
-        
       </div>
-      
-    </div>
-  </nav>
-</header>
-    
-    <div class="md-container">
-      
-        
-      
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-nav__button md-logo">
-      
-        <i class="md-icon"></i>
-      
-    </a>
-    Less-Than-10 Tutorials (<10)
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../.." title="Instructions" class="md-nav__link">
-      Instructions
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../gettingStarted/" title="Getting Started" class="md-nav__link">
-      Getting Started
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
-    <label class="md-nav__link" for="nav-3">
-      00.Remote Access
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        00.Remote Access
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../scp/" title="scp - Secure Copy in 10 mins" class="md-nav__link">
-      scp - Secure Copy in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        ssh - Secure Shell in 10 mins
-      </label>
-    
-    <a href="./" title="ssh - Secure Shell in 10 mins" class="md-nav__link md-nav__link--active">
-      ssh - Secure Shell in 10 mins
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-on-linux" title="ssh on Linux" class="md-nav__link">
-    ssh on Linux
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install" title="Install" class="md-nav__link">
-    Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh-usage-syntax" title="ssh usage syntax" class="md-nav__link">
-    ssh usage syntax
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-client-for-windows-putty" title="ssh client for Windows: Putty" class="md-nav__link">
-    ssh client for Windows: Putty
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install_1" title="Install" class="md-nav__link">
-    Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connect" title="Connect" class="md-nav__link">
-    Connect
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#putty-fonts-themes-and-appearance-customizing-putty-with-powerline" title="Putty Fonts, Themes and Appearance: Customizing Putty with powerline" class="md-nav__link">
-    Putty Fonts, Themes and Appearance: Customizing Putty with powerline
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-authentication-keys" title="ssh authentication KEYS" class="md-nav__link">
-    ssh authentication KEYS
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-set-up-ssh-keys-on-host-and-client-linux" title="How To Set Up SSH Keys on Host and Client (Linux)" class="md-nav__link">
-    How To Set Up SSH Keys on Host and Client (Linux)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#log-in-using-your-private-key" title="Log In Using Your Private Key" class="md-nav__link">
-    Log In Using Your Private Key
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#retrieve-your-public-key-from-your-private-key" title="Retrieve Your Public Key from Your Private Key" class="md-nav__link">
-    Retrieve Your Public Key from Your Private Key
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-tips" title="ssh Tips" class="md-nav__link">
-    ssh Tips
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-ssh-config-file-for-easy-login-more-info" title="Using ssh config file for easy login : More Info" class="md-nav__link">
-    Using ssh config file for easy login : More Info
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-alias-in-bashrc-for-ssh-host-enries" title="Using alias in .bashrc for ssh host enries" class="md-nav__link">
-    Using alias in .bashrc for ssh host enries
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-tunnelling" title="SSH Tunnelling" class="md-nav__link">
-    SSH Tunnelling
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#port-forwarding-forward-tunnel" title="Port Forwarding : Forward Tunnel" class="md-nav__link">
-    Port Forwarding : Forward Tunnel
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reverse-ssh-tunnelling" title="Reverse SSH tunnelling" class="md-nav__link">
-    Reverse SSH tunnelling
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#google-cloud-comute-instance-ssh-connect" title="Google Cloud Comute Instance SSH connect" class="md-nav__link">
-    Google Cloud Comute Instance SSH connect
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      01.UNIX Tutorial
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        01.UNIX Tutorial
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/shell/" title="UNIX Shell in 10 mins" class="md-nav__link">
-      UNIX Shell in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/unix-cheat-sheet/" title="UNIX Shell Cheat Sheet" class="md-nav__link">
-      UNIX Shell Cheat Sheet
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
-    
-    <label class="md-nav__link" for="nav-4-3">
-      Unix Tutorial
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
-      <label class="md-nav__title" for="nav-4-3">
-        Unix Tutorial
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/Unix-Tutorial/" title="Contents: UNIX Tutorial for Beginners" class="md-nav__link">
-      Contents: UNIX Tutorial for Beginners
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/Unix-Tutorial/introunix/" title="Introduction to UNIX" class="md-nav__link">
-      Introduction to UNIX
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/Unix-Tutorial/unix0/" title="UNIX Tutorial" class="md-nav__link">
-      UNIX Tutorial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/Unix-Tutorial/unix1/" title="1. UNIX Tutorial One" class="md-nav__link">
-      1. UNIX Tutorial One
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/Unix-Tutorial/unix2/" title="2. UNIX Tutorial Two" class="md-nav__link">
-      2. UNIX Tutorial Two
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/Unix-Tutorial/unix3/" title="3. UNIX Tutorial Three" class="md-nav__link">
-      3. UNIX Tutorial Three
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/Unix-Tutorial/unix4/" title="4. UNIX Tutorial Four" class="md-nav__link">
-      4. UNIX Tutorial Four
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/Unix-Tutorial/unix5/" title="5. UNIX Tutorial Five" class="md-nav__link">
-      5. UNIX Tutorial Five
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/Unix-Tutorial/unix6/" title="6. UNIX Tutorial Six" class="md-nav__link">
-      6. UNIX Tutorial Six
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/Unix-Tutorial/unix7/" title="7. UNIX Tutorial Seven" class="md-nav__link">
-      7. UNIX Tutorial Seven
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/Unix-Tutorial/unix8/" title="8. UNIX Tutorial Eight" class="md-nav__link">
-      8. UNIX Tutorial Eight
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../01.UNIX-Tutorial/Unix-Tutorial/unix99answer/" title="7. Answers" class="md-nav__link">
-      7. Answers
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      02.Editors
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        02.Editors
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../02.Editors/nano/" title="Getting started with `Nano`" class="md-nav__link">
-      Getting started with `Nano`
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      03.Web Interaction
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        03.Web Interaction
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../03.Web-Interaction/Unix-Basic-NetworkAccess/" title="Basic Networking from shell" class="md-nav__link">
-      Basic Networking from shell
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../03.Web-Interaction/Unix-Networking/" title="More on Networking" class="md-nav__link">
-      More on Networking
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      04.Organizing Reporting
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        04.Organizing Reporting
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../04.Organizing-Reporting/github/" title="Git and Github" class="md-nav__link">
-      Git and Github
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../04.Organizing-Reporting/github_xrzz/" title="Exercise: Git and Github" class="md-nav__link">
-      Exercise: Git and Github
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../04.Organizing-Reporting/html/" title="Creating a Webpage with Github.io" class="md-nav__link">
-      Creating a Webpage with Github.io
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../04.Organizing-Reporting/html_xrzz/" title="Exercise: Create a webpage on Github.io" class="md-nav__link">
-      Exercise: Create a webpage on Github.io
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../04.Organizing-Reporting/linux-google-cloud/" title="Setting up Google Cloud Console" class="md-nav__link">
-      Setting up Google Cloud Console
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../04.Organizing-Reporting/markdown/" title="Markdown (.md)  in 10 mins" class="md-nav__link">
-      Markdown (.md)  in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../04.Organizing-Reporting/publishing-markdown/" title="Publishing Markdown Documents" class="md-nav__link">
-      Publishing Markdown Documents
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
-    
-    <label class="md-nav__link" for="nav-8">
-      99.Projects
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        99.Projects
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../99.Projects/Assignment-01/" title="Assignment 1: Project" class="md-nav__link">
-      Assignment 1: Project
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
-    
-    <label class="md-nav__link" for="nav-9">
-      Others
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        Others
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Others/RollingUpdates/" title="RollingUpdates" class="md-nav__link">
-      RollingUpdates
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
-    
-    <label class="md-nav__link" for="nav-10">
-      WorkInProgress
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
-        WorkInProgress
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../WorkInProgress/University-List-Detailed/" title="US University Ranking 2019 (Detailed List)" class="md-nav__link">
-      US University Ranking 2019 (Detailed List)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../WorkInProgress/University-List/" title="Top 200 US University Rankings 2019" class="md-nav__link">
-      Top 200 US University Rankings 2019
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../WorkInProgress/about/" title="About" class="md-nav__link">
-      About
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
-    
-    <label class="md-nav__link" for="nav-11">
-      Tutorials
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
-        Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/" title="Getting Started with Tutorials" class="md-nav__link">
-      Getting Started with Tutorials
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Helper/" title="Insert Multiple Cursors at the Start of Every Line with VSCode" class="md-nav__link">
-      Insert Multiple Cursors at the Start of Every Line with VSCode
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-3" type="checkbox" id="nav-11-3">
-    
-    <label class="md-nav__link" for="nav-11-3">
-      Intro
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
-      <label class="md-nav__title" for="nav-11-3">
-        Intro
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Intro/mkdocs/" title="Markdown documentation with MkDocs and Themes" class="md-nav__link">
-      Markdown documentation with MkDocs and Themes
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-4" type="checkbox" id="nav-11-4">
-    
-    <label class="md-nav__link" for="nav-11-4">
-      Linux Shell
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="5">
-      <label class="md-nav__title" for="nav-11-4">
-        Linux Shell
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/bash-alias/" title="Bash Pro Tips" class="md-nav__link">
-      Bash Pro Tips
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/bash-cheat-sheet/" title="Bash Script Cheat Sheet" class="md-nav__link">
-      Bash Script Cheat Sheet
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/benchmark-linux/" title="Sysbench tool for benchmarking" class="md-nav__link">
-      Sysbench tool for benchmarking
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/cleanup/" title="Cleanup" class="md-nav__link">
-      Cleanup
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/nano/" title="Getting started with `Nano`" class="md-nav__link">
-      Getting started with `Nano`
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/permissions/" title="Setting Default permissions for Directory with user groups" class="md-nav__link">
-      Setting Default permissions for Directory with user groups
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/reference/" title="References" class="md-nav__link">
-      References
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/rough/" title="Rough" class="md-nav__link">
-      Rough
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/shell-advanced-1/" title="Unix Shell Advanced" class="md-nav__link">
-      Unix Shell Advanced
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/shell/" title="Unix Shell in 10 mins" class="md-nav__link">
-      Unix Shell in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
-      ssh - Secure Shell in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/tmux/" title="tmux in 10 mins" class="md-nav__link">
-      tmux in 10 mins
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Linux Shell/vim/" title="Vim in 10 mins" class="md-nav__link">
-      Vim in 10 mins
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-5" type="checkbox" id="nav-11-5">
-    
-    <label class="md-nav__link" for="nav-11-5">
-      Python
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="6">
-      <label class="md-nav__title" for="nav-11-5">
-        Python
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Python/Todo/" title="Python For Engineers and Professionals" class="md-nav__link">
-      Python For Engineers and Professionals
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Python/python-cheat-sheet/" title="Newbies" class="md-nav__link">
-      Newbies
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/Python/setup-Jupyter/" title="How to Setup Jupyter Notebook Server as a daemon service" class="md-nav__link">
-      How to Setup Jupyter Notebook Server as a daemon service
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
 
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Instructions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../gettingStarted/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">00.Remote Access</span>
+    <ul class="subnav">
+                <li class="">
                     
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-on-linux" title="ssh on Linux" class="md-nav__link">
-    ssh on Linux
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install" title="Install" class="md-nav__link">
-    Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh-usage-syntax" title="ssh usage syntax" class="md-nav__link">
-    ssh usage syntax
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-client-for-windows-putty" title="ssh client for Windows: Putty" class="md-nav__link">
-    ssh client for Windows: Putty
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install_1" title="Install" class="md-nav__link">
-    Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connect" title="Connect" class="md-nav__link">
-    Connect
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#putty-fonts-themes-and-appearance-customizing-putty-with-powerline" title="Putty Fonts, Themes and Appearance: Customizing Putty with powerline" class="md-nav__link">
-    Putty Fonts, Themes and Appearance: Customizing Putty with powerline
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-authentication-keys" title="ssh authentication KEYS" class="md-nav__link">
-    ssh authentication KEYS
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-set-up-ssh-keys-on-host-and-client-linux" title="How To Set Up SSH Keys on Host and Client (Linux)" class="md-nav__link">
-    How To Set Up SSH Keys on Host and Client (Linux)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#log-in-using-your-private-key" title="Log In Using Your Private Key" class="md-nav__link">
-    Log In Using Your Private Key
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#retrieve-your-public-key-from-your-private-key" title="Retrieve Your Public Key from Your Private Key" class="md-nav__link">
-    Retrieve Your Public Key from Your Private Key
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-tips" title="ssh Tips" class="md-nav__link">
-    ssh Tips
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-ssh-config-file-for-easy-login-more-info" title="Using ssh config file for easy login : More Info" class="md-nav__link">
-    Using ssh config file for easy login : More Info
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-alias-in-bashrc-for-ssh-host-enries" title="Using alias in .bashrc for ssh host enries" class="md-nav__link">
-    Using alias in .bashrc for ssh host enries
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-tunnelling" title="SSH Tunnelling" class="md-nav__link">
-    SSH Tunnelling
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#port-forwarding-forward-tunnel" title="Port Forwarding : Forward Tunnel" class="md-nav__link">
-    Port Forwarding : Forward Tunnel
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reverse-ssh-tunnelling" title="Reverse SSH tunnelling" class="md-nav__link">
-    Reverse SSH tunnelling
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#google-cloud-comute-instance-ssh-connect" title="Google Cloud Comute Instance SSH connect" class="md-nav__link">
-    Google Cloud Comute Instance SSH connect
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
+    <a class="" href="../scp/">scp - Secure Copy in 10 mins</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">ssh - Secure Shell in 10 mins</a>
+    <ul class="subnav">
             
+    <li class="toctree-l3"><a href="#ssh-secure-shell-in-10-mins">ssh - Secure Shell in 10 mins</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#ssh-on-linux">ssh on Linux</a></li>
+        
+            <li><a class="toctree-l4" href="#ssh-client-for-windows-putty">ssh client for Windows: Putty</a></li>
+        
+            <li><a class="toctree-l4" href="#ssh-authentication-keys">ssh authentication KEYS</a></li>
+        
+            <li><a class="toctree-l4" href="#ssh-tips">ssh Tips</a></li>
+        
+            <li><a class="toctree-l4" href="#ssh-tunnelling">SSH Tunnelling</a></li>
+        
+            <li><a class="toctree-l4" href="#google-cloud-comute-instance-ssh-connect">Google Cloud Comute Instance SSH connect</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
+            <li class="toctree-l1">
+		
+    <span class="caption-text">01.UNIX Tutorial</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/shell/">UNIX Shell in 10 mins</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/unix-cheat-sheet/">UNIX Shell Cheat Sheet</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unix Tutorial</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/Unix-Tutorial/">Contents: UNIX Tutorial for Beginners</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/Unix-Tutorial/introunix/">Introduction to UNIX</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/Unix-Tutorial/unix0/">UNIX Tutorial</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/Unix-Tutorial/unix1/">1. UNIX Tutorial One</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/Unix-Tutorial/unix2/">2. UNIX Tutorial Two</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/Unix-Tutorial/unix3/">3. UNIX Tutorial Three</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/Unix-Tutorial/unix4/">4. UNIX Tutorial Four</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/Unix-Tutorial/unix5/">5. UNIX Tutorial Five</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/Unix-Tutorial/unix6/">6. UNIX Tutorial Six</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/Unix-Tutorial/unix7/">7. UNIX Tutorial Seven</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/Unix-Tutorial/unix8/">8. UNIX Tutorial Eight</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01.UNIX-Tutorial/Unix-Tutorial/unix99answer/">7. Answers</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">02.Editors</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../02.Editors/nano/">Getting started with `Nano`</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">03.Web Interaction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../03.Web-Interaction/Unix-Basic-NetworkAccess/">Basic Networking from shell</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03.Web-Interaction/Unix-Networking/">More on Networking</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">04.Organizing Reporting</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../04.Organizing-Reporting/github/">Git and Github</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../04.Organizing-Reporting/github_xrzz/">Exercise: Git and Github</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../04.Organizing-Reporting/html/">Creating a Webpage with Github.io</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../04.Organizing-Reporting/html_xrzz/">Exercise: Create a webpage on Github.io</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../04.Organizing-Reporting/linux-google-cloud/">Setting up Google Cloud Console</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../04.Organizing-Reporting/markdown/">Markdown (.md)  in 10 mins</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../04.Organizing-Reporting/publishing-markdown/">Publishing Markdown Documents</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">99.Projects</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../99.Projects/Assignment-01/">Assignment 1: Project</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Others</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../Others/RollingUpdates/">RollingUpdates</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">WorkInProgress</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../WorkInProgress/University-List-Detailed/">US University Ranking 2019 (Detailed List)</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../WorkInProgress/University-List/">Top 200 US University Rankings 2019</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../WorkInProgress/about/">About</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../tutorials/">Getting Started with Tutorials</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../tutorials/Helper/">Insert Multiple Cursors at the Start of Every Line with VSCode</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Intro</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Intro/mkdocs/">Markdown documentation with MkDocs and Themes</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Linux Shell</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/bash-alias/">Bash Pro Tips</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/bash-cheat-sheet/">Bash Script Cheat Sheet</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/benchmark-linux/">Sysbench tool for benchmarking</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/cleanup/">Cleanup</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/nano/">Getting started with `Nano`</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/permissions/">Setting Default permissions for Directory with user groups</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/reference/">References</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/rough/">Rough</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/shell-advanced-1/">Unix Shell Advanced</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/shell/">Unix Shell in 10 mins</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/ssh/">ssh - Secure Shell in 10 mins</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/tmux/">tmux in 10 mins</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Linux Shell/vim/">Vim in 10 mins</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Python</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Python/Todo/">Python For Engineers and Professionals</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Python/python-cheat-sheet/">Newbies</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tutorials/Python/setup-Jupyter/">How to Setup Jupyter Notebook Server as a daemon service</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Less-Than-10 Tutorials (<10)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>00.Remote Access &raquo;</li>
+        
+      
+    
+    <li>ssh - Secure Shell in 10 mins</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
               
-                
-                
                 <h1 id="ssh-secure-shell-in-10-mins">ssh - Secure Shell in 10 mins</h1>
 <p>ssh is a secure shell client to access remote terminal securely.</p>
 <hr />
 <h2 id="ssh-on-linux">ssh on Linux</h2>
 <h3 id="install">Install</h3>
 <p>ssh client is available as a part of openssh-server package. </p>
-<div class="codehilite"><pre><span></span># install ssh client, server and ssh-agent
+<pre><code># install ssh client, server and ssh-agent
 sudo apt install openssh-server
-</pre></div>
-
-
+</code></pre>
 <h3 id="ssh-usage-syntax"><code>ssh</code> usage syntax</h3>
-<div class="codehilite"><pre><span></span># Basic usage     
+<pre><code># Basic usage     
 ssh [USERNAME]@[IP_ADDRESS or HOSTNAME]
 
 # with custom PORT; default PORT:22
 ssh -p [PORT] [USERNAME]@[IP_ADDRESS or HOSTNAME]
-</pre></div>
-
-
+</code></pre>
 <p>Example: </p>
-<div class="codehilite"><pre><span></span>ssh -p 6789 fermi@server.gentoo.com
-</pre></div>
-
-
+<pre><code>ssh -p 6789 fermi@server.gentoo.com
+</code></pre>
 <hr />
 <h2 id="ssh-client-for-windows-putty">ssh client for Windows: <code>Putty</code></h2>
 <h3 id="install_1">Install</h3>
@@ -1515,14 +429,12 @@ ssh -p [PORT] [USERNAME]@[IP_ADDRESS or HOSTNAME]
 <em> Download Putty standalone version or installed version from <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a>
 </em> Run the PuTTY tool (putty.exe)
 * In the PuTTY tool, specify your username and the external IP address of the instance that you want to connect to in the Host Name field. Click open.</p>
-<div class="codehilite"><pre><span></span>In the example below, the `username` is jane_doe and the external `IP` address is 203.0.113.2
+<pre><code>In the example below, the `username` is jane_doe and the external `IP` address is 203.0.113.2
 
 You can however use only `[IP]` instead of the `[username]@[IP]` syntax.
 
 ![Putty](https://cloud.google.com/compute/images/connecting/putty_set_hostname.png)
-</pre></div>
-
-
+</code></pre>
 <h3 id="connect">Connect</h3>
 <p>User guide for connecting to server : <a href="https://www.digitalocean.com/docs/droplets/how-to/connect-with-ssh/putty/">ssh with putty </a>
 For exploring more advanced option on putty continue reading. </p>
@@ -1552,49 +464,39 @@ Follow the installation instructions for powerline</p>
 <em> public key [remains in server or the host] ; format </em>.pub (Unix) and <em>.ppk (windows Putty) 
 </em> private key [used by client]</p>
 <p>Usage Syntax for ssh connection with keys:</p>
-<div class="codehilite"><pre><span></span>ssh -i [PATH_TO_PRIVATE_KEY] [USERNAME]@[IP_ADDRESS]
-</pre></div>
-
-
+<pre><code>ssh -i [PATH_TO_PRIVATE_KEY] [USERNAME]@[IP_ADDRESS]
+</code></pre>
 <p>Example: </p>
-<div class="codehilite"><pre><span></span>ssh -i /home/towshif/.ssh/AWS-Server2019-Key -p 6789 towshif@server.gentoo.com
-</pre></div>
-
-
+<pre><code>ssh -i /home/towshif/.ssh/AWS-Server2019-Key -p 6789 towshif@server.gentoo.com
+</code></pre>
 <h3 id="how-to-set-up-ssh-keys-on-host-and-client-linux">How To Set Up SSH Keys on Host and Client (Linux)</h3>
 <p>Now lets look at how to setup server and client to use keys. With keys you can also skip password for ssh login. 
 1. Step One—Create the RSA Key Pair</p>
-<div class="codehilite"><pre><span></span>The first step is to create the key pair on the `client` machine (there is a good chance that this will just be your computer):
+<pre><code>The first step is to create the key pair on the `client` machine (there is a good chance that this will just be your computer):
 
     ssh-keygen -t rsa
 
 advanced usage:
 
     ssh-keygen -t rsa -f ~/.ssh/[KEY_FILENAME] -C [USERNAME]
-</pre></div>
-
-
+</code></pre>
 <ol>
 <li>
 <p>Step Two—Store the Keys and Passphrase</p>
 <p>Once you have entered the Gen Key command, you will get a few more questions:</p>
-<div class="codehilite"><pre><span></span>Enter file in which to save the key (/home/demo/.ssh/id_rsa):
+<pre><code>Enter file in which to save the key (/home/demo/.ssh/id_rsa):
 # You can press enter here, saving the file to the user home (in this case, my example user is called demo).
 
 Enter passphrase (empty for no passphrase):
-</pre></div>
-
-
+</code></pre>
 <p>Example: 
 The entire key generation process looks like this:</p>
 <blockquote>
-<div class="codehilite"><pre><span></span>ssh-keygen -t rsa
-</pre></div>
-
-
+<pre><code>ssh-keygen -t rsa
+</code></pre>
 </blockquote>
 <p>Output</p>
-<div class="codehilite"><pre><span></span>Generating public/private rsa key pair.
+<pre><code>Generating public/private rsa key pair.
 Enter file in which to save the key (/home/demo/.ssh/id_rsa): 
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
@@ -1602,7 +504,7 @@ Your identification has been saved in /home/demo/.ssh/id_rsa.
 Your public key has been saved in /home/demo/.ssh/id_rsa.pub.
 The key fingerprint is:
 4a:dd:0a:c6:35:4e:3f:ed:27:38:8c:74:44:4d:93:67 demo@a
-The key&#39;s randomart image is:
+The key's randomart image is:
 +--[ RSA 2048]----+
 |          .oo.   |
 |         .  o.E  |
@@ -1616,78 +518,58 @@ The key&#39;s randomart image is:
 +-----------------+
 The public key is now located in /home/demo/.ssh/id_rsa.pub. 
 The private key (identification) is now located in /home/demo/.ssh/id_rsa.
-</pre></div>
-
-
+</code></pre>
 <p>List the contents of ~/.ssh to view the key files. 
 <em> Public key file: ~/.ssh/[KEY_FILENAME].pub
 </em> Private key file: ~/.ssh/[KEY_FILENAME]
 where [KEY_FILENAME] is the filename of the SSH key, which was set when the key was created.</p>
 <p>Restrict access to the private key so only you (this USER) can access it</p>
-<div class="codehilite"><pre><span></span>    chmod 400 ~/.ssh/[KEY_FILENAME]
-</pre></div>
-
-
+<pre><code>    chmod 400 ~/.ssh/[KEY_FILENAME]
+</code></pre>
 <p>Private keys can be used from different clients to connect to the host.</p>
 </li>
 <li>
 <p>Step Three—Copy the Public Key to Host Server that you want to access. </p>
 <p>Once the key pair is generated, it's time to place the public key on the server that we want to use.
 You can copy the public key into the new machine's authorized_keys file with the <code>ssh-copy-id</code> command. Make sure to replace the example username and IP address below.</p>
-<div class="codehilite"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="k">copy</span><span class="o">-</span><span class="kt">id</span> <span class="n">demo</span><span class="mf">@198.51.100.0</span>
-</pre></div>
-
-
+<pre><code>ssh-copy-id demo@198.51.100.0
+</code></pre>
 <p>OR copy manually like this or any way you prefer. </p>
-<div class="codehilite"><pre><span></span><span class="n">cat</span> <span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="p">.</span><span class="n">pub</span> <span class="o">|</span> <span class="n">ssh</span> <span class="n">demo</span><span class="mf">@198.51.100.0</span> <span class="s">&quot;mkdir -p ~/.ssh &amp;amp;&amp;amp; chmod 700 ~/.ssh &amp;amp;&amp;amp; cat &amp;gt;&amp;gt;  ~/.ssh/authorized_keys&quot;</span>
-</pre></div>
-
-
+<pre><code>cat ~/.ssh/id_rsa.pub | ssh demo@198.51.100.0 "mkdir -p ~/.ssh &amp;&amp; chmod 700 ~/.ssh &amp;&amp; cat &gt;&gt;  ~/.ssh/authorized_keys"
+</code></pre>
 <p>Either one you choose you will see similar output as this </p>
-<div class="codehilite"><pre><span></span><span class="n">The</span> <span class="n">authenticity</span> <span class="n">of</span> <span class="n">host</span> <span class="err">&#39;</span><span class="mf">198.51.100.0</span> <span class="p">(</span><span class="mf">198.51.100.0</span><span class="p">)</span><span class="err">&#39;</span> <span class="n">can</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">be</span> <span class="n">established</span><span class="p">.</span>
-<span class="n">RSA</span> <span class="n">key</span> <span class="n">fingerprint</span> <span class="n">is</span> <span class="nl">b1</span><span class="p">:</span><span class="mi">2</span><span class="nl">d</span><span class="p">:</span><span class="mi">33</span><span class="o">:</span><span class="mi">67</span><span class="o">:</span><span class="nl">ce</span><span class="p">:</span><span class="mi">35</span><span class="o">:</span><span class="mi">4</span><span class="nl">d</span><span class="p">:</span><span class="mf">5f</span><span class="o">:</span><span class="nl">f3</span><span class="p">:</span><span class="nl">a8</span><span class="p">:</span><span class="nl">cd</span><span class="p">:</span><span class="nl">c0</span><span class="p">:</span><span class="nl">c4</span><span class="p">:</span><span class="mi">48</span><span class="o">:</span><span class="mi">86</span><span class="o">:</span><span class="mf">12.</span>
-<span class="n">Are</span> <span class="n">you</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="k">continue</span> <span class="n">connecting</span> <span class="p">(</span><span class="n">yes</span><span class="o">/</span><span class="n">no</span><span class="p">)</span><span class="o">?</span> <span class="n">yes</span>
-<span class="nl">Warning</span><span class="p">:</span> <span class="n">Permanently</span> <span class="n">added</span> <span class="err">&#39;</span><span class="mf">198.51.100.0</span><span class="err">&#39;</span> <span class="p">(</span><span class="n">RSA</span><span class="p">)</span> <span class="n">to</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">known</span> <span class="n">hosts</span><span class="p">.</span>
-<span class="n">user</span><span class="mf">@198.51.100.0</span><span class="err">&#39;</span><span class="n">s</span> <span class="nl">password</span><span class="p">:</span>
-</pre></div>
-
-
+<pre><code>The authenticity of host '198.51.100.0 (198.51.100.0)' can't be established.
+RSA key fingerprint is b1:2d:33:67:ce:35:4d:5f:f3:a8:cd:c0:c4:48:86:12.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '198.51.100.0' (RSA) to the list of known hosts.
+user@198.51.100.0's password:
+</code></pre>
 <p>Remember to change permisson for public key to 700 on your remote server. Make sure you're logged in as the user for whom the key was created. Then, ensure your .ssh directory on the server, and the files it contains, have the correct permissions:</p>
-<div class="codehilite"><pre><span></span>chmod 700 ~/.ssh/[KEY_FILENAME].pub        
+<pre><code>chmod 700 ~/.ssh/[KEY_FILENAME].pub        
 # optional if you are only user
 chmod 600 ~/.ssh/authorized_keys
-</pre></div>
-
-
+</code></pre>
 </li>
 </ol>
 <p>To Create ssh keys on Windows with <code>putty</code> use this reference: <br />
 <a href="https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/create-with-putty/">SSH keys on Windows</a></p>
 <h3 id="log-in-using-your-private-key">Log In Using Your Private Key</h3>
 <p>You can now SSH or SFTP into your server using your private key. From the command line, you can use:</p>
-<div class="codehilite"><pre><span></span>ssh SYSUSER@x.x.x.x
-</pre></div>
-
-
+<pre><code>ssh SYSUSER@x.x.x.x
+</code></pre>
 <p>If you didn't create your key in the default location, you'll need to specify the location:</p>
-<div class="codehilite"><pre><span></span>ssh -i ~/.ssh/custom_key_name SYSUSER@x.x.x.x
-</pre></div>
-
-
+<pre><code>ssh -i ~/.ssh/custom_key_name SYSUSER@x.x.x.x
+</code></pre>
 <p>OR a more verbose syntax </p>
-<div class="codehilite"><pre><span></span># -l [USER]
+<pre><code># -l [USER]
 # -i [PATH TO PRIVATE KEY]
 # -p [PORT]
 ssh -i /nfs/shared/users/nixcraft/keys/server1/id_rsa -p 4242 -l nixcraft server1.cyberciti.biz
-</pre></div>
-
-
+</code></pre>
 <h3 id="retrieve-your-public-key-from-your-private-key">Retrieve Your Public Key from Your Private Key</h3>
 <p>The following command will retrieve the public key from a private key:</p>
-<div class="codehilite"><pre><span></span>ssh-keygen -y
-</pre></div>
-
-
+<pre><code>ssh-keygen -y
+</code></pre>
 <p>This can be useful, for example, if your server provider generated your SSH key for you and you were only able to download the private key portion of the key pair.
 Note that you cannot retrieve the private key if you only have the public key.</p>
 <p>If you're using a Windows SSH client, such as PuTTy, look in the configuration settings to specify the path to your private key.</p>
@@ -1697,18 +579,14 @@ Note that you cannot retrieve the private key if you only have the public key.</
 <p>Create a file <code>config</code> in ~/.ssh dir and you can populate it with the host login configurations that are frequently used by that machine. 
 Note : passwords are not allowed to be saven in this file. </p>
 <p>If config file doesnot exist create one </p>
-<div class="codehilite"><pre><span></span>touch ~/.ssh/config
+<pre><code>touch ~/.ssh/config
 vi ~/.ssh/config
-</pre></div>
-
-
+</code></pre>
 <p>Set permissions on ~/.ssh/config</p>
-<div class="codehilite"><pre><span></span>chmod 600 ~/.ssh/config
-</pre></div>
-
-
+<pre><code>chmod 600 ~/.ssh/config
+</code></pre>
 <p>Sample basic <code>config</code> : </p>
-<div class="codehilite"><pre><span></span>Host scotch
+<pre><code>Host scotch
     HostName scotch.io
     User nick
 
@@ -1727,37 +605,29 @@ Host amazon1
     IdentityFile /path/to/special/privatekey/amazonKey
     ServerAliveInterval 60
     ServerAliveCountMax 30
-</pre></div>
-
-
+</code></pre>
 <p>For host "amazon1" there are <code>ServerAliveInterval</code> and <code>ServerAliveCountMax</code> options. 
 <em> <code>ServerAliveInterval</code> option will refresh your session every 60 seconds in order to keep it open, 
 </em> <code>ServerAliveCountMax</code> option specifies that this should only be performed 30 times, thus ensuring your session won’t time-out for at least 30 minutes of inactivity.</p>
 <h3 id="using-alias-in-bashrc-for-ssh-host-enries">Using alias in <code>.bashrc</code> for ssh host enries</h3>
-<div class="codehilite"><pre><span></span># in .bashrc file add this line 
-alias dev=&#39;ssh fooey@dev.example.com -p 22000&#39;
+<pre><code># in .bashrc file add this line 
+alias dev='ssh fooey@dev.example.com -p 22000'
 
 # then source it 
 source ~/.bashrc
-</pre></div>
-
-
+</code></pre>
 <p>To connect </p>
-<div class="codehilite"><pre><span></span>$ dev
-</pre></div>
-
-
+<pre><code>$ dev
+</code></pre>
 <p>Use as many alias as needed. For more info on <code>alias</code> use <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-useful-bash-aliases-and-functions">this reference</a></p>
 <hr />
 <h2 id="ssh-tunnelling">SSH Tunnelling</h2>
 <p>What is it?</p>
 <h3 id="port-forwarding-forward-tunnel">Port Forwarding : Forward Tunnel</h3>
-<div class="codehilite"><pre><span></span>ssh -f -N -L 9906:127.0.0.1:3306 coolio@database.example.com
+<pre><code>ssh -f -N -L 9906:127.0.0.1:3306 coolio@database.example.com
 # -f puts ssh in background
 # -N makes it not execute a remote command
-</pre></div>
-
-
+</code></pre>
 <h3 id="reverse-ssh-tunnelling">Reverse SSH tunnelling</h3>
 <p>This section is in progress.    </p>
 <hr />
@@ -1766,86 +636,53 @@ source ~/.bashrc
 <li><a href="https://cloud.google.com/compute/docs/instances/connecting-advanced#provide-key">Connect with ssh / putty</a></li>
 <li><a href="https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys#createsshkeys">Create New SSH Keys</a></li>
 </ul>
-                
-                  
-                
               
-              
-                
-
-
-              
-            </article>
+            </div>
           </div>
-        </div>
-      </main>
-      
-        
-<footer class="md-footer">
+          <footer>
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../scp/" title="scp - Secure Copy in 10 mins" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                scp - Secure Copy in 10 mins
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../01.UNIX-Tutorial/shell/" title="UNIX Shell in 10 mins" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                UNIX Shell in 10 mins
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../01.UNIX-Tutorial/shell/" class="btn btn-neutral float-right" title="UNIX Shell in 10 mins">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../scp/" class="btn btn-neutral" title="scp - Secure Copy in 10 mins"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
     </div>
   
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
-      </div>
-      
-        
-      
-    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
   </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
-    </div>
-    
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <span><a href="../scp/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-    
-    
       
-    
-  </body>
+        <span style="margin-left: 15px"><a href="../../01.UNIX-Tutorial/shell/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
 </html>
