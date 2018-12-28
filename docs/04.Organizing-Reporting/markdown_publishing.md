@@ -14,6 +14,8 @@ More info on [How Does publishing work?](https://www.markdownguide.org/getting-s
 3. Use the Markdown application to convert the Markdown file to an HTML document.
 4. View the HTML file in a web browser or use the Markdown application to convert it to another file format, like PDF.
 
+There are a number of markdown publishing/ conversion utilities like `MKdocs`, `Jekyll`, `Hugo`, `Docusaurus`, `Read the Docs`, `Pandoc`, `Sphynx`. For this tutorial we will be using a simple one: `MKdocs`.
+
 
 ## **MKdocs** - A simple documentation engine written in Python.
 

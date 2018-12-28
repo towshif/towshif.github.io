@@ -645,6 +645,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
       
       
       
@@ -1300,6 +1307,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
       
       
       
@@ -1329,7 +1343,7 @@
 <img alt="" src="https://www.howtogeek.com/wp-content/uploads/2014/01/2-create-repo.jpg" /></p>
 <hr />
 <h2 id="beginners-guide">Beginners Guide</h2>
-<p>Create a Github account at <a href="https://github.com">https://github.com</a>. Remember your usename and password. You will need is everytime you sync your git on your local machine with github.</p>
+<p>Create a Github account at <a href="https://github.com">https://github.com</a>. Remember your usename and password. You will need is everytime you sync your local git repo with github.</p>
 <p>Git and Github in a nutshell: </p>
 <pre><code># Working locally
 git status      # tell whats the current sync status of local repo
@@ -1346,7 +1360,7 @@ git commit [file1] [file2] [--all]
 </code></pre>
 <h2 id="getting-started-with-a-github-repo">Getting started with a github repo</h2>
 <p>Go to <a href="https://github.com">https://github.com</a> and login. </p>
-<p>Create a new repository (aka repo) with a name for the project. In this example we will use <code>YOUR-REPOSITORY</code> as you repo name. </p>
+<p>Create a new repository (aka repo) with a name for the project. In this example we will use <code>YOUR-REPOSITORY</code> as you repo name. Replace this with you own project name.</p>
 <p>Now on your local machine, go to the directory under which you want this git project</p>
 <pre><code># clone the git repo you created
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
@@ -1370,12 +1384,16 @@ git commit --all        # you will be asked to write a message with each commit
 # sync it with remote repository 
 git push origin master
 </code></pre>
-<p>For first time <code>push</code> you will be asked for username and password. After you have finished push run the following to remember your credentials for future use. Or else you will be asked to enter password everytime you push.</p>
+<p>For first time <code>push</code> you will be asked for username and password. After you have finished push run the following to remember your credentials for future use. Or else you will be asked to enter password everytime you push this repo.</p>
 <pre><code># to remember git crcedentials (user, password)
 git config credential.helper store
 
 # then run git pull 
 git pull
+</code></pre>
+<p>First time git usage on a machine can ask you for commit username and email address with instructions of how to set them both. You will need to use the <code>git config --global</code> option to set them both</p>
+<pre><code>git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
 </code></pre>
 <p>Now check online at https://github.com/YOUR-USERNAME/YOUR-REPOSITORY to see if the changes you made synced correctly.</p>
 <p>Next time when when you start working on your project you should always <code>pull</code> before making any local changes. This will sync your local with remote and you will have the latest changes before you start. </p>
@@ -1458,6 +1476,18 @@ git commit -m "edit file1"
 # push changes to github
 git push
 </code></pre>
+<h2 id="references">References</h2>
+<p><strong>Git</strong></p>
+<ul>
+<li>Guide: http://rogerdudler.github.io/git-guide/</li>
+<li>Tutorial: https://git-scm.com/docs/gittutorial </li>
+<li>Video:  https://www.youtube.com/watch?v=noZnOSpcjYY</li>
+</ul>
+<p><strong>Github</strong></p>
+<ul>
+<li><a href="https://guides.github.com/activities/hello-world/">Github HelloWorld</a></li>
+<li><a href="https://guides.github.com/">Github Guides</a></li>
+</ul>
                 
                   
                 

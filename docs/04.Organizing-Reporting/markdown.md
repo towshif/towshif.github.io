@@ -6,6 +6,12 @@ Got to [https://stackedit.io/app#](https://stackedit.io/app#) and learn markdown
 **Markdown** is a lightweight markup language with plain text formatting syntax. Its design allows it to be converted to many output formats like `pdf`, `html`, `doc` etc. 
 Markdown is a fast and easy way to take notes, create content for a website, and produce print-ready documents. It was designed for the web, so it should come as no surprise that there are plenty of applications specifically designed for creating website content.
 
+References: 
+
+* [https://blog.ghost.org/markdown/](https://blog.ghost.org/markdown/)
+* 
+
+
 
 **Getting started**
 

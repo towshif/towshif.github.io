@@ -1180,21 +1180,21 @@
 <ol>
 <li>
 <p>Go to <a href="https://github.com">https://github.com</a> and login. </p>
-<p>Create a new repository (aka repo) with a name for the project. In this example we will use <code>Project101</code> as you repo name. Copy the git repo link (HTTPS) from the Download tab. </p>
+<p>Create a new repository (aka repo) with a name for the project. In this example we will use <code>project101</code> as you repo name. Copy the git repo link (HTTPS) from the Download tab. </p>
 <p>Now on your local machine, go to the directory under which you want this git project and clone this repo. </p>
 <pre><code># clone the git repo you created
-git clone https://github.com/YOUR-USERNAME/Project101.git
+git clone https://github.com/YOUR-USERNAME/project101.git
 
 # check local dir 
 ls
 
 # you should be able to see repo directory
 # cd into this git project dir 
-cd Project101
+cd project101
 </code></pre>
 </li>
 <li>
-<p>Now that we have setup the repo locally, let us write some code in <code>C</code>.</p>
+<p>Now that we have setup the repo locally, let us write some simple code in <code>C</code>.</p>
 <p>Create a file <code>helloworld.c</code></p>
 <pre><code>#include &lt;stdio.h&gt;
 
@@ -1213,15 +1213,15 @@ Hello World from Unix
 </code></pre>
 <p>Lets write a helloworld program in <code>python</code>. </p>
 <p>Create a new file <code>helloworld.py</code>, open it in nano editor and write the following single line of python code. </p>
-<pre><code>print ("Hello World from Unix.")
+<pre><code>print ("Hello World from Unix")
 </code></pre>
-<p>There is not compilation step in python since it is an interpreter based language like <code>sh</code>, <code>bash</code>, <code>perl</code> scripts. Where as <code>C</code>, <code>Java</code>, <code>C#</code> are compiled languages and needs a compiler to convert them into binary. To run this python program. </p>
+<p>There is no compilation step in python since it is an interpreter based language like <code>sh</code>, <code>bash</code>, <code>perl</code>. Whereas <code>C</code>, <code>Java</code>, <code>C#</code> are compiled languages and needs a compiler to convert them into binary. To run this python program we fire the following commands </p>
 <pre><code>python helloworld.py
 Hello World from Unix
 </code></pre>
 </li>
 <li>
-<p>Now that we have this code we want to sync this with github. So we need to go to the <code>projects1</code> root directory and then run git add, commit and push </p>
+<p>Now that we have this code we want to sync this with github. So we need to go to the <code>projects101/</code> root directory and then run git add, commit and push. Also we run git congif + pull to save out credentials since this is our first push. </p>
 <pre><code>git add --all 
 git commit --all 
 # you will be asked for commit message
@@ -1235,11 +1235,11 @@ git pull
 </code></pre>
 </li>
 <li>
-<p>Now navigate to your online repo at https://github.com/YOUR-USERNAME/Project101. You should be able to see the files <code>helloworld.c</code> and <code>hellowold.py</code>. Click on them and browse through the contents. </p>
+<p>Now navigate to your online repo at https://github.com/YOUR-USERNAME/project101. You should be able to see the files <code>helloworld.c</code> and <code>hellowold.py</code>. Click on them and browse through the contents. </p>
 </li>
 <li>
 <p>Lets get back to the terminal/ shell that we were using and make changes into these two files. </p>
-<p>We will create an <code>addme()</code> function in each of the <code>helloworld.c</code> and <code>hellowold.py</code> files as follows. The purpose of this function is to add two integers and then we want to print the sum as output from the code.</p>
+<p>We will create an <code>addme()</code> function in each of the <code>helloworld.c</code> and <code>hellowold.py</code> files. The purpose of this function is to add two integers and then we want to print the sum as output from the code. The new <code>helloworld.c</code> code as follows:</p>
 <pre><code>#include &lt;stdio.h&gt;
 
 int addme (int a, int b) {
@@ -1265,8 +1265,8 @@ I added: 5 + 7 = 12
 print ("Hello World from Unix. I am KrazyCoder")
 print ("I added: 5 + 7 = ", addme(5,7))
 </code></pre>
-<p>Note Python has a simpler syntax; it does not need for <code>;</code> at line endinngs and variable declaration like <code>int</code>, <code>string</code>, <code>float</code> etc. </p>
-<p>Lets run the python file </p>
+<p>Note Python has a simpler syntax; it does not need for <code>;</code> at line endinngs and variable declaration like <code>int</code>, <code>string</code>, <code>float</code> etc. Also pay attention to the tab/ indentation for functions and loops. There are no curly braces <code>{}</code> in python so the indent defines the content within a function or subroutine. </p>
+<p>Lets run the python file and you will get the folloeing output. </p>
 <pre><code>python helloworld.py 
 Hello World from Unix. I am KrazyCoder
 ('I added: 5 + 7 = ', 12)
@@ -1281,9 +1281,20 @@ git commit --all
 git push 
 # you will be asked for github username and password.
 </code></pre>
-<p>Visualize the changes in your repo at github.com. </p>
+<p>Got to github.com and see the changes in your repo at github.com. </p>
+</li>
+<li>
+<p>Visualize/ track changes on github.com</p>
+<p>In your github repo page click on "Commits" link. This will show all the commits you have made. Select one of them to view what files were changed and the code changes you made in each one of the. Color coding green with a <code>+</code> indicate addition and red <code>-</code> means deletions. </p>
+<p>There are two options for viewing changes.  </p>
+<ul>
+<li>"Unified" - shows the changes together and </li>
+<li>"Split" - shows the change side by side as shown in the image below. </li>
+</ul>
+<p><img alt="github-difference" src="https://github.githubassets.com/images/modules/site/product-illo/img-see-the-difference.png" /></p>
 </li>
 </ol>
+<p>This marks the end of this github tutorial. Feel free to check the references in the previous page if you want to learn more on git and github features.</p>
                 
                   
                 

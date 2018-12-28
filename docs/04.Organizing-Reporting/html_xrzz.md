@@ -6,15 +6,18 @@ In the previous tutorial we already hosted a simple index.html file with "Hello 
 ## Problem statement: What do we want to achieve ?
 This is the [bio page](https://towshif.github.io/) we will try to mimic. As you can see there are a few components we want to update first.
 
-* profile images  
+* Title 
+* Profile images  
 * Bio text 
 
 ## Modifying HTML Template 
 
 Lets get started 
 
-1. Download the sample `index.html` file 
-    The sample html file for this page is available here [https://raw.githubusercontent.com/towshif/towshif.github.io/master/docs/Samples/sample_index.html](https://raw.githubusercontent.com/towshif/towshif.github.io/master/docs/Samples/sample_index.html)
+1. Download the `sample_index.html` file 
+    The sample html file for this page is available here 
+    
+    > [https://raw.githubusercontent.com/towshif/towshif.github.io/master/docs/Samples/sample_index.html](https://raw.githubusercontent.com/towshif/towshif.github.io/master/docs/Samples/sample_index.html)
 
     To download this file we will fire command `wget`
 
@@ -106,3 +109,8 @@ Lets get started
         <a href="#" rel="me">LinkedIn</a> </li>
 
 
+
+## References
+
+* [Github Pages Getting Started Video - Youtube](https://www.youtube.com/watch?v=RaKX4A5EiQo)
+* [Github Pages](https://guides.github.com/features/pages/)

@@ -21,7 +21,7 @@ A repository (usually abbreviated to “repo”) is a location where all the fil
 
 ## Beginners Guide 
 
-Create a Github account at [https://github.com](https://github.com). Remember your usename and password. You will need is everytime you sync your git on your local machine with github.
+Create a Github account at [https://github.com](https://github.com). Remember your usename and password. You will need is everytime you sync your local git repo with github.
 
 Git and Github in a nutshell: 
 
@@ -43,7 +43,7 @@ Git and Github in a nutshell:
 
 Go to [https://github.com](https://github.com) and login. 
 
-Create a new repository (aka repo) with a name for the project. In this example we will use `YOUR-REPOSITORY` as you repo name. 
+Create a new repository (aka repo) with a name for the project. In this example we will use `YOUR-REPOSITORY` as you repo name. Replace this with you own project name.
 
 Now on your local machine, go to the directory under which you want this git project
 
@@ -69,13 +69,19 @@ Now on your local machine, go to the directory under which you want this git pro
     # sync it with remote repository 
     git push origin master 
 
-For first time `push` you will be asked for username and password. After you have finished push run the following to remember your credentials for future use. Or else you will be asked to enter password everytime you push.
+For first time `push` you will be asked for username and password. After you have finished push run the following to remember your credentials for future use. Or else you will be asked to enter password everytime you push this repo.
 
     # to remember git crcedentials (user, password)
     git config credential.helper store
 
     # then run git pull 
     git pull 
+
+First time git usage on a machine can ask you for commit username and email address with instructions of how to set them both. You will need to use the `git config --global` option to set them both
+
+    git config --global user.name "John Doe"
+    git config --global user.email johndoe@example.com
+ 
     
 
 Now check online at https://github.com/YOUR-USERNAME/YOUR-REPOSITORY to see if the changes you made synced correctly.
@@ -170,3 +176,20 @@ First, you will need to create a new repository on GitHub. You can learn how to 
 
     # push changes to github
     git push
+
+
+
+## References
+
+**Git**
+
+* Guide: http://rogerdudler.github.io/git-guide/
+* Tutorial: https://git-scm.com/docs/gittutorial 
+* Video:  https://www.youtube.com/watch?v=noZnOSpcjYY
+
+**Github**
+
+* [Github HelloWorld](https://guides.github.com/activities/hello-world/)
+* [Github Guides](https://guides.github.com/)
+
+
