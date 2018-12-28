@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://towshif.github.io/04.Organizing-Reporting/publishing-markdown/">
+        <link rel="canonical" href="https://towshif.github.io/04.Organizing-Reporting/markdown_publishing/">
       
       
       
@@ -663,35 +663,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mkdocs-a-markdown-publishing-utility" title="MKdocs - a markdown publishing utility" class="md-nav__link">
-    MKdocs - a markdown publishing utility
+  <a href="#publishing" title="Publishing" class="md-nav__link">
+    Publishing
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-setup-mkdocs-configuration" title="1. Setup mkdocs configuration" class="md-nav__link">
-    1. Setup mkdocs configuration
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-build-the-mkdocs-project" title="2. Build the mkdocs project" class="md-nav__link">
-    2. Build the mkdocs project
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mkdocs-a-simple-documentation-engine-written-in-python" title="mkDocs - A simple documentation engine written in Python." class="md-nav__link">
-    mkDocs - A simple documentation engine written in Python.
+  <a href="#mkdocs-a-simple-documentation-engine-written-in-python" title="MKdocs - A simple documentation engine written in Python." class="md-nav__link">
+    MKdocs - A simple documentation engine written in Python.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-a-new-mkdocs-project-in-project-root-directory" title="Start a new mkdocs project in project root directory" class="md-nav__link">
+    Start a new mkdocs project in project root directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-mkdocs-configuration" title="Setup mkdocs configuration" class="md-nav__link">
+    Setup mkdocs configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ready-to-write-markdown-documents-in-docs" title="Ready to write markdown documents in docs/" class="md-nav__link">
+    Ready to write markdown documents in docs/
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-the-mkdocs-project" title="Build the mkdocs project" class="md-nav__link">
+    Build the mkdocs project
   </a>
   
 </li>
@@ -1225,35 +1233,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mkdocs-a-markdown-publishing-utility" title="MKdocs - a markdown publishing utility" class="md-nav__link">
-    MKdocs - a markdown publishing utility
+  <a href="#publishing" title="Publishing" class="md-nav__link">
+    Publishing
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-setup-mkdocs-configuration" title="1. Setup mkdocs configuration" class="md-nav__link">
-    1. Setup mkdocs configuration
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-build-the-mkdocs-project" title="2. Build the mkdocs project" class="md-nav__link">
-    2. Build the mkdocs project
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mkdocs-a-simple-documentation-engine-written-in-python" title="mkDocs - A simple documentation engine written in Python." class="md-nav__link">
-    mkDocs - A simple documentation engine written in Python.
+  <a href="#mkdocs-a-simple-documentation-engine-written-in-python" title="MKdocs - A simple documentation engine written in Python." class="md-nav__link">
+    MKdocs - A simple documentation engine written in Python.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-a-new-mkdocs-project-in-project-root-directory" title="Start a new mkdocs project in project root directory" class="md-nav__link">
+    Start a new mkdocs project in project root directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-mkdocs-configuration" title="Setup mkdocs configuration" class="md-nav__link">
+    Setup mkdocs configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ready-to-write-markdown-documents-in-docs" title="Ready to write markdown documents in docs/" class="md-nav__link">
+    Ready to write markdown documents in docs/
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-the-mkdocs-project" title="Build the mkdocs project" class="md-nav__link">
+    Build the mkdocs project
   </a>
   
 </li>
@@ -1276,13 +1292,63 @@
                 
                 
                 <h1 id="publishing-markdown-documents">Publishing Markdown Documents</h1>
-<p>Markdown is a raw text format for storing structures information for various uses. It can be easily converted into various other formats like <code>pdf</code>, <code>html</code>, <code>doc</code>, etc </p>
+<p>There are many software and tools for publishing md into different formats. Most uses are its html applications for generating static webpages. Here we will be learning about a simple python based program called <em>MKdocs</em>. We will be using mkdocs to publish reports and data for our future projects. </p>
 <hr />
-<h2 id="mkdocs-a-markdown-publishing-utility"><strong>MKdocs</strong> - a markdown publishing utility</h2>
-<h3 id="1-setup-mkdocs-configuration">1. Setup mkdocs configuration</h3>
-<p>Create a configuration file <code>mkdocs.yml</code> in your project root directory and thats it.</p>
+<h2 id="publishing">Publishing</h2>
+<p>More info on <a href="https://www.markdownguide.org/getting-started#how-does-it-work">How Does publishing work?</a></p>
+<p><img alt="" src="https://d33wubrfki0l68.cloudfront.net/75cdd78aba218a9abbfe91d2ba2cf540a7502d8c/553fa/assets/images/process.png" /></p>
+<ol>
+<li>Create a Markdown file using a text editor or a dedicated Markdown application. The file should have an .md or .markdown extension.</li>
+<li>Open the Markdown file in a Markdown application.</li>
+<li>Use the Markdown application to convert the Markdown file to an HTML document.</li>
+<li>View the HTML file in a web browser or use the Markdown application to convert it to another file format, like PDF.</li>
+</ol>
+<h2 id="mkdocs-a-simple-documentation-engine-written-in-python"><strong>MKdocs</strong> - A simple documentation engine written in Python.</h2>
+<ul>
+<li><a href="https://www.mkdocs.org/">MKdocs Website </a></li>
+<li><a href="https://varrette.gforge.uni.lu/blog/2018/01/18/tutorial-mkdocs-and-readthedocs/">MKdocs Quick Start</a></li>
+</ul>
+<hr />
+<h2 id="start-a-new-mkdocs-project-in-project-root-directory">Start a new mkdocs project in project root directory</h2>
+<p>To initialise a project with mkdocs, just run the following command from the root directory of your repository:</p>
+<pre><code>mkdocs new        # initialize 'mkdocs.yml' and docs/ directory
+</code></pre>
+<p>You will see there are two new items created in out project root directory (.)</p>
+<ul>
+<li><code>docs/</code> - a new directory created containing an <code>index.md</code> file in it </li>
+<li>configuration file:  <code>mkdocs.yml</code> </li>
+</ul>
+<p>Then you just need to edit the <code>mkdocs.yml</code> file to reflect the left menu you wish to offer, with relative paths from the docs/ directory toward the markdown file you want to display.</p>
+<hr />
+<h2 id="setup-mkdocs-configuration">Setup mkdocs configuration</h2>
+<p>Create or modify a configuration file <code>mkdocs.yml</code> in your project root directory. </p>
+<p>Example configuration: </p>
+<pre><code># mkdocs.yml -- MkDocs configuration, all *.md files relative to docs/
+
+site_name: Less-Than-10 Tutorials (&lt;10)
+
+theme: 
+    name: material  #readthedocs # material
+    highlightjs: true  # only for readthedocs
+
+site_url: https://username.github.io
+</code></pre>
+<p>Note we are using the git repo website link as site_url since that is the homepage (entrypoint) for our website.</p>
+<hr />
+<h2 id="ready-to-write-markdown-documents-in-docs">Ready to write markdown documents in <code>docs/</code></h2>
+<p>All our markdown files should be contained in this directoy. Best practice is to start any empty folder with a <code>index.md</code> in the docs/. On any web server / service, index is always the entrypoint for any folder or path or url. Then you can add directories or files in any order. Only make sure to add an <code>index.md</code> inside each subdirectory created.</p>
+<hr />
+<h2 id="build-the-mkdocs-project">Build the mkdocs project</h2>
+<p>We will be using <code>mkdocs</code> for publishing markdown in to web html. </p>
+<pre><code>mkdocs build [DIRECTORY]   # with convert .md filed into .html and put in site/ directory.
+</code></pre>
+<p>once you run this command you will see a new directory called <code>site/</code> which contains the <code>html</code> files generated from the .md documents. Now this folder is ready to host on the web. </p>
+<hr />
+<p>More Examples of config for <code>mkdocs.yml</code></p>
+<p>Custom Navigation menu (pages). </p>
 <pre><code># mkdocs.yml -- MkDocs configuration, all *.md files relative to docs/
 site_name: UL HPC Developpers Documentaion
+
 pages:
 - Home: 'index.md'
 - Tools:
@@ -1290,18 +1356,26 @@ pages:
     - Git: 'tools/git.md'
 - Configuration:
     - CA Certificates: 'config/certificates/README.md'
+
 theme: readthedocs
 </code></pre>
-<h3 id="2-build-the-mkdocs-project">2. Build the mkdocs project</h3>
-<p>We will be using <code>mkdocs</code> for publishing markdown in to web html. </p>
-<pre><code>mkdocs build [DIRECTORY]
+<p>Code Syntax Highlighting and Math Support with MathJax</p>
+<pre><code>site_name: My Humble Website
+theme:
+    name: readthedocs
+    highlightjs: true
+
+extra_javascript:
+- 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
 </code></pre>
-<hr />
-<h2 id="mkdocs-a-simple-documentation-engine-written-in-python">mkDocs - A simple documentation engine written in Python.</h2>
-<ul>
-<li><a href="https://www.mkdocs.org/">MkDocs Website </a></li>
-<li><a href="https://varrette.gforge.uni.lu/blog/2018/01/18/tutorial-mkdocs-and-readthedocs/">MkDocs Quick Start</a></li>
-</ul>
+<p>For <code>material-docs</code> theme with mkdocs you will need the extension installed and update mkdocs.yml </p>
+<pre><code>pip install pygments
+
+To enable CodeHilite, add the following lines to your mkdocs.yml:
+
+markdown_extensions:
+- codehilite
+</code></pre>
                 
                   
                 

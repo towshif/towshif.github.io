@@ -763,7 +763,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../publishing-markdown/" title="Publishing Markdown Documents" class="md-nav__link">
+    <a href="../markdown_publishing/" title="Publishing Markdown Documents" class="md-nav__link">
       Publishing Markdown Documents
     </a>
   </li>
@@ -1402,6 +1402,14 @@
                 <h1 id="markdown-md-in-10-mins">Markdown (.md)  in 10 mins</h1>
 <p>Got to <a href="https://stackedit.io/app#">https://stackedit.io/app#</a> and learn markdown formats</p>
 <hr />
+<p><strong>Markdown</strong> is a lightweight markup language with plain text formatting syntax. Its design allows it to be converted to many output formats like <code>pdf</code>, <code>html</code>, <code>doc</code> etc. 
+Markdown is a fast and easy way to take notes, create content for a website, and produce print-ready documents. It was designed for the web, so it should come as no surprise that there are plenty of applications specifically designed for creating website content.</p>
+<p><strong>Getting started</strong></p>
+<p>The best way to get started with Markdown is to use it. That’s easier than ever before thanks to a variety of free tools.</p>
+<blockquote>
+<p><a href="https://dillinger.io/">Dillinger.io</a> is one of the best online Markdown editors. Just open the site and start typing in the left pane. A preview of the rendered document appears in the right pane.</p>
+</blockquote>
+<hr />
 <h2 id="quick-and-dirty">Quick and Dirty</h2>
 <p>The <em>quick</em> brown fox, jumped <strong>over</strong> the lazy <a href="https://en.wikipedia.org/wiki/Dog">dog</a>.</p>
 <pre><code>The *quick* brown fox, jumped **over** the lazy [dog](https://en.wikipedia.org/wiki/Dog).
@@ -1491,6 +1499,13 @@ And just like with other paragraphs,
 all of these lines are still
 part of the blockquote, even without the &gt; character in front.</p>
 </blockquote>
+<pre><code>&gt; Use it if you're quoting a person, a song or whatever.
+
+&gt; You can use *italic* or lists inside them also.
+And just like with other paragraphs,
+all of these lines are still
+part of the blockquote, even without the &gt; character in front.
+</code></pre>
 <p>To end the blockquote, just put a blank line before the following
 paragraph.</p>
 <h2 id="preformatted-text-use-indentation">Preformatted text - use indentation</h2>
@@ -1503,7 +1518,8 @@ exactly &lt;i&gt;as you see it in this text file&lt;/i&gt;.
 <p>Within a paragraph, you can use backquotes to do the same thing.
 <code>This won't be *italic* or **bold** at all.</code></p>
 <p>And thats it. </p>
-<h1 id="advanced">Advanced:</h1>
+<hr />
+<h1 id="advanced-usage">Advanced Usage:</h1>
 <h2 id="links-using-link-url">Links using link url:</h2>
 <p>You can also put the <a href="http://url">link URL</a> below the current paragraph
 like <a href="http://another.url" title="A funky title">this</a>.</p>
@@ -1513,13 +1529,24 @@ like <a href="http://another.url" title="A funky title">this</a>.</p>
 }
 </code></pre>
 
-<p>you will need the extension installed and update mkdocs.yml </p>
+<ul>
+<li>
+<p>For <code>material-docs</code> theme with mkdocs you will need the extension installed and update mkdocs.yml </p>
 <pre><code>pip install pygments
 </code></pre>
 <p>To enable CodeHilite, add the following lines to your mkdocs.yml:</p>
 <pre><code>markdown_extensions:
 - codehilite
 </code></pre>
+</li>
+<li>
+<p>For default mkdocs theme <code>readthedocs</code> which has inbuilt syntax highlighting, please include <code>highlightjs</code> on the mkdocs.yml </p>
+<pre><code>theme:
+    name: readthedocs
+    highlightjs: true
+</code></pre>
+</li>
+</ul>
 <h2 id="adding-latex-support">Adding Latex Support</h2>
 <p>if using mkdocs need to add <code>extra_javascript</code> tags in config file mkdocs.yml</p>
 <pre><code>site_name: My Humble Website
@@ -1565,7 +1592,7 @@ extra_javascript:
           </a>
         
         
-          <a href="../publishing-markdown/" title="Publishing Markdown Documents" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../markdown_publishing/" title="Publishing Markdown Documents" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">

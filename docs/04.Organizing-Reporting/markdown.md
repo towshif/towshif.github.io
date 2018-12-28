@@ -3,6 +3,18 @@ Got to [https://stackedit.io/app#](https://stackedit.io/app#) and learn markdown
 
 ---
 
+**Markdown** is a lightweight markup language with plain text formatting syntax. Its design allows it to be converted to many output formats like `pdf`, `html`, `doc` etc. 
+Markdown is a fast and easy way to take notes, create content for a website, and produce print-ready documents. It was designed for the web, so it should come as no surprise that there are plenty of applications specifically designed for creating website content.
+
+
+**Getting started**
+
+The best way to get started with Markdown is to use it. That’s easier than ever before thanks to a variety of free tools.
+
+>[Dillinger.io](https://dillinger.io/) is one of the best online Markdown editors. Just open the site and start typing in the left pane. A preview of the rendered document appears in the right pane.
+
+---
+
 ## Quick and Dirty
 
 The *quick* brown fox, jumped **over** the lazy [dog](https://en.wikipedia.org/wiki/Dog).
@@ -94,6 +106,14 @@ And just like with other paragraphs,
 all of these lines are still
 part of the blockquote, even without the > character in front.
 
+    > Use it if you're quoting a person, a song or whatever.
+
+    > You can use *italic* or lists inside them also.
+    And just like with other paragraphs,
+    all of these lines are still
+    part of the blockquote, even without the > character in front.
+
+
 To end the blockquote, just put a blank line before the following
 paragraph.
 
@@ -112,9 +132,9 @@ Within a paragraph, you can use backquotes to do the same thing.
 
 And thats it. 
 
+---
 
-
-# Advanced: 
+# Advanced Usage: 
 
 ## Links using link url: 
 
@@ -134,15 +154,20 @@ for(var i = 0; i < 5; i++){
 }
 ``` 
 
-you will need the extension installed and update mkdocs.yml 
+* For `material-docs` theme with mkdocs you will need the extension installed and update mkdocs.yml 
 
-    pip install pygments
+        pip install pygments
 
-To enable CodeHilite, add the following lines to your mkdocs.yml:
+    To enable CodeHilite, add the following lines to your mkdocs.yml:
 
-    markdown_extensions:
-    - codehilite
+        markdown_extensions:
+        - codehilite
 
+* For default mkdocs theme `readthedocs` which has inbuilt syntax highlighting, please include `highlightjs` on the mkdocs.yml 
+
+        theme:
+            name: readthedocs
+            highlightjs: true
 
 
 ## Adding Latex Support 

@@ -620,9 +620,59 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Setting up Google Cloud Console
+      </label>
+    
     <a href="./" title="Setting up Google Cloud Console" class="md-nav__link md-nav__link--active">
       Setting up Google Cloud Console
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-begin" title="Before you begin" class="md-nav__link">
+    Before you begin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-a-new-session" title="Starting a new session" class="md-nav__link">
+    Starting a new session
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-cloud-virtual-machine-overview" title="Google Cloud Virtual Machine Overview" class="md-nav__link">
+    Google Cloud Virtual Machine Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-setup" title="Post Setup" class="md-nav__link">
+    Post Setup
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -645,7 +695,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../publishing-markdown/" title="Publishing Markdown Documents" class="md-nav__link">
+    <a href="../markdown_publishing/" title="Publishing Markdown Documents" class="md-nav__link">
       Publishing Markdown Documents
     </a>
   </li>
@@ -1165,6 +1215,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-begin" title="Before you begin" class="md-nav__link">
+    Before you begin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-a-new-session" title="Starting a new session" class="md-nav__link">
+    Starting a new session
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-cloud-virtual-machine-overview" title="Google Cloud Virtual Machine Overview" class="md-nav__link">
+    Google Cloud Virtual Machine Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-setup" title="Post Setup" class="md-nav__link">
+    Post Setup
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1177,6 +1264,39 @@
                 
                 
                 <h1 id="setting-up-google-cloud-console">Setting up Google Cloud Console</h1>
+<p>This page describes how to start a new Google Cloud Shell session. We will be using google clould virtual unix environment to proceed with the next tutorial. </p>
+<h2 id="before-you-begin">Before you begin</h2>
+<p>Select or create a GCP project.</p>
+<ol>
+<li>Go to the Manage resources page in the GCP Console -&gt; GO TO THE MANAGE RESOURCES PAGE</li>
+<li>On the Select organization drop-down list at the top of the page, select the organization in which you want to create a project. If you are a free trial user, skip this step, as this list does not appear.</li>
+<li>Click Create Project.</li>
+<li>In the New Project window that appears, enter a project name and select a billing account as applicable.</li>
+<li>If you want to add the project to a folder, enter the folder name in the Location box.</li>
+<li>When you're finished entering new project details, click Create.</li>
+</ol>
+<h2 id="starting-a-new-session">Starting a new session</h2>
+<p>Click the Activate Cloud Shell button at the top of the <a href="https://console.cloud.google.com/?_ga=2.78739668.-1395301382.1545925460">Google Cloud Platform Console</a>.</p>
+<p><img alt="" src="https://cloud.google.com/shell/docs/images/startcloudshell1.png" /></p>
+<p>A Cloud Shell session opens inside a new frame at the bottom of the console and displays a command-line prompt. It can take a few seconds for the shell session to be initialized.</p>
+<p><img alt="" src="https://cloud.google.com/shell/docs/images/startcloudshell2.png" /></p>
+<p>When you start Cloud Shell, g1-small Google Compute Engine virtual machine running a Debian-based Linux operating system is provisioned for you. Cloud Shell instances are provisioned on a per-user, per-session basis. The instance persists while your Cloud Shell session is active and terminates after a hour of inactivity.</p>
+<h2 id="google-cloud-virtual-machine-overview">Google Cloud Virtual Machine Overview</h2>
+<p>The cloud shell provides access to a linux virtual machine just line a standard linux/ unix based server. Cloud shell environment provides you with </p>
+<ol>
+<li>a code editor </li>
+<li>a shell - for commandline access</li>
+</ol>
+<p><img alt="Google Cloud Shell GUI" src="https://cloud.google.com/shell/docs/images/code-editor.png" /></p>
+<p>This environment makes editing code and using terminal very handy. Because all of this runs on Google servers so it is accessible from anywhere, you dont have to worrk about installation of linux and program. This is very handy when you dont have your own machine available. Also Cloud Shell comes prepackaged with most popular softwares and languages like <code>C</code>, <code>Python</code>, <code>Java</code>, <code>Node.js</code>, <code>Ruby</code>, <code>PHP</code>. </p>
+<p>Additional information on <a href="https://cloud.google.com/shell/docs/features">Google Cloud Shell Features</a>. </p>
+<hr />
+<h2 id="post-setup">Post Setup</h2>
+<p>Once you have setup your cloud shell environment fire up the terminal in your browser and make a clone of the repo for the website we created in the previous tutorial <code>username.github.io</code>. </p>
+<pre><code>git clone https://github.com/username/username.github.io
+</code></pre>
+<p>You will not be able to visualize the repository and its folder structure in the google cloud code editor. </p>
+<p><strong>Next Steps</strong></p>
                 
                   
                 
