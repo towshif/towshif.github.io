@@ -9,6 +9,8 @@ This is the [bio page](https://towshif.github.io/) we will try to mimic. As you 
 * profile images  
 * Bio text 
 
+## Modifying HTML Template 
+
 Lets get started 
 
 1. Download the sample `index.html` file 
@@ -56,7 +58,6 @@ Lets get started
         <h1>
             Hi, I'm <a href="#" class="u-url u-uid p-name">Konfuzed Banda</a> </h1>
         <p> I'm the CTO and one of the Co-Founders at A Company. I like things on Github as well. </p>
-        <p>
 
 3. Sync this with github.io repo. 
         
@@ -70,7 +71,7 @@ Lets get started
     We are all set to view our bio page at https://username.github.io with updated picture and information. 
 
 
-## Advanced 
+## Modifying links and navigation  
 
 1. Update the social `links` for Instagram, Linkedin, GitHub with your own links by replacing the `#` in the `href=` tags 
 
