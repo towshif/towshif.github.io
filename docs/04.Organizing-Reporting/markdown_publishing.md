@@ -27,7 +27,10 @@ There are a number of markdown publishing/ conversion utilities like `MKdocs`, `
 ## Start a new mkdocs project in project root directory 
 To initialise a project with mkdocs, just run the following command from the root directory of your repository:
 
-    mkdocs new        # initialize 'mkdocs.yml' and docs/ directory
+    mkdocs new        # initialize 'mkdocs.yml' and docs/ in current directory
+
+    # OR create a mkdocs projects `myproject` with 'mkdocs.yml' and 'docs/' initialized
+    mkdocs new myProject  
     
 You will see there are two new items created in out project root directory (.)
 
@@ -67,15 +70,15 @@ All our markdown files should be contained in this directoy. Best practice is to
 ## Build the mkdocs project
 We will be using `mkdocs` for publishing markdown in to web html. 
 
-    mkdocs build [DIRECTORY]   # with convert .md filed into .html and put in site/ directory.
+    mkdocs build [DIRECTORY]   # build/ convert .md filed into .html and put in site/ directory.
 
-once you run this command you will see a new directory called `site/` which contains the `html` files generated from the .md documents. Now this folder is ready to host on the web. 
+Once you run this command you will see a new directory called `site/` which contains the `html` files generated from the .md documents. Now this folder is ready to be hosted on the web. 
 
 ----
 
-More Examples of config for `mkdocs.yml`
+## More Examples of config for `mkdocs.yml`
 
-Custom Navigation menu (pages). 
+#### Custom Navigation menu (pages). 
 
     # mkdocs.yml -- MkDocs configuration, all *.md files relative to docs/
     site_name: UL HPC Developpers Documentaion
@@ -91,7 +94,7 @@ Custom Navigation menu (pages).
     theme: readthedocs
 
 
-Code Syntax Highlighting and Math Support with MathJax
+#### Code Syntax Highlighting and Math Support with MathJax
 
     site_name: My Humble Website
     theme:

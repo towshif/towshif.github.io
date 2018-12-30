@@ -1,5 +1,5 @@
 # Markdown (.md)  in 10 mins 
-Got to [https://stackedit.io/app#](https://stackedit.io/app#) and learn markdown formats
+Got to [Dillinger.io](https://dillinger.io/) and learn markdown formats.
 
 ---
 
@@ -9,9 +9,8 @@ Markdown is a fast and easy way to take notes, create content for a website, and
 References: 
 
 * [https://blog.ghost.org/markdown/](https://blog.ghost.org/markdown/)
-* 
-
-
+* [Dillinger.io](https://dillinger.io/)
+* [https://stackedit.io/app#](https://stackedit.io/app#)
 
 **Getting started**
 
