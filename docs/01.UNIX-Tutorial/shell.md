@@ -17,18 +17,21 @@ Also take a look at this [badunixhabits](https://www.ibm.com/developerworks/aix/
 
 Summary 
 
-| command     | Function                   | Example Syntax             | -OPTIONS |
-| ---         | ---                        | ---                        | ---      |
-| `ls`        | List files                 | `ls -l`                    | `-ltrha` |
-| `cd`        | Change Directory           | `cd [DIRNAME]`             |          |
-| `mkdir`     | Make Directory             | `mkdir [DIRNAME]`          | `-p`     |
-| `touch`     | Create a new empty File    | `touch [FILENAME]`         |          |
-| `cat`       | Display contents of a File | `cat [FILENAME]`           |          |
-| `mv`        | move/ rename               | `mv [SOURCE][DESTINATION]` | `-rf`    |
-| `cp`        | copy                       | `cp [SOURCE][DESTINATION]` | `-rf`    |
-| `rm`        | remove/ delete             | `rm [DIRNAME or FILENAME]` | `-rf`    |
-| `>` or `>>` | redirecting output         | `cat [FILE1] >> [FILE2]`   |          |
-| `man`       | displays usage manual      | `man [UNIX COMMAND]`       |          |
+| command     | Function                     | Example Syntax               | -OPTIONS    |
+| ---         | ---                          | ---                          | ---         |
+| `ls`        | List files                   | `ls -l`                      | `-ltrha`    |
+| `file`      | displays file type           | `file [DIR or PATH os WILD]` |             |
+| `cd`        | Change Directory             | `cd [DIRNAME or PATH]`       |             |
+| `mkdir`     | Make Directory               | `mkdir [DIRNAME or PATH]`    | `-p (path)` |
+| `touch`     | Create a new empty File      | `touch [FILENAME]`           |             |
+| `cat`       | Display contents of a File   | `cat [FILENAME]`             |             |
+| `mv`        | move/ rename                 | `mv [SOURCE][DESTINATION]`   |             |
+| `cp`        | copy                         | `cp [SOURCE][DESTINATION]`   | `-rf`       |
+| `rm`        | remove/ delete               | `rm [DIRNAME or FILENAME]`   | `-rf`       |
+| `>` or `>>` | redirecting output           | `cat [FILE1] >> [FILE2]`     |             |
+| `man`       | displays usage manual        | `man [UNIX COMMAND]`         |             |
+| `history`   | displays history of commands | `history`                    | `!-3`       |
+
 
 
 For more -OPTIONS try `man [COMMAND]`
@@ -51,6 +54,12 @@ The ls command is used to list the contents of a directory. It is probably the m
     ls -l /etc /bin	    #  List the files in the /bin directory and the /etc directory in long format
 
     ls -la ..           # List all files (even ones with names beginning with a period character, which are normally hidden) in the parent of the working directory in long format
+
+Wild Cards `*` and `?`
+
+    ls *.doc            # List all files ending with '.doc' 
+    ls hello*           # List all files starting with 'hello'
+    ls ??ll*            # List all files with 3,4th chars 'll' 
 
 ---
 
@@ -90,7 +99,7 @@ Concatenate and print files to stdout cat my_file. This command is only for view
 You can pass one or more file names to this command, and even number the lines using the -n to number the lines. Close cousin of this is `more`, `head`, `tail`. Also you can use  `vi` to launch a terminal-based text editor. 
 
     cat [FILENAME]              # to show whole file in stdout (terminal)
-    cat [FILENAME] -n           # to number the lines in stdout (terminal)
+    cat [FILENAME] -n           # print line numbers in stdout (terminal)
     cat [FILENAME_1] [FILENAME_2] [..]
 
 ---
@@ -99,14 +108,9 @@ You can pass one or more file names to this command, and even number the lines u
 ### `mv` - move or rename 
 Moves files and folders. The first argument is the file you want to move, and the second is the location to move it to. Use the flags -f to force move them and -i to prompt confirmation before overwriting files.
 
-Moving Files
+Moving Files and Directories 
     
-    mv [SOURCE_FILE] [DESTINATION_FILE] 
-
-Moving Directories
-
-    mv -r [SOURCE DIRECTORY] [DESTINATION DIRECTORY]    
-    # -r options needed to move files recursively
+    mv [SOURCE_FILE OR DIRECTORY] [DESTINATION_FILE OR DIRECTORY] 
 
 ---
 
@@ -118,7 +122,7 @@ Copying Files
     
     cp [SOURCE_FILE] [DESTINATION_FILE] 
 
-Copying Directories
+Copying Directories ( `-r` option )
 
     cp -r [SOURCE DIRECTORY] [DESTINATION DIRECTORY]    # -r options needed to move files recursively
 
