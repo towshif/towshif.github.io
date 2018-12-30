@@ -19,15 +19,15 @@ Summary
 
 | command     | Function                     | Example Syntax               | -OPTIONS    |
 | ---         | ---                          | ---                          | ---         |
-| `ls`        | List files                   | `ls -l`                      | `-ltrha`    |
-| `file`      | displays file type           | `file [DIR or PATH os WILD]` |             |
-| `cd`        | Change Directory             | `cd [DIRNAME or PATH]`       |             |
-| `mkdir`     | Make Directory               | `mkdir [DIRNAME or PATH]`    | `-p (path)` |
+| `ls`        | List files                   | `ls -l [DIR/PATH/WILDCARDS]` | `-ltrha`    |
+| `file`      | displays file type           | `file [DIR/PATH/WILDCARDS]`  |             |
+| `cd`        | Change Directory             | `cd [DIRNAME/PATH]`          |             |
+| `mkdir`     | Make Directory               | `mkdir [DIRNAME/PATH]`       | `-p (path)` |
 | `touch`     | Create a new empty File      | `touch [FILENAME]`           |             |
 | `cat`       | Display contents of a File   | `cat [FILENAME]`             |             |
 | `mv`        | move/ rename                 | `mv [SOURCE][DESTINATION]`   |             |
 | `cp`        | copy                         | `cp [SOURCE][DESTINATION]`   | `-rf`       |
-| `rm`        | remove/ delete               | `rm [DIRNAME or FILENAME]`   | `-rf`       |
+| `rm`        | remove/ delete               | `rm [DIRNAME/FILENAME]`      | `-rf`       |
 | `>` or `>>` | redirecting output           | `cat [FILE1] >> [FILE2]`     |             |
 | `man`       | displays usage manual        | `man [UNIX COMMAND]`         |             |
 | `history`   | displays history of commands | `history`                    | `!-3`       |
