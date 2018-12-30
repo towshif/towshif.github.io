@@ -1,4 +1,4 @@
-# Basic Networking from shell
+# Accessing Network from shell
 This document explains how Unix based OS can access and communicate with **LAN and Internet**. Lets get started. 
 
 ---
