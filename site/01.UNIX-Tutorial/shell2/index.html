@@ -303,8 +303,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic-unix-shell-commands-contd" title="Basic Unix Shell Commands (contd...)" class="md-nav__link">
-    Basic Unix Shell Commands (contd...)
+  <a href="#basic-unix-shell-commands" title="Basic Unix Shell Commands" class="md-nav__link">
+    Basic Unix Shell Commands
   </a>
   
     <nav class="md-nav">
@@ -1256,8 +1256,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic-unix-shell-commands-contd" title="Basic Unix Shell Commands (contd...)" class="md-nav__link">
-    Basic Unix Shell Commands (contd...)
+  <a href="#basic-unix-shell-commands" title="Basic Unix Shell Commands" class="md-nav__link">
+    Basic Unix Shell Commands
   </a>
   
     <nav class="md-nav">
@@ -1314,7 +1314,7 @@
                 
                 
                 <h1 id="unix-shell-part-ii-in-10-mins">UNIX Shell Part-II in 10 mins</h1>
-<h2 id="basic-unix-shell-commands-contd"><strong>Basic Unix Shell Commands (contd...) </strong></h2>
+<h2 id="basic-unix-shell-commands"><strong>Basic Unix Shell Commands</strong></h2>
 <p>Summary </p>
 <table>
 <thead>
@@ -1498,6 +1498,9 @@ find . -name testfile.txt       # Find a file called testfile.txt in current and
 find /home -name *.jpg          # Find all .jpg files in the /home and sub-directories.
 find . -type f -empty           # Find an empty file within the current directory.
 find /home -user exampleuser -mtime 7 -iname ".db"  # Find all .db files (ignoring text case) modified in the last 7 days by a
+</code></pre>
+<p><strong>Advanced usage</strong> : find locates all files in the hierarchy starting at the current directory and fully recursing into the directory tree. In this example, find will delete all files that end with the characters <code>.bak</code>:</p>
+<pre><code>find . -name "*.bak" -delete
 </code></pre>
 <hr />
 <h3 id="redirection">Redirection</h3>

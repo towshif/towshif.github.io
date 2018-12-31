@@ -1,9 +1,8 @@
 # UNIX Shell Part-II in 10 mins
 
-## **Basic Unix Shell Commands (contd...) **
+## **Basic Unix Shell Commands**
 
 Summary 
-
 
 | command             | Function                                                                     | Example Syntax                             | -OPTIONS                    |
 | ---                 | ---                                                                          | ---                                        | ---                         |
@@ -56,6 +55,9 @@ Write (or redirect) output from a command to a file.
     find . -type f -empty	        # Find an empty file within the current directory.
     find /home -user exampleuser -mtime 7 -iname ".db"	# Find all .db files (ignoring text case) modified in the last 7 days by a 
 
+**Advanced usage** : find locates all files in the hierarchy starting at the current directory and fully recursing into the directory tree. In this example, find will delete all files that end with the characters `.bak`:
+    
+    find . -name "*.bak" -delete
 
 ---
 

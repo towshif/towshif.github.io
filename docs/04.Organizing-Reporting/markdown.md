@@ -139,7 +139,7 @@ And thats it.
 
 ---
 
-# Advanced Usage: 
+# **Advanced Usage:** 
 
 ## Links using link url: 
 

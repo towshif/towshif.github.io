@@ -76,7 +76,7 @@ Once you run this command you will see a new directory called `site/` which cont
 
 ----
 
-## More Examples of config for `mkdocs.yml`
+## Advanced: More Examples of config for `mkdocs.yml`
 
 #### Custom Navigation menu (pages). 
 
