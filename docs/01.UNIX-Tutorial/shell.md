@@ -17,21 +17,21 @@ Also take a look at this [badunixhabits](https://www.ibm.com/developerworks/aix/
 
 Summary 
 
-| command     | Function                     | Example Syntax               | -OPTIONS    |
-| ---         | ---                          | ---                          | ---         |
-| `ls`        | List files                   | `ls -l [DIR/PATH/WILDCARDS]` | `-ltrha`    |
-| `file`      | displays file type           | `file [DIR/PATH/WILDCARDS]`  |             |
-| `cd`        | Change Directory             | `cd [DIRNAME/PATH]`          |             |
-| `mkdir`     | Make Directory               | `mkdir [DIRNAME/PATH]`       | `-p (path)` |
-| `touch`     | Create a new empty File      | `touch [FILENAME]`           |             |
-| `cat`       | Display contents of a File   | `cat [FILENAME]`             |             |
-| `mv`        | move/ rename                 | `mv [SOURCE][DESTINATION]`   |             |
-| `cp`        | copy                         | `cp [SOURCE][DESTINATION]`   | `-rf`       |
-| `rm`        | remove/ delete               | `rm [DIRNAME/FILENAME]`      | `-rf`       |
-| `>` or `>>` | redirecting output           | `cat [FILE1] >> [FILE2]`     |             |
-| `man`       | displays usage manual        | `man [UNIX COMMAND]`         |             |
-| `history`   | displays history of commands | `history`                    | `!-3`       |
-
+| command     | Function                           | Example Syntax               | -OPTIONS    |
+| ---         | ---                                | ---                          | ---         |
+| `pwd`       | pathname for the current directory | `pwd`                        |             |
+| `ls`        | List files                         | `ls -l [DIR/PATH/WILDCARDS]` | `-ltrha`    |
+| `file`      | displays file type                 | `file [DIR/PATH/WILDCARDS]`  |             |
+| `cd`        | Change Directory                   | `cd [DIRNAME/PATH]`          |             |
+| `mkdir`     | Make Directory                     | `mkdir [DIRNAME/PATH]`       | `-p (path)` |
+| `touch`     | Create a new empty File            | `touch [FILENAME]`           |             |
+| `cat`       | Display contents of a File         | `cat [FILENAME]`             |             |
+| `mv`        | move/ rename                       | `mv [SOURCE][DESTINATION]`   |             |
+| `cp`        | copy                               | `cp [SOURCE][DESTINATION]`   | `-rf`       |
+| `rm`        | remove/ delete                     | `rm [DIRNAME/FILENAME]`      | `-rf`       |
+| `>` or `>>` | redirecting output                 | `cat [FILE1] >> [FILE2]`     |             |
+| `man`       | displays usage manual              | `man [UNIX COMMAND]`         |             |
+| `history`   | displays history of commands       | `history`                    | `!-3`       |
 
 
 For more -OPTIONS try `man [COMMAND]`

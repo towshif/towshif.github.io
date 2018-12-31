@@ -562,15 +562,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-wget-download-a-file-from-a-url-link" title="2. wget - Download a file from a url link" class="md-nav__link">
-    2. wget - Download a file from a url link
+  <a href="#2-wget-download-a-file-from-a-url-link-ftp-sftp-https" title="2. wget - Download a file from a url link (FTP, SFTP, HTTP(S))" class="md-nav__link">
+    2. wget - Download a file from a url link (FTP, SFTP, HTTP(S))
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-scp-copy-a-file-across-network-servers" title="3. scp - Copy a file across network servers" class="md-nav__link">
-    3. scp - Copy a file across network servers
+  <a href="#3-ssh-secure-shell-access" title="3. ssh - secure shell access" class="md-nav__link">
+    3. ssh - secure shell access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-scp-copy-a-file-across-network-servers" title="4. scp - Copy a file across network servers" class="md-nav__link">
+    4. scp - Copy a file across network servers
   </a>
   
 </li>
@@ -1243,15 +1250,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-wget-download-a-file-from-a-url-link" title="2. wget - Download a file from a url link" class="md-nav__link">
-    2. wget - Download a file from a url link
+  <a href="#2-wget-download-a-file-from-a-url-link-ftp-sftp-https" title="2. wget - Download a file from a url link (FTP, SFTP, HTTP(S))" class="md-nav__link">
+    2. wget - Download a file from a url link (FTP, SFTP, HTTP(S))
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-scp-copy-a-file-across-network-servers" title="3. scp - Copy a file across network servers" class="md-nav__link">
-    3. scp - Copy a file across network servers
+  <a href="#3-ssh-secure-shell-access" title="3. ssh - secure shell access" class="md-nav__link">
+    3. ssh - secure shell access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-scp-copy-a-file-across-network-servers" title="4. scp - Copy a file across network servers" class="md-nav__link">
+    4. scp - Copy a file across network servers
   </a>
   
 </li>
@@ -1277,24 +1291,79 @@
 <p>This document explains how Unix based OS can access and communicate with <strong>LAN and Internet</strong>. Lets get started. </p>
 <hr />
 <h2 id="1-curl-get-a-webpage">1. <code>curl</code> - Get a webpage</h2>
-<pre><code>curl http://www.website.com
+<pre><code># Syntax
+curl [options] [URL...]
+</code></pre>
+<p>Examples: </p>
+<pre><code>Fetch the file index.htm from www.computerhope.com over HTTP, and display it to stdout
+curl https://www.computerhope.com/index.htm
+
+Fetch and save to file myindex.htm
+curl https://www.computerhope.com/index.htm &gt; myindex.htm
+
+# Fetch and output to a file with the same name (index.htm),  curl OPTION -O
+curl -O https://www.computerhope.com/index.htm
 </code></pre>
 <p>Try yourself </p>
-<pre><code>curl https://ide.towshif.com
+<pre><code>curl https://towshif.com
 </code></pre>
 <hr />
-<h2 id="2-wget-download-a-file-from-a-url-link">2. <code>wget</code> - Download a file from a url link</h2>
-<pre><code>wget [URL LINK TO FILE]
+<h2 id="2-wget-download-a-file-from-a-url-link-ftp-sftp-https">2. <code>wget</code> - Download a file from a url link (FTP, SFTP, HTTP(S))</h2>
+<pre><code>wget [OPTIONS] [URL LINK TO FILE]
 </code></pre>
 <p>Try yourself </p>
 <pre><code>wget https://www.livingandloving.co.za/wp-content/uploads/2017/02/How-to-cope-with-your-babys-acid-reflux.jpg
 </code></pre>
 <p>This command will download the following baby image to your local machine
 <img alt="baby" src="https://www.livingandloving.co.za/wp-content/uploads/2017/02/How-to-cope-with-your-babys-acid-reflux.jpg" /></p>
-<hr />
-<h2 id="3-scp-copy-a-file-across-network-servers">3. <code>scp</code> - Copy a file across network servers</h2>
-<pre><code>scp [source HOST]:[SOURCE FILEPATH] [DESTINATION HOST]:[DEST FILEPATH]
+<p>OPTION <code>-c</code>: </p>
+<pre><code># if a partial download exists, resume the download where it left off.
+wget -c http://www.example.org/files/archive.zip
 </code></pre>
+<p>OPTION <code>-b</code></p>
+<pre><code># Download in the background, returning you to the command prompt in the interim.
+wget -b http://www.example.org/files/archive.zip
+# in above case wget-log appears in the specified download directory 
+tail -f wget-log
+</code></pre>
+<p>wget Over FTP with auth</p>
+<pre><code>wget --ftp-user=YOUR_USERNAME --ftp-password=YOUR_PASSWORD ftp://example.com/something.tar
+</code></pre>
+<hr />
+<h2 id="3-ssh-secure-shell-access">3. <code>ssh</code> - secure shell access</h2>
+<pre><code>ssh [OPTIONS] [user]@[host]
+</code></pre>
+<p>Examples: </p>
+<pre><code># Basic usage     
+ssh [USERNAME]@[IP_ADDRESS or HOSTNAME]
+
+# with custom PORT; default PORT:22
+ssh -p [PORT] [USERNAME]@[IP_ADDRESS or HOSTNAME]
+</code></pre>
+<hr />
+<h2 id="4-scp-copy-a-file-across-network-servers">4. <code>scp</code> - Copy a file across network servers</h2>
+<pre><code>scp [OPTIONS] [USER]@[SOURCE_HOST]:[SOURCE FILEPATH] [USER]@[DESTINATION_HOST]:[DEST FILEPATH]
+</code></pre>
+<p>Example: scp file copy from one host to another / local machine. </p>
+<pre><code># Copy file from a remote host to local host SCP example:
+scp username@from_host:file.txt /local/directory/
+
+# Copy file from local host to a remote host SCP example:
+scp file.txt username@to_host:/remote/directory/
+
+# Copy directory from a remote host to local host SCP example:
+scp -r username@from_host:/remote/directory/  /local/directory/
+
+# Copy directory from local host to a remote hos SCP example:
+scp -r /local/directory/ username@to_host:/remote/directory/
+
+# Copy file from remote host to remote host SCP example:
+scp username@from_host:/remote/directory/file.txt username@to_host:/remote/directory/
+</code></pre>
+<p>With Custom PORT <code>-P</code> option example scp port 90: </p>
+<pre><code> scp -P 90 username@from_host:/remote/directory/file.txt username@to_host:/remote/directory/
+</code></pre>
+<p>In case both ports are different then use 2 steps via a local directory to copy from HOST1 to HOST2 </p>
 <hr />
                 
                   

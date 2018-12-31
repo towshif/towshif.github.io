@@ -26,12 +26,14 @@ Summary
 | `unzip `            | compress or expand files (also look at `gunzip`)                             | `unzip [ZIP FILENAME] [FILENAME2]`         | `-l (list) -d (to new DIR)` |
 | `ping`              | send ICMP ECHO_REQUEST to network hosts                                      | `ping [SERVER/ HOST/ URL/ IP]`             |                             |
 | `curl`              | transfer a URL                                                               | `curl [URL]`                               |                             |
-| `wget`              | The non-interactive network downloader. Download file                        | `wget [URL]`                               |                             |
+| `wget`              | The non-interactive network downloader. Download file                        | `wget [URL]`                               | `-c -b`                     |
 | `top`               | display Linux processes                                                      | `top`                                      |                             |
 | `htop`              | interactive process viewer                                                   | `htop`                                     |                             |
 | `kill`              | send a signal to a process                                                   | `kill [PID]`                               |                             |
 | `>` ; `>>`          | directs standard output to file; append to file if it already exists         | `[COMMAND1] > [FILENAME]`                  |                             |
 | <code>&#124;</code> | pipe operator: pipe; takes standard output of cmd1 as standard input to cmd2 | <code>[COMMAND1] &#124; [COMMAND2]</code>  |                             |
+
+
 
 
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## this file is in root of the repo towshif.github.io
+## this file is in root of the repo towshif.github.io where mkdocs.yml exists
 
 # rsync to sync SRC and DEST --delete option to delete files in DEST which are not in SRC
 rsync /home/towshif/workspace/next/.docs/docs/ ./docs -ar --delete
