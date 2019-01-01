@@ -13,8 +13,8 @@ for when there is no X windows system, for example, in a telnet session.
 ## The UNIX operating system
 -------------------------
 
-The UNIX operating system is made up of three parts; the kernel, the
-shell and the programs.
+The UNIX operating system is made up of three parts; the **kernel**, the
+**shell** and the **programs**.
 
 ### The kernel
 
@@ -38,7 +38,7 @@ then starts another program called the shell. The shell is a command
 line interpreter (CLI). It interprets the commands the user types in and
 arranges for them to be carried out. The commands are themselves
 programs: when they terminate, the shell gives the user another prompt
-(% on our systems).
+(`%` or `$` on our systems).
 
 The adept user can customise his/her own shell, and users can use
 different shells on the same machine. Staff and students in the school
@@ -46,18 +46,18 @@ have the tcsh shell by default.
 
 The tcsh shell has certain features to help the user inputting commands.
 
-Filename Completion - By typing part of the name of a command, filename
+**Filename Completion** - By typing part of the name of a command, filename
 or directory and pressing the \[Tab\] key, the tcsh shell will complete
 the rest of the name automatically. If the shell finds more than one
 name beginning with those letters you have typed, it will beep,
 prompting you to type a few more letters before pressing the tab key
 again.
 
-History - The shell keeps a list of the commands you have typed in. If
+**History** - The shell keeps a list of the commands you have typed in. If
 you need to repeat a command, use the cursor keys to scroll up and down
 the list or type history for a list of previous commands.
 
-Files and processes
+## Files and processes
 -------------------
 
 Everything in UNIX is either a file or a process.
@@ -79,7 +79,7 @@ Examples of files:
 -   a directory, containing information about its contents, which may be
     a mixture of other directories (subdirectories) and ordinary files.
 
-The Directory Structure
+## The Directory Structure
 -----------------------
 
 All the files are grouped together in the directory structure. The
@@ -91,7 +91,10 @@ tree. The top of the hierarchy is traditionally called **root**.
 In the diagram above, we see that the directory `ee51ab` contains the
 subdirectory `unixstuff` and a file `proj.txt`
 
-Starting an Xterminal session
+
+
+
+## Starting an Xterminal session
 -----------------------------
 
 To start an Xterm session, click on the Unix Terminal icon on your
@@ -104,11 +107,10 @@ desktop, or from the drop-down menus
 An Xterminal window will appear with a Unix prompt, waiting for you to
 start entering commands.
 
-![An X terminal window at the Unix prompt](Unix-Tutorial/gterm.gif){width="479"
-height="316"}
+![An X terminal window at the Unix prompt](Unix-Tutorial/gterm.gif)
 
 
-
+---
 
 ## Unix Shell Types 
 
