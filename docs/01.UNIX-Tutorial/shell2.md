@@ -37,9 +37,6 @@ Summary
 
 
 
-
-
-
 ---
 
 ### `find` - Searching Files & Directories
@@ -132,9 +129,7 @@ To output a VARIABLE use a `$` infront of the `VARIABLE` with and `echo` command
     + Read this file from shell, 
     + find all the occurrencec of ".txt" filenames in it, 
     + then sort them in reverse order and save to `moby-list.txt`. 
-    + In this file find the count of the string `ahab` in the file.
-Ans is 13.  
-
+    + In this file find the count of the string `ahab`. Ans is 13.  
 
 
 ---
