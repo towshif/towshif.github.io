@@ -374,13 +374,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#redirection-output" title="Redirection - output" class="md-nav__link">
-    Redirection - output
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#man-manual" title="man - manual" class="md-nav__link">
     man - manual
   </a>
@@ -1388,13 +1381,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#redirection-output" title="Redirection - output" class="md-nav__link">
-    Redirection - output
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#man-manual" title="man - manual" class="md-nav__link">
     man - manual
   </a>
@@ -1486,7 +1472,7 @@
 <td><code>cat</code></td>
 <td>Display contents of a File</td>
 <td><code>cat [FILENAME]</code></td>
-<td></td>
+<td><code>-n (line#)</code></td>
 </tr>
 <tr>
 <td><code>mv</code></td>
@@ -1505,12 +1491,6 @@
 <td>remove/ delete</td>
 <td><code>rm [DIRNAME/FILENAME]</code></td>
 <td><code>-rf</code></td>
-</tr>
-<tr>
-<td><code>&gt;</code> or <code>&gt;&gt;</code></td>
-<td>redirecting output</td>
-<td><code>cat [FILE1] &gt;&gt; [FILE2]</code></td>
-<td></td>
 </tr>
 <tr>
 <td><code>man</code></td>
@@ -1607,19 +1587,6 @@ rm -r [DIRECTORY_NAME]
 
 # If you want to remove all folders and files in the current directory the command is 
 rm -rf ./*
-</code></pre>
-<hr />
-<h3 id="redirection-output">Redirection - output</h3>
-<p>Write (or redirect) output from a command to a file.<br />
-<code>&gt;</code> with write to the file which <code>&gt;&gt;</code> will append to the file if it already exists. </p>
-<pre><code># Redirection
-python hello.py &gt; output.txt   # stdout to (file)
-python hello.py &gt;&gt; output.txt  # stdout to (file), append
-python hello.py 2&gt; error.log   # stderr to (file)
-python hello.py 2&gt;&amp;1           # stderr to stdout
-python hello.py 2&gt;/dev/null    # stderr to (null)
-python hello.py &amp;&gt;/dev/null    # stdout and stderr to (null)
-python hello.py &lt; foo.txt
 </code></pre>
 <hr />
 <h3 id="man-manual"><code>man</code> - manual</h3>

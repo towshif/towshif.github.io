@@ -25,17 +25,15 @@ Summary
 | `cd`        | Change Directory                   | `cd [DIRNAME/PATH]`          |             |
 | `mkdir`     | Make Directory                     | `mkdir [DIRNAME/PATH]`       | `-p (path)` |
 | `touch`     | Create a new empty File            | `touch [FILENAME]`           |             |
-| `cat`       | Display contents of a File         | `cat [FILENAME]`             |             |
+| `cat`       | Display contents of a File         | `cat [FILENAME]`             | `-n (line#)`|
 | `mv`        | move/ rename                       | `mv [SOURCE][DESTINATION]`   |             |
 | `cp`        | copy                               | `cp [SOURCE][DESTINATION]`   | `-rf`       |
 | `rm`        | remove/ delete                     | `rm [DIRNAME/FILENAME]`      | `-rf`       |
-| `>` or `>>` | redirecting output                 | `cat [FILE1] >> [FILE2]`     |             |
 | `man`       | displays usage manual              | `man [UNIX COMMAND]`         |             |
 | `history`   | displays history of commands       | `history`                    | `!-3`       |
 
 
 For more -OPTIONS try `man [COMMAND]`
-
 
 ---
 
@@ -142,21 +140,6 @@ Removes files and folders rm my_folder. Options below
     
     # If you want to remove all folders and files in the current directory the command is 
     rm -rf ./* 
-
----
-
-### Redirection - output
-Write (or redirect) output from a command to a file.  
-`>` with write to the file which `>>` will append to the file if it already exists. 
-
-    # Redirection
-    python hello.py > output.txt   # stdout to (file)
-    python hello.py >> output.txt  # stdout to (file), append
-    python hello.py 2> error.log   # stderr to (file)
-    python hello.py 2>&1           # stderr to stdout
-    python hello.py 2>/dev/null    # stderr to (null)
-    python hello.py &>/dev/null    # stdout and stderr to (null)
-    python hello.py < foo.txt
 
 ---
 

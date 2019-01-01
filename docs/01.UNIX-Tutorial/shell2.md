@@ -21,7 +21,7 @@ Summary
 | `whereis`           | locate the binary, source, and manual page files for a command               | `whereis [COMMAND_NAME OR BINARY_FILE]`    |                             |
 | `whatis`            | display one-line manual page descriptions                                    | `whatis [COMMAND_NAME]`                    |                             |
 | `find`              | search for files in a directory hierarchy                                    | `find [DIR] [-name] "[STRING/WILDCARD]"`   | `-name`                     |
-| `grep`              | print lines matching a pattern                                               | `grep [-OPTION] "[STRING PATTERN]"`        | `-i (ignore case)`          |
+| `grep`              | print lines matching a pattern                                               | `grep [-OPTION] "[PATTERN] [FILE]"`        | `-i (ignore case)`          |
 | `zip `              | list, test and extract compressed files in a ZIP archive                     | `zip [ZIPFILENAME] [FILE1] [FILE2] [DIR1]` | `-r (compress DIR)`         |
 | `unzip `            | compress or expand files (also look at `gunzip`)                             | `unzip [ZIP FILENAME] [FILENAME2]`         | `-l (list) -d (to new DIR)` |
 | `ping`              | send ICMP ECHO_REQUEST to network hosts                                      | `ping [SERVER/ HOST/ URL/ IP]`             |                             |
