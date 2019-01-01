@@ -120,6 +120,49 @@ To output a VARIABLE use a `$` infront of the `VARIABLE` with and `echo` command
 
 ---
 
-[Cheat Sheet](../unix-cheat-sheet/)
+## Exercise 
 
-[Another Cheat Sheet](https://devhints.io/bash)
+1. Get contents of URL http://towshif.com and find all lines starting with `<` and save them to a file `strip-html.txt`. Output the last 5 lines of the file.
+
+2. Find all names and paths of python files (.py) in your home directory and save it into a file `all-py.txt`. Count the number of files you found and output them. Now from the file output all the lines that contain the word 'setup' and save it into another file `all-setup-py.txt`. Count the number of files with word 'setup' in their path. 
+
+3. Find all the commands in your history that contains a 'http' link. 
+
+4. This link [http://www.gutenberg.org/files/15/15.txt](http://www.gutenberg.org/files/15/15.txt) has a text file which contains a list of files for the legendary novel *Moby Dick*. 
+    + Read this file from shell, 
+    + find all the occurrencec of ".txt" filenames in it, 
+    + then sort them in reverse order and save to `moby-list.txt`. 
+    + In this file find the count of the string `ahab` in the file.
+Ans is 13.  
+
+
+
+---
+
+## References
+* [Cheat Sheet](../unix-cheat-sheet/)
+* [Another Cheat Sheet](https://devhints.io/bash)
+
+--- 
+
+## Answers: 
+
+    # Ans 1: 
+    curl https://towshif.com | grep -i "<" > ~/code/krazykoder/strip-html.txt
+    tail -5 ~/code/krazykoder/strip-html.txt
+
+    # Ans 2:
+    find ~ -name "*.py" > ~/code/krazykoder/allpy.txt
+    wc -l  ~/code/krazykoder/allpy.txt
+    cat  ~/code/krazykoder/allpy.txt | grep -i "setup" > ~/code/krazykoder/all-setup-py.txt
+    wc ~/code/krazykoder/all-setup-py.txt
+
+    # Ans 3: 
+    history | grep -i 'http'
+
+    # And 4: 
+    curl http://www.gutenberg.org/files/15/15.txt | grep -i ".txt" | sort --reverse > moby-list.txt
+    grep -io "ahab" moby-list.txt | wc -l
+
+
+----

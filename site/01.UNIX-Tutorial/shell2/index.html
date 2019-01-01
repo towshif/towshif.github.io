@@ -355,6 +355,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exercise" title="Exercise" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answers" title="Answers:" class="md-nav__link">
+    Answers:
+  </a>
+  
+</li>
+      
       
       
       
@@ -1308,6 +1329,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exercise" title="Exercise" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answers" title="Answers:" class="md-nav__link">
+    Answers:
+  </a>
+  
+</li>
+      
       
       
       
@@ -1563,8 +1605,54 @@ history (histroy of all the command run in SHELL)
 <pre><code>echo $USER
 </code></pre>
 <hr />
-<p><a href="../unix-cheat-sheet/">Cheat Sheet</a></p>
-<p><a href="https://devhints.io/bash">Another Cheat Sheet</a></p>
+<h2 id="exercise">Exercise</h2>
+<ol>
+<li>
+<p>Get contents of URL http://towshif.com and find all lines starting with <code>&lt;</code> and save them to a file <code>strip-html.txt</code>. Output the last 5 lines of the file.</p>
+</li>
+<li>
+<p>Find all names and paths of python files (.py) in your home directory and save it into a file <code>all-py.txt</code>. Count the number of files you found and output them. Now from the file output all the lines that contain the word 'setup' and save it into another file <code>all-setup-py.txt</code>. Count the number of files with word 'setup' in their path. </p>
+</li>
+<li>
+<p>Find all the commands in your history that contains a 'http' link. </p>
+</li>
+<li>
+<p>This link <a href="http://www.gutenberg.org/files/15/15.txt">http://www.gutenberg.org/files/15/15.txt</a> has a text file which contains a list of files for the legendary novel <em>Moby Dick</em>. </p>
+<ul>
+<li>Read this file from shell, </li>
+<li>find all the occurrencec of ".txt" filenames in it, </li>
+<li>then sort them in reverse order and save to <code>moby-list.txt</code>. </li>
+<li>In this file find the count of the string <code>ahab</code> in the file.
+Ans is 13.  </li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li><a href="../unix-cheat-sheet/">Cheat Sheet</a></li>
+<li><a href="https://devhints.io/bash">Another Cheat Sheet</a></li>
+</ul>
+<hr />
+<h2 id="answers">Answers:</h2>
+<pre><code># Ans 1: 
+curl https://towshif.com | grep -i "&lt;" &gt; ~/code/krazykoder/strip-html.txt
+tail -5 ~/code/krazykoder/strip-html.txt
+
+# Ans 2:
+find ~ -name "*.py" &gt; ~/code/krazykoder/allpy.txt
+wc -l  ~/code/krazykoder/allpy.txt
+cat  ~/code/krazykoder/allpy.txt | grep -i "setup" &gt; ~/code/krazykoder/all-setup-py.txt
+wc ~/code/krazykoder/all-setup-py.txt
+
+# Ans 3: 
+history | grep -i 'http'
+
+# And 4: 
+curl http://www.gutenberg.org/files/15/15.txt | grep -i ".txt" | sort --reverse &gt; moby-list.txt
+grep -io "ahab" moby-list.txt | wc -l
+</code></pre>
+<hr />
                 
                   
                 
