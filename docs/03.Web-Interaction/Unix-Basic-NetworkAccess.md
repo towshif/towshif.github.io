@@ -24,7 +24,7 @@ Try yourself
 
 ---
 
-## 2. `wget` - Download a file from a url link (FTP, SFTP, HTTP(S))
+## 2. `wget` - Download a file from a url link - FTP, HTTP(S)
 
     wget [OPTIONS] [URL LINK TO FILE]
 
