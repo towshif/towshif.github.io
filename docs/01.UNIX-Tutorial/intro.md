@@ -92,8 +92,6 @@ In the diagram above, we see that the directory `ee51ab` contains the
 subdirectory `unixstuff` and a file `proj.txt`
 
 
-
-
 ## Starting an Xterminal session
 -----------------------------
 
@@ -147,3 +145,21 @@ start entering commands.
 
 
 M.Stonebank@surrey.ac.uk, © 9th October 2000
+
+
+
+---
+
+
+
+## Advanced reading
+
+
+**Snapshot of a linux filesystem**
+
+![](https://upload.wikimedia.org/wikipedia/commons/f/f3/Standard-unix-filesystem-hierarchy.svg)
+
+
+
+* [Youtube Video](https://www.youtube.com/watch?v=2qQTXp4rBEE)
+* [The Linux Directory Structure, Explained](https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/)

@@ -29,7 +29,7 @@ Summary
 | `mv`      | move/ rename                       | `mv [SOURCE][DESTINATION]`   |              |
 | `cp`      | copy                               | `cp [SOURCE][DESTINATION]`   | `-rf`        |
 | `rm`      | remove/ delete                     | `rm [DIRNAME/FILENAME]`      | `-rf`        |
-| `locate`  | locate a filen with name           | `locate [FILENAME]`          | `-inc`       |
+| `locate`  | locate a file with name            | `locate [FILENAME]`          | `-inc`       |
 | `man`     | displays usage manual              | `man [UNIX COMMAND]`         |              |
 | `history` | displays history of commands       | `history`                    | `!-3`        |
 
