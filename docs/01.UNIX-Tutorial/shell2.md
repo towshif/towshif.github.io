@@ -21,7 +21,7 @@ Summary
 | `whereis`           | locate the binary, source, and manual page files for a command               | `whereis [COMMAND_NAME OR BINARY_FILE]`    |                             |
 | `whatis`            | display one-line manual page descriptions                                    | `whatis [COMMAND_NAME]`                    |                             |
 | `find`              | search for files in a directory hierarchy                                    | `find [DIR] [-name] "[STRING/WILDCARD]"`   | `-name`                     |
-| `grep`              | print lines matching a pattern                                               | `grep [-OPTION] "[PATTERN] [FILE]"`        | `-i (ignore case)`          |
+| `grep`              | print lines matching a pattern                                               | `grep [-OPTION] "[PATTERN]" [FILE]`        | `-i (ignore case)`          |
 | `zip `              | list, test and extract compressed files in a ZIP archive                     | `zip [ZIPFILENAME] [FILE1] [FILE2] [DIR1]` | `-r (compress DIR)`         |
 | `unzip `            | compress or expand files (also look at `gunzip`)                             | `unzip [ZIP FILENAME] [FILENAME2]`         | `-l (list) -d (to new DIR)` |
 | `ping`              | send ICMP ECHO_REQUEST to network hosts                                      | `ping [SERVER/ HOST/ URL/ IP]`             |                             |
@@ -119,7 +119,7 @@ To output a VARIABLE use a `$` infront of the `VARIABLE` with and `echo` command
 
 ## Exercise 
 
-1. Get contents of URL http://towshif.com and find all lines starting with `<` and save them to a file `strip-html.txt`. Output the last 5 lines of the file.
+1. Get contents of URL https://towshif.com and find all lines starting with `<` and save them to a file `strip-html.txt`. Output the last 5 lines of the file.
 
 2. Find all names and paths of python files (.py) in your home directory and save it into a file `all-py.txt`. Count the number of files you found and output them. Now from the file output all the lines that contain the word 'setup' and save it into another file `all-setup-py.txt`. Count the number of files with word 'setup' in their path. 
 
