@@ -9,9 +9,9 @@ When developers create something (an app, for example), they make constant chang
 
 Version control systems keep these revisions straight, storing the modifications in a central repository. This allows developers to easily collaborate, as they can download a new version of the software, make changes, and upload the newest revision. Every developer can see these new changes, download them, and contribute.
 
-**What is GitHub?**
+**What is [GitHub](https://github.com)?**
 
-Github.com is where developers store their projects and network with like minded people. It provides a online platform to sync your code, visually track changes and collaborate with other developers. More information on features provided by github is [here](https://github.com/features)
+[Github.com](https://github.com) is where developers store their projects and network with like minded people. It provides a online platform to sync your code, visually track changes and collaborate with other developers. More information on features provided by github is [here](https://github.com/features)
 
 ## Repository
 A repository (usually abbreviated to “repo”) is a location where all the files for a particular project are stored. Each project has its own repo, and you can access it with a unique URL.
