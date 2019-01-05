@@ -7,6 +7,8 @@ Git is a *version-control system* for tracking changes in computer files and coo
 
 When developers create something (an app, for example), they make constant changes to the code, releasing new versions up to and after the first official (non-beta) release.
 
+![Git and Collaboration](http://invistruct.com/wp-content/uploads/2012/08/centralized-vc.png)
+
 Version control systems keep these revisions straight, storing the modifications in a central repository. This allows developers to easily collaborate, as they can download a new version of the software, make changes, and upload the newest revision. Every developer can see these new changes, download them, and contribute.
 
 **What is [GitHub](https://github.com)?**
@@ -37,7 +39,15 @@ Git and Github in a nutshell:
     
     # Committing Changes 
     git commit [file1] [file2] [--all]      
-    
+
+
+
+## Github Flow 
+
+![](https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/4883/original/git-and-github-diagram-turing.png
+)
+
+
 
 ## Getting started with a github repo 
 
