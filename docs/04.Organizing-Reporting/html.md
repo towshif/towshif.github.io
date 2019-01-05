@@ -38,7 +38,7 @@ There are a lot more html elements that have custom use and are contained in the
 Some common html elements are: 
 
 * `<p>` tag - paragraph 
-* `<h1>, <h2>, <h3>` tag - headers of different font size; 1 being largets and then bigger the h-number smaller the font 
+* `<h1>, <h2>, <h3>` tag - headers of different font size; 1 being largest and then bigger the h-number smaller the font 
 * `a` tag - this is a link tag that often contains a `href` link. We usually see them as clickable links on a webpage. Usage Syntax:
     
         <a href="URL"> DISPLAY-TEXT </a>
