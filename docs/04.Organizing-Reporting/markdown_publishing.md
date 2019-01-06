@@ -24,6 +24,21 @@ There are a number of markdown publishing/ conversion utilities like `MKdocs`, `
 
 ---
 
+## Quick Install, Dev and Build with mkdocs
+
+    # Install mkdocs and themes
+    pip install mkdocs --user
+    
+    # Install extensions and material theme
+    pip install pymdown-extensions mkdocs-material pygments --user
+
+    # Start mkdoc markdown engine for local viewing 
+    python -m mkdocs serve
+
+    # build mkdocs markdhown --> html
+    python -m mkdocs build
+
+
 ## Start a new mkdocs project in project root directory 
 To initialise a project with mkdocs, just run the following command from the root directory of your repository:
 

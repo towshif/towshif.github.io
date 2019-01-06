@@ -1,6 +1,9 @@
 # Setting up Google Cloud Console 
 This page describes how to start a new Google Cloud Shell session. We will be using google clould virtual unix environment to proceed with the next tutorial. 
 
+## [Google Cloud](https://cloud.google.com/)
+
+Go to [https://cloud.google.com/](https://cloud.google.com/) and click on Console. This will load your google cloud console and projects. This is a free service from google and unless you do advanced stuff you dont need to pay or subscribe. 
 
 ## Before you begin
 Select or create a GCP project.
@@ -41,13 +44,49 @@ Additional information on [Google Cloud Shell Features](https://cloud.google.com
 
 ---
 
-## Post Setup 
+## Customize your cloud shell 
 
-Once you have setup your cloud shell environment fire up the terminal in your browser and make a clone of the repo for the website we created in the previous tutorial `username.github.io`. 
+Terminal Settings: I prefer Font -> Large, Monospace; Copy on Select; Dark theme.
 
-    git clone https://github.com/username/username.github.io
+**Update / add .vimrc** with syntax highlighting
 
-You will not be able to visualize the repository and its folder structure in the google cloud code editor. 
+    curl -fsSL https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim > ~/.vimrc
+
+**Update .bashrc** with custom aliases
+
+    curl -fsSL https://gist.githubusercontent.com/towshif/bba124a507d1f7513118977c7dd591ae/raw/22f26f731f0349c2b0fcd170dc33eca93e3c561e/bash-aliases.sh >> ~/.bashrc
+
+**Install zsh** 
+
+    # install oh-my-zsh (default)
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+**Install packages**
+
+Because google cloud provisions this Virtual machine to your account it comes with a root access. So you can install whatever you want. However GC comes packaged with most of the useful language compilers.
+
+    sudo apt install [package]
+
+    # example: install htop process viewer 
+    sudo apt install htop 
+
+Also you can run a local server for development and host it over a local `PORT`. There is a preview button on top right of the cloud shell where you can configure the serving `PORT` and see the output of the local server. 
+
+    # To start HTTP Server : default port 8080
+    python -m SimpleHTTPServer 
+
+    # Start mkdoc markdown Server : default port: 8000 
+    python -m mkdocs serve
 
 
-**Next Steps**
+## Exercise 
+
+1. Clone and existing git repo and create a projects folder in it. Using the google cloud code editor create working helloworld programs in `C`, `Java`, `Python`. Compile and run to verify. Please update/ add `.gitignore` to project home before commit 
+
+        wget -c https://raw.githubusercontent.com/towshif/tutorials101/master/.gitignore
+
+2. Create a simple index.html file(s) and start a local dev server to preview it on GCP using python `SimpleHTTPServer` module. 
+
+
+
+3. Install a static site generator like `jekyll` or `mkdocs`. Use its dev server module (option: `serve`) to host a local site written in markdown and preview the changes in real time over a custom port using the *preview* option in cloud shell.
