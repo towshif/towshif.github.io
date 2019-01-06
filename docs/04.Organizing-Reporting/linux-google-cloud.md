@@ -67,9 +67,12 @@ Because google cloud provisions this Virtual machine to your account it comes wi
 
     sudo apt install [package]
 
-    # example: install htop process viewer 
+    # example: install htop (process viewer)
     sudo apt install htop 
-
+    
+    # example: install htop (process viewer) and tree ( directory structure viewer)
+    sudo apt install htop tree
+    
 Also you can run a local server for development and host it over a local `PORT`. There is a preview button on top right of the cloud shell where you can configure the serving `PORT` and see the output of the local server. 
 
     # To start HTTP Server : default port 8080
