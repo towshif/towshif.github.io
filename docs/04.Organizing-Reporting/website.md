@@ -33,7 +33,7 @@ We will use our github repo `username.github.io` directory to initialize the mkd
 
 **Initilaize mkdocs**
     
-    mkdocs new        # initialize 'mkdocs.yml' and docs/ in current directory
+    mkdocs new  .      # initialize 'mkdocs.yml' and docs/ in current directory
 
 At this point your directory structure will look like this: 2 new items will be added to the current directory: `docs/` directory is created with an `index.md` file in it and `mkdocs.yml` config file. 
 
