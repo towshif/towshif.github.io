@@ -1441,11 +1441,12 @@ python -m mkdocs build
 </code></pre>
 <h2 id="start-a-new-mkdocs-project-in-project-root-directory">Start a new mkdocs project in project root directory</h2>
 <p>To initialise a project with mkdocs, just run the following command from the root directory of your repository:</p>
-<pre><code>mkdocs new        # initialize 'mkdocs.yml' and docs/ in current directory
+<pre><code>mkdocs new .       # initialize 'mkdocs.yml' and docs/ in current directory
 
 # OR create a mkdocs projects `myproject` with 'mkdocs.yml' and 'docs/' initialized
 mkdocs new myProject
 </code></pre>
+<p>In case mkdocs binary is not in your path user <code>python -m mkdocs</code> for all mkdocs operations. </p>
 <p>You will see there are two new items created in out project root directory (.)</p>
 <ul>
 <li><code>docs/</code> - a new directory created containing an <code>index.md</code> file in it </li>

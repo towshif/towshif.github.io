@@ -42,11 +42,13 @@ There are a number of markdown publishing/ conversion utilities like `MKdocs`, `
 ## Start a new mkdocs project in project root directory 
 To initialise a project with mkdocs, just run the following command from the root directory of your repository:
 
-    mkdocs new        # initialize 'mkdocs.yml' and docs/ in current directory
+    mkdocs new .       # initialize 'mkdocs.yml' and docs/ in current directory
 
     # OR create a mkdocs projects `myproject` with 'mkdocs.yml' and 'docs/' initialized
     mkdocs new myProject  
-    
+
+In case mkdocs binary is not in your path user `python -m mkdocs` for all mkdocs operations. 
+
 You will see there are two new items created in out project root directory (.)
 
 + `docs/` - a new directory created containing an `index.md` file in it 

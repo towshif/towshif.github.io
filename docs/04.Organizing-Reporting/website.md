@@ -160,6 +160,11 @@ Update one the `navigation links` on top right in the same way. Replace the text
 
 The link will show as 'My Document' and point to http://username.github.io/site using the tag link in `<a href="site/"`
 
+Finally add, commit and push to github 
+
+    # shortcut for all git commands: in nano editor - write message, save and exit nano
+    git add --all && git commit --all && git push
+
 
 And that is it. You can continue developing the site and add pages. 
 
