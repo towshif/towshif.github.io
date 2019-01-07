@@ -64,6 +64,25 @@ The *quick* brown fox, jumped **over** the lazy [dog](https://en.wikipedia.org/w
 ![m'lady](http://i.imgur.com/v8IVDka.jpg)
 
 
+
+## **Videos**
+
+You can use direct html code in Markdown as you would in regular html. So just paste the embedding link from youtube like example below and your video will be embedded in the page.
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/CH1XGdu-hzQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CH1XGdu-hzQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+2nd [Hard] way: this will not embed the video but will create a link to navigate to the video link page.
+
+    [![Gangnal Style](https://i.ytimg.com/an_webp/9bZkp7q19f0/mqdefault_6s.webp?du=3000&sqp=CNvwyuEF&rs=AOn4CLAT7gjHaf7EycGvpZcJZm-4TPvRjA)](https://www.youtube.com/watch?v=9bZkp7q19f0)
+
+[![Gangnal Style](https://i.ytimg.com/an_webp/9bZkp7q19f0/mqdefault_6s.webp?du=3000&sqp=CNvwyuEF&rs=AOn4CLAT7gjHaf7EycGvpZcJZm-4TPvRjA)](https://www.youtube.com/watch?v=9bZkp7q19f0)
+
+
+
+
 ## **Lists**
 
     * Item 1

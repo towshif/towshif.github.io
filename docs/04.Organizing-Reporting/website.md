@@ -66,7 +66,7 @@ We will already have a `docs/` directory to write files into. All the markdown d
 Lets create 2 document like this 
 
 * [index.md]()
-* [report.md]()
+* [helloworlds.md]()
 
 To see the changes we made and how our site looks like we can start a local server inbuilt in mkdocs using `serve` option.  
 
