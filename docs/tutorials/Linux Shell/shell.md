@@ -83,6 +83,22 @@ Change mode so you can set permissions for read, write and execute for the user,
 In general, chmod commands take the form:
 
     chmod options permissions file name
+
+Example #1: 
+
+    chmod g+w,o-rw,a+x ~/group-project-files/
+
+This adds write permissions to the usergroup members, and removes read and write permissions from the “other” users of the system. Finally the a+x adds the execute permissions to all categories. This value may also be specified as +x. If no category is specified, the permission is added or subtracted to all permission categories.
+
+Example #2: 
+
+    chmod -R +w,g=rw,o-rw, ~/group-project-files/
+
+The -R option applies the modification to the permissions recursively to the directory specified and to all of its contents
+
+
+**chmod - details** 
+
 If no options are specified, chmod modifies the permissions of the file specified by file name to the permissions specified by permissions.
 
 permissions defines the permissions for the owner of the file (the "user"), members of the group who owns the file (the "group"), and anyone else ("others"). There are two ways to represent these permissions: with symbols (alphanumeric characters), or with octal numbers (the digits 0 through 7).

@@ -38,7 +38,7 @@
     
     
       
-        <title>Setting Default permissions for Directory with user groups - Less-Than-10 Tutorials (<10)</title>
+        <title>Setting Permission with chmod - Less-Than-10 Tutorials (<10)</title>
       
     
     
@@ -74,7 +74,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#setting-default-permissions-for-directory-with-user-groups" tabindex="1" class="md-skip">
+      <a href="#setting-permission-with-chmod" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -100,7 +100,7 @@
                 Less-Than-10 Tutorials (<10)
               </span>
               <span class="md-header-nav__topic">
-                Setting Default permissions for Directory with user groups
+                Setting Permission with chmod
               </span>
             
           
@@ -1038,11 +1038,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Setting Default permissions for Directory with user groups
+        Setting Permission with chmod
       </label>
     
-    <a href="./" title="Setting Default permissions for Directory with user groups" class="md-nav__link md-nav__link--active">
-      Setting Default permissions for Directory with user groups
+    <a href="./" title="Setting Permission with chmod" class="md-nav__link md-nav__link--active">
+      Setting Permission with chmod
     </a>
     
       
@@ -1056,8 +1056,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#examples" title="Examples:" class="md-nav__link">
-    Examples:
+  <a href="#chmod" title="chmod" class="md-nav__link">
+    chmod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-default-permissions-for-directory-with-user-groups" title="Setting Default permissions for Directory with user groups" class="md-nav__link">
+    Setting Default permissions for Directory with user groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
   </a>
   
 </li>
@@ -1248,8 +1262,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#examples" title="Examples:" class="md-nav__link">
-    Examples:
+  <a href="#chmod" title="chmod" class="md-nav__link">
+    chmod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-default-permissions-for-directory-with-user-groups" title="Setting Default permissions for Directory with user groups" class="md-nav__link">
+    Setting Default permissions for Directory with user groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
   </a>
   
 </li>
@@ -1271,7 +1299,99 @@
               
                 
                 
-                <h1 id="setting-default-permissions-for-directory-with-user-groups">Setting Default permissions for Directory with user groups</h1>
+                <h1 id="setting-permission-with-chmod">Setting Permission with chmod</h1>
+<h2 id="chmod"><code>chmod</code></h2>
+<p>Change mode so you can set permissions for read, write and execute for the user, members of your group and others. This uses binary values as an argument to set these. There are many common chmod permissions, a few key ones are:</p>
+<p>In general, chmod commands take the form:</p>
+<pre><code>chmod [who][+,-,=][permissions] filename
+</code></pre>
+<p>Example #1: </p>
+<pre><code>chmod g+w,o-rw,a+x ~/group-project-files/
+</code></pre>
+<p>This adds write permissions to the usergroup members, and removes read and write permissions from the “other” users of the system. Finally the a+x adds the execute permissions to all categories. This value may also be specified as +x. If no category is specified, the permission is added or subtracted to all permission categories.</p>
+<p>Example #2: </p>
+<pre><code>chmod -R +w,g=rw,o-rw, ~/group-project-files/
+</code></pre>
+<p>The -R option applies the modification to the permissions recursively to the directory specified and to all of its contents</p>
+<p>Permissions: </p>
+<pre><code>File type       User    Group   Global
+d Directory     rwx     r-x     r-x
+- Regular file  rw-     r--     r--
+l Symbolic Link rwx     rwx     rwx
+</code></pre>
+<p>Who: </p>
+<pre><code>Who     Meaning
+u        user
+g        group
+o        others
+a        all
+</code></pre>
+<p><strong>chmod - details</strong> </p>
+<p>If no options are specified, chmod modifies the permissions of the file specified by file name to the permissions specified by permissions.</p>
+<p>permissions defines the permissions for the owner of the file (the "user"), members of the group who owns the file (the "group"), and anyone else ("others"). There are two ways to represent these permissions: with symbols (alphanumeric characters), or with octal numbers (the digits 0 through 7).</p>
+<p>Let's say you are the owner of a file named myfile, and you want to set its permissions so that:
+<em> the user can read, write, ande xecute it;
+</em> members of your group can read ande xecute it; and
+* others may only read it.</p>
+<p>This command will do the trick:</p>
+<pre><code>chmod u=rwx,g=rx,o=r myfile
+</code></pre>
+<p>This example uses symbolic permissions notation. The letters u, g, and o stand for "user", "group", and "other". The equals sign ("=") means "set the permissions exactly like this," and the letters "r", "w", and "x" stand for "read", "write", and "execute", respectively. The commas separate the different classes of permissions, and there are no spaces in between them.</p>
+<p>Here is the equivalent command using octal permissions notation:</p>
+<pre><code>chmod 754 myfile 
+# this is equivalent to chmod u=rwx,g=rx,o=r myfile
+</code></pre>
+<p>Here the digits 7, 5, and 4 each individually represent the permissions for the user, group, and others, in that order. Each digit is a combination of the numbers 4, 2, 1, and 0:</p>
+<pre><code>4 stands for "read",
+2 stands for "write",
+1 stands for "execute", and
+0 stands for "no permission."
+</code></pre>
+<p>So 7 is the combination of permissions 4+2+1 (read, write, and execute), 5 is 4+0+1 (read, no write, and execute), and 4 is 4+0+0 (read, no write, and no execute).</p>
+<pre><code>777 — anyone can read, write and execute chmod 777 my_file
+755 — for files that should be readable and executable by others, but only changeable by the issuing user
+700 — only the user can do anything to the file
+</code></pre>
+<p>These are the examples from the symbolic notation section given in octal notation:</p>
+<pre><code>Symbolic       Notation    Numeric Notation English  
+----------     0000        no permissions  
+-rwx------     0700        read, write, &amp; execute only for owner   
+-rwxrwx---     0770        read, write, &amp; execute for owner and group  
+-rwxrwxrwx     0777        read, write, &amp; execute for owner, group and others  
+---x--x--x     0111        execute     
+--w--w--w-     0222        write   
+--wx-wx-wx     0333        write &amp; execute     
+-r--r--r--     0444        read    
+-r-xr-xr-x     0555        read &amp; execute  
+-rw-rw-rw-     0666        read &amp; write    
+-rwxr-----     0740        owner can read, write, &amp; execute; group can only read; others have no permissions
+</code></pre>
+<p>chmod Examples
+    # Set the permissions of file.htm to "owner can read and write; group can read only; others can read only".
+    chmod 644 file.htm</p>
+<pre><code># Recursively (-R) Change the permissions of the directory myfiles, and all folders and files it contains, to mode 755: User can read, write, and execute; group members and other users can read and execute, but cannot write.
+chmod -R 755 myfiles
+
+# Change the permissions for the owner of example.jpg so that the owner may read and write the file. Do not change the permissions for the group, or for others.
+chmod u=rw example.jpg
+
+# Set the "Set-User-ID" bit of comphope.txt, so that anyone who attempts to access that file does so as if they are the owner of the file.
+chmod u+s comphope.txt
+
+# The opposite of the above command; un-sets the SUID bit.
+chmod u-s comphope.txt
+
+# Set the permissions of file.cgi to "read, write, and execute by owner" and "read and execute by the group and everyone else".
+chmod 755 file.cgi
+
+# Set the permission of file.txt to "read and write by everyone.".
+chmod 666 file.txt
+
+# Accomplishes the same thing as the above command, using symbolic notation.
+chmod a=rw file.txt
+</code></pre>
+<h2 id="setting-default-permissions-for-directory-with-user-groups">Setting Default permissions for Directory with user groups</h2>
+<p><a href="https://unix.stackexchange.com/questions/1314/how-to-set-default-file-permissions-for-all-folders-files-in-a-directory">Stackoverflow ref.</a></p>
 <p>How to set rw permission in a directory shared by a <code>group</code> of users</p>
 <ul>
 <li>First all users accessing the directory need to share a group. </li>
@@ -1299,7 +1419,7 @@ default:group::rwx
 default:other::r-x
 </code></pre>
 
-<h2 id="examples">Examples:</h2>
+<h2 id="examples">Examples</h2>
 <p>To modify existing files in goups use <code>-m</code> switch and to set new default permission with switch <code>-d</code> to the directory for <code>group</code>. </p>
 <pre><code>chmod g+s /home/limited.users/&lt;directory&gt;
 setfacl -R -m g::rwx /home/limited.users/&lt;directory&gt; // gives group read,write,exec permissions for currently existing files and folders, recursively

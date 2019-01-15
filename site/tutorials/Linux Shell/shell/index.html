@@ -1029,8 +1029,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../permissions/" title="Setting Default permissions for Directory with user groups" class="md-nav__link">
-      Setting Default permissions for Directory with user groups
+    <a href="../permissions/" title="Setting Permission with chmod" class="md-nav__link">
+      Setting Permission with chmod
     </a>
   </li>
 
@@ -1342,6 +1342,15 @@ rm -rf ./*
 <p>In general, chmod commands take the form:</p>
 <pre><code>chmod options permissions file name
 </code></pre>
+<p>Example #1: </p>
+<pre><code>chmod g+w,o-rw,a+x ~/group-project-files/
+</code></pre>
+<p>This adds write permissions to the usergroup members, and removes read and write permissions from the “other” users of the system. Finally the a+x adds the execute permissions to all categories. This value may also be specified as +x. If no category is specified, the permission is added or subtracted to all permission categories.</p>
+<p>Example #2: </p>
+<pre><code>chmod -R +w,g=rw,o-rw, ~/group-project-files/
+</code></pre>
+<p>The -R option applies the modification to the permissions recursively to the directory specified and to all of its contents</p>
+<p><strong>chmod - details</strong> </p>
 <p>If no options are specified, chmod modifies the permissions of the file specified by file name to the permissions specified by permissions.</p>
 <p>permissions defines the permissions for the owner of the file (the "user"), members of the group who owns the file (the "group"), and anyone else ("others"). There are two ways to represent these permissions: with symbols (alphanumeric characters), or with octal numbers (the digits 0 through 7).</p>
 <p>Let's say you are the owner of a file named myfile, and you want to set its permissions so that:
