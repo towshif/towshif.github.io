@@ -146,7 +146,7 @@ Let update the repo `username.github.io`
 Check your online repo at github.com and erify your site is up at http://username.github.io/site. Note the `/site` added to your URL since we are hosting from a subdirectory at inside your repo root directory. Your website should be up and it will identical to what you previewed at the GCP console. 
 
 
-Not lets link this site to out `index.html` landing page which we created in out root (previous tutorial)
+Now lets link this site to our `index.html` landing page which we created in the root directory (previous tutorial)
 
 Use the code editor or terminal to edit the index.html file in root dir `username.github.io/`
 
