@@ -15,9 +15,10 @@ rem just configure mkdocs.yml
 
 
 mkdocs build
+
+REM use ssh if possible with RSA key in github : removes confusion with multiple github usernames on single machine
 git pull
 git add --all
 git commit -m "Build and committed $(date)"
 git push
-
 
