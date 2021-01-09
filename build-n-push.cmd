@@ -1,3 +1,4 @@
+@echo off
 rem Bat script for Win7, Win10
 rem Adapted from Shell script build-n-push.sh in the same directory 
 
