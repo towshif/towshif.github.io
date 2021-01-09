@@ -1,40 +1,18 @@
 
-
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-      
-        <link rel="canonical" href="https://towshif.github.io/tutorials/Linux Shell/cleanup/">
       
       
       
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
       
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
+        <link rel="canonical" href="https://towshif.github.io/tutorials/Linux%20Shell/cleanup/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
@@ -42,90 +20,107 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.15aa0b43.min.css">
       
-      
-    
-    
-      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
-    
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.75751829.min.css">
+        
       
     
-    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
     
     
   </head>
   
-    <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-      </defs>
-    </svg>
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#remove-unnecessary-packages-and-dependencies" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon"></i>
-          
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#remove-unnecessary-packages-and-dependencies" class="md-skip">
+          Skip to content
         </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (&lt;10)" class="md-header-nav__button md-logo" aria-label="Less-Than-10 Tutorials (<10)">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Less-Than-10 Tutorials (<10)
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
-              <span class="md-header-nav__topic">
-                Less-Than-10 Tutorials (<10)
-              </span>
-              <span class="md-header-nav__topic">
-                Cleanup
-              </span>
+              Cleanup
             
-          
+          </span>
         </div>
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -133,32 +128,36 @@
     </div>
   </div>
 </div>
-          
-        
-      </div>
-      
-    </div>
+    
+    
   </nav>
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
+      
       
         
       
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-nav__button md-logo">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (&lt;10)" class="md-nav__button md-logo" aria-label="Less-Than-10 Tutorials (<10)">
       
-        <i class="md-icon"></i>
-      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
     </a>
     Less-Than-10 Tutorials (<10)
   </label>
@@ -170,8 +169,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href="../../.." title="Instructions" class="md-nav__link">
+    <a href="../../.." class="md-nav__link">
       Instructions
     </a>
   </li>
@@ -182,8 +182,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href="../../../gettingStarted/" title="Getting Started" class="md-nav__link">
+    <a href="../../../gettingStarted/" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -194,15 +195,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
     
     <label class="md-nav__link" for="nav-3">
       00.Remote Access
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="00.Remote Access" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
         00.Remote Access
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -213,8 +219,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../00.Remote-Access/scp/" title="scp - Secure Copy in 10 mins" class="md-nav__link">
+    <a href="../../../00.Remote-Access/scp/" class="md-nav__link">
       scp - Secure Copy in 10 mins
     </a>
   </li>
@@ -225,8 +232,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../00.Remote-Access/ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
+    <a href="../../../00.Remote-Access/ssh/" class="md-nav__link">
       ssh - Secure Shell in 10 mins
     </a>
   </li>
@@ -242,15 +250,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
     
     <label class="md-nav__link" for="nav-4">
       01.UNIX Tutorial
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="01.UNIX Tutorial" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
         01.UNIX Tutorial
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -261,8 +274,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/intro/" title="Introduction to UNIX" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/intro/" class="md-nav__link">
       Introduction to UNIX
     </a>
   </li>
@@ -273,8 +287,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/shell/" title="UNIX Shell in 10 mins" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/shell/" class="md-nav__link">
       UNIX Shell in 10 mins
     </a>
   </li>
@@ -285,8 +300,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/shell2/" title="UNIX Shell Part-II in 10 mins" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/shell2/" class="md-nav__link">
       UNIX Shell Part-II in 10 mins
     </a>
   </li>
@@ -297,8 +313,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/unix-cheat-sheet/" title="UNIX Shell Cheat Sheet" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/unix-cheat-sheet/" class="md-nav__link">
       UNIX Shell Cheat Sheet
     </a>
   </li>
@@ -309,15 +326,20 @@
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5" >
     
     <label class="md-nav__link" for="nav-4-5">
       Unix Tutorial
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="6">
+    <nav class="md-nav" aria-label="Unix Tutorial" data-md-level="2">
       <label class="md-nav__title" for="nav-4-5">
+        <span class="md-nav__icon md-icon"></span>
         Unix Tutorial
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -328,8 +350,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/" title="Contents: UNIX Tutorial for Beginners" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/" class="md-nav__link">
       Contents: UNIX Tutorial for Beginners
     </a>
   </li>
@@ -340,8 +363,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/introunix/" title="Introduction to UNIX" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/introunix/" class="md-nav__link">
       Introduction to UNIX
     </a>
   </li>
@@ -352,8 +376,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix0/" title="UNIX Tutorial" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix0/" class="md-nav__link">
       UNIX Tutorial
     </a>
   </li>
@@ -364,8 +389,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix1/" title="1. UNIX Tutorial One" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix1/" class="md-nav__link">
       1. UNIX Tutorial One
     </a>
   </li>
@@ -376,8 +402,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix2/" title="2. UNIX Tutorial Two" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix2/" class="md-nav__link">
       2. UNIX Tutorial Two
     </a>
   </li>
@@ -388,8 +415,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix3/" title="3. UNIX Tutorial Three" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix3/" class="md-nav__link">
       3. UNIX Tutorial Three
     </a>
   </li>
@@ -400,8 +428,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix4/" title="4. UNIX Tutorial Four" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix4/" class="md-nav__link">
       4. UNIX Tutorial Four
     </a>
   </li>
@@ -412,8 +441,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix5/" title="5. UNIX Tutorial Five" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix5/" class="md-nav__link">
       5. UNIX Tutorial Five
     </a>
   </li>
@@ -424,8 +454,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix6/" title="6. UNIX Tutorial Six" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix6/" class="md-nav__link">
       6. UNIX Tutorial Six
     </a>
   </li>
@@ -436,8 +467,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix7/" title="7. UNIX Tutorial Seven" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix7/" class="md-nav__link">
       7. UNIX Tutorial Seven
     </a>
   </li>
@@ -448,8 +480,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix8/" title="8. UNIX Tutorial Eight" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix8/" class="md-nav__link">
       8. UNIX Tutorial Eight
     </a>
   </li>
@@ -460,8 +493,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix99answer/" title="7. Answers" class="md-nav__link">
+    <a href="../../../01.UNIX-Tutorial/Unix-Tutorial/unix99answer/" class="md-nav__link">
       7. Answers
     </a>
   </li>
@@ -482,15 +516,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
     
     <label class="md-nav__link" for="nav-5">
       02.Editors
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="02.Editors" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
         02.Editors
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -501,8 +540,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../02.Editors/nano/" title="Getting started with `Nano`" class="md-nav__link">
+    <a href="../../../02.Editors/nano/" class="md-nav__link">
       Getting started with `Nano`
     </a>
   </li>
@@ -518,15 +558,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
     
     <label class="md-nav__link" for="nav-6">
       03.Web Interaction
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="03.Web Interaction" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
         03.Web Interaction
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -537,8 +582,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../03.Web-Interaction/Unix-Basic-NetworkAccess/" title="Accessing Network from shell" class="md-nav__link">
+    <a href="../../../03.Web-Interaction/Unix-Basic-NetworkAccess/" class="md-nav__link">
       Accessing Network from shell
     </a>
   </li>
@@ -549,8 +595,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../03.Web-Interaction/Unix-Networking/" title="More on Networking" class="md-nav__link">
+    <a href="../../../03.Web-Interaction/Unix-Networking/" class="md-nav__link">
       More on Networking
     </a>
   </li>
@@ -566,15 +613,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
     
     <label class="md-nav__link" for="nav-7">
       04.Organizing Reporting
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="04.Organizing Reporting" data-md-level="1">
       <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
         04.Organizing Reporting
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -585,8 +637,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/github/" title="Git and Github" class="md-nav__link">
+    <a href="../../../04.Organizing-Reporting/github/" class="md-nav__link">
       Git and Github
     </a>
   </li>
@@ -597,8 +650,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/github_xrzz/" title="Exercise: Git and Github" class="md-nav__link">
+    <a href="../../../04.Organizing-Reporting/github_xrzz/" class="md-nav__link">
       Exercise: Git and Github
     </a>
   </li>
@@ -609,8 +663,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/html/" title="Creating a Webpage with Github.io" class="md-nav__link">
+    <a href="../../../04.Organizing-Reporting/html/" class="md-nav__link">
       Creating a Webpage with Github.io
     </a>
   </li>
@@ -621,8 +676,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/html_xrzz/" title="Exercise: Create a webpage on Github.io" class="md-nav__link">
+    <a href="../../../04.Organizing-Reporting/html_xrzz/" class="md-nav__link">
       Exercise: Create a webpage on Github.io
     </a>
   </li>
@@ -633,8 +689,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/linux-google-cloud/" title="Setting up Google Cloud Console" class="md-nav__link">
+    <a href="../../../04.Organizing-Reporting/linux-google-cloud/" class="md-nav__link">
       Setting up Google Cloud Console
     </a>
   </li>
@@ -645,8 +702,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/markdown/" title="Markdown (.md)  in 10 mins" class="md-nav__link">
+    <a href="../../../04.Organizing-Reporting/markdown/" class="md-nav__link">
       Markdown (.md)  in 10 mins
     </a>
   </li>
@@ -657,8 +715,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/markdown_publishing/" title="Publishing Markdown Documents" class="md-nav__link">
+    <a href="../../../04.Organizing-Reporting/markdown_publishing/" class="md-nav__link">
       Publishing Markdown Documents
     </a>
   </li>
@@ -669,8 +728,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../04.Organizing-Reporting/website/" title="Finally A Website On Github.io" class="md-nav__link">
+    <a href="../../../04.Organizing-Reporting/website/" class="md-nav__link">
       Finally A Website On Github.io
     </a>
   </li>
@@ -686,15 +746,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
     
     <label class="md-nav__link" for="nav-8">
       99.Projects
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="99.Projects" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
         99.Projects
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -705,8 +770,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../99.Projects/Assignment-01/" title="Assignment 1: Project" class="md-nav__link">
+    <a href="../../../99.Projects/Assignment-01/" class="md-nav__link">
       Assignment 1: Project
     </a>
   </li>
@@ -717,8 +783,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../99.Projects/WiseWords/" title="Word of Advice for Beginners" class="md-nav__link">
+    <a href="../../../99.Projects/WiseWords/" class="md-nav__link">
       Word of Advice for Beginners
     </a>
   </li>
@@ -734,15 +801,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
     
     <label class="md-nav__link" for="nav-9">
       Others
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Others" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
         Others
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -753,8 +825,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../Others/RollingUpdates/" title="RollingUpdates" class="md-nav__link">
+    <a href="../../../Others/RollingUpdates/" class="md-nav__link">
       RollingUpdates
     </a>
   </li>
@@ -770,15 +843,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" >
     
     <label class="md-nav__link" for="nav-10">
       Samples
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Samples" data-md-level="1">
       <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon"></span>
         Samples
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -789,9 +867,23 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../Samples/Markdown-Sample/" title="Towshif Ali" class="md-nav__link">
+    <a href="../../../Samples/Markdown-Sample/" class="md-nav__link">
       Towshif Ali
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../../Samples/README_test/" class="md-nav__link">
+      README test
     </a>
   </li>
 
@@ -806,15 +898,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" >
     
     <label class="md-nav__link" for="nav-11">
       WorkInProgress
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="WorkInProgress" data-md-level="1">
       <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon"></span>
         WorkInProgress
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -825,8 +922,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../WorkInProgress/University-List-Detailed/" title="US University Ranking 2019 (Detailed List)" class="md-nav__link">
+    <a href="../../../WorkInProgress/University-List-Detailed/" class="md-nav__link">
       US University Ranking 2019 (Detailed List)
     </a>
   </li>
@@ -837,8 +935,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../WorkInProgress/University-List/" title="Top 200 US University Rankings 2019" class="md-nav__link">
+    <a href="../../../WorkInProgress/University-List/" class="md-nav__link">
       Top 200 US University Rankings 2019
     </a>
   </li>
@@ -849,8 +948,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../WorkInProgress/about/" title="About" class="md-nav__link">
+    <a href="../../../WorkInProgress/about/" class="md-nav__link">
       About
     </a>
   </li>
@@ -861,8 +961,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../../WorkInProgress/reverse_ssh/" title="Reverse ssh" class="md-nav__link">
+    <a href="../../../WorkInProgress/reverse_ssh/" class="md-nav__link">
       Reverse ssh
     </a>
   </li>
@@ -877,18 +978,23 @@
       
       
 
+
   
 
 
+  
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
     
     <label class="md-nav__link" for="nav-12">
       Tutorials
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
       <label class="md-nav__title" for="nav-12">
+        <span class="md-nav__icon md-icon"></span>
         Tutorials
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -899,8 +1005,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../" title="Getting Started with Tutorials" class="md-nav__link">
+    <a href="../../" class="md-nav__link">
       Getting Started with Tutorials
     </a>
   </li>
@@ -911,8 +1018,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../Helper/" title="Insert Multiple Cursors at the Start of Every Line with VSCode" class="md-nav__link">
+    <a href="../../Helper/" class="md-nav__link">
       Insert Multiple Cursors at the Start of Every Line with VSCode
     </a>
   </li>
@@ -923,15 +1031,20 @@
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3" >
     
     <label class="md-nav__link" for="nav-12-3">
       Intro
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+    <nav class="md-nav" aria-label="Intro" data-md-level="2">
       <label class="md-nav__title" for="nav-12-3">
+        <span class="md-nav__icon md-icon"></span>
         Intro
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -942,8 +1055,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../Intro/mkdocs/" title="Markdown documentation with MkDocs and Themes" class="md-nav__link">
+    <a href="../../Intro/mkdocs/" class="md-nav__link">
       Markdown documentation with MkDocs and Themes
     </a>
   </li>
@@ -958,18 +1072,23 @@
           
           
 
+
   
 
 
+  
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4" checked>
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4" checked>
     
     <label class="md-nav__link" for="nav-12-4">
       Linux Shell
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="5">
+    <nav class="md-nav" aria-label="Linux Shell" data-md-level="2">
       <label class="md-nav__title" for="nav-12-4">
+        <span class="md-nav__icon md-icon"></span>
         Linux Shell
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -980,8 +1099,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../bash-alias/" title="Bash Pro Tips" class="md-nav__link">
+    <a href="../bash-alias/" class="md-nav__link">
       Bash Pro Tips
     </a>
   </li>
@@ -992,8 +1112,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../bash-cheat-sheet/" title="Bash Script Cheat Sheet" class="md-nav__link">
+    <a href="../bash-cheat-sheet/" class="md-nav__link">
       Bash Script Cheat Sheet
     </a>
   </li>
@@ -1004,8 +1125,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../benchmark-linux/" title="Sysbench tool for benchmarking" class="md-nav__link">
+    <a href="../benchmark-linux/" class="md-nav__link">
       Sysbench tool for benchmarking
     </a>
   </li>
@@ -1015,68 +1137,69 @@
           
           
 
+
   
 
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Cleanup
+        <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="Cleanup" class="md-nav__link md-nav__link--active">
+    <a href="./" class="md-nav__link md-nav__link--active">
       Cleanup
     </a>
     
       
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#remove-unnecessary-packages-and-dependencies" title="Remove Unnecessary Packages and Dependencies" class="md-nav__link">
+  <a href="#remove-unnecessary-packages-and-dependencies" class="md-nav__link">
     Remove Unnecessary Packages and Dependencies
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cleanup-thumnail-cache" title="Cleanup Thumnail cache" class="md-nav__link">
+  <a href="#cleanup-thumnail-cache" class="md-nav__link">
     Cleanup Thumnail cache
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#remove-old-kernels" title="Remove Old Kernels" class="md-nav__link">
+  <a href="#remove-old-kernels" class="md-nav__link">
     Remove Old Kernels
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#clean-apt-cache" title="Clean Apt Cache" class="md-nav__link">
+  <a href="#clean-apt-cache" class="md-nav__link">
     Clean Apt Cache
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gtkorphan-orphaned-packages-gui-support" title="GtkOrphan (orphaned packages) - GUI support" class="md-nav__link">
+  <a href="#gtkorphan-orphaned-packages-gui-support" class="md-nav__link">
     GtkOrphan (orphaned packages) - GUI support
   </a>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -1090,8 +1213,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../nano/" title="Getting started with `Nano`" class="md-nav__link">
+    <a href="../nano/" class="md-nav__link">
       Getting started with `Nano`
     </a>
   </li>
@@ -1102,8 +1226,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../permissions/" title="Setting Permission with chmod" class="md-nav__link">
+    <a href="../permissions/" class="md-nav__link">
       Setting Permission with chmod
     </a>
   </li>
@@ -1114,8 +1239,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../reference/" title="References" class="md-nav__link">
+    <a href="../reference/" class="md-nav__link">
       References
     </a>
   </li>
@@ -1126,8 +1252,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../rough/" title="Rough" class="md-nav__link">
+    <a href="../rough/" class="md-nav__link">
       Rough
     </a>
   </li>
@@ -1138,8 +1265,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../shell-advanced-1/" title="Unix Shell Advanced" class="md-nav__link">
+    <a href="../shell-advanced-1/" class="md-nav__link">
       Unix Shell Advanced
     </a>
   </li>
@@ -1150,8 +1278,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../shell/" title="Unix Shell in 10 mins" class="md-nav__link">
+    <a href="../shell/" class="md-nav__link">
       Unix Shell in 10 mins
     </a>
   </li>
@@ -1162,8 +1291,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
+    <a href="../ssh/" class="md-nav__link">
       ssh - Secure Shell in 10 mins
     </a>
   </li>
@@ -1174,8 +1304,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../tmux/" title="tmux in 10 mins" class="md-nav__link">
+    <a href="../tmux/" class="md-nav__link">
       tmux in 10 mins
     </a>
   </li>
@@ -1186,8 +1317,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../vim/" title="Vim in 10 mins" class="md-nav__link">
+    <a href="../vim/" class="md-nav__link">
       Vim in 10 mins
     </a>
   </li>
@@ -1203,15 +1335,20 @@
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-5" type="checkbox" id="nav-12-5">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-5" type="checkbox" id="nav-12-5" >
     
     <label class="md-nav__link" for="nav-12-5">
       Python
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="6">
+    <nav class="md-nav" aria-label="Python" data-md-level="2">
       <label class="md-nav__title" for="nav-12-5">
+        <span class="md-nav__icon md-icon"></span>
         Python
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1222,8 +1359,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../Python/Todo/" title="Python For Engineers and Professionals" class="md-nav__link">
+    <a href="../../Python/Todo/" class="md-nav__link">
       Python For Engineers and Professionals
     </a>
   </li>
@@ -1234,8 +1372,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../Python/python-cheat-sheet/" title="Newbies" class="md-nav__link">
+    <a href="../../Python/python-cheat-sheet/" class="md-nav__link">
       Newbies
     </a>
   </li>
@@ -1246,8 +1385,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../Python/setup-Jupyter/" title="How to Setup Jupyter Notebook Server as a daemon service" class="md-nav__link">
+    <a href="../../Python/setup-Jupyter/" class="md-nav__link">
       How to Setup Jupyter Notebook Server as a daemon service
     </a>
   </li>
@@ -1270,55 +1410,55 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#remove-unnecessary-packages-and-dependencies" title="Remove Unnecessary Packages and Dependencies" class="md-nav__link">
+  <a href="#remove-unnecessary-packages-and-dependencies" class="md-nav__link">
     Remove Unnecessary Packages and Dependencies
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cleanup-thumnail-cache" title="Cleanup Thumnail cache" class="md-nav__link">
+  <a href="#cleanup-thumnail-cache" class="md-nav__link">
     Cleanup Thumnail cache
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#remove-old-kernels" title="Remove Old Kernels" class="md-nav__link">
+  <a href="#remove-old-kernels" class="md-nav__link">
     Remove Old Kernels
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#clean-apt-cache" title="Clean Apt Cache" class="md-nav__link">
+  <a href="#clean-apt-cache" class="md-nav__link">
     Clean Apt Cache
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gtkorphan-orphaned-packages-gui-support" title="GtkOrphan (orphaned packages) - GUI support" class="md-nav__link">
+  <a href="#gtkorphan-orphaned-packages-gui-support" class="md-nav__link">
     GtkOrphan (orphaned packages) - GUI support
   </a>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -1354,8 +1494,6 @@ sudo apt-get clean
 <pre><code>sudo apt-get install gtkorphan
 </code></pre>
                 
-                  
-                
               
               
                 
@@ -1371,34 +1509,34 @@ sudo apt-get clean
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../benchmark-linux/" title="Sysbench tool for benchmarking" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+          <a href="../benchmark-linux/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
                 Sysbench tool for benchmarking
-              </span>
+              </div>
             </div>
           </a>
         
         
-          <a href="../nano/" title="Getting started with `Nano`" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+          <a href="../nano/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
                 Getting started with `Nano`
-              </span>
+              </div>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
             </div>
           </a>
         
@@ -1409,14 +1547,11 @@ sudo apt-get clean
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -1424,14 +1559,20 @@ sudo apt-get clean
       
     </div>
     
-      <script src="../../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-      
-    
-    
       
     
   </body>
