@@ -1,0 +1,1853 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://towshif.github.io/01.UNIX-Tutorial/Unix-Tutorial/unix5/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>5. UNIX Tutorial Five - Less-Than-10 Tutorials (<10)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#5-unix-tutorial-five" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Less-Than-10 Tutorials (<10)
+              </span>
+              <span class="md-header-nav__topic">
+                5. UNIX Tutorial Five
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Less-Than-10 Tutorials (<10)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Instructions" class="md-nav__link">
+      Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../gettingStarted/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      00.Remote Access
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        00.Remote Access
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../00.Remote-Access/scp/" title="scp - Secure Copy in 10 mins" class="md-nav__link">
+      scp - Secure Copy in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../00.Remote-Access/ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
+      ssh - Secure Shell in 10 mins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      01.UNIX Tutorial
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        01.UNIX Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../intro/" title="Introduction to UNIX" class="md-nav__link">
+      Introduction to UNIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../shell/" title="UNIX Shell in 10 mins" class="md-nav__link">
+      UNIX Shell in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../shell2/" title="UNIX Shell Part-II in 10 mins" class="md-nav__link">
+      UNIX Shell Part-II in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../unix-cheat-sheet/" title="UNIX Shell Cheat Sheet" class="md-nav__link">
+      UNIX Shell Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5" checked>
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Unix Tutorial
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        Unix Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Contents: UNIX Tutorial for Beginners" class="md-nav__link">
+      Contents: UNIX Tutorial for Beginners
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introunix/" title="Introduction to UNIX" class="md-nav__link">
+      Introduction to UNIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix0/" title="UNIX Tutorial" class="md-nav__link">
+      UNIX Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix1/" title="1. UNIX Tutorial One" class="md-nav__link">
+      1. UNIX Tutorial One
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix2/" title="2. UNIX Tutorial Two" class="md-nav__link">
+      2. UNIX Tutorial Two
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix3/" title="3. UNIX Tutorial Three" class="md-nav__link">
+      3. UNIX Tutorial Three
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix4/" title="4. UNIX Tutorial Four" class="md-nav__link">
+      4. UNIX Tutorial Four
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        5. UNIX Tutorial Five
+      </label>
+    
+    <a href="./" title="5. UNIX Tutorial Five" class="md-nav__link md-nav__link--active">
+      5. UNIX Tutorial Five
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-file-system-security-access-rights" title="5.1 File system security (access rights)" class="md-nav__link">
+    5.1 File system security (access rights)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-rights-on-files" title="Access rights on files." class="md-nav__link">
+    Access rights on files.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-rights-on-directories" title="Access rights on directories." class="md-nav__link">
+    Access rights on directories.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-examples" title="Some examples" class="md-nav__link">
+    Some examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-changing-access-rights" title="5.2 Changing access rights" class="md-nav__link">
+    5.2 Changing access rights
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chmod-changing-a-file-mode" title="chmod (changing a file mode)" class="md-nav__link">
+    chmod (changing a file mode)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-5a" title="Exercise 5a" class="md-nav__link">
+    Exercise 5a
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-processes-and-jobs" title="5.3 Processes and Jobs" class="md-nav__link">
+    5.3 Processes and Jobs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-background-processes" title="Running background processes" class="md-nav__link">
+    Running background processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backgrounding-a-current-foreground-process" title="Backgrounding a current foreground process" class="md-nav__link">
+    Backgrounding a current foreground process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-listing-suspended-and-background-processes" title="5.4 Listing suspended and background processes" class="md-nav__link">
+    5.4 Listing suspended and background processes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-killing-a-process" title="5.5 Killing a process" class="md-nav__link">
+    5.5 Killing a process
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kill-terminate-or-signal-a-process" title="kill (terminate or signal a process)" class="md-nav__link">
+    kill (terminate or signal a process)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ps-process-status" title="ps (process status)" class="md-nav__link">
+    ps (process status)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix6/" title="6. UNIX Tutorial Six" class="md-nav__link">
+      6. UNIX Tutorial Six
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix7/" title="7. UNIX Tutorial Seven" class="md-nav__link">
+      7. UNIX Tutorial Seven
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix8/" title="8. UNIX Tutorial Eight" class="md-nav__link">
+      8. UNIX Tutorial Eight
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix99answer/" title="7. Answers" class="md-nav__link">
+      7. Answers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      02.Editors
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        02.Editors
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../02.Editors/nano/" title="Getting started with `Nano`" class="md-nav__link">
+      Getting started with `Nano`
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      03.Web Interaction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        03.Web Interaction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../03.Web-Interaction/Unix-Basic-NetworkAccess/" title="Accessing Network from shell" class="md-nav__link">
+      Accessing Network from shell
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../03.Web-Interaction/Unix-Networking/" title="More on Networking" class="md-nav__link">
+      More on Networking
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      04.Organizing Reporting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        04.Organizing Reporting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/github/" title="Git and Github" class="md-nav__link">
+      Git and Github
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/github_xrzz/" title="Exercise: Git and Github" class="md-nav__link">
+      Exercise: Git and Github
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/html/" title="Creating a Webpage with Github.io" class="md-nav__link">
+      Creating a Webpage with Github.io
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/html_xrzz/" title="Exercise: Create a webpage on Github.io" class="md-nav__link">
+      Exercise: Create a webpage on Github.io
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/linux-google-cloud/" title="Setting up Google Cloud Console" class="md-nav__link">
+      Setting up Google Cloud Console
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/markdown/" title="Markdown (.md)  in 10 mins" class="md-nav__link">
+      Markdown (.md)  in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/markdown_publishing/" title="Publishing Markdown Documents" class="md-nav__link">
+      Publishing Markdown Documents
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/website/" title="Finally A Website On Github.io" class="md-nav__link">
+      Finally A Website On Github.io
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      99.Projects
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        99.Projects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../99.Projects/Assignment-01/" title="Assignment 1: Project" class="md-nav__link">
+      Assignment 1: Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../99.Projects/WiseWords/" title="Word of Advice for Beginners" class="md-nav__link">
+      Word of Advice for Beginners
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Others
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Others
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Others/RollingUpdates/" title="RollingUpdates" class="md-nav__link">
+      RollingUpdates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Samples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Samples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Samples/Markdown-Sample/" title="Towshif Ali" class="md-nav__link">
+      Towshif Ali
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Samples/README_test/" title="README test" class="md-nav__link">
+      README test
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      WorkInProgress
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        WorkInProgress
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WorkInProgress/University-List-Detailed/" title="US University Ranking 2019 (Detailed List)" class="md-nav__link">
+      US University Ranking 2019 (Detailed List)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WorkInProgress/University-List/" title="Top 200 US University Rankings 2019" class="md-nav__link">
+      Top 200 US University Rankings 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WorkInProgress/about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WorkInProgress/reverse_ssh/" title="Reverse ssh" class="md-nav__link">
+      Reverse ssh
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/" title="Getting Started with Tutorials" class="md-nav__link">
+      Getting Started with Tutorials
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Helper/" title="Insert Multiple Cursors at the Start of Every Line with VSCode" class="md-nav__link">
+      Insert Multiple Cursors at the Start of Every Line with VSCode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3">
+    
+    <label class="md-nav__link" for="nav-12-3">
+      Intro
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-3">
+        Intro
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Intro/mkdocs/" title="Markdown documentation with MkDocs and Themes" class="md-nav__link">
+      Markdown documentation with MkDocs and Themes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4">
+    
+    <label class="md-nav__link" for="nav-12-4">
+      Linux Shell
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-4">
+        Linux Shell
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/bash-alias/" title="Bash Pro Tips" class="md-nav__link">
+      Bash Pro Tips
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/bash-cheat-sheet/" title="Bash Script Cheat Sheet" class="md-nav__link">
+      Bash Script Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/benchmark-linux/" title="Sysbench tool for benchmarking" class="md-nav__link">
+      Sysbench tool for benchmarking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/cleanup/" title="Cleanup" class="md-nav__link">
+      Cleanup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/nano/" title="Getting started with `Nano`" class="md-nav__link">
+      Getting started with `Nano`
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/permissions/" title="Setting Permission with chmod" class="md-nav__link">
+      Setting Permission with chmod
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/reference/" title="References" class="md-nav__link">
+      References
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/rough/" title="Rough" class="md-nav__link">
+      Rough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/shell-advanced-1/" title="Unix Shell Advanced" class="md-nav__link">
+      Unix Shell Advanced
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/shell/" title="Unix Shell in 10 mins" class="md-nav__link">
+      Unix Shell in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
+      ssh - Secure Shell in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/tmux/" title="tmux in 10 mins" class="md-nav__link">
+      tmux in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/vim/" title="Vim in 10 mins" class="md-nav__link">
+      Vim in 10 mins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-5" type="checkbox" id="nav-12-5">
+    
+    <label class="md-nav__link" for="nav-12-5">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-5">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Python/Todo/" title="Python For Engineers and Professionals" class="md-nav__link">
+      Python For Engineers and Professionals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Python/python-cheat-sheet/" title="Newbies" class="md-nav__link">
+      Newbies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Python/setup-Jupyter/" title="How to Setup Jupyter Notebook Server as a daemon service" class="md-nav__link">
+      How to Setup Jupyter Notebook Server as a daemon service
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-file-system-security-access-rights" title="5.1 File system security (access rights)" class="md-nav__link">
+    5.1 File system security (access rights)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-rights-on-files" title="Access rights on files." class="md-nav__link">
+    Access rights on files.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-rights-on-directories" title="Access rights on directories." class="md-nav__link">
+    Access rights on directories.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-examples" title="Some examples" class="md-nav__link">
+    Some examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-changing-access-rights" title="5.2 Changing access rights" class="md-nav__link">
+    5.2 Changing access rights
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chmod-changing-a-file-mode" title="chmod (changing a file mode)" class="md-nav__link">
+    chmod (changing a file mode)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-5a" title="Exercise 5a" class="md-nav__link">
+    Exercise 5a
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-processes-and-jobs" title="5.3 Processes and Jobs" class="md-nav__link">
+    5.3 Processes and Jobs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-background-processes" title="Running background processes" class="md-nav__link">
+    Running background processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backgrounding-a-current-foreground-process" title="Backgrounding a current foreground process" class="md-nav__link">
+    Backgrounding a current foreground process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-listing-suspended-and-background-processes" title="5.4 Listing suspended and background processes" class="md-nav__link">
+    5.4 Listing suspended and background processes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-killing-a-process" title="5.5 Killing a process" class="md-nav__link">
+    5.5 Killing a process
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kill-terminate-or-signal-a-process" title="kill (terminate or signal a process)" class="md-nav__link">
+    kill (terminate or signal a process)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ps-process-status" title="ps (process status)" class="md-nav__link">
+    ps (process status)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="5-unix-tutorial-five">5. UNIX Tutorial Five</h1>
+<p>==================</p>
+<h2 id="51-file-system-security-access-rights">5.1 File system security (access rights)</h2>
+<p>In your unixstuff directory, type</p>
+<pre><code>ls -l (l for long listing!)
+</code></pre>
+<p>You will see that you now get lots of details about the contents of your
+directory, similar to the example below.</p>
+<p><img alt="File and directory access rights" src="../file1.gif" /></p>
+<p>Each file (and directory) has associated access rights, which may be
+found by typing ls -l. Also, ls -lg gives additional information as to
+which group owns the file (beng95 in the following example):</p>
+<pre><code>-rwxrw-r-- 1 ee51ab beng95 2450 Sept29 11:52 file1
+</code></pre>
+<p>In the left-hand column is a 10 symbol string consisting of the symbols
+d, r, w, x, -, and, occasionally, s or S. If d is present, it will be at
+the left hand end of the string, and indicates a directory: otherwise -
+will be the starting symbol of the string.</p>
+<p>The 9 remaining symbols indicate the permissions, or access rights, and
+are taken as three groups of 3.</p>
+<ul>
+<li>The left group of 3 gives the file permissions for the user that
+    owns the file (or directory) (ee51ab in the above example);</li>
+<li>the middle group gives the permissions for the group of people to
+    whom the file (or directory) belongs (eebeng95 in the above
+    example);</li>
+<li>the rightmost group gives the permissions for all others.</li>
+</ul>
+<p>The symbols r, w, etc., have slightly different meanings depending on
+whether they refer to a simple file or to a directory.</p>
+<h3 id="access-rights-on-files">Access rights on files.</h3>
+<ul>
+<li>r (or -), indicates read permission (or otherwise), that is, the
+    presence or absence of permission to read and copy the file</li>
+<li>w (or -), indicates write permission (or otherwise), that is, the
+    permission (or otherwise) to change a file</li>
+<li>x (or -), indicates execution permission (or otherwise), that is,
+    the permission to execute a file, where appropriate</li>
+</ul>
+<h3 id="access-rights-on-directories">Access rights on directories.</h3>
+<ul>
+<li>r allows users to list files in the directory;</li>
+<li>w means that users may delete files from the directory or move files
+    into it;</li>
+<li>x means the right to access files in the directory. This implies
+    that you may read files in the directory provided you have read
+    permission on the individual files.</li>
+</ul>
+<p>So, in order to read a file, you must have execute permission on the
+directory containing that file, and hence on any directory containing
+that directory as a subdirectory, and so on, up the tree.</p>
+<h3 id="some-examples">Some examples</h3>
+<pre><code>-rwxrwxrwx    a file that everyone can read, write and execute (and delete).
+
+-rw-------    a file that only the owner can read and write - no-one else
+              can read or write and no-one has execution rights (e.g. your
+              mailbox file).
+</code></pre>
+<h2 id="52-changing-access-rights">5.2 Changing access rights</h2>
+<h3 id="chmod-changing-a-file-mode">chmod (changing a file mode)</h3>
+<p>Only the owner of a file can use chmod to change the permissions of a
+file. The options of chmod are as follows</p>
+<p>For example, to remove read write and execute permissions on the file
+<strong>biglist</strong> for the group and others, type</p>
+<pre><code>chmod go-rwx biglist
+</code></pre>
+<p>This will leave the other permissions unaffected.</p>
+<p>To give read and write permissions on the file <strong>biglist</strong> to all,</p>
+<pre><code>chmod a+rw biglist
+</code></pre>
+<h3 id="exercise-5a">Exercise 5a</h3>
+<p>Try changing access permissions on the file <strong>science.txt</strong> and on the
+directory <strong>backups</strong></p>
+<p>Use <code>ls -l</code> to check that the permissions have changed.</p>
+<h2 id="53-processes-and-jobs">5.3 Processes and Jobs</h2>
+<p>A process is an executing program identified by a unique PID (process
+identifier). To see information about your processes, with their
+associated PID and status, type</p>
+<pre><code>ps
+</code></pre>
+<p>A process may be in the foreground, in the background, or be suspended.
+In general the shell does not return the UNIX prompt until the current
+process has finished executing.</p>
+<p>Some processes take a long time to run and hold up the terminal.
+Backgrounding a long process has the effect that the UNIX prompt is
+returned immediately, and other tasks can be carried out while the
+original process continues executing.</p>
+<h3 id="running-background-processes">Running background processes</h3>
+<p>To background a process, type an <strong>&amp;</strong> at the end of the command line.
+For example, the command sleep waits a given number of seconds before
+continuing. Type</p>
+<pre><code>sleep 10
+</code></pre>
+<p>This will wait 10 seconds before returning the command prompt %. Until
+the command prompt is returned, you can do nothing except wait.</p>
+<p>To run sleep in the background, type</p>
+<pre><code>sleep 10 &amp;
+</code></pre>
+<p>[1] 6259</p>
+<p>The <strong>&amp;</strong> runs the job in the background and returns the prompt straight
+away, allowing you do run other programs while waiting for that one to
+finish.</p>
+<p>The first line in the above example is typed in by the user; the next
+line, indicating job number and PID, is returned by the machine. The
+user is be notified of a job number (numbered from 1) enclosed in square
+brackets, together with a PID and is notified when a background process
+is finished. Backgrounding is useful for jobs which will take a long
+time to complete.</p>
+<h3 id="backgrounding-a-current-foreground-process">Backgrounding a current foreground process</h3>
+<p>At the prompt, type</p>
+<pre><code>sleep 100
+</code></pre>
+<p>You can suspend the process running in the foreground by holding down
+the <code>[control]</code> key and typing <code>[z]</code> (written as <strong>^Z</strong>) Then to put it
+in the background, type</p>
+<pre><code>bg
+</code></pre>
+<p>Note: do not background programs that require user interaction e.g. pine</p>
+<h2 id="54-listing-suspended-and-background-processes">5.4 Listing suspended and background processes</h2>
+<p>When a process is running, backgrounded or suspended, it will be entered
+onto a list along with a job number. To examine this list, type</p>
+<pre><code>jobs
+</code></pre>
+<p>An example of a job list could be</p>
+<p>[1] Suspended sleep 100
+[2] Running netscape
+[3] Running nedit</p>
+<p>To restart (foreground) a suspended processes, type</p>
+<pre><code>fg %jobnumber
+</code></pre>
+<p>For example, to restart sleep 100, type</p>
+<pre><code>fg %1
+</code></pre>
+<p>Typing fg with no job number foregrounds the last suspended process.</p>
+<h2 id="55-killing-a-process">5.5 Killing a process</h2>
+<h3 id="kill-terminate-or-signal-a-process">kill (terminate or signal a process)</h3>
+<p>It is sometimes necessary to kill a process (for example, when an
+executing program is in an infinite loop)</p>
+<p>To kill a job running in the foreground, type ^C (control c). For
+example, run</p>
+<pre><code>sleep 100
+</code></pre>
+<p>^C</p>
+<p>To kill a suspended or background process, type</p>
+<pre><code>kill %jobnumber
+</code></pre>
+<p>For example, run</p>
+<pre><code>sleep 100 &amp;
+jobs
+</code></pre>
+<p>If it is job number 4, type</p>
+<pre><code>kill %4
+</code></pre>
+<p>To check whether this has worked, examine the job list again to see if
+the process has been removed.</p>
+<h3 id="ps-process-status">ps (process status)</h3>
+<p>Alternatively, processes can be killed by finding their process numbers
+(PIDs) and using kill PID_number</p>
+<pre><code>sleep 100 &amp;
+ps
+</code></pre>
+<p>PID TT S TIME COMMAND
+20077 pts/5 S 0:05 sleep 100
+21563 pts/5 T 0:00 netscape
+21873 pts/5 S 0:25 nedit</p>
+<p>To kill off the process sleep 100, type</p>
+<pre><code>kill 20077
+</code></pre>
+<p>and then type ps again to see if it has been removed from the list.</p>
+<p>If a process refuses to be killed, uses the <strong>-9</strong> option, i.e. type</p>
+<pre><code>kill -9 20077
+</code></pre>
+<p>Note: It is not possible to kill off other users' processes !!!</p>
+<h2 id="summary">Summary</h2>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls -lag</code></td>
+<td>list access rights for all files</td>
+</tr>
+<tr>
+<td><code>chmod [options] file</code></td>
+<td>change access rights for named file</td>
+</tr>
+<tr>
+<td><code>command &amp;</code></td>
+<td>run command in background</td>
+</tr>
+<tr>
+<td><code>^C</code></td>
+<td>kill the job running in the foreground</td>
+</tr>
+<tr>
+<td><code>^Z</code></td>
+<td>suspend the job running in the foreground</td>
+</tr>
+<tr>
+<td><code>bg</code></td>
+<td>background the suspended job</td>
+</tr>
+<tr>
+<td><code>jobs</code></td>
+<td>list current jobs</td>
+</tr>
+<tr>
+<td><code>fg %1</code></td>
+<td>foreground job number 1</td>
+</tr>
+<tr>
+<td><code>kill %1</code></td>
+<td>kill job number 1</td>
+</tr>
+<tr>
+<td><code>ps</code></td>
+<td>list current processes</td>
+</tr>
+<tr>
+<td><code>kill 26152</code></td>
+<td>kill process number 26152</td>
+</tr>
+</tbody>
+</table>
+<p>M.Stonebank@surrey.ac.uk, 9th October 2000</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../unix4/" title="4. UNIX Tutorial Four" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                4. UNIX Tutorial Four
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../unix6/" title="6. UNIX Tutorial Six" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                6. UNIX Tutorial Six
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

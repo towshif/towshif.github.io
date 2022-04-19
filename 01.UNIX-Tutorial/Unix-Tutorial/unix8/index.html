@@ -1,0 +1,1648 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://towshif.github.io/01.UNIX-Tutorial/Unix-Tutorial/unix8/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>8. UNIX Tutorial Eight - Less-Than-10 Tutorials (<10)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#8-unix-tutorial-eight" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Less-Than-10 Tutorials (<10)
+              </span>
+              <span class="md-header-nav__topic">
+                8. UNIX Tutorial Eight
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Less-Than-10 Tutorials (<10)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Instructions" class="md-nav__link">
+      Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../gettingStarted/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      00.Remote Access
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        00.Remote Access
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../00.Remote-Access/scp/" title="scp - Secure Copy in 10 mins" class="md-nav__link">
+      scp - Secure Copy in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../00.Remote-Access/ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
+      ssh - Secure Shell in 10 mins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      01.UNIX Tutorial
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        01.UNIX Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../intro/" title="Introduction to UNIX" class="md-nav__link">
+      Introduction to UNIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../shell/" title="UNIX Shell in 10 mins" class="md-nav__link">
+      UNIX Shell in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../shell2/" title="UNIX Shell Part-II in 10 mins" class="md-nav__link">
+      UNIX Shell Part-II in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../unix-cheat-sheet/" title="UNIX Shell Cheat Sheet" class="md-nav__link">
+      UNIX Shell Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5" checked>
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Unix Tutorial
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        Unix Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Contents: UNIX Tutorial for Beginners" class="md-nav__link">
+      Contents: UNIX Tutorial for Beginners
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introunix/" title="Introduction to UNIX" class="md-nav__link">
+      Introduction to UNIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix0/" title="UNIX Tutorial" class="md-nav__link">
+      UNIX Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix1/" title="1. UNIX Tutorial One" class="md-nav__link">
+      1. UNIX Tutorial One
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix2/" title="2. UNIX Tutorial Two" class="md-nav__link">
+      2. UNIX Tutorial Two
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix3/" title="3. UNIX Tutorial Three" class="md-nav__link">
+      3. UNIX Tutorial Three
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix4/" title="4. UNIX Tutorial Four" class="md-nav__link">
+      4. UNIX Tutorial Four
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix5/" title="5. UNIX Tutorial Five" class="md-nav__link">
+      5. UNIX Tutorial Five
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix6/" title="6. UNIX Tutorial Six" class="md-nav__link">
+      6. UNIX Tutorial Six
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix7/" title="7. UNIX Tutorial Seven" class="md-nav__link">
+      7. UNIX Tutorial Seven
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        8. UNIX Tutorial Eight
+      </label>
+    
+    <a href="./" title="8. UNIX Tutorial Eight" class="md-nav__link md-nav__link--active">
+      8. UNIX Tutorial Eight
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-unix-variables" title="8.1 UNIX Variables" class="md-nav__link">
+    8.1 UNIX Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-environment-variables" title="8.2 Environment Variables" class="md-nav__link">
+    8.2 Environment Variables
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-out-the-current-values-of-these-variables" title="Finding out the current values of these variables." class="md-nav__link">
+    Finding out the current values of these variables.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-shell-variables" title="8.3 Shell Variables" class="md-nav__link">
+    8.3 Shell Variables
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-out-the-current-values-of-these-variables_1" title="Finding out the current values of these variables." class="md-nav__link">
+    Finding out the current values of these variables.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so-what-is-the-difference-between-path-and-path" title="So what is the difference between PATH and path ?" class="md-nav__link">
+    So what is the difference between PATH and path ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-using-and-setting-variables" title="8.4 Using and setting variables" class="md-nav__link">
+    8.4 Using and setting variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85-setting-shell-variables-in-the-cshrc-file" title="8.5 Setting shell variables in the .cshrc file" class="md-nav__link">
+    8.5 Setting shell variables in the .cshrc file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#86-setting-the-path" title="8.6 Setting the path" class="md-nav__link">
+    8.6 Setting the path
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix99answer/" title="7. Answers" class="md-nav__link">
+      7. Answers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      02.Editors
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        02.Editors
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../02.Editors/nano/" title="Getting started with `Nano`" class="md-nav__link">
+      Getting started with `Nano`
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      03.Web Interaction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        03.Web Interaction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../03.Web-Interaction/Unix-Basic-NetworkAccess/" title="Accessing Network from shell" class="md-nav__link">
+      Accessing Network from shell
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../03.Web-Interaction/Unix-Networking/" title="More on Networking" class="md-nav__link">
+      More on Networking
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      04.Organizing Reporting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        04.Organizing Reporting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/github/" title="Git and Github" class="md-nav__link">
+      Git and Github
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/github_xrzz/" title="Exercise: Git and Github" class="md-nav__link">
+      Exercise: Git and Github
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/html/" title="Creating a Webpage with Github.io" class="md-nav__link">
+      Creating a Webpage with Github.io
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/html_xrzz/" title="Exercise: Create a webpage on Github.io" class="md-nav__link">
+      Exercise: Create a webpage on Github.io
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/linux-google-cloud/" title="Setting up Google Cloud Console" class="md-nav__link">
+      Setting up Google Cloud Console
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/markdown/" title="Markdown (.md)  in 10 mins" class="md-nav__link">
+      Markdown (.md)  in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/markdown_publishing/" title="Publishing Markdown Documents" class="md-nav__link">
+      Publishing Markdown Documents
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../04.Organizing-Reporting/website/" title="Finally A Website On Github.io" class="md-nav__link">
+      Finally A Website On Github.io
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      99.Projects
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        99.Projects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../99.Projects/Assignment-01/" title="Assignment 1: Project" class="md-nav__link">
+      Assignment 1: Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../99.Projects/WiseWords/" title="Word of Advice for Beginners" class="md-nav__link">
+      Word of Advice for Beginners
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Others
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Others
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Others/RollingUpdates/" title="RollingUpdates" class="md-nav__link">
+      RollingUpdates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Samples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Samples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Samples/Markdown-Sample/" title="Towshif Ali" class="md-nav__link">
+      Towshif Ali
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Samples/README_test/" title="README test" class="md-nav__link">
+      README test
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      WorkInProgress
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        WorkInProgress
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WorkInProgress/University-List-Detailed/" title="US University Ranking 2019 (Detailed List)" class="md-nav__link">
+      US University Ranking 2019 (Detailed List)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WorkInProgress/University-List/" title="Top 200 US University Rankings 2019" class="md-nav__link">
+      Top 200 US University Rankings 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WorkInProgress/about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WorkInProgress/reverse_ssh/" title="Reverse ssh" class="md-nav__link">
+      Reverse ssh
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/" title="Getting Started with Tutorials" class="md-nav__link">
+      Getting Started with Tutorials
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Helper/" title="Insert Multiple Cursors at the Start of Every Line with VSCode" class="md-nav__link">
+      Insert Multiple Cursors at the Start of Every Line with VSCode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3">
+    
+    <label class="md-nav__link" for="nav-12-3">
+      Intro
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-3">
+        Intro
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Intro/mkdocs/" title="Markdown documentation with MkDocs and Themes" class="md-nav__link">
+      Markdown documentation with MkDocs and Themes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4">
+    
+    <label class="md-nav__link" for="nav-12-4">
+      Linux Shell
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-4">
+        Linux Shell
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/bash-alias/" title="Bash Pro Tips" class="md-nav__link">
+      Bash Pro Tips
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/bash-cheat-sheet/" title="Bash Script Cheat Sheet" class="md-nav__link">
+      Bash Script Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/benchmark-linux/" title="Sysbench tool for benchmarking" class="md-nav__link">
+      Sysbench tool for benchmarking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/cleanup/" title="Cleanup" class="md-nav__link">
+      Cleanup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/nano/" title="Getting started with `Nano`" class="md-nav__link">
+      Getting started with `Nano`
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/permissions/" title="Setting Permission with chmod" class="md-nav__link">
+      Setting Permission with chmod
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/reference/" title="References" class="md-nav__link">
+      References
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/rough/" title="Rough" class="md-nav__link">
+      Rough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/shell-advanced-1/" title="Unix Shell Advanced" class="md-nav__link">
+      Unix Shell Advanced
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/shell/" title="Unix Shell in 10 mins" class="md-nav__link">
+      Unix Shell in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
+      ssh - Secure Shell in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/tmux/" title="tmux in 10 mins" class="md-nav__link">
+      tmux in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Linux Shell/vim/" title="Vim in 10 mins" class="md-nav__link">
+      Vim in 10 mins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-5" type="checkbox" id="nav-12-5">
+    
+    <label class="md-nav__link" for="nav-12-5">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-5">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Python/Todo/" title="Python For Engineers and Professionals" class="md-nav__link">
+      Python For Engineers and Professionals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Python/python-cheat-sheet/" title="Newbies" class="md-nav__link">
+      Newbies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/Python/setup-Jupyter/" title="How to Setup Jupyter Notebook Server as a daemon service" class="md-nav__link">
+      How to Setup Jupyter Notebook Server as a daemon service
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-unix-variables" title="8.1 UNIX Variables" class="md-nav__link">
+    8.1 UNIX Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-environment-variables" title="8.2 Environment Variables" class="md-nav__link">
+    8.2 Environment Variables
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-out-the-current-values-of-these-variables" title="Finding out the current values of these variables." class="md-nav__link">
+    Finding out the current values of these variables.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-shell-variables" title="8.3 Shell Variables" class="md-nav__link">
+    8.3 Shell Variables
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-out-the-current-values-of-these-variables_1" title="Finding out the current values of these variables." class="md-nav__link">
+    Finding out the current values of these variables.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so-what-is-the-difference-between-path-and-path" title="So what is the difference between PATH and path ?" class="md-nav__link">
+    So what is the difference between PATH and path ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-using-and-setting-variables" title="8.4 Using and setting variables" class="md-nav__link">
+    8.4 Using and setting variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85-setting-shell-variables-in-the-cshrc-file" title="8.5 Setting shell variables in the .cshrc file" class="md-nav__link">
+    8.5 Setting shell variables in the .cshrc file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#86-setting-the-path" title="8.6 Setting the path" class="md-nav__link">
+    8.6 Setting the path
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="8-unix-tutorial-eight">8. UNIX Tutorial Eight</h1>
+<p>===================</p>
+<h2 id="81-unix-variables">8.1 UNIX Variables</h2>
+<p>Variables are a way of passing information from the shell to programs
+when you run them. Programs look "in the environment" for particular
+variables and if they are found will use the values stored. Some are set
+by the system, others by you, yet others by the shell, or any program
+that loads another program.</p>
+<p>Standard UNIX variables are split into two categories, environment
+variables and shell variables. In broad terms, shell variables apply
+only to the current instance of the shell and are used to set short-term
+working conditions; environment variables have a farther reaching
+significance, and those set at login are valid for the duration of the
+session. By convention, environment variables have UPPER CASE and shell
+variables have lower case names.</p>
+<h2 id="82-environment-variables">8.2 Environment Variables</h2>
+<p>An example of an environment variable is the OSTYPE variable. The value
+of this is the current operating system you are using. Type</p>
+<pre><code>echo $OSTYPE
+</code></pre>
+<p>More examples of environment variables are</p>
+<ul>
+<li>USER (your login name)</li>
+<li>HOME (the path name of your home directory)</li>
+<li>HOST (the name of the computer you are using)</li>
+<li>ARCH (the architecture of the computers processor)</li>
+<li>DISPLAY (the name of the computer screen to display X windows)</li>
+<li>PRINTER (the default printer to send print jobs)</li>
+<li>PATH (the directories the shell should search to find a command)</li>
+</ul>
+<h3 id="finding-out-the-current-values-of-these-variables">Finding out the current values of these variables.</h3>
+<p>ENVIRONMENT variables are set using the setenv command, displayed using
+the printenv or env commands, and unset using the unsetenv command.</p>
+<p>To show all values of these variables, type</p>
+<pre><code>printenv | less
+</code></pre>
+<h2 id="83-shell-variables">8.3 Shell Variables</h2>
+<p>An example of a shell variable is the history variable. The value of
+this is how many shell commands to save, allow the user to scroll back
+through all the commands they have previously entered. Type</p>
+<pre><code>echo $history
+</code></pre>
+<p>More examples of shell variables are</p>
+<ul>
+<li>cwd (your current working directory)</li>
+<li>home (the path name of your home directory)</li>
+<li>path (the directories the shell should search to find a command)</li>
+<li>prompt (the text string used to prompt for interactive commands
+    shell your login shell)</li>
+</ul>
+<h3 id="finding-out-the-current-values-of-these-variables_1">Finding out the current values of these variables.</h3>
+<p>SHELL variables are both set and displayed using the set command. They
+can be unset by using the unset command.</p>
+<p>To show all values of these variables, type</p>
+<pre><code>set | less
+</code></pre>
+<h3 id="so-what-is-the-difference-between-path-and-path">So what is the difference between PATH and path ?</h3>
+<p>In general, environment and shell variables that have the same name
+(apart from the case) are distinct and independent, except for possibly
+having the same initial values. There are, however, exceptions.</p>
+<p>Each time the shell variables home, user and term are changed, the
+corresponding environment variables HOME, USER and TERM receive the same
+values. However, altering the environment variables has no effect on the
+corresponding shell variables.</p>
+<p>PATH and path specify directories to search for commands and programs.
+Both variables always represent the same directory list, and altering
+either automatically causes the other to be changed.</p>
+<h2 id="84-using-and-setting-variables">8.4 Using and setting variables</h2>
+<p>Each time you login to a UNIX host, the system looks in your home
+directory for initialisation files. Information in these files is used
+to set up your working environment. The <code>C</code> and <code>TC</code> shells uses two files
+called .login and .cshrc (note that both file names begin with a dot).
+(For ubuntu systems commonly the default shell is <code>bash</code> the configuration file in <strong>.bashrc</strong>)</p>
+<p>At login the C shell first reads <strong>.cshrc</strong> followed by <strong>.login</strong></p>
+<p><strong>.login</strong> is to set conditions which will apply to the whole session
+and to perform actions that are relevant only at login.</p>
+<p><strong>.cshrc</strong> is used to set conditions and perform actions specific to the
+shell and to each invocation of it.</p>
+<p>The guidelines are to set ENVIRONMENT variables in the <strong>.login</strong> file
+and SHELL variables in the <strong>.cshrc</strong> file.</p>
+<p><strong>WARNING:</strong> NEVER put commands that run graphical displays (e.g. a web
+browser) in your .cshrc or .login file.</p>
+<h2 id="85-setting-shell-variables-in-the-cshrc-file">8.5 Setting shell variables in the .cshrc file</h2>
+<p>For example, to change the number of shell commands saved in the history
+list, you need to set the shell variable history. It is set to 100 by
+default, but you can increase this if you wish.</p>
+<pre><code>set history = 200
+</code></pre>
+<p>Check this has worked by typing</p>
+<pre><code>echo $history
+</code></pre>
+<p>However, this has only set the variable for the lifetime of the current
+shell. If you open a new xterm window, it will only have the default
+history value set. To PERMANENTLY set the value of history, you will
+need to add the set command to the .cshrc file.</p>
+<p>First open the <strong>.cshrc</strong> file in a text editor. An easy, user-friendly
+editor to use is nedit.</p>
+<pre><code>nedit ~/.cshrc
+</code></pre>
+<p>Add the following line AFTER the list of other commands.</p>
+<p>set history = 200</p>
+<p>Save the file and force the shell to reread its .cshrc file buy using
+the shell source command.</p>
+<pre><code>source .cshrc
+</code></pre>
+<p>Check this has worked by typing</p>
+<pre><code>echo $history
+</code></pre>
+<h2 id="86-setting-the-path">8.6 Setting the path</h2>
+<p>When you type a command, your path (or PATH) variable defines in which
+directories the shell will look to find the command you typed. If the
+system returns a message saying "command: Command not found", this
+indicates that either the command doesn't exist at all on the system or
+it is simply not in your path.</p>
+<p>For example, to run units, you either need to directly specify the units
+path (<strong>~/units174/bin/units</strong>), or you need to have the directory
+<strong>~/units174/bin</strong> in your path.</p>
+<p>You can add it to the end of your existing path (the <strong>$path</strong>
+represents this) by issuing the command:</p>
+<pre><code>set path = ($path ~/units174/bin)
+</code></pre>
+<p>Test that this worked by trying to run units in any directory other that
+where units is actually located.</p>
+<pre><code>cd; units
+</code></pre>
+<p><strong>HINT:</strong> You can run multiple commands on one line by separating them
+with a semicolon.</p>
+<p>To add this path PERMANENTLY, add the following line to your .cshrc
+AFTER the list of other commands.</p>
+<pre><code>set path = ($path ~/units174/bin)
+</code></pre>
+<p>M.Stonebank@surrey.ac.uk October 2001</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../unix7/" title="7. UNIX Tutorial Seven" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                7. UNIX Tutorial Seven
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../unix99answer/" title="7. Answers" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                7. Answers
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

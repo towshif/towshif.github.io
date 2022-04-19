@@ -1,0 +1,1895 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://towshif.github.io/01.UNIX-Tutorial/unix-cheat-sheet/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>UNIX Shell Cheat Sheet - Less-Than-10 Tutorials (<10)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#unix-shell-cheat-sheet" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Less-Than-10 Tutorials (<10)
+              </span>
+              <span class="md-header-nav__topic">
+                UNIX Shell Cheat Sheet
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Less-Than-10 Tutorials (<10)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Instructions" class="md-nav__link">
+      Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../gettingStarted/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      00.Remote Access
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        00.Remote Access
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../00.Remote-Access/scp/" title="scp - Secure Copy in 10 mins" class="md-nav__link">
+      scp - Secure Copy in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../00.Remote-Access/ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
+      ssh - Secure Shell in 10 mins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      01.UNIX Tutorial
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        01.UNIX Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intro/" title="Introduction to UNIX" class="md-nav__link">
+      Introduction to UNIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shell/" title="UNIX Shell in 10 mins" class="md-nav__link">
+      UNIX Shell in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shell2/" title="UNIX Shell Part-II in 10 mins" class="md-nav__link">
+      UNIX Shell Part-II in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        UNIX Shell Cheat Sheet
+      </label>
+    
+    <a href="./" title="UNIX Shell Cheat Sheet" class="md-nav__link md-nav__link--active">
+      UNIX Shell Cheat Sheet
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-bash-basics" title="1. Bash Basics." class="md-nav__link">
+    1. Bash Basics.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-file-commands" title="1.1. File Commands." class="md-nav__link">
+    1.1. File Commands.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-directory-commands" title="1.2. Directory Commands." class="md-nav__link">
+    1.2. Directory Commands.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-ssh-system-info-network-commands" title="1.3. SSH, System Info &amp; Network Commands." class="md-nav__link">
+    1.3. SSH, System Info &amp; Network Commands.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-basic-shell-programming" title="2. Basic Shell Programming." class="md-nav__link">
+    2. Basic Shell Programming.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-variables" title="2.1. Variables." class="md-nav__link">
+    2.1. Variables.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-functions" title="2.2. Functions." class="md-nav__link">
+    2.2. Functions.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-flow-control" title="2.3. Flow Control." class="md-nav__link">
+    2.3. Flow Control.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-command-line-processing-cycle" title="3. Command-Line Processing Cycle." class="md-nav__link">
+    3. Command-Line Processing Cycle.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-inputoutput-redirectors" title="4. Input/Output Redirectors." class="md-nav__link">
+    4. Input/Output Redirectors.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-process-handling" title="5. Process Handling." class="md-nav__link">
+    5. Process Handling.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tips-and-tricks" title="6. Tips and Tricks." class="md-nav__link">
+    6. Tips and Tricks.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-debugging-shell-programs" title="7. Debugging Shell Programs." class="md-nav__link">
+    7. Debugging Shell Programs.
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Unix Tutorial
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        Unix Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/" title="Contents: UNIX Tutorial for Beginners" class="md-nav__link">
+      Contents: UNIX Tutorial for Beginners
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/introunix/" title="Introduction to UNIX" class="md-nav__link">
+      Introduction to UNIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix0/" title="UNIX Tutorial" class="md-nav__link">
+      UNIX Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix1/" title="1. UNIX Tutorial One" class="md-nav__link">
+      1. UNIX Tutorial One
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix2/" title="2. UNIX Tutorial Two" class="md-nav__link">
+      2. UNIX Tutorial Two
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix3/" title="3. UNIX Tutorial Three" class="md-nav__link">
+      3. UNIX Tutorial Three
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix4/" title="4. UNIX Tutorial Four" class="md-nav__link">
+      4. UNIX Tutorial Four
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix5/" title="5. UNIX Tutorial Five" class="md-nav__link">
+      5. UNIX Tutorial Five
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix6/" title="6. UNIX Tutorial Six" class="md-nav__link">
+      6. UNIX Tutorial Six
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix7/" title="7. UNIX Tutorial Seven" class="md-nav__link">
+      7. UNIX Tutorial Seven
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix8/" title="8. UNIX Tutorial Eight" class="md-nav__link">
+      8. UNIX Tutorial Eight
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix99answer/" title="7. Answers" class="md-nav__link">
+      7. Answers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      02.Editors
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        02.Editors
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../02.Editors/nano/" title="Getting started with `Nano`" class="md-nav__link">
+      Getting started with `Nano`
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      03.Web Interaction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        03.Web Interaction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03.Web-Interaction/Unix-Basic-NetworkAccess/" title="Accessing Network from shell" class="md-nav__link">
+      Accessing Network from shell
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03.Web-Interaction/Unix-Networking/" title="More on Networking" class="md-nav__link">
+      More on Networking
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      04.Organizing Reporting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        04.Organizing Reporting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/github/" title="Git and Github" class="md-nav__link">
+      Git and Github
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/github_xrzz/" title="Exercise: Git and Github" class="md-nav__link">
+      Exercise: Git and Github
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/html/" title="Creating a Webpage with Github.io" class="md-nav__link">
+      Creating a Webpage with Github.io
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/html_xrzz/" title="Exercise: Create a webpage on Github.io" class="md-nav__link">
+      Exercise: Create a webpage on Github.io
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/linux-google-cloud/" title="Setting up Google Cloud Console" class="md-nav__link">
+      Setting up Google Cloud Console
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/markdown/" title="Markdown (.md)  in 10 mins" class="md-nav__link">
+      Markdown (.md)  in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/markdown_publishing/" title="Publishing Markdown Documents" class="md-nav__link">
+      Publishing Markdown Documents
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/website/" title="Finally A Website On Github.io" class="md-nav__link">
+      Finally A Website On Github.io
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      99.Projects
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        99.Projects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99.Projects/Assignment-01/" title="Assignment 1: Project" class="md-nav__link">
+      Assignment 1: Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99.Projects/WiseWords/" title="Word of Advice for Beginners" class="md-nav__link">
+      Word of Advice for Beginners
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Others
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Others
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Others/RollingUpdates/" title="RollingUpdates" class="md-nav__link">
+      RollingUpdates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Samples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Samples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Samples/Markdown-Sample/" title="Towshif Ali" class="md-nav__link">
+      Towshif Ali
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Samples/README_test/" title="README test" class="md-nav__link">
+      README test
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      WorkInProgress
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        WorkInProgress
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../WorkInProgress/University-List-Detailed/" title="US University Ranking 2019 (Detailed List)" class="md-nav__link">
+      US University Ranking 2019 (Detailed List)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../WorkInProgress/University-List/" title="Top 200 US University Rankings 2019" class="md-nav__link">
+      Top 200 US University Rankings 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../WorkInProgress/about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../WorkInProgress/reverse_ssh/" title="Reverse ssh" class="md-nav__link">
+      Reverse ssh
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/" title="Getting Started with Tutorials" class="md-nav__link">
+      Getting Started with Tutorials
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Helper/" title="Insert Multiple Cursors at the Start of Every Line with VSCode" class="md-nav__link">
+      Insert Multiple Cursors at the Start of Every Line with VSCode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3">
+    
+    <label class="md-nav__link" for="nav-12-3">
+      Intro
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-3">
+        Intro
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Intro/mkdocs/" title="Markdown documentation with MkDocs and Themes" class="md-nav__link">
+      Markdown documentation with MkDocs and Themes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4">
+    
+    <label class="md-nav__link" for="nav-12-4">
+      Linux Shell
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-4">
+        Linux Shell
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/bash-alias/" title="Bash Pro Tips" class="md-nav__link">
+      Bash Pro Tips
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/bash-cheat-sheet/" title="Bash Script Cheat Sheet" class="md-nav__link">
+      Bash Script Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/benchmark-linux/" title="Sysbench tool for benchmarking" class="md-nav__link">
+      Sysbench tool for benchmarking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/cleanup/" title="Cleanup" class="md-nav__link">
+      Cleanup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/nano/" title="Getting started with `Nano`" class="md-nav__link">
+      Getting started with `Nano`
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/permissions/" title="Setting Permission with chmod" class="md-nav__link">
+      Setting Permission with chmod
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/reference/" title="References" class="md-nav__link">
+      References
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/rough/" title="Rough" class="md-nav__link">
+      Rough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/shell-advanced-1/" title="Unix Shell Advanced" class="md-nav__link">
+      Unix Shell Advanced
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/shell/" title="Unix Shell in 10 mins" class="md-nav__link">
+      Unix Shell in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
+      ssh - Secure Shell in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/tmux/" title="tmux in 10 mins" class="md-nav__link">
+      tmux in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/vim/" title="Vim in 10 mins" class="md-nav__link">
+      Vim in 10 mins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-5" type="checkbox" id="nav-12-5">
+    
+    <label class="md-nav__link" for="nav-12-5">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-5">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Python/Todo/" title="Python For Engineers and Professionals" class="md-nav__link">
+      Python For Engineers and Professionals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Python/python-cheat-sheet/" title="Newbies" class="md-nav__link">
+      Newbies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Python/setup-Jupyter/" title="How to Setup Jupyter Notebook Server as a daemon service" class="md-nav__link">
+      How to Setup Jupyter Notebook Server as a daemon service
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-bash-basics" title="1. Bash Basics." class="md-nav__link">
+    1. Bash Basics.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-file-commands" title="1.1. File Commands." class="md-nav__link">
+    1.1. File Commands.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-directory-commands" title="1.2. Directory Commands." class="md-nav__link">
+    1.2. Directory Commands.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-ssh-system-info-network-commands" title="1.3. SSH, System Info &amp; Network Commands." class="md-nav__link">
+    1.3. SSH, System Info &amp; Network Commands.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-basic-shell-programming" title="2. Basic Shell Programming." class="md-nav__link">
+    2. Basic Shell Programming.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-variables" title="2.1. Variables." class="md-nav__link">
+    2.1. Variables.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-functions" title="2.2. Functions." class="md-nav__link">
+    2.2. Functions.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-flow-control" title="2.3. Flow Control." class="md-nav__link">
+    2.3. Flow Control.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-command-line-processing-cycle" title="3. Command-Line Processing Cycle." class="md-nav__link">
+    3. Command-Line Processing Cycle.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-inputoutput-redirectors" title="4. Input/Output Redirectors." class="md-nav__link">
+    4. Input/Output Redirectors.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-process-handling" title="5. Process Handling." class="md-nav__link">
+    5. Process Handling.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tips-and-tricks" title="6. Tips and Tricks." class="md-nav__link">
+    6. Tips and Tricks.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-debugging-shell-programs" title="7. Debugging Shell Programs." class="md-nav__link">
+    7. Debugging Shell Programs.
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="unix-shell-cheat-sheet">UNIX Shell Cheat Sheet</h1>
+<h2 id="1-bash-basics">1. Bash Basics.</h2>
+<pre><code>export              # displays all environment variables
+
+echo $0             # displays the shell you're using
+echo $SHELL
+
+echo $BASH_VERSION  # displays bash version
+
+bash                # if you want to use bash (type exit to go back to your normal shell)
+whereis bash        # finds out where bash is on your system
+
+clear               # clears content on window (hide displayed lines): keyboard shortcut ^L 
+
+</code></pre>
+
+<h2 id="11-file-commands">1.1. File Commands.</h2>
+<pre><code>ls                            # lists your files
+ls -l                         # lists your files in 'long format', which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified
+ls -a                         # lists all files, including hidden files
+ln -s &lt;filename&gt; &lt;link&gt;       # creates symbolic link to file
+touch &lt;filename&gt;              # creates or updates your file
+cat &gt; &lt;filename&gt;              # places standard input into file
+more &lt;filename&gt;               # shows the first part of a file (move with space and type q to quit)
+head &lt;filename&gt;               # outputs the first 10 lines of file
+tail &lt;filename&gt;               # outputs the last 10 lines of file (useful with -f option)
+emacs &lt;filename&gt;              # lets you create and edit a file
+mv &lt;filename1&gt; &lt;filename2&gt;    # moves a file
+cp &lt;filename1&gt; &lt;filename2&gt;    # copies a file
+rm &lt;filename&gt;                 # removes a file
+diff &lt;filename1&gt; &lt;filename2&gt;  # compares files, and shows where they differ
+wc &lt;filename&gt;                 # tells you how many lines, words and characters there are in a file
+chmod -options &lt;filename&gt;     # lets you change the read, write, and execute permissions on your files
+gzip &lt;filename&gt;               # compresses files
+gunzip &lt;filename&gt;             # uncompresses files compressed by gzip
+gzcat &lt;filename&gt;              # lets you look at gzipped file without actually having to gunzip it
+lpr &lt;filename&gt;                # print the file
+lpq                           # check out the printer queue
+lprm &lt;jobnumber&gt;              # remove something from the printer queue
+genscript                     # converts plain text files into postscript for printing and gives you some options for formatting
+dvips &lt;filename&gt;              # print .dvi files (i.e. files produced by LaTeX)
+grep &lt;pattern&gt; &lt;filenames&gt;    # looks for the string in the files
+grep -r &lt;pattern&gt; &lt;dir&gt;       # search recursively for pattern in directory
+</code></pre>
+
+<h2 id="12-directory-commands">1.2. Directory Commands.</h2>
+<pre><code>mkdir &lt;dirname&gt;  # makes a new directory
+cd               # changes to home
+cd &lt;dirname&gt;     # changes directory
+pwd              # tells you where you currently are
+</code></pre>
+
+<h2 id="13-ssh-system-info-network-commands">1.3. SSH, System Info &amp; Network Commands.</h2>
+<pre><code>ssh user@host            # connects to host as user
+ssh -p &lt;port&gt; user@host  # connects to host on specified port as user
+ssh-copy-id user@host    # adds your ssh key to host for user to enable a keyed or passwordless login
+
+whoami                   # returns your username
+passwd                   # lets you change your password
+quota -v                 # shows what your disk quota is
+date                     # shows the current date and time
+cal                      # shows the month's calendar
+uptime                   # shows current uptime
+w                        # displays whois online
+who                      # return all users who all logged in
+finger &lt;user&gt;            # displays information about user
+uname -a                 # shows kernel information
+man &lt;command&gt;            # shows the manual for specified command
+df                       # shows disk usage
+du &lt;filename&gt;            # shows the disk usage of the files and directories in filename (du -s give only a total)
+last &lt;yourUsername&gt;      # lists your last logins
+ps -u yourusername       # lists your processes
+kill &lt;PID&gt;               # kills (ends) the processes with the ID you gave
+killall &lt;processname&gt;    # kill all processes with the name
+top                      # displays your currently active processes
+bg                       # lists stopped or background jobs ; resume a stopped job in the background
+fg                       # brings the most recent job in the foreground
+fg &lt;job&gt;                 # brings job to the foreground
+
+ping &lt;host&gt;              # pings host and outputs results
+whois &lt;domain&gt;           # gets whois information for domain
+dig &lt;domain&gt;             # gets DNS information for domain
+dig -x &lt;host&gt;            # reverses lookup host
+wget &lt;file&gt;              # downloads file
+
+</code></pre>
+
+<h2 id="2-basic-shell-programming">2. Basic Shell Programming.</h2>
+<h2 id="21-variables">2.1. Variables.</h2>
+<pre><code>varname=value                # defines a variable
+varname=value command        # defines a variable to be in the environment of a particular subprocess
+echo $varname                # checks a variable's value
+echo $$                      # prints process ID of the current shell
+echo $!                      # prints process ID of the most recently invoked background job
+echo $?                      # displays the exit status of the last command
+export VARNAME=value         # defines an environment variable (will be available in subprocesses)
+
+array[0] = val               # several ways to define an array
+array[1] = val
+array[2] = val
+array=([2]=val [0]=val [1]=val)
+array(val val val)
+
+${array[i]}                  # displays array's value for this index. If no index is supplied, array element 0 is assumed
+${#array[i]}                 # to find out the length of any element in the array
+${#array[@]}                 # to find out how many values there are in the array
+
+declare -a                   # the variables are treaded as arrays
+declare -f                   # uses funtion names only
+declare -F                   # displays function names without definitions
+declare -i                   # the variables are treaded as integers
+declare -r                   # makes the variables read-only
+declare -x                   # marks the variables for export via the environment
+
+${varname:-word}             # if varname exists and isn't null, return its value; otherwise return word
+${varname:=word}             # if varname exists and isn't null, return its value; otherwise set it word and then return its value
+${varname:?message}          # if varname exists and isn't null, return its value; otherwise print varname, followed by message and abort the current command or script
+${varname:+word}             # if varname exists and isn't null, return word; otherwise return null
+${varname:offset:length}     # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
+
+${variable#pattern}          # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
+${variable##pattern}         # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
+${variable%pattern}          # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
+${variable%%pattern}         # if the pattern matches the end of the variable's value, delete the longest part that matches and return the rest
+${variable/pattern/string}   # the longest match to pattern in variable is replaced by string. Only the first match is replaced
+${variable//pattern/string}  # the longest match to pattern in variable is replaced by string. All matches are replaced
+
+${#varname}                  # returns the length of the value of the variable as a character string
+
+*(patternlist)               # matches zero or more occurences of the given patterns
++(patternlist)               # matches one or more occurences of the given patterns
+?(patternlist)               # matches zero or one occurence of the given patterns
+@(patternlist)               # matches exactly one of the given patterns
+!(patternlist)               # matches anything except one of the given patterns
+
+$(UNIX command)              # command substitution: runs the command and returns standard output
+
+</code></pre>
+
+<h2 id="22-functions">2.2. Functions.</h2>
+<p>The function refers to passed arguments by position (as if they were positional parameters), that is, $1, $2, and so forth.
+<code>$@ is equal to "$1" "$2"... "$N"</code>, where N is the number of positional parameters. <code>$#</code> holds the number of positional parameters.</p>
+<pre><code>functname() {
+  shell commands
+}
+
+unset -f functname  # deletes a function definition
+declare -f          # displays all defined functions in your login session
+</code></pre>
+
+<h2 id="23-flow-control">2.3. Flow Control.</h2>
+<pre><code>statement1 &amp;&amp; statement2  # and operator
+statement1 || statement2  # or operator
+
+-a                        # and operator inside a test conditional expression
+-o                        # or operator inside a test conditional expression
+
+str1=str2                 # str1 matches str2
+str1!=str2                # str1 does not match str2
+str1&lt;str2                 # str1 is less than str2
+str1&gt;str2                 # str1 is greater than str2
+-n str1                   # str1 is not null (has length greater than 0)
+-z str1                   # str1 is null (has length 0)
+
+-a file                   # file exists
+-d file                   # file exists and is a directory
+-e file                   # file exists; same -a
+-f file                   # file exists and is a regular file (i.e., not a directory or other special type of file)
+-r file                   # you have read permission
+-r file                   # file exists and is not empty
+-w file                   # your have write permission
+-x file                   # you have execute permission on file, or directory search permission if it is a directory
+-N file                   # file was modified since it was last read
+-O file                   # you own file
+-G file                   # file's group ID matches yours (or one of yours, if you are in multiple groups)
+file1 -nt file2           # file1 is newer than file2
+file1 -ot file2           # file1 is older than file2
+
+-lt                       # less than
+-le                       # less than or equal
+-eq                       # equal
+-ge                       # greater than or equal
+-gt                       # greater than
+-ne                       # not equal
+
+if condition
+then
+  statements
+[elif condition
+  then statements...]
+[else
+  statements]
+fi
+
+for x := 1 to 10 do
+begin
+  statements
+end
+
+for name [in list]
+do
+  statements that can use $name
+done
+
+for (( initialisation ; ending condition ; update ))
+do
+  statements...
+done
+
+case expression in
+  pattern1 )
+    statements ;;
+  pattern2 )
+    statements ;;
+  ...
+esac
+
+select name [in list]
+do
+  statements that can use $name
+done
+
+while condition; do
+  statements
+done
+
+until condition; do
+  statements
+done
+
+</code></pre>
+
+<h2 id="3-command-line-processing-cycle">3. Command-Line Processing Cycle.</h2>
+<p>The default order for command lookup is functions, followed by built-ins, with scripts and executables last.
+There are three built-ins that you can use to override this order: <code>command</code>, <code>builtin</code> and <code>enable</code>.</p>
+<pre><code>command  # removes alias and function lookup. Only built-ins and commands found in the search path are executed
+builtin  # looks up only built-in commands, ignoring functions and commands found in PATH
+enable   # enables and disables shell built-ins
+
+eval     # takes arguments and run them through the command-line processing steps all over again
+</code></pre>
+
+<h2 id="4-inputoutput-redirectors">4. Input/Output Redirectors.</h2>
+<pre><code>
+cmd1|cmd2  # pipe; takes standard output of cmd1 as standard input to cmd2
+&gt; file     # directs standard output to file
+&lt; file     # takes standard input from file
+&gt;&gt; file    # directs standard output to file; append to file if it already exists
+&gt;|file     # forces standard output to file even if noclobber is set
+n&gt;|file    # forces output to file from file descriptor n even if noclobber is set
+&lt;&gt; file    # uses file as both standard input and standard output
+n&lt;&gt;file    # uses file as both input and output for file descriptor n
+&lt;&lt;label    # here-document
+n&gt;file     # directs file descriptor n to file
+n&lt;file     # takes file descriptor n from file
+n&gt;&gt;file    # directs file description n to file; append to file if it already exists
+n&gt;&amp;        # duplicates standard output to file descriptor n
+n&lt;&amp;        # duplicates standard input from file descriptor n
+n&gt;&amp;m       # file descriptor n is made to be a copy of the output file descriptor
+n&lt;&amp;m       # file descriptor n is made to be a copy of the input file descriptor
+&amp;&gt;file     # directs standard output and standard error to file
+&lt;&amp;-        # closes the standard input
+&gt;&amp;-        # closes the standard output
+n&gt;&amp;-       # closes the ouput from file descriptor n
+n&lt;&amp;-       # closes the input from file descripor n
+
+</code></pre>
+
+<h2 id="5-process-handling">5. Process Handling.</h2>
+<p>To suspend a job, type CTRL+Z while it is running. You can also suspend a job with CTRL+Y.
+This is slightly different from CTRL+Z in that the process is only stopped when it attempts to read input from terminal.
+Of course, to interupt a job, type CTRL+C.</p>
+<pre><code>myCommand &amp;  # runs job in the background and prompts back the shell
+
+jobs         # lists all jobs (use with -l to see associated PID)
+
+fg           # brings a background job into the foreground
+fg %+        # brings most recently invoked background job
+fg %-        # brings second most recently invoked background job
+fg %N        # brings job number N
+fg %string   # brings job whose command begins with string
+fg %?string  # brings job whose command contains string
+
+kill -l      # returns a list of all signals on the system, by name and number
+kill PID     # terminates process with specified PID
+
+ps           # prints a line of information about the current running login shell and any processes running under it
+ps -a        # selects all processes with a tty except session leaders
+
+trap cmd sig1 sig2  # executes a command when a signal is received by the script
+trap &quot;&quot; sig1 sig2   # ignores that signals
+trap - sig1 sig2    # resets the action taken when the signal is received to the default
+
+disown &lt;PID|JID&gt;    # removes the process from the list of jobs
+
+wait                # waits until all background jobs have finished
+
+</code></pre>
+
+<h2 id="6-tips-and-tricks">6. Tips and Tricks.</h2>
+<pre><code>
+## set an alias
+cd; nano .bash_profile
+&gt; alias gentlenode='ssh admin@gentlenode.com -p 3404'  # add your alias in .bash_profile
+
+## to quickly go to a specific directory
+cd; nano .bashrc
+&gt; shopt -s cdable_vars
+&gt; export websites=&quot;/Users/mac/Documents/websites&quot;
+
+source .bashrc
+cd websites
+
+</code></pre>
+
+<h2 id="7-debugging-shell-programs">7. Debugging Shell Programs.</h2>
+<pre><code>bash -n scriptname  # don't run commands; check for syntax errors only
+set -o noexec       # alternative (set option in script)
+
+bash -v scriptname  # echo commands before running them
+set -o verbose      # alternative (set option in script)
+
+bash -x scriptname  # echo commands after command-line processing
+set -o xtrace       # alternative (set option in script)
+
+trap 'echo $varname' EXIT  # useful when you want to print out the values of variables at the point that your script exits
+
+function errtrap {
+  es=$?
+  echo &quot;ERROR line $1: Command exited with status $es.&quot;
+}
+
+trap 'errtrap $LINENO' ERR  # is run whenever a command in the surrounding script or function exists with non-zero status 
+
+function dbgtrap {
+  echo &quot;badvar is $badvar&quot;
+}
+
+trap ```dbgtrap DEBUG  # causes the trap code to be executed before every statement in a function or script
+## ...section of code in which the problem occurs...
+tr```ap - DEBUG  # turn off the DEBUG trap
+
+function returntrap {
+  echo &quot;A return occured&quot;
+}
+
+trap returntrap RETURN  # is executed each time a shell function or a script executed with the . or source commands finishes executing
+
+</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../shell2/" title="UNIX Shell Part-II in 10 mins" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                UNIX Shell Part-II in 10 mins
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Unix-Tutorial/" title="Contents: UNIX Tutorial for Beginners" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Contents: UNIX Tutorial for Beginners
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

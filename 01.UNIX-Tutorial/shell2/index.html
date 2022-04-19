@@ -1,0 +1,1773 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://towshif.github.io/01.UNIX-Tutorial/shell2/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>UNIX Shell Part-II in 10 mins - Less-Than-10 Tutorials (<10)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#unix-shell-part-ii-in-10-mins" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Less-Than-10 Tutorials (<10)
+              </span>
+              <span class="md-header-nav__topic">
+                UNIX Shell Part-II in 10 mins
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://towshif.github.io" title="Less-Than-10 Tutorials (<10)" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Less-Than-10 Tutorials (<10)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Instructions" class="md-nav__link">
+      Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../gettingStarted/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      00.Remote Access
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        00.Remote Access
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../00.Remote-Access/scp/" title="scp - Secure Copy in 10 mins" class="md-nav__link">
+      scp - Secure Copy in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../00.Remote-Access/ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
+      ssh - Secure Shell in 10 mins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      01.UNIX Tutorial
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        01.UNIX Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intro/" title="Introduction to UNIX" class="md-nav__link">
+      Introduction to UNIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shell/" title="UNIX Shell in 10 mins" class="md-nav__link">
+      UNIX Shell in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        UNIX Shell Part-II in 10 mins
+      </label>
+    
+    <a href="./" title="UNIX Shell Part-II in 10 mins" class="md-nav__link md-nav__link--active">
+      UNIX Shell Part-II in 10 mins
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-unix-shell-commands" title="Basic Unix Shell Commands" class="md-nav__link">
+    Basic Unix Shell Commands
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-searching-files-directories" title="find - Searching Files &amp; Directories" class="md-nav__link">
+    find - Searching Files &amp; Directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirection" title="Redirection" class="md-nav__link">
+    Redirection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-pipes" title="&#124; - Pipes" class="md-nav__link">
+    &#124; - Pipes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" title="Environment Variables" class="md-nav__link">
+    Environment Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" title="Exercise" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answers" title="Answers:" class="md-nav__link">
+    Answers:
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unix-cheat-sheet/" title="UNIX Shell Cheat Sheet" class="md-nav__link">
+      UNIX Shell Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Unix Tutorial
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        Unix Tutorial
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/" title="Contents: UNIX Tutorial for Beginners" class="md-nav__link">
+      Contents: UNIX Tutorial for Beginners
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/introunix/" title="Introduction to UNIX" class="md-nav__link">
+      Introduction to UNIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix0/" title="UNIX Tutorial" class="md-nav__link">
+      UNIX Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix1/" title="1. UNIX Tutorial One" class="md-nav__link">
+      1. UNIX Tutorial One
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix2/" title="2. UNIX Tutorial Two" class="md-nav__link">
+      2. UNIX Tutorial Two
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix3/" title="3. UNIX Tutorial Three" class="md-nav__link">
+      3. UNIX Tutorial Three
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix4/" title="4. UNIX Tutorial Four" class="md-nav__link">
+      4. UNIX Tutorial Four
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix5/" title="5. UNIX Tutorial Five" class="md-nav__link">
+      5. UNIX Tutorial Five
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix6/" title="6. UNIX Tutorial Six" class="md-nav__link">
+      6. UNIX Tutorial Six
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix7/" title="7. UNIX Tutorial Seven" class="md-nav__link">
+      7. UNIX Tutorial Seven
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix8/" title="8. UNIX Tutorial Eight" class="md-nav__link">
+      8. UNIX Tutorial Eight
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unix-Tutorial/unix99answer/" title="7. Answers" class="md-nav__link">
+      7. Answers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      02.Editors
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        02.Editors
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../02.Editors/nano/" title="Getting started with `Nano`" class="md-nav__link">
+      Getting started with `Nano`
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      03.Web Interaction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        03.Web Interaction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03.Web-Interaction/Unix-Basic-NetworkAccess/" title="Accessing Network from shell" class="md-nav__link">
+      Accessing Network from shell
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03.Web-Interaction/Unix-Networking/" title="More on Networking" class="md-nav__link">
+      More on Networking
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      04.Organizing Reporting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        04.Organizing Reporting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/github/" title="Git and Github" class="md-nav__link">
+      Git and Github
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/github_xrzz/" title="Exercise: Git and Github" class="md-nav__link">
+      Exercise: Git and Github
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/html/" title="Creating a Webpage with Github.io" class="md-nav__link">
+      Creating a Webpage with Github.io
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/html_xrzz/" title="Exercise: Create a webpage on Github.io" class="md-nav__link">
+      Exercise: Create a webpage on Github.io
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/linux-google-cloud/" title="Setting up Google Cloud Console" class="md-nav__link">
+      Setting up Google Cloud Console
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/markdown/" title="Markdown (.md)  in 10 mins" class="md-nav__link">
+      Markdown (.md)  in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/markdown_publishing/" title="Publishing Markdown Documents" class="md-nav__link">
+      Publishing Markdown Documents
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04.Organizing-Reporting/website/" title="Finally A Website On Github.io" class="md-nav__link">
+      Finally A Website On Github.io
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      99.Projects
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        99.Projects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99.Projects/Assignment-01/" title="Assignment 1: Project" class="md-nav__link">
+      Assignment 1: Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99.Projects/WiseWords/" title="Word of Advice for Beginners" class="md-nav__link">
+      Word of Advice for Beginners
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Others
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Others
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Others/RollingUpdates/" title="RollingUpdates" class="md-nav__link">
+      RollingUpdates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Samples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Samples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Samples/Markdown-Sample/" title="Towshif Ali" class="md-nav__link">
+      Towshif Ali
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Samples/README_test/" title="README test" class="md-nav__link">
+      README test
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      WorkInProgress
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        WorkInProgress
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../WorkInProgress/University-List-Detailed/" title="US University Ranking 2019 (Detailed List)" class="md-nav__link">
+      US University Ranking 2019 (Detailed List)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../WorkInProgress/University-List/" title="Top 200 US University Rankings 2019" class="md-nav__link">
+      Top 200 US University Rankings 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../WorkInProgress/about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../WorkInProgress/reverse_ssh/" title="Reverse ssh" class="md-nav__link">
+      Reverse ssh
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/" title="Getting Started with Tutorials" class="md-nav__link">
+      Getting Started with Tutorials
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Helper/" title="Insert Multiple Cursors at the Start of Every Line with VSCode" class="md-nav__link">
+      Insert Multiple Cursors at the Start of Every Line with VSCode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3">
+    
+    <label class="md-nav__link" for="nav-12-3">
+      Intro
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-3">
+        Intro
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Intro/mkdocs/" title="Markdown documentation with MkDocs and Themes" class="md-nav__link">
+      Markdown documentation with MkDocs and Themes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4">
+    
+    <label class="md-nav__link" for="nav-12-4">
+      Linux Shell
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-4">
+        Linux Shell
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/bash-alias/" title="Bash Pro Tips" class="md-nav__link">
+      Bash Pro Tips
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/bash-cheat-sheet/" title="Bash Script Cheat Sheet" class="md-nav__link">
+      Bash Script Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/benchmark-linux/" title="Sysbench tool for benchmarking" class="md-nav__link">
+      Sysbench tool for benchmarking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/cleanup/" title="Cleanup" class="md-nav__link">
+      Cleanup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/nano/" title="Getting started with `Nano`" class="md-nav__link">
+      Getting started with `Nano`
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/permissions/" title="Setting Permission with chmod" class="md-nav__link">
+      Setting Permission with chmod
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/reference/" title="References" class="md-nav__link">
+      References
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/rough/" title="Rough" class="md-nav__link">
+      Rough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/shell-advanced-1/" title="Unix Shell Advanced" class="md-nav__link">
+      Unix Shell Advanced
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/shell/" title="Unix Shell in 10 mins" class="md-nav__link">
+      Unix Shell in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/ssh/" title="ssh - Secure Shell in 10 mins" class="md-nav__link">
+      ssh - Secure Shell in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/tmux/" title="tmux in 10 mins" class="md-nav__link">
+      tmux in 10 mins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Linux Shell/vim/" title="Vim in 10 mins" class="md-nav__link">
+      Vim in 10 mins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-5" type="checkbox" id="nav-12-5">
+    
+    <label class="md-nav__link" for="nav-12-5">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-12-5">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Python/Todo/" title="Python For Engineers and Professionals" class="md-nav__link">
+      Python For Engineers and Professionals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Python/python-cheat-sheet/" title="Newbies" class="md-nav__link">
+      Newbies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/Python/setup-Jupyter/" title="How to Setup Jupyter Notebook Server as a daemon service" class="md-nav__link">
+      How to Setup Jupyter Notebook Server as a daemon service
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-unix-shell-commands" title="Basic Unix Shell Commands" class="md-nav__link">
+    Basic Unix Shell Commands
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-searching-files-directories" title="find - Searching Files &amp; Directories" class="md-nav__link">
+    find - Searching Files &amp; Directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirection" title="Redirection" class="md-nav__link">
+    Redirection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-pipes" title="&#124; - Pipes" class="md-nav__link">
+    &#124; - Pipes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" title="Environment Variables" class="md-nav__link">
+    Environment Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" title="Exercise" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answers" title="Answers:" class="md-nav__link">
+    Answers:
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="unix-shell-part-ii-in-10-mins">UNIX Shell Part-II in 10 mins</h1>
+<h2 id="basic-unix-shell-commands"><strong>Basic Unix Shell Commands</strong></h2>
+<p>Summary </p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>Function</th>
+<th>Example Syntax</th>
+<th>-OPTIONS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>echo</code></td>
+<td>display a line of text</td>
+<td><code>echo [VARIABLE OR string]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>cat</code></td>
+<td>concatenate files and print on the standard output</td>
+<td><code>cat [FILENAME]</code></td>
+<td><code>-n (show line numbers)</code></td>
+</tr>
+<tr>
+<td><code>head</code></td>
+<td>output the first part of files</td>
+<td><code>head -[n] [FILENAME]</code></td>
+<td><code>-[n OR # of lines]</code></td>
+</tr>
+<tr>
+<td><code>tail</code></td>
+<td>output the last part of files</td>
+<td><code>tail -[n] [FILENAME]</code></td>
+<td><code>-[n OR # of lines]</code></td>
+</tr>
+<tr>
+<td><code>more</code></td>
+<td>file viewing (only down scrolling allowed with <code>space</code> key)</td>
+<td><code>more [FILENAME]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>less</code></td>
+<td>file viewing (both UP and DOWN scrolling permitted )</td>
+<td><code>less [FILENAME]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>sort lines of text files</td>
+<td><code>sort [FILENAME or STDIN]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>diff</code></td>
+<td>compare files line by line</td>
+<td><code>diff [FILENAME1] [FILENAME2]</code></td>
+<td><code>-u (unified)</code></td>
+</tr>
+<tr>
+<td><code>wc</code></td>
+<td>count: print newline, word, and byte counts for each file</td>
+<td><code>wc  [FILENAME1]</code></td>
+<td><code>-lwcm</code></td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>Show who is logged on and what they are doing.</td>
+<td><code>w</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>who</code></td>
+<td>show who is logged on</td>
+<td><code>who</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>which</code></td>
+<td>locate a command</td>
+<td><code>which [COMMAND_NAME]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>whereis</code></td>
+<td>locate the binary, source, and manual page files for a command</td>
+<td><code>whereis [COMMAND_NAME OR BINARY_FILE]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>whatis</code></td>
+<td>display one-line manual page descriptions</td>
+<td><code>whatis [COMMAND_NAME]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>find</code></td>
+<td>search for files in a directory hierarchy</td>
+<td><code>find [DIR] [-name] "[STRING/WILDCARD]"</code></td>
+<td><code>-name</code></td>
+</tr>
+<tr>
+<td><code>grep</code></td>
+<td>print lines matching a pattern</td>
+<td><code>grep [-OPTION] "[PATTERN]" [FILE]</code></td>
+<td><code>-i (ignore case)</code></td>
+</tr>
+<tr>
+<td><code>zip</code></td>
+<td>list, test and extract compressed files in a ZIP archive</td>
+<td><code>zip [ZIPFILENAME] [FILE1] [FILE2] [DIR1]</code></td>
+<td><code>-r (compress DIR)</code></td>
+</tr>
+<tr>
+<td><code>unzip</code></td>
+<td>compress or expand files (also look at <code>gunzip</code>)</td>
+<td><code>unzip [ZIP FILENAME] [FILENAME2]</code></td>
+<td><code>-l (list) -d (to new DIR)</code></td>
+</tr>
+<tr>
+<td><code>ping</code></td>
+<td>send ICMP ECHO_REQUEST to network hosts</td>
+<td><code>ping [SERVER/ HOST/ URL/ IP]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>curl</code></td>
+<td>transfer a URL</td>
+<td><code>curl [URL]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>wget</code></td>
+<td>The non-interactive network downloader. Download file</td>
+<td><code>wget [URL]</code></td>
+<td><code>-c -b</code></td>
+</tr>
+<tr>
+<td><code>top</code></td>
+<td>display Linux processes</td>
+<td><code>top</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>htop</code></td>
+<td>interactive process viewer</td>
+<td><code>htop</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>kill</code></td>
+<td>send a signal to a process</td>
+<td><code>kill [PID]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&gt;</code> ; <code>&gt;&gt;</code></td>
+<td>directs standard output to file; append to file if it already exists</td>
+<td><code>[COMMAND1] &gt; [FILENAME]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&#124;</code></td>
+<td>pipe operator: pipe; takes standard output of cmd1 as standard input to cmd2</td>
+<td><code>[COMMAND1] &#124; [COMMAND2]</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="find-searching-files-directories"><code>find</code> - Searching Files &amp; Directories</h3>
+<p>Write (or redirect) output from a command to a file.  </p>
+<pre><code># Syntax: 
+find [DIR] [-name] "[STRING/WILDCARD]"  # note the quotes on STRING/ WILDCARD
+
+# Use find from the command line to locate a specific file by name or extension. The following example searches for *.err files in the /home/username/ directory and all sub-directories:
+
+find /home/username/ -name "*.err"
+
+find . -name testfile.txt       # Find a file called testfile.txt in current and sub-directories.
+find /home -name *.jpg          # Find all .jpg files in the /home and sub-directories.
+find . -type f -empty           # Find an empty file within the current directory.
+find /home -user exampleuser -mtime 7 -iname ".db"  # Find all .db files (ignoring text case) modified in the last 7 days by a
+</code></pre>
+<p><strong>Advanced usage</strong> : find locates all files in the hierarchy starting at the current directory and fully recursing into the directory tree. In this example, find will delete all files that end with the characters <code>.bak</code>:</p>
+<pre><code>find . -name "*.bak" -delete
+</code></pre>
+<hr />
+<h3 id="redirection">Redirection</h3>
+<p>Write (or redirect) output from a command to a file.<br />
+<code>&gt;</code> with write to the file which <code>&gt;&gt;</code> will append to the file if it already exists. </p>
+<pre><code># Syntax 
+[COMMAND] &gt; [FILENAME]
+
+# Redirection
+python hello.py &gt; output.txt   # write stdout to (file)
+python hello.py &gt;&gt; output.txt  # append stdout to (file) if file exists
+
+# pipe and redirection together 
+history | tail -20 &gt; myhistory.txt   # saves history last 20 line to file (myhistory.txt)
+</code></pre>
+<hr />
+<h3 id="-pipes"><code>&#124;</code> - Pipes</h3>
+<p>Takes standard output of COMMAND1 as standard input to COMMAND2</p>
+<pre><code>cat old.py | less
+
+echo $history | more
+
+history | grep -i "whatis"
+
+history | grep -i "chmod"
+
+cat new.py | grep -i import
+
+# pipe and redirection together 
+history | tail -20 &gt; myhistory.txt   # saves history last 20 line to file (myhistory.txt)
+</code></pre>
+<hr />
+<h3 id="environment-variables">Environment Variables</h3>
+<p>An example of an environment variable is the OSTYPE variable. The value of this is the current operating system you are using. Type</p>
+<pre><code>echo $OSTYPE
+</code></pre>
+<p>More examples of environment variables are</p>
+<pre><code>USER (your login name)
+HOME (the path name of your home directory)
+HOST (the name of the computer you are using)
+ARCH (the architecture of the computers processor)
+DISPLAY (the name of the computer screen to display X windows)
+PRINTER (the default printer to send print jobs)
+PATH (the directories the shell should search to find a command)
+history (histroy of all the command run in SHELL)
+</code></pre>
+<p>To output a VARIABLE use a <code>$</code> infront of the <code>VARIABLE</code> with and <code>echo</code> command</p>
+<pre><code>echo $USER
+</code></pre>
+<hr />
+<h2 id="exercise">Exercise</h2>
+<ol>
+<li>
+<p>Get contents of URL https://towshif.com and find all lines starting with <code>&lt;</code> and save them to a file <code>strip-html.txt</code>. Output the last 5 lines of the file.</p>
+</li>
+<li>
+<p>Find all names and paths of python files (.py) in your home directory and save it into a file <code>all-py.txt</code>. Count the number of files you found and output them. Now from the file output all the lines that contain the word 'setup' and save it into another file <code>all-setup-py.txt</code>. Count the number of files with word 'setup' in their path. </p>
+</li>
+<li>
+<p>Find all the commands in your history that contains a 'http' link. </p>
+</li>
+<li>
+<p>This link <a href="http://www.gutenberg.org/files/15/15.txt">http://www.gutenberg.org/files/15/15.txt</a> has a text file which contains a list of files for the legendary novel <em>Moby Dick</em>. </p>
+<ul>
+<li>Read this file from shell, </li>
+<li>find all the occurrencec of ".txt" filenames in it, </li>
+<li>then sort them in reverse order and save to <code>moby-list.txt</code>. </li>
+<li>In this file find the count of the string <code>ahab</code>. Ans is 13.  </li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li><a href="../unix-cheat-sheet/">Cheat Sheet</a></li>
+<li><a href="https://devhints.io/bash">Another Cheat Sheet</a></li>
+</ul>
+<hr />
+<h2 id="answers">Answers:</h2>
+<pre><code># Ans 1: 
+curl https://towshif.com | grep -i "&lt;" &gt; ~/code/krazykoder/strip-html.txt
+tail -5 ~/code/krazykoder/strip-html.txt
+
+# Ans 2:
+find ~ -name "*.py" &gt; ~/code/krazykoder/allpy.txt
+wc -l  ~/code/krazykoder/allpy.txt
+cat  ~/code/krazykoder/allpy.txt | grep -i "setup" &gt; ~/code/krazykoder/all-setup-py.txt
+wc ~/code/krazykoder/all-setup-py.txt
+
+# Ans 3: 
+history | grep -i 'http'
+
+# And 4: 
+curl http://www.gutenberg.org/files/15/15.txt | grep -i ".txt" | sort --reverse &gt; moby-list.txt
+grep -io "ahab" moby-list.txt | wc -l
+</code></pre>
+<hr />
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../shell/" title="UNIX Shell in 10 mins" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                UNIX Shell in 10 mins
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../unix-cheat-sheet/" title="UNIX Shell Cheat Sheet" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                UNIX Shell Cheat Sheet
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
